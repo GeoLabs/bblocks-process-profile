@@ -1,0 +1,97 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:kindgrove:mangrove",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove",
+      "startedAtTime": "2026-09-23T08:01:12Z",
+      "used": [
+        "urn:example:entity:mangrove:in:west",
+        "urn:example:entity:mangrove:in:south",
+        "urn:example:entity:mangrove:in:east",
+        "urn:example:entity:mangrove:in:north",
+        "urn:example:entity:mangrove:in:cloud_cover_max",
+        "urn:example:entity:mangrove:in:days_back",
+        "urn:example:entity:mangrove:in:output_dir"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ghcr.io/geolabs/kindgrove/mangrove-cwl:v0.0.1-rc7"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/mangrove_cli"
+        }
+      ],
+      "endedAtTime": "2026-09-23T08:03:16Z"
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:west",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/west",
+      "value": 95.15
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:south",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/south",
+      "value": 15.9
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:east",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/east",
+      "value": 95.35
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:north",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/north",
+      "value": 16.1
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:cloud_cover_max",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/cloud_cover_max",
+      "value": 20
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:days_back",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/days_back",
+      "value": 90
+    },
+    {
+      "id": "urn:example:entity:mangrove:in:output_dir",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#inputs/output_dir",
+      "value": "outputs"
+    },
+    {
+      "id": "urn:example:entity:mangrove:out:result",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/mangrove_cli#outputs/result",
+      "wasGeneratedBy": "urn:example:run:kindgrove:mangrove",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-0001/results/catalog.json",
+          "rel": "item",
+          "type": "application/json"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ghcr.io/geolabs/kindgrove/mangrove-cwl:v0.0.1-rc7",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ghcr.io/geolabs/kindgrove/mangrove-cwl:v0.0.1-rc7"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "inputs": {
+    "aoi": {
+      "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
+      "type": "application/geo+json"
+    },
+    "collection": "SENTINEL-2",
+    "date": "2019-06-29",
+    "delta": 4,
+    "cloud_cover": 0.1,
+    "s3_access_key": "<redacted>",
+    "s3_secret_key": "<redacted>"
+  },
+  "response": "document"
+}

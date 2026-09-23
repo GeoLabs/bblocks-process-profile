@@ -1,0 +1,136 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:workflow-copernicus:out:chlorophyll_a> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:chlorophyll_a_color> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_color> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:chlorophyll_a_plot> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_plot> ;
+    rdfs:seeAlso [ dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:cyanobacteria> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:cyanobacteria_color> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_color> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:cyanobacteria_plot> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_plot> ;
+    rdfs:seeAlso [ dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:turbidity> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:turbidity_color> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_color> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:out:turbidity_plot> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_plot> ;
+    rdfs:seeAlso [ dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:workflow-copernicus:in:aoi> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:workflow-copernicus> .
+
+<urn:example:entity:workflow-copernicus:in:cloud_cover> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/cloud_cover> ;
+    rdf:value 1e-01 .
+
+<urn:example:entity:workflow-copernicus:in:collection> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/collection> ;
+    rdf:value "SENTINEL-2" .
+
+<urn:example:entity:workflow-copernicus:in:date> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/date> ;
+    rdf:value "2019-06-29" .
+
+<urn:example:entity:workflow-copernicus:in:delta> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/delta> ;
+    rdf:value 4 .
+
+<urn:example:entity:workflow-copernicus:in:s3_access_key> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/s3_access_key> .
+
+<urn:example:entity:workflow-copernicus:in:s3_secret_key> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/s3_secret_key> .
+
+<urn:example:run:algae-bloom:workflow-copernicus> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus> ;
+    prov:endedAtTime "2026-09-23T07:33:59+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus> ] ;
+    prov:startedAtTime "2026-09-23T07:31:01+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:workflow-copernicus:in:aoi>,
+        <urn:example:entity:workflow-copernicus:in:cloud_cover>,
+        <urn:example:entity:workflow-copernicus:in:collection>,
+        <urn:example:entity:workflow-copernicus:in:date>,
+        <urn:example:entity:workflow-copernicus:in:delta>,
+        <urn:example:entity:workflow-copernicus:in:s3_access_key>,
+        <urn:example:entity:workflow-copernicus:in:s3_secret_key> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+
+<urn:example:entity:workflow-copernicus:in:aoi> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#inputs/aoi> ;
+    rdfs:seeAlso [ dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson> ] .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

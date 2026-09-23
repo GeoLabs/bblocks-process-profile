@@ -1,0 +1,734 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld",
+  "id": "calculate-band",
+  "version": "1.1.0",
+  "title": "Performs a calculation with bands.",
+  "description": "Performs a calculation over JPEG bands and returns the resulting GeoTiff.",
+  "mutable": true,
+  "keywords": [
+    "Sentinel-2",
+    "OSPD",
+    "demo",
+    "calculation"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Performs a calculation with bands."
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Performs a calculation over JPEG bands and returns the resulting GeoTiff."
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.1.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "identifier": "http://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@crim.ca",
+        "name": "Francis Charette-Migneault"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    }
+  ],
+  "inputs": {
+    "name": {
+      "title": "Output file name",
+      "description": "Name to apply for the output GeoTiff file.",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "calc": {
+      "title": "Calculation",
+      "description": "Calculation to perform with band references.",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "band_a": {
+      "title": "band_a",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_b": {
+      "title": "band_b",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_c": {
+      "title": "band_c",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_d": {
+      "title": "band_d",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_e": {
+      "title": "band_e",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_f": {
+      "title": "band_f",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_g": {
+      "title": "band_g",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_h": {
+      "title": "band_h",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_i": {
+      "title": "band_i",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_j": {
+      "title": "band_j",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_k": {
+      "title": "band_k",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_l": {
+      "title": "band_l",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_m": {
+      "title": "band_m",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_n": {
+      "title": "band_n",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_o": {
+      "title": "band_o",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_p": {
+      "title": "band_p",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_q": {
+      "title": "band_q",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_r": {
+      "title": "band_r",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_s": {
+      "title": "band_s",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_t": {
+      "title": "band_t",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_u": {
+      "title": "band_u",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_v": {
+      "title": "band_v",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_w": {
+      "title": "band_w",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_x": {
+      "title": "band_x",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_y": {
+      "title": "band_y",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band_z": {
+      "title": "band_z",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "result",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "binary",
+        "contentMediaType": "image/tiff; application=geotiff"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

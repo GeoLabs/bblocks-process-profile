@@ -1,0 +1,14 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "processDescription": {
+    "process": {
+      "id": "parse_aoi",
+      "version": "0.0.1"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/GeoLabs/bblocks-eoap-cct/raw/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#parse_aoi",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

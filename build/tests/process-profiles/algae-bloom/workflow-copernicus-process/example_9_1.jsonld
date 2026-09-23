@@ -1,0 +1,64 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus-process",
+  "type": "ProcessType",
+  "prefLabel": "Processing on Sentinel-2 bands to evaluate algae bloom.",
+  "definition": "Performs band calculation on Sentinel-2 product bands to evaluate algae bloom for water quality assessment.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
+  "processDescription": {
+    "id": "algae-usecase-workflow-copernicus-process",
+    "version": "2.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl",
+    "cwlClass": "Workflow",
+    "cwlId": "algae-usecase-workflow-copernicus-process",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.string-format"
+  ],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite (11 steps). No resampling step: the SAFE product already provides 60 m bands, so B03 60 m is downloaded directly instead of being resampled.",
+    "decomposition": [
+      {
+        "stage": "download_b0x (x5)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.load_collection",
+          "ogc.openeo.processes.cubes.filter_bands"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "calculate_* (x3)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.reduce_dimension"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "plot_* (x3)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.save_result"
+        ],
+        "level": "closeMatch",
+        "note": "partial"
+      }
+    ]
+  }
+}

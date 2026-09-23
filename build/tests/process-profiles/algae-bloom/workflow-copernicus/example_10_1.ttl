@@ -1,0 +1,410 @@
+@prefix cwlprov: <https://w3id.org/cwl/prov#> .
+@prefix data: <urn:hash::sha1:> .
+@prefix id: <urn:uuid:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix provext: <https://openprovenance.org/ns/provext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wf: <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/process> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+id:0470b6f9-f5c0-484c-bb2e-534806f95d65 a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/algae-usecase-workflow-copernicus/process" ;
+    prov:has_provenance "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.json"^^xsd:QName,
+        "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.jsonld"^^xsd:QName,
+        "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.nt"^^xsd:QName,
+        "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.provn"^^xsd:QName,
+        "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.ttl"^^xsd:QName,
+        "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.xml"^^xsd:QName ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/algae-usecase-workflow-copernicus/process> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T09:31:06.036894"^^xsd:dateTime ;
+            prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] .
+
+id:398fcc75-135c-469b-88f3-3e233dd75a21 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/chlorophyll_a_color> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:8fe98067-8e97-40b6-a99a-cf787f26fa36 ] .
+
+id:6627362d-c06e-46d9-9217-cb29e2dc2c49 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/cyanobacteria_color> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:29f23348-9547-4fef-b002-ceefd5b2471b ] .
+
+id:759b68d0-f11e-471f-9055-67965a9955c9 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/turbidity_color> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:a9c95e1a-ef39-4627-8292-d1020e85dfa1 ] .
+
+id:7d2099b8-1e52-4533-8140-dfb685676d26 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:3b68ba23-95c2-48fc-92bb-753f98188bf2 ;
+            prov:atTime "2026-09-23T09:31:06.035288"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/urls> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ] .
+
+id:a47fc7dc-2f9a-4925-aacf-c93722a523cd a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/chlorophyll_a> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:7fb56c04-4cb6-45f5-923c-390c6520ae3a ] .
+
+id:a5265478-cf9f-4fdd-9446-cb47cfe5629a a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/chlorophyll_a_plot> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:ed443e92-82d0-40c9-b63e-724fba739364 ] .
+
+id:af10a7c3-f90c-434e-820f-0ce388d38dcf a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/cyanobacteria> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:1855b873-514a-46e8-85f9-7e6fdd5c1c12 ] .
+
+id:d6c2d96d-b204-406d-90a1-122d95408dfc a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/turbidity_plot> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:3b413d9a-adab-454b-8670-0cf37423eec6 ] .
+
+id:d7988ddd-8e9e-4bba-aaa5-4cc0ed49fd4e a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/cyanobacteria_plot> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:7e671680-4e90-4584-89b1-36260f670af1 ] .
+
+id:fcab6658-7e8a-4045-9086-8daf16ffa739 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:44c595c3-0138-459e-bff2-432829fe1bf3 ;
+            prov:atTime "2026-09-23T09:33:59.467940"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/primary/turbidity> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:0a64bae7-5f25-441b-b114-51f6437fb00f ] .
+
+wf:main a wfdesc:Workflow,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance" ;
+    wfdesc:hasSubProcess "wf:main/process"^^xsd:QName,
+        "wf:main/select_products"^^xsd:QName .
+
+<arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+cwlprov:None a prov:Entity ;
+    rdfs:label "None" .
+
+data:1b832fde3fc0d94955508d006d745a0a9e9b9596 a prov:Entity .
+
+data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758 a prov:Entity .
+
+data:3b00d9df28c7548e79088d660b1d416953bdb464 a prov:Entity .
+
+data:5e7cb55727e375cb72dac733c05c4c81c30ffaae a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE" .
+
+data:632ab110c744c188c9ae98cb2c6b74767894037a a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "L2A" .
+
+data:823dc9c0e24073601b98c7ac80d545355715c6f5 a prov:Entity .
+
+data:8bfeb7b030ae1994f504c6c9ec46111b90434378 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "copernicus" .
+
+data:92c53811eb6d7bad871be5ebee515b4f95e0336a a prov:Entity .
+
+data:9cf89d0572c2a7632f7e096b040d37f8a99b4307 a prov:Entity .
+
+data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1 a prov:Entity .
+
+data:b75fa50f91a9dd377927a83994bff64245718790 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)" .
+
+data:b90b2dee65d0b638143e2788b825e245dbe9c4bb a prov:Entity .
+
+data:e6006027bca29c0e9abb13482a5deea81527097b a prov:Entity .
+
+data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)" .
+
+id:0a64bae7-5f25-441b-b114-51f6437fb00f a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff" ;
+    cwlprov:nameext ".tiff" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity" .
+
+id:1855b873-514a-46e8-85f9-7e6fdd5c1c12 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:b90b2dee65d0b638143e2788b825e245dbe9c4bb ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff" ;
+    cwlprov:nameext ".tiff" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria" .
+
+id:29f23348-9547-4fef-b002-ceefd5b2471b a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif" ;
+    cwlprov:nameext ".tif" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color" .
+
+id:3b413d9a-adab-454b-8670-0cf37423eec6 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:92c53811eb6d7bad871be5ebee515b4f95e0336a ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png" ;
+    cwlprov:nameext ".png" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot" .
+
+id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/select_products" ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products> ],
+        [ a prov:Association ;
+            prov:agent id:925ed775-3f3c-444a-b740-a81e965f32e0 ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2026-09-23T09:31:06.035275"^^xsd:dateTime ;
+            prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T09:31:02.350383"^^xsd:dateTime ;
+            prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392720"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/toi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392439"^^xsd:dateTime ;
+            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/date> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392701"^^xsd:dateTime ;
+            prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/product_level> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392462"^^xsd:dateTime ;
+            prov:entity id:fc839955-c480-42b7-a657-730494fc154e ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/delta> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.391980"^^xsd:dateTime ;
+            prov:entity data:8bfeb7b030ae1994f504c6c9ec46111b90434378 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/catalog> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392016"^^xsd:dateTime ;
+            prov:entity id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/cloud_cover> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.391633"^^xsd:dateTime ;
+            prov:entity id:653d2ec7-333d-431e-81c5-d30c4c02282a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392236"^^xsd:dateTime ;
+            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/collection> ] .
+
+id:5001cc2f-8b7b-4b93-9043-8ce09886304f a prov:Agent .
+
+id:653d2ec7-333d-431e-81c5-d30c4c02282a a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:09b3c69758a531dc4f198b8a083607dc5a617e4f ] ;
+    cwlprov:basename "algae-usecase-region.geojson" ;
+    cwlprov:nameext ".geojson" ;
+    cwlprov:nameroot "algae-usecase-region" .
+
+id:7e671680-4e90-4584-89b1-36260f670af1 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:1b832fde3fc0d94955508d006d745a0a9e9b9596 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png" ;
+    cwlprov:nameext ".png" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot" .
+
+id:7fb56c04-4cb6-45f5-923c-390c6520ae3a a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:3b00d9df28c7548e79088d660b1d416953bdb464 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff" ;
+    cwlprov:nameext ".tiff" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a" .
+
+id:8fe98067-8e97-40b6-a99a-cf787f26fa36 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:e6006027bca29c0e9abb13482a5deea81527097b ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif" ;
+    cwlprov:nameext ".tif" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color" .
+
+id:925ed775-3f3c-444a-b740-a81e965f32e0 a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0" ;
+    cwlprov:image "ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0" .
+
+id:97f268f3-383e-43a2-ad2b-3212b43b5676 a prov:Entity ;
+    prov:value "4"^^xsd:int .
+
+id:a9c95e1a-ef39-4627-8292-d1020e85dfa1 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:823dc9c0e24073601b98c7ac80d545355715c6f5 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif" ;
+    cwlprov:nameext ".tif" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color" .
+
+id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2 a prov:Entity ;
+    prov:value 1e-01 .
+
+id:c719b109-a5e5-414b-8e1a-2fa5262c9394 a prov:Entity ;
+    prov:value 1e-01 .
+
+id:cea98bc9-4a78-442d-a99a-eb4850b01d63 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:09b3c69758a531dc4f198b8a083607dc5a617e4f ] ;
+    cwlprov:basename "algae-usecase-region.geojson" ;
+    cwlprov:nameext ".geojson" ;
+    cwlprov:nameroot "algae-usecase-region" .
+
+id:ed443e92-82d0-40c9-b63e-724fba739364 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:9cf89d0572c2a7632f7e096b040d37f8a99b4307 ] ;
+    cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png" ;
+    cwlprov:nameext ".png" ;
+    cwlprov:nameroot "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot" .
+
+id:fc839955-c480-42b7-a657-730494fc154e a prov:Entity ;
+    prov:value "4"^^xsd:int .
+
+data:09b3c69758a531dc4f198b8a083607dc5a617e4f a wfprov:Artifact,
+        prov:Entity .
+
+data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "2019-06-29" .
+
+data:d184cbedd77b80cede3f63388a471a8634278cf3 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "SENTINEL-2" .
+
+id:63709288-2770-4d4f-97fa-3e8ff70d0b32 a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.1.20260108082145" ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T09:31:01.086649"^^xsd:dateTime ;
+            prov:hadActivity id:5001cc2f-8b7b-4b93-9043-8ce09886304f ] .
+
+id:44c595c3-0138-459e-bff2-432829fe1bf3 a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main" ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2026-09-23T09:33:59.469201"^^xsd:dateTime ;
+            prov:hadActivity id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T09:31:01.086687"^^xsd:dateTime ;
+            prov:hadActivity id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.348133"^^xsd:dateTime ;
+            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.348450"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347708"^^xsd:dateTime ;
+            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/date> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.346187"^^xsd:dateTime ;
+            prov:entity id:c719b109-a5e5-414b-8e1a-2fa5262c9394 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/cloud_cover> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347208"^^xsd:dateTime ;
+            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/collection> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.346121"^^xsd:dateTime ;
+            prov:entity id:cea98bc9-4a78-442d-a99a-eb4850b01d63 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347746"^^xsd:dateTime ;
+            prov:entity id:97f268f3-383e-43a2-ad2b-3212b43b5676 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/delta> ] ;
+    prov:startedAtTime "2026-09-23T09:31:01.086664"^^xsd:dateTime .
+

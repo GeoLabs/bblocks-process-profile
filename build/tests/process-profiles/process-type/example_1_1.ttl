@@ -1,0 +1,23 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.resample_spatial> ;
+    skos:definition "Performs a reprojection over image bands and returns the resulting GeoTiff." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Performs image reprojection." ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "As used in W1 the tool only changes the pixel size (gdalwarp `-tr 60 60`, nearest neighbour by default, no `-t_srs`): resample_spatial with `resolution: 60`, `projection: null`, `method: near`. Not an exactMatch: `output_dimensions` (`-ts`) has no openEO parameter, the output type is forced to Float32 (`-ot Float32`), and the tool works on a file rather than a data cube. Despite its name, no CRS transformation takes place." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/reproject-image> ;
+    pp:profile "ospd.process-profiles.algae-bloom.reproject-image" ;
+    pp:provenanceClass <http://purl.org/wf4ever/wfprov#ProcessRun> ;
+    pp:source [ dcterms:license <https://spdx.org/licenses/CC-BY-NC-SA-4.0> ;
+            pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/reproject-image.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "reproject-image" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/reproject-image> pp:version "1.0.0" .
+

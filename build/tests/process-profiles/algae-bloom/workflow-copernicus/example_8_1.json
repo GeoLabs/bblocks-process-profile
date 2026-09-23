@@ -1,0 +1,137 @@
+{
+  "run": {
+    "id": "urn:example:run:algae-bloom:workflow-copernicus",
+    "type": "WorkflowRun",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus",
+    "describedByWorkflow": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus",
+    "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+    "status": "successful",
+    "jobID": "algae-bloom-workflow-copernicus-0001",
+    "startedAtTime": "2026-09-23T07:31:01Z",
+    "endedAtTime": "2026-09-23T07:33:59Z",
+    "hadSubProcessRun": [
+      {
+        "id": "urn:example:run:algae-bloom:select-products-sentinel2"
+      },
+      {
+        "id": "urn:example:run:algae-bloom:workflow-copernicus-process"
+      }
+    ]
+  },
+  "engine": {
+    "@id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "@type": "WorkflowEngine",
+    "name": "cwltool",
+    "version": "3.1.20260108082145"
+  },
+  "outputs": [
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "3b00d9df28c7548e79088d660b1d416953bdb464"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_color",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "e6006027bca29c0e9abb13482a5deea81527097b"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/png",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_plot",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "9cf89d0572c2a7632f7e096b040d37f8a99b4307"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "b90b2dee65d0b638143e2788b825e245dbe9c4bb"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_color",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/png",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_plot",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "1b832fde3fc0d94955508d006d745a0a9e9b9596"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "1e0302087d93ff81d5ec6b3a7a63ad7d0daec758"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_color",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "823dc9c0e24073601b98c7ac80d545355715c6f5"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/png",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_plot",
+      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-copernicus",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "92c53811eb6d7bad871be5ebee515b4f95e0336a"
+      }
+    }
+  ]
+}

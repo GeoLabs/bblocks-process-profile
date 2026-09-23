@@ -1,0 +1,17 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "inputs": {
+    "aoi": {
+      "bbox": [
+        95.15,
+        15.9,
+        95.35,
+        16.1
+      ],
+      "crs": "CRS84"
+    },
+    "cloud_cover_max": 20,
+    "days_back": 90
+  },
+  "response": "document"
+}

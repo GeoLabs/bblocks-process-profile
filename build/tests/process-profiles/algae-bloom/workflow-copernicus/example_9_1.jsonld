@@ -1,0 +1,56 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus",
+  "type": "ProcessType",
+  "prefLabel": "Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.",
+  "definition": "Finds Sentinel-2 products on Copernicus using filtering parameters and performs band calculation on retrieved Sentinel-2 products to evaluate algae bloom for water quality assessment.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/filter-configuration",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.algae-bloom.workflow-copernicus",
+  "processDescription": {
+    "id": "algae-usecase-workflow-copernicus",
+    "version": "2.0.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-copernicus.cwl",
+    "cwlClass": "Workflow",
+    "cwlId": "algae-usecase-workflow-copernicus",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.geojson",
+    "eoap.cct.string-format"
+  ],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus-process"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite; same structure as the Earth-Search variant but over Copernicus Data Space (SAFE products on S3, credentials required). openEO hides credentials in the back-end.",
+    "decomposition": [
+      {
+        "stage": "select_products",
+        "openeo": [
+          "ogc.openeo.processes.cubes.load_collection"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "process (scatter over urls)",
+        "openeo": [],
+        "level": "none"
+      }
+    ]
+  }
+}

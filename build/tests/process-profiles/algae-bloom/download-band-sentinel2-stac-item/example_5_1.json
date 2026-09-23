@@ -1,0 +1,7 @@
+{
+  "inputs": {
+    "product_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A",
+    "band": "B03"
+  },
+  "response": "document"
+}

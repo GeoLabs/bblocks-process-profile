@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
+  "chlorophyll_a": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "chlorophyll_a_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "chlorophyll_a_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png",
+    "type": "image/png"
+  },
+  "cyanobacteria": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "cyanobacteria_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "cyanobacteria_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png",
+    "type": "image/png"
+  },
+  "turbidity": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "turbidity_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "turbidity_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-process-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png",
+    "type": "image/png"
+  }
+}

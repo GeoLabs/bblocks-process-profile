@@ -1,0 +1,38 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus-process> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation> ;
+    skos:definition "Performs band calculation on Sentinel-2 product bands to evaluate algae bloom for water quality assessment." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Processing on Sentinel-2 bands to evaluate algae bloom." ;
+    pp:candidateCctDependency "eoap.cct.string-format" ;
+    pp:hasStep <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image> ;
+    pp:openeoEquivalence [ pp:decomposition ( [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.cubes.filter_bands",
+                            "ogc.openeo.processes.cubes.load_collection" ;
+                        pp:stage "download_b0x (x5)" ] [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.cubes.reduce_dimension" ;
+                        pp:stage "calculate_* (x3)" ] [ skos:note "partial" ;
+                        pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.cubes.save_result" ;
+                        pp:stage "plot_* (x3)" ] ) ;
+            pp:equivalenceLevel "none" ;
+            pp:rationale "Composite (11 steps). No resampling step: the SAFE product already provides 60 m bands, so B03 60 m is downloaded directly instead of being resampled." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/algae-usecase-workflow-copernicus-process> ;
+    pp:profile "ospd.process-profiles.algae-bloom.workflow-copernicus-process" ;
+    pp:provenanceClass wfprov:WorkflowRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl> ;
+            pp:cwlClass "Workflow" ;
+            pp:cwlId "algae-usecase-workflow-copernicus-process" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/algae-usecase-workflow-copernicus-process> pp:version "2.1.0" .
+

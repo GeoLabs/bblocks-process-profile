@@ -1,0 +1,29 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection> ;
+    skos:definition "Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations. Returned matches will be either S3 or direct HTTPS references depending on the catalog." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
+    skos:relatedMatch <https://www.opengis.net/def/bblocks/ogc.openeo.types.collection-id>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.types.geojson>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.types.metadata-filter>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.types.temporal-interval> ;
+    pp:candidateCctDependency "eoap.cct.geojson",
+        "eoap.cct.string-format" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Same filter semantics as load_collection's `id` (collection), `spatial_extent` (aoi), `temporal_extent` (date±delta or toi) and `properties` (eo:cloud_cover) parameters. Not an exactMatch: the tool only selects (returns product URLs) and does not load data; the `catalog` switch (copernicus / earth-search) is a back-end choice with no openEO parameter; `date`+`delta` must be turned into an interval; the Earth-Search branch filters `0 < eo:cloud_cover < cloud_cover` (strict, excludes 0) where an openEO `lte` filter would be expected." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/select-products-sentinel2> ;
+    pp:profile "ospd.process-profiles.algae-bloom.select-products-sentinel2" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/select-products-sentinel2.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "select-products-sentinel2" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/select-products-sentinel2> pp:version "1.1.0" .
+

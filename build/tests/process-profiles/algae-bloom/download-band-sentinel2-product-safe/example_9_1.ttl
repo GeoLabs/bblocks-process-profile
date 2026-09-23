@@ -1,0 +1,26 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection> ;
+    skos:definition "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Downloads Copernicus products." ;
+    skos:relatedMatch <https://www.opengis.net/def/bblocks/ogc.openeo.types.band-name> ;
+    pp:candidateCctDependency "eoap.cct.string-format" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Same operation as the STAC-Item variant (one band of one product) but reading the SAFE archive on S3 with user credentials and a `resolution` selector (10m/20m/60m). openEO has no credential parameters (handled by the back-end) and chooses native resolution per band; choosing another resolution is resample_spatial territory." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-product-safe> ;
+    pp:profile "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-product-safe.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "download-band-sentinel2-product-safe" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-product-safe> pp:version "1.1.0" .
+

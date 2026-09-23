@@ -1,0 +1,4131 @@
+{
+  "@context": [
+    {
+      "wfprov": "http://purl.org/wf4ever/wfprov#",
+      "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+      "cwlprov": "https://w3id.org/cwl/prov#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "schema": "http://schema.org/",
+      "orcid": "https://orcid.org/",
+      "id": "urn:uuid:",
+      "data": "urn:hash::sha1:",
+      "sha256": "nih:sha-256;",
+      "researchobject": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/",
+      "metadata": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/metadata/",
+      "provenance": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/metadata/provenance/",
+      "wf": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#",
+      "input": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/primary-job.json#",
+      "wf4ever": "http://purl.org/wf4ever/wf4ever#"
+    },
+    "https://openprovenance.org/prov-jsonld/context.jsonld"
+  ],
+  "@graph": [
+    {
+      "@type": "Agent",
+      "@id": "id:5001cc2f-8b7b-4b93-9043-8ce09886304f"
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "type": [
+        "wfprov:WorkflowEngine",
+        "prov:SoftwareAgent"
+      ],
+      "label": [
+        {
+          "@value": "cwltool 3.1.20260108082145"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:136d036c-1194-4d69-b3c7-538ad435fe46",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:271d494f-4cd0-47bc-86d6-bcd7da4a7ff9",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:a8ac9566-6183-46d2-8801-4814c774cbd1",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:1a71a853-4269-4af2-9e7e-0b8b9dd37a24",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:27cdb921-72e1-47e6-96a9-08b6f25e590a",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:e9c353d3-6b40-4b92-becb-8bb1decc76b7",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:e268cc0e-1073-422f-af40-acfe6b7db163",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:d9e8b09a-c16c-484e-9bc9-27c25011460a",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/calculate-band:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:97e3cfc5-acf5-4568-8df6-99615db81d5f",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:6a564363-742d-4015-b71b-70001b3a39ff",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:697c2f54-7c7d-4e14-8900-d1e42db3a142",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/plot-image:1.0.0"
+        }
+      ]
+    },
+    {
+      "@type": "Start",
+      "activity": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "starter": "id:5001cc2f-8b7b-4b93-9043-8ce09886304f",
+      "time": "2026-09-23T09:31:01.456509"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "starter": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "time": "2026-09-23T09:31:01.456549"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:06.038809"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:13.105700"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:20.403484"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:23.033156"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:29.717898"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:32.238304"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:34.582528"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:48.321511"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:50.769647"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:51.980880"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "starter": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:56.238639"
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "startTime": "2026-09-23T09:31:01.456528",
+      "type": [
+        "wfprov:WorkflowRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/download_b03_10m"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/download_b04_10m"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/download_b01_60m"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/download_b02_10m"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/download_b03_60m"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/calculate_turbidity"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/calculate_cyanobacteria"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/calculate_chlorophyll_a"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/plot_cyanobacteria"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/plot_turbidity"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/plot_chlorophyll_a"
+        }
+      ]
+    },
+    {
+      "@type": "Association",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/download_b03_10m"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "agent": "id:136d036c-1194-4d69-b3c7-538ad435fe46"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/download_b04_10m"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "agent": "id:271d494f-4cd0-47bc-86d6-bcd7da4a7ff9"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/download_b01_60m"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "agent": "id:a8ac9566-6183-46d2-8801-4814c774cbd1"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/download_b02_10m"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "agent": "id:1a71a853-4269-4af2-9e7e-0b8b9dd37a24"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/download_b03_60m"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "agent": "id:27cdb921-72e1-47e6-96a9-08b6f25e590a"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/calculate_turbidity"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "agent": "id:e9c353d3-6b40-4b92-becb-8bb1decc76b7"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/calculate_cyanobacteria"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "agent": "id:e268cc0e-1073-422f-af40-acfe6b7db163"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/calculate_chlorophyll_a"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "agent": "id:d9e8b09a-c16c-484e-9bc9-27c25011460a"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/plot_cyanobacteria"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "agent": "id:97e3cfc5-acf5-4568-8df6-99615db81d5f"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/plot_turbidity"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "agent": "id:6a564363-742d-4015-b71b-70001b3a39ff"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/plot_chlorophyll_a"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "agent": "id:697c2f54-7c7d-4e14-8900-d1e42db3a142"
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "type": [
+        "wfdesc:Workflow",
+        "prov:Plan"
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/calculate_cyanobacteria",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/calculate_chlorophyll_a",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/download_b03_10m",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/download_b04_10m",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/plot_cyanobacteria",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/download_b01_60m",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/plot_turbidity",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/plot_chlorophyll_a",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/download_b02_10m",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/download_b03_60m",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/calculate_turbidity",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/calculate_cyanobacteria",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/calculate_chlorophyll_a",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/download_b03_10m",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/download_b04_10m",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/plot_cyanobacteria",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/download_b01_60m",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/plot_turbidity",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/plot_chlorophyll_a",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/download_b02_10m",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/download_b03_60m",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/calculate_turbidity",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:7c5d11a451cde788be37383d50239d7672a8cb1f",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "B03"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:7c5d11a451cde788be37383d50239d7672a8cb1f",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "B03"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "10m"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "10m"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "10m"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:e882c92a-6411-4b82-aae7-70be694c29d7",
+      "value": [
+        {
+          "@value": "false",
+          "@type": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:bfcfb6a10e7a05a5a7c2508fd2c2918e7483c6f5",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:b379cd45-e93d-43eb-902f-df573b67ccf0",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "T29SPC_20190701T110621_B03_10m.jp2"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "T29SPC_20190701T110621_B03_10m"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".jp2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "B04"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:a16a5d61-1192-43b9-8be3-6f546af4ccdd",
+      "value": [
+        {
+          "@value": "false",
+          "@type": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f670343b66112543f0c884bdf23886e2d7126070",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:f1093031-b0f1-4f09-bf38-f001b51a13e5",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "T29SPC_20190701T110621_B04_10m.jp2"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "T29SPC_20190701T110621_B04_10m"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".jp2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:0e25362cc531cdfa5fe7478737037da2ab1c4b2f",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "B01"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "60m"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "60m"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:fbda755c-26d7-4213-8ac3-437112f3f27a",
+      "value": [
+        {
+          "@value": "false",
+          "@type": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5d6d0f08e1b29a2d9531b02d6ad6c382ead6b33f",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:6e735750-bb9c-4417-b20e-f7ddb07df649",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "T29SPC_20190701T110621_B01_60m.jp2"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "T29SPC_20190701T110621_B01_60m"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".jp2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:36dea452bfe795afb42cf14b59c82a3127598281",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "B02"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:b509d8cc-cc7b-4fdf-88aa-f13c8d9b47c5",
+      "value": [
+        {
+          "@value": "false",
+          "@type": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:86c333c825c3e7e7e612f61b8a330693f3f8bfc2",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:55c5cc1e-5f73-4878-8a63-f5d1ab235cb6",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "T29SPC_20190701T110621_B02_10m.jp2"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "T29SPC_20190701T110621_B02_10m"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".jp2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:ee76b2e7-fa78-416c-982a-0034be8e3618",
+      "value": [
+        {
+          "@value": "false",
+          "@type": "xsd:boolean"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6be82354dccae2e18c5d885d24c5ea13a3420e1b",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:fcc8bc22-4c42-45a2-a828-ef8de070904e",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "T29SPC_20190701T110621_B03_60m.jp2"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "T29SPC_20190701T110621_B03_60m"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".jp2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:81e487db73b1725c362decd3aac3a2c13f86d595",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(8.93*(C/A))-6.39"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:cf72a11e7365073ae3c966029d357f3e9b82af8a",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:a87dac8429196320690ec2c17ae2c00532d9e957",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "115530.31*(((B.astype(float)*C.astype(float))/A.astype(float))**2.38)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:915294efd60b642abdf0ab2947e15fbb5d702a7e",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b90b2dee65d0b638143e2788b825e245dbe9c4bb",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:c6f40f302effca33768fc256bbb5dedaca044174",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "4.26*((C/A)**3.94)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:a67be08b0183aa19f78701cd7fb864462a08af4c",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:3b00d9df28c7548e79088d660b1d416953bdb464",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:73af567d-64fb-4113-9d5d-24a98b4a23d5",
+      "value": [
+        {
+          "@value": "100000000000000",
+          "@type": "xsd:int"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:8fc8d4c9-0d3d-43d8-8e04-1fb53d64f191",
+      "value": [
+        {
+          "@value": "1000000",
+          "@type": "xsd:int"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1370052da0755d73768c0c75500107d3759bcc2d",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "[\n  [1E6,  [ 18,  28,  60] ],\n  [1E7,  [ 73, 111, 242] ],\n  [1E8,  [130, 211,  95] ],\n  [1E9,  [254, 253,   5] ],\n  [1E10, [253,   0,   4] ],\n  [1E11, [142,  32,  38] ],\n  [1E12, [111, 63,  125] ],\n  [1E13, [ 58,   6,   3] ],\n  [1E14, [ 18,  28,  60] ]\n]\n"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:8655751d19f645dec4f65b6bb306877a7180a3b2",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:a15e03a530b917f396df0bd7bf919d2f342d7ecf",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:4ad2eab867b3280cabc93a14c615ab97b6b6575e",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "Cyanobacteria"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1b832fde3fc0d94955508d006d745a0a9e9b9596",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:2b0824b4ba24b098adc7ce01881499891c48d2ea",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "[\n  [0,  [ 73, 111, 242] ],\n  [4,  [130, 211,  95] ],\n  [8,  [254, 253,   5] ],\n  [12, [253,   0,   4] ],\n  [16, [142,  32,  38] ],\n  [20, [217, 124, 245] ]\n]\n"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:34bd4f200813f30333e40ecb55d1a316cf2da8af",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1edf82bd141d9e642e6ec01d71e53d8107df885c",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "Turbidity"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:823dc9c0e24073601b98c7ac80d545355715c6f5",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:92c53811eb6d7bad871be5ebee515b4f95e0336a",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:53dc86e3cbc21ff9ef3ae5a5a8cc9f7d1a9942c8",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "[\n  [0,  [ 73, 111, 242] ],\n  [6,  [130, 211,  95] ],\n  [12, [254, 253,   5] ],\n  [20, [253,   0,   4] ],\n  [30, [142,  32,  38] ],\n  [50, [217, 124, 245] ]\n]\n"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:6f7a2e56416e7ae7128bf930d39e5c26ca53c5d7",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f1a11aea9cfbd38e6dbda7e14c05bf9addcd2248",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:e059662a461e5d1b245f555149febc699f42b537",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "Chlorophyll a"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:e6006027bca29c0e9abb13482a5deea81527097b",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:9cf89d0572c2a7632f7e096b040d37f8a99b4307",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:06.037596",
+      "role": [
+        "wf:main/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:06.037821",
+      "role": [
+        "wf:main/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "data:7c5d11a451cde788be37383d50239d7672a8cb1f",
+      "time": "2026-09-23T09:31:06.087662",
+      "role": [
+        "wf:main/download_b03_10m/band"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "time": "2026-09-23T09:31:06.087923",
+      "role": [
+        "wf:main/download_b03_10m/product_url"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "time": "2026-09-23T09:31:06.088207",
+      "role": [
+        "wf:main/download_b03_10m/resolution"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:06.088513",
+      "role": [
+        "wf:main/download_b03_10m/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:06.088743",
+      "role": [
+        "wf:main/download_b03_10m/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "entity": "id:e882c92a-6411-4b82-aae7-70be694c29d7",
+      "time": "2026-09-23T09:31:06.088793",
+      "role": [
+        "wf:main/download_b03_10m/debug"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0",
+      "time": "2026-09-23T09:31:13.111444",
+      "role": [
+        "wf:main/download_b04_10m/band"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "time": "2026-09-23T09:31:13.111723",
+      "role": [
+        "wf:main/download_b04_10m/product_url"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "time": "2026-09-23T09:31:13.111934",
+      "role": [
+        "wf:main/download_b04_10m/resolution"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:13.112207",
+      "role": [
+        "wf:main/download_b04_10m/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:13.112514",
+      "role": [
+        "wf:main/download_b04_10m/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "entity": "id:a16a5d61-1192-43b9-8be3-6f546af4ccdd",
+      "time": "2026-09-23T09:31:13.112573",
+      "role": [
+        "wf:main/download_b04_10m/debug"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "data:0e25362cc531cdfa5fe7478737037da2ab1c4b2f",
+      "time": "2026-09-23T09:31:20.409442",
+      "role": [
+        "wf:main/download_b01_60m/band"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "time": "2026-09-23T09:31:20.409713",
+      "role": [
+        "wf:main/download_b01_60m/product_url"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5",
+      "time": "2026-09-23T09:31:20.409969",
+      "role": [
+        "wf:main/download_b01_60m/resolution"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:20.410192",
+      "role": [
+        "wf:main/download_b01_60m/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:20.410382",
+      "role": [
+        "wf:main/download_b01_60m/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "entity": "id:fbda755c-26d7-4213-8ac3-437112f3f27a",
+      "time": "2026-09-23T09:31:20.410426",
+      "role": [
+        "wf:main/download_b01_60m/debug"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "data:36dea452bfe795afb42cf14b59c82a3127598281",
+      "time": "2026-09-23T09:31:23.049716",
+      "role": [
+        "wf:main/download_b02_10m/band"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "time": "2026-09-23T09:31:23.050787",
+      "role": [
+        "wf:main/download_b02_10m/product_url"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b",
+      "time": "2026-09-23T09:31:23.052004",
+      "role": [
+        "wf:main/download_b02_10m/resolution"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:23.052690",
+      "role": [
+        "wf:main/download_b02_10m/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:23.053637",
+      "role": [
+        "wf:main/download_b02_10m/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "entity": "id:b509d8cc-cc7b-4fdf-88aa-f13c8d9b47c5",
+      "time": "2026-09-23T09:31:23.053767",
+      "role": [
+        "wf:main/download_b02_10m/debug"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "data:7c5d11a451cde788be37383d50239d7672a8cb1f",
+      "time": "2026-09-23T09:31:29.723838",
+      "role": [
+        "wf:main/download_b03_60m/band"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "time": "2026-09-23T09:31:29.724260",
+      "role": [
+        "wf:main/download_b03_60m/product_url"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5",
+      "time": "2026-09-23T09:31:29.724514",
+      "role": [
+        "wf:main/download_b03_60m/resolution"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:29.724732",
+      "role": [
+        "wf:main/download_b03_60m/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:29.724936",
+      "role": [
+        "wf:main/download_b03_60m/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "entity": "id:ee76b2e7-fa78-416c-982a-0034be8e3618",
+      "time": "2026-09-23T09:31:29.724989",
+      "role": [
+        "wf:main/download_b03_60m/debug"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "id:6e735750-bb9c-4417-b20e-f7ddb07df649",
+      "time": "2026-09-23T09:31:32.278687",
+      "role": [
+        "wf:main/calculate_turbidity/band_a"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "id:fcc8bc22-4c42-45a2-a828-ef8de070904e",
+      "time": "2026-09-23T09:31:32.278743",
+      "role": [
+        "wf:main/calculate_turbidity/band_c"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "data:81e487db73b1725c362decd3aac3a2c13f86d595",
+      "time": "2026-09-23T09:31:32.279388",
+      "role": [
+        "wf:main/calculate_turbidity/calc"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "data:cf72a11e7365073ae3c966029d357f3e9b82af8a",
+      "time": "2026-09-23T09:31:32.279679",
+      "role": [
+        "wf:main/calculate_turbidity/name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279699",
+      "role": [
+        "wf:main/calculate_turbidity/band_b"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279711",
+      "role": [
+        "wf:main/calculate_turbidity/band_d"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279722",
+      "role": [
+        "wf:main/calculate_turbidity/band_e"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279733",
+      "role": [
+        "wf:main/calculate_turbidity/band_f"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279742",
+      "role": [
+        "wf:main/calculate_turbidity/band_g"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279751",
+      "role": [
+        "wf:main/calculate_turbidity/band_h"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279760",
+      "role": [
+        "wf:main/calculate_turbidity/band_i"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279769",
+      "role": [
+        "wf:main/calculate_turbidity/band_j"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279781",
+      "role": [
+        "wf:main/calculate_turbidity/band_k"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279795",
+      "role": [
+        "wf:main/calculate_turbidity/band_l"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279806",
+      "role": [
+        "wf:main/calculate_turbidity/band_m"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279816",
+      "role": [
+        "wf:main/calculate_turbidity/band_n"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279826",
+      "role": [
+        "wf:main/calculate_turbidity/band_o"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279835",
+      "role": [
+        "wf:main/calculate_turbidity/band_p"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279843",
+      "role": [
+        "wf:main/calculate_turbidity/band_q"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279852",
+      "role": [
+        "wf:main/calculate_turbidity/band_r"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279861",
+      "role": [
+        "wf:main/calculate_turbidity/band_s"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279872",
+      "role": [
+        "wf:main/calculate_turbidity/band_t"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279882",
+      "role": [
+        "wf:main/calculate_turbidity/band_u"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279891",
+      "role": [
+        "wf:main/calculate_turbidity/band_v"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279899",
+      "role": [
+        "wf:main/calculate_turbidity/band_w"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279908",
+      "role": [
+        "wf:main/calculate_turbidity/band_x"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279921",
+      "role": [
+        "wf:main/calculate_turbidity/band_y"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:32.279934",
+      "role": [
+        "wf:main/calculate_turbidity/band_z"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "id:55c5cc1e-5f73-4878-8a63-f5d1ab235cb6",
+      "time": "2026-09-23T09:31:34.594359",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_a"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "id:b379cd45-e93d-43eb-902f-df573b67ccf0",
+      "time": "2026-09-23T09:31:34.594405",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_b"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "id:f1093031-b0f1-4f09-bf38-f001b51a13e5",
+      "time": "2026-09-23T09:31:34.594422",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_c"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "data:a87dac8429196320690ec2c17ae2c00532d9e957",
+      "time": "2026-09-23T09:31:34.596025",
+      "role": [
+        "wf:main/calculate_cyanobacteria/calc"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "data:915294efd60b642abdf0ab2947e15fbb5d702a7e",
+      "time": "2026-09-23T09:31:34.596397",
+      "role": [
+        "wf:main/calculate_cyanobacteria/name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596418",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_d"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596433",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_e"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596452",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_f"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596463",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_g"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596473",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_h"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596483",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_i"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596492",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_j"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596518",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_k"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596530",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_l"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596540",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_m"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596549",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_n"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596558",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_o"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596567",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_p"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596576",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_q"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596585",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_r"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596594",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_s"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596606",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_t"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596617",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_u"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596626",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_v"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596635",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_w"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596648",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_x"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596658",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_y"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:34.596667",
+      "role": [
+        "wf:main/calculate_cyanobacteria/band_z"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "id:6e735750-bb9c-4417-b20e-f7ddb07df649",
+      "time": "2026-09-23T09:31:48.327798",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_a"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "id:fcc8bc22-4c42-45a2-a828-ef8de070904e",
+      "time": "2026-09-23T09:31:48.327842",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_c"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "data:c6f40f302effca33768fc256bbb5dedaca044174",
+      "time": "2026-09-23T09:31:48.328390",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/calc"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "data:a67be08b0183aa19f78701cd7fb864462a08af4c",
+      "time": "2026-09-23T09:31:48.328672",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328691",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_b"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328703",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_d"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328713",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_e"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328723",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_f"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328735",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_g"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328747",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_h"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328761",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_i"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328772",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_j"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328781",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_k"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328790",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_l"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328799",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_m"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328808",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_n"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328819",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_o"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328828",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_p"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328843",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_q"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328852",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_r"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328861",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_s"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328871",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_t"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328880",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_u"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328889",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_v"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328898",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_w"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328907",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_x"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328916",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_y"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:48.328925",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/band_z"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "id:73af567d-64fb-4113-9d5d-24a98b4a23d5",
+      "time": "2026-09-23T09:31:50.803703",
+      "role": [
+        "wf:main/plot_cyanobacteria/clip_max"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "id:8fc8d4c9-0d3d-43d8-8e04-1fb53d64f191",
+      "time": "2026-09-23T09:31:50.803738",
+      "role": [
+        "wf:main/plot_cyanobacteria/clip_min"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "data:1370052da0755d73768c0c75500107d3759bcc2d",
+      "time": "2026-09-23T09:31:50.804251",
+      "role": [
+        "wf:main/plot_cyanobacteria/color_scale"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "time": "2026-09-23T09:31:50.804275",
+      "role": [
+        "wf:main/plot_cyanobacteria/input_image"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "data:8655751d19f645dec4f65b6bb306877a7180a3b2",
+      "time": "2026-09-23T09:31:50.804535",
+      "role": [
+        "wf:main/plot_cyanobacteria/output_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "data:a15e03a530b917f396df0bd7bf919d2f342d7ecf",
+      "time": "2026-09-23T09:31:50.804800",
+      "role": [
+        "wf:main/plot_cyanobacteria/plot_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "entity": "data:4ad2eab867b3280cabc93a14c615ab97b6b6575e",
+      "time": "2026-09-23T09:31:50.805055",
+      "role": [
+        "wf:main/plot_cyanobacteria/plot_title"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "data:2b0824b4ba24b098adc7ce01881499891c48d2ea",
+      "time": "2026-09-23T09:33:51.987879",
+      "role": [
+        "wf:main/plot_turbidity/color_scale"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "time": "2026-09-23T09:33:51.987923",
+      "role": [
+        "wf:main/plot_turbidity/input_image"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "data:34bd4f200813f30333e40ecb55d1a316cf2da8af",
+      "time": "2026-09-23T09:33:51.988466",
+      "role": [
+        "wf:main/plot_turbidity/output_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "data:1edf82bd141d9e642e6ec01d71e53d8107df885c",
+      "time": "2026-09-23T09:33:51.988984",
+      "role": [
+        "wf:main/plot_turbidity/plot_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c",
+      "time": "2026-09-23T09:33:51.989395",
+      "role": [
+        "wf:main/plot_turbidity/plot_title"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:33:51.989423",
+      "role": [
+        "wf:main/plot_turbidity/clip_max"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:33:51.989440",
+      "role": [
+        "wf:main/plot_turbidity/clip_min"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "data:53dc86e3cbc21ff9ef3ae5a5a8cc9f7d1a9942c8",
+      "time": "2026-09-23T09:33:56.247945",
+      "role": [
+        "wf:main/plot_chlorophyll_a/color_scale"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "time": "2026-09-23T09:33:56.248008",
+      "role": [
+        "wf:main/plot_chlorophyll_a/input_image"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "data:6f7a2e56416e7ae7128bf930d39e5c26ca53c5d7",
+      "time": "2026-09-23T09:33:56.248701",
+      "role": [
+        "wf:main/plot_chlorophyll_a/output_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "data:f1a11aea9cfbd38e6dbda7e14c05bf9addcd2248",
+      "time": "2026-09-23T09:33:56.249375",
+      "role": [
+        "wf:main/plot_chlorophyll_a/plot_name"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "data:e059662a461e5d1b245f555149febc699f42b537",
+      "time": "2026-09-23T09:33:56.249844",
+      "role": [
+        "wf:main/plot_chlorophyll_a/plot_title"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:33:56.249875",
+      "role": [
+        "wf:main/plot_chlorophyll_a/clip_max"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:33:56.249891",
+      "role": [
+        "wf:main/plot_chlorophyll_a/clip_min"
+      ]
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:b379cd45-e93d-43eb-902f-df573b67ccf0",
+      "generalEntity": "data:bfcfb6a10e7a05a5a7c2508fd2c2918e7483c6f5"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:f1093031-b0f1-4f09-bf38-f001b51a13e5",
+      "generalEntity": "data:f670343b66112543f0c884bdf23886e2d7126070"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:6e735750-bb9c-4417-b20e-f7ddb07df649",
+      "generalEntity": "data:5d6d0f08e1b29a2d9531b02d6ad6c382ead6b33f"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:55c5cc1e-5f73-4878-8a63-f5d1ab235cb6",
+      "generalEntity": "data:86c333c825c3e7e7e612f61b8a330693f3f8bfc2"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:fcc8bc22-4c42-45a2-a828-ef8de070904e",
+      "generalEntity": "data:6be82354dccae2e18c5d885d24c5ea13a3420e1b"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "generalEntity": "data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "generalEntity": "data:b90b2dee65d0b638143e2788b825e245dbe9c4bb"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "generalEntity": "data:3b00d9df28c7548e79088d660b1d416953bdb464"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "generalEntity": "data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "generalEntity": "data:1b832fde3fc0d94955508d006d745a0a9e9b9596"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "generalEntity": "data:823dc9c0e24073601b98c7ac80d545355715c6f5"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "generalEntity": "data:92c53811eb6d7bad871be5ebee515b4f95e0336a"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "generalEntity": "data:e6006027bca29c0e9abb13482a5deea81527097b"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "generalEntity": "data:9cf89d0572c2a7632f7e096b040d37f8a99b4307"
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:b379cd45-e93d-43eb-902f-df573b67ccf0",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "time": "2026-09-23T09:31:13.060679",
+      "role": [
+        "wf:main/download_b03_10m/product"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:f1093031-b0f1-4f09-bf38-f001b51a13e5",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "time": "2026-09-23T09:31:20.357696",
+      "role": [
+        "wf:main/download_b04_10m/product"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:6e735750-bb9c-4417-b20e-f7ddb07df649",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "time": "2026-09-23T09:31:23.013686",
+      "role": [
+        "wf:main/download_b01_60m/product"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:55c5cc1e-5f73-4878-8a63-f5d1ab235cb6",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "time": "2026-09-23T09:31:29.673344",
+      "role": [
+        "wf:main/download_b02_10m/product"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:fcc8bc22-4c42-45a2-a828-ef8de070904e",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "time": "2026-09-23T09:31:32.223947",
+      "role": [
+        "wf:main/download_b03_60m/product"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "time": "2026-09-23T09:31:34.569525",
+      "role": [
+        "wf:main/calculate_turbidity/result"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "time": "2026-09-23T09:31:48.067700",
+      "role": [
+        "wf:main/calculate_cyanobacteria/result"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "time": "2026-09-23T09:31:50.757395",
+      "role": [
+        "wf:main/calculate_chlorophyll_a/result"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "time": "2026-09-23T09:33:51.697961",
+      "role": [
+        "wf:main/plot_cyanobacteria/output_file"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "time": "2026-09-23T09:33:51.697961",
+      "role": [
+        "wf:main/plot_cyanobacteria/output_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "time": "2026-09-23T09:33:56.221505",
+      "role": [
+        "wf:main/plot_turbidity/output_file"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "time": "2026-09-23T09:33:56.221505",
+      "role": [
+        "wf:main/plot_turbidity/output_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "time": "2026-09-23T09:33:59.271268",
+      "role": [
+        "wf:main/plot_chlorophyll_a/output_file"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "time": "2026-09-23T09:33:59.271268",
+      "role": [
+        "wf:main/plot_chlorophyll_a/output_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%20process/chlorophyll_a"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%2520process/chlorophyll_a_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%252520process/chlorophyll_a_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%25252520process/cyanobacteria"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%2525252520process/cyanobacteria_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%252525252520process/cyanobacteria_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%25252525252520process/turbidity"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%2525252525252520process/turbidity_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.283154",
+      "role": [
+        "wf:main/workflow%252525252525252520process/turbidity_plot"
+      ]
+    },
+    {
+      "@type": "End",
+      "activity": "id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:13.060666"
+    },
+    {
+      "@type": "End",
+      "activity": "id:1f7c9599-10e3-4a9f-a64b-c333d730ff68",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:20.357689"
+    },
+    {
+      "@type": "End",
+      "activity": "id:489bffb3-47ea-4505-8a69-fb23eacf14a1",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:23.013674"
+    },
+    {
+      "@type": "End",
+      "activity": "id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:29.673327"
+    },
+    {
+      "@type": "End",
+      "activity": "id:74e5b6d2-7e78-4e78-9028-bec1988305d6",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:32.223936"
+    },
+    {
+      "@type": "End",
+      "activity": "id:63513262-cbe0-42d8-a5b8-843eba63ae68",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:34.569516"
+    },
+    {
+      "@type": "End",
+      "activity": "id:f0b22113-c4b4-451a-894f-30fc14eafc60",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:48.067683"
+    },
+    {
+      "@type": "End",
+      "activity": "id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:31:50.757388"
+    },
+    {
+      "@type": "End",
+      "activity": "id:f5c0b341-97fb-484c-9f8c-0646f0c63e86",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:51.697918"
+    },
+    {
+      "@type": "End",
+      "activity": "id:5805a5d2-d626-4eee-a0c2-b4167521a820",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:56.221490"
+    },
+    {
+      "@type": "End",
+      "activity": "id:6a328b3b-9e05-4b3b-94c1-551257cc1214",
+      "ender": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "time": "2026-09-23T09:33:59.271251"
+    },
+    {
+      "@type": "End",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "ender": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "time": "2026-09-23T09:33:59.283374"
+    }
+  ]
+}

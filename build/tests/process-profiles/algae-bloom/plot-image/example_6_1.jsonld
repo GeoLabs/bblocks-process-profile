@@ -1,0 +1,11 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld",
+  "output_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-plot-image-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "output_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-plot-image-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+    "type": "image/png"
+  }
+}

@@ -1,0 +1,18 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:algae-bloom:select-products-sentinel2> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/select-products-sentinel2> ;
+    wfprov:usedInput <urn:example:entity:select-products-sentinel2:in:aoi>,
+        <urn:example:entity:select-products-sentinel2:in:catalog>,
+        <urn:example:entity:select-products-sentinel2:in:cloud_cover>,
+        <urn:example:entity:select-products-sentinel2:in:collection>,
+        <urn:example:entity:select-products-sentinel2:in:delta>,
+        <urn:example:entity:select-products-sentinel2:in:product_level>,
+        <urn:example:entity:select-products-sentinel2:in:toi> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search> ;
+    prov:startedAtTime "2026-09-23T06:26:24+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

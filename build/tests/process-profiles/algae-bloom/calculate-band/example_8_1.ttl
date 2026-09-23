@@ -1,0 +1,15 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:algae-bloom:calculate-band> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/calculate-band> ;
+    wfprov:usedInput <urn:example:entity:calculate-band:in:band_a>,
+        <urn:example:entity:calculate-band:in:band_c>,
+        <urn:example:entity:calculate-band:in:calc>,
+        <urn:example:entity:calculate-band:in:name> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search-process> ;
+    prov:startedAtTime "2026-09-23T06:40:28+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

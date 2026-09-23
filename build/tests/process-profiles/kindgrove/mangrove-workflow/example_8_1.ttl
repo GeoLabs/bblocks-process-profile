@@ -1,0 +1,71 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/catalog.json> prov:generated <urn:example:run:kindgrove:mangrove-workflow> ;
+    ns1:checksum [ rdf:value "8eeff5d9360c12c34666e58c05819462f451c0cb" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac" ;
+    ns1:mediaType "application/json" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/biomass_summary.csv> prov:generated <urn:example:run:kindgrove:mangrove-workflow> ;
+    ns1:checksum [ rdf:value "85e5b7702d82de1bc19c00fdebce3e4b00d9ae4c" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac" ;
+    ns1:mediaType "text/csv" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/carbon_summary.csv> prov:generated <urn:example:run:kindgrove:mangrove-workflow> ;
+    ns1:checksum [ rdf:value "7e692955f3c119da05517da56423ef1afffeb3a1" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac" ;
+    ns1:mediaType "text/csv" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove-analysis-20260923-080315.json> prov:generated <urn:example:run:kindgrove:mangrove-workflow> ;
+    ns1:checksum [ rdf:value "85af35ec75b965fc1c515c5850cb53a81c919b22" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac" ;
+    ns1:mediaType "application/json" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove_mask.tif> prov:generated <urn:example:run:kindgrove:mangrove-workflow> ;
+    ns1:checksum [ rdf:value "de0d01dfb965345b5db12bd9c3701bd109aa9362" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a wfprov:WorkflowEngine ;
+    pp:name "cwltool" ;
+    pp:version "3.1.20260108082145" .
+
+<urn:example:run:kindgrove:mangrove-workflow> a wfprov:WorkflowRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove-workflow> ;
+    wfprov:describedByWorkflow <https://ospd.example.org/ogc-api/processes/mangrove-workflow> ;
+    wfprov:hadSubProcessRun <urn:example:run:kindgrove:mangrove>,
+        <urn:example:run:kindgrove:parse-aoi> ;
+    prov:endedAtTime "2026-09-23T08:03:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T08:01:10+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:jobID "kindgrove-mangrove-workflow-0001" ;
+    pp:status "successful" .
+
+[] pp:engine <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:run <urn:example:run:kindgrove:mangrove-workflow> ;
+    proc:outputs <https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/catalog.json>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/biomass_summary.csv>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/carbon_summary.csv>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove-analysis-20260923-080315.json>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove_mask.tif> .
+

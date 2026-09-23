@@ -1,0 +1,28 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection> ;
+    skos:definition "Downloads the GeoTiff band from the Sentinel-2 product STAC Item using the requested band selection criteria. It is assumed that the referenced STAC Item contains the desired GeoTiff Asset with the 'common band name' associated to the band (see https://github.com/stac-extensions/eo#common-band-names)." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Downloads Sentinel-2 GeoTiff from STAC Item." ;
+    skos:relatedMatch <https://www.opengis.net/def/bblocks/ogc.openeo.types.band-name>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.types.stac> ;
+    pp:candidateCctDependency "eoap.cct.stac",
+        "eoap.cct.string-format" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Retrieves one band of one product: load_collection with `bands` (or filter_bands) over a single-item extent. The closest openEO process, `load_stac`, is only an openEO proposal and out of the register's scope. The band is chosen by Sentinel-2 band id (B01..B12), matched to STAC `eo:common_name` assets inside the tool, where openEO uses collection band names directly." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-stac-item> ;
+    pp:profile "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-stac-item.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "download-band-sentinel2-stac-item" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-stac-item> pp:version "1.1.0" .
+

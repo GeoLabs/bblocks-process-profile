@@ -1,0 +1,55 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove-workflow",
+  "type": "ProcessType",
+  "prefLabel": "Mangrove Biomass Workflow",
+  "definition": "Workflow for Mangrove Biomass Analysis This workflow orchestrates the mangrove biomass estimation process using Sentinel-2 imagery. It wraps the mangrove_workflow.cwl tool to provide a reusable workflow for analyzing different study areas.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/filter-configuration",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.kindgrove.mangrove-workflow",
+  "processDescription": {
+    "id": "mangrove-workflow",
+    "version": "0.0.1"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove-workflow",
+    "cwlClass": "Workflow",
+    "cwlId": "mangrove-workflow",
+    "license": "https://spdx.org/licenses/Apache-2.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [
+    "eoap.cct.bbox"
+  ],
+  "candidateCctDependencies": [],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/parse-aoi",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite of a BBox-unpacking helper and one opaque tool; the openEO equivalent is a process graph (see the `mangrove` profile for the stage-by-stage decomposition). `stac.yaml` is imported in `SchemaDefRequirement` but unused.",
+    "decomposition": [
+      {
+        "stage": "parse_aoi",
+        "openeo": [],
+        "level": "none",
+        "note": "structural; bounding box is a native openEO parameter type"
+      },
+      {
+        "stage": "step_1 (mangrove_cli)",
+        "openeo": [],
+        "level": "none",
+        "note": "see ospd.process-profiles.kindgrove.mangrove"
+      }
+    ]
+  }
+}

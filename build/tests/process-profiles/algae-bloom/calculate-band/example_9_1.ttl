@@ -1,0 +1,42 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.reduce_dimension> ;
+    skos:definition "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Performs a calculation with bands." ;
+    skos:relatedMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.divide>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.multiply>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.power>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.subtract> ;
+    pp:openeoEquivalence [ pp:decomposition ( [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.math.divide",
+                            "ogc.openeo.processes.math.multiply",
+                            "ogc.openeo.processes.math.power" ;
+                        pp:stage "chlorophyll_a = 4.26*((C/A)**3.94), A=B01 60m, C=B03 60m" ] [ skos:note "coefficient is 115530 in the Earth-Search variant, 115530.31 in the Copernicus variant" ;
+                        pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.math.divide",
+                            "ogc.openeo.processes.math.multiply",
+                            "ogc.openeo.processes.math.power" ;
+                        pp:stage "cyanobacteria = 115530*(((B*C)/A)**2.38), A=B02, B=B03, C=B04 (10m)" ] [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.math.divide",
+                            "ogc.openeo.processes.math.multiply",
+                            "ogc.openeo.processes.math.subtract" ;
+                        pp:stage "turbidity = (8.93*(C/A))-6.39, A=B01 60m, C=B03 60m" ] ) ;
+            pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Generic band math (gdal_calc.py with a Python/numpy expression over up to 26 bands A..Z): openEO expresses it as reduce_dimension over the `bands` dimension with a callback built from math processes. closeMatch at the generic level; each W1 instance is a fixed chain of math processes (see decomposition). The expression is free text in CWL, a process graph in openEO." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/calculate-band> ;
+    pp:profile "ospd.process-profiles.algae-bloom.calculate-band" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/calculate-band.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "calculate-band" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/calculate-band> pp:version "1.1.0" .
+

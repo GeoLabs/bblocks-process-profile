@@ -1,0 +1,39 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe",
+  "type": "ProcessType",
+  "prefLabel": "Downloads Copernicus products.",
+  "definition": "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval"
+  ],
+  "profile": "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe",
+  "processDescription": {
+    "id": "download-band-sentinel2-product-safe",
+    "version": "1.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-product-safe.cwl",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "download-band-sentinel2-product-safe",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.string-format"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands"
+  ],
+  "relatedMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.band-name"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "Same operation as the STAC-Item variant (one band of one product) but reading the SAFE archive on S3 with user credentials and a `resolution` selector (10m/20m/60m). openEO has no credential parameters (handled by the back-end) and chooses native resolution per band; choosing another resolution is resample_spatial territory."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "chlorophyll_a": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "chlorophyll_a_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "chlorophyll_a_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png",
+    "type": "image/png"
+  },
+  "cyanobacteria": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "cyanobacteria_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "cyanobacteria_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png",
+    "type": "image/png"
+  },
+  "turbidity": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
+    "type": "image/tiff; application=geotiff"
+  },
+  "turbidity_color": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "turbidity_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+    "type": "image/png"
+  }
+}

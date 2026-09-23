@@ -1,0 +1,6 @@
+{
+  "product": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-download-band-sentinel2-product-safe-0001/results/T29SPC_20190701T110621_B03_60m.jp2",
+    "type": "image/jp2"
+  }
+}

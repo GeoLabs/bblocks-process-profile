@@ -1,0 +1,107 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "3b00d9df28c7548e79088d660b1d416953bdb464" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "e6006027bca29c0e9abb13482a5deea81527097b" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_color" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "9cf89d0572c2a7632f7e096b040d37f8a99b4307" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/chlorophyll_a_plot" ;
+    ns1:mediaType "image/png" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "b90b2dee65d0b638143e2788b825e245dbe9c4bb" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_color" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "1b832fde3fc0d94955508d006d745a0a9e9b9596" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/cyanobacteria_plot" ;
+    ns1:mediaType "image/png" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "1e0302087d93ff81d5ec6b3a7a63ad7d0daec758" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "823dc9c0e24073601b98c7ac80d545355715c6f5" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_color" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png> prov:generated <urn:example:run:algae-bloom:workflow-copernicus> ;
+    ns1:checksum [ rdf:value "92c53811eb6d7bad871be5ebee515b4f95e0336a" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus#outputs/turbidity_plot" ;
+    ns1:mediaType "image/png" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a wfprov:WorkflowEngine ;
+    pp:name "cwltool" ;
+    pp:version "3.1.20260108082145" .
+
+<urn:example:run:algae-bloom:workflow-copernicus> a wfprov:WorkflowRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-copernicus> ;
+    wfprov:describedByWorkflow <https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-copernicus> ;
+    wfprov:hadSubProcessRun <urn:example:run:algae-bloom:select-products-sentinel2>,
+        <urn:example:run:algae-bloom:workflow-copernicus-process> ;
+    prov:endedAtTime "2026-09-23T07:33:59+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T07:31:01+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:jobID "algae-bloom-workflow-copernicus-0001" ;
+    pp:status "successful" .
+
+[] pp:engine <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:run <urn:example:run:algae-bloom:workflow-copernicus> ;
+    proc:outputs <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif>,
+        <https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-copernicus-0001/results/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png> .
+

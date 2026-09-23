@@ -1,0 +1,10 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-product-safe> pp:version "1.1.0" .
+
+[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/download-band-sentinel2-product-safe> ] ;
+    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+            pp:href "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-product-safe.cwl" ;
+            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+

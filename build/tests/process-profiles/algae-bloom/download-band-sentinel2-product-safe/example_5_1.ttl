@@ -1,0 +1,10 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+[] proc:inputs [ ns1:band "B03" ;
+            ns1:product_url "s3:///eodata/Sentinel-2/MSI/L2A/2019/07/01/S2A_MSIL2A_20190701T110621_N0212_R137_T29SPC_20190701T120906.SAFE" ;
+            ns1:resolution "60m" ;
+            ns1:s3_access_key "<redacted>" ;
+            ns1:s3_secret_key "<redacted>" ] ;
+    proc:response "document" .
+

@@ -1,0 +1,94 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <http://schema.org/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/mangrove_cli> dcterms:description "Process converted from CWL" ;
+    dcterms:subject "OSPD",
+        "biomass",
+        "mangrove" ;
+    dcterms:title "mangrove_cli" ;
+    pp:version "0.0.1" ;
+    proc:inputs [ ns1:cloud_cover_max [ dcterms:description "" ;
+                    dcterms:title "cloud_cover_max" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:days_back [ dcterms:description "" ;
+                    dcterms:title "days_back" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "integer" ] ] ;
+            ns1:east [ dcterms:description "" ;
+                    dcterms:title "east" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:north [ dcterms:description "" ;
+                    dcterms:title "north" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:output_dir [ dcterms:description "" ;
+                    dcterms:title "output_dir" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns1:south [ dcterms:description "" ;
+                    dcterms:title "south" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:west [ dcterms:description "" ;
+                    dcterms:title "west" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns3:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "mangrove_cli" ;
+            proc:role schema:name ],
+        [ rdf:value "0.0.1" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
+            proc:role schema:license ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ pp:result [ dcterms:description "" ;
+                    dcterms:title "result" ;
+                    proc:schema [ proc:type "object" ;
+                            ns2:format "stac-collection" ;
+                            ns2:properties [ dcterms:description [ proc:type "string" ] ;
+                                    dcterms:title [ proc:type "string" ] ;
+                                    rdfs:seeAlso [ dcterms:type "array" ] ;
+                                    proc:type [ proc:enum "Collection" ;
+                                            proc:type "string" ] ;
+                                    ns2:assets [ proc:type "object" ] ;
+                                    ns2:extent [ proc:type "object" ] ;
+                                    ns2:license [ proc:type "string" ] ;
+                                    ns2:stac_version [ proc:type "string" ] ] ;
+                            ns2:required "description",
+                                "extent",
+                                "id",
+                                "license",
+                                "links",
+                                "stac_version",
+                                "type" ] ] ] .
+

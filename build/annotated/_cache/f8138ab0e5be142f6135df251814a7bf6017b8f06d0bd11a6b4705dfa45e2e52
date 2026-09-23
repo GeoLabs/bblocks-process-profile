@@ -1,0 +1,515 @@
+{
+  "name": "OGC Building Blocks - Generic Provenance",
+  "abstract": "Generic provenance profile aggregating W3C PROV, Wf4Ever and EOAP building blocks",
+  "description": "These OGC Building Blocks provide a generic **provenance profile** for the\nOSPD / EOAP context, built on top of the canonical\n[W3C PROV](https://www.w3.org/TR/prov-overview/) data model (PROV-DM / PROV-O).\n\nRather than redefining PROV, this register **builds on** the W3C PROV JSON\nschema building block [`ogc.ogc-utils.prov`](https://ogcincubator.github.io/bblock-prov-schema/)\nand **aggregates** it with two complementary registers so they can be\ncross-referenced from a single place:\n\n- **[bblock-prov-schema](https://github.com/ogcincubator/bblock-prov-schema)**\n  (`ogc.ogc-utils.prov*`) \u2014 the canonical W3C PROV-O Entity / Activity / Agent\n  schemas that this register profiles.\n- **[bblocks-wf4ever](https://github.com/ogcincubator/bblocks-wf4ever)**\n  (`ogc.bbr.wf4ever.*`) \u2014 workflow-level provenance (wfdesc / wfprov / ro),\n  e.g. `wfprov:WorkflowRun`, for retrospective execution provenance.\n- **[bblocks-eoap-cct](https://github.com/ogcincubator/bblocks-eoap-cct)**\n  (`eoap.cct.*`) \u2014 EOAP CWL custom types (STAC, GeoJSON, bbox) used to type the\n  entities whose provenance is described.\n\nThe register defines the three core PROV starting-point classes as thin\nprofiles of the prov-schema sub-schemas, plus a provenance bundle:\n\n- **Entity** \u2014 profile of `ogc.ogc-utils.prov-entity`.\n- **Activity** \u2014 profile of `ogc.ogc-utils.prov-activity`.\n- **Agent** \u2014 profile of `ogc.ogc-utils.prov-agent`.\n- **Provenance (bundle)** \u2014 built on the `ogc.ogc-utils.prov` provenance chain.\n",
+  "modified": "2026-09-16T13:28:49.683229",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"e9e9cb5c905d4e569b44b4816a663ec450322f6f",
+      "shortCommitId": "\"e9e9cb",
+      "date": "2026-09-14T10:12:51+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-provenance-profile",
+  "gitHubRepository": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/",
+  "baseURL": "https://geolabs.github.io/bblocks-generic-provenance-profile/",
+  "viewerURL": "https://geolabs.github.io/bblocks-generic-provenance-profile/",
+  "license": {
+    "name": "CC-BY-4.0"
+  },
+  "validationReport": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/tests/report.html",
+  "validationReportJson": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://ogcincubator.github.io/bblock-prov-schema/build/register.json",
+    "https://ogcincubator.github.io/bblocks-wf4ever/build/register.json",
+    "https://ogcincubator.github.io/bblocks-eoap-cct/build/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.bbr.provenance.entity",
+      "name": "PROV Entity",
+      "abstract": "A W3C PROV Entity: a physical, digital, conceptual, or other kind of thing whose provenance is described.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "sources": [
+        {
+          "title": "PROV-O: The PROV Ontology",
+          "link": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "title": "PROV-DM: The PROV Data Model",
+          "link": "https://www.w3.org/TR/prov-dm/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "entity"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "isProfileOf": [
+        "bblocks://ogc.ogc-utils.prov-entity"
+      ],
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.prov-entity"
+      ],
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/entity/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/entity/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/entity/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/entity/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/entity/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/entity/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/entity/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/entity/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/entity/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.entity"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.agent",
+      "name": "PROV Agent",
+      "abstract": "A W3C PROV Agent: something that bears responsibility for an activity, an entity, or another agent's activity.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "sources": [
+        {
+          "title": "PROV-O: The PROV Ontology",
+          "link": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "title": "PROV-DM: The PROV Data Model",
+          "link": "https://www.w3.org/TR/prov-dm/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "agent"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "isProfileOf": [
+        "bblocks://ogc.ogc-utils.prov-agent"
+      ],
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.prov-agent"
+      ],
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/agent/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/agent/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/agent/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/agent/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/agent/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/agent/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/agent/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/agent/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/agent/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.agent"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.provenance",
+      "name": "Provenance Bundle",
+      "abstract": "A W3C PROV bundle grouping entities, activities, agents and the relations between them.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.prov"
+      ],
+      "sources": [
+        {
+          "title": "PROV-O: The PROV Ontology",
+          "link": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "title": "PROV-DM: The PROV Data Model",
+          "link": "https://www.w3.org/TR/prov-dm/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "bundle"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/provenance/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/provenance/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/provenance/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/provenance/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/provenance/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.provenance"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.activity",
+      "name": "PROV Activity",
+      "abstract": "A W3C PROV Activity: something that occurs over a period of time and acts upon or with entities.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "sources": [
+        {
+          "title": "PROV-O: The PROV Ontology",
+          "link": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "title": "PROV-DM: The PROV Data Model",
+          "link": "https://www.w3.org/TR/prov-dm/"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "activity"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "isProfileOf": [
+        "bblocks://ogc.ogc-utils.prov-activity"
+      ],
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.prov-activity"
+      ],
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/activity/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/activity/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/activity/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/activity/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/activity/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/activity/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/activity/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/activity/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/activity/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.activity"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.eoap-artifact",
+      "name": "OSPD EO Artifact",
+      "abstract": "Provenance of a data artifact produced or consumed by an OSPD / EOAP workflow execution, profiling Wf4Ever wfprov:Artifact and adding optional Earth Observation typing (STAC item, bounding box).",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "dependsOn": [
+        "bblocks://ogc.bbr.wf4ever.wfprov.Artifact",
+        "bblocks://eoap.cct.bbox",
+        "bblocks://eoap.cct.stac"
+      ],
+      "sources": [
+        {
+          "title": "Workflow Provenance Ontology (wfprov)",
+          "link": "http://purl.org/wf4ever/wfprov"
+        },
+        {
+          "title": "EOAP CWL Custom Types",
+          "link": "https://github.com/eoap/schemas"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "wfprov",
+        "eoap",
+        "stac",
+        "artifact",
+        "ospd"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "isProfileOf": [
+        "bblocks://ogc.bbr.wf4ever.wfprov.Artifact"
+      ],
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/eoap-artifact/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/eoap-artifact/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/eoap-artifact/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/eoap-artifact/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/eoap-artifact/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/eoap-artifact/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/eoap-artifact/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/eoap-artifact/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/eoap-artifact/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.eoap-artifact"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.workflow-run",
+      "name": "OSPD Workflow Run",
+      "abstract": "Provenance of a workflow/process execution in the OSPD / EOAP context, profiling the Wf4Ever wfprov:WorkflowRun with mandatory links to the executed workflow and the enacting engine.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "dependsOn": [
+        "bblocks://ogc.bbr.wf4ever.wfprov.WorkflowRun"
+      ],
+      "sources": [
+        {
+          "title": "Workflow Provenance Ontology (wfprov)",
+          "link": "http://purl.org/wf4ever/wfprov"
+        },
+        {
+          "title": "OGC API - Processes Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "workflow",
+        "wfprov",
+        "eoap",
+        "ospd"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "isProfileOf": [
+        "bblocks://ogc.bbr.wf4ever.wfprov.WorkflowRun"
+      ],
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/workflow-run/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/workflow-run/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/workflow-run/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/workflow-run/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/workflow-run/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/workflow-run/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/workflow-run/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/workflow-run/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/workflow-run/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.workflow-run"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.provenance.execution",
+      "name": "OSPD Execution Provenance",
+      "abstract": "An integrated OSPD / EOAP execution provenance bundle tying together a workflow run, its EO input/output artifacts and the enacting workflow engine, harmonizing W3C PROV, Wf4Ever and EOAP building blocks.",
+      "status": "under-development",
+      "version": "0.1.0",
+      "dateOfLastChange": "2026-09-16",
+      "dateTimeAddition": "2026-07-30T12:00:00Z",
+      "itemClass": "schema",
+      "dependsOn": [
+        "bblocks://ogc.bbr.provenance.eoap-artifact",
+        "bblocks://ogc.bbr.provenance.workflow-run",
+        "bblocks://ogc.bbr.wf4ever.wfprov.WorkflowEngine"
+      ],
+      "sources": [
+        {
+          "title": "Workflow Provenance Ontology (wfprov)",
+          "link": "http://purl.org/wf4ever/wfprov"
+        },
+        {
+          "title": "OGC Best Practice for EO Application Package",
+          "link": "https://docs.ogc.org/bp/20-089r1.html"
+        }
+      ],
+      "maturity": "development",
+      "scope": "unstable",
+      "tags": [
+        "provenance",
+        "prov",
+        "wfprov",
+        "eoap",
+        "workflow",
+        "ospd",
+        "bundle"
+      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "CC-BY-4.0"
+      },
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/execution/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/execution/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/execution/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/execution/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/execution/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-provenance-profile/_sources/execution/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-provenance-profile/blob/master/build/tests/bbr/provenance/execution/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/markdown/bbr/provenance/execution/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/generateddocs/json-full/bbr/provenance/execution/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-provenance-profile/bblock/ogc.bbr.provenance.execution"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

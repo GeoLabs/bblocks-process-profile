@@ -1,0 +1,6 @@
+{
+  "result": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff",
+    "type": "image/tiff; application=geotiff"
+  }
+}

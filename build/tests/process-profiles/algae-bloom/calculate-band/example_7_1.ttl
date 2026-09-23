@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:calculate-band:out:result> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/calculate-band#outputs/result> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-calculate-band-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:calculate-band:in:band_a>,
+        <urn:example:entity:calculate-band:in:band_c> ;
+    prov:wasGeneratedBy <urn:example:run:algae-bloom:calculate-band> .
+
+<urn:example:entity:calculate-band:in:calc> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/calculate-band#inputs/calc> ;
+    rdf:value "(8.93*(C/A))-6.39" .
+
+<urn:example:entity:calculate-band:in:name> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/calculate-band#inputs/name> ;
+    rdf:value "S2A_29SPC_20190701_0_L2A_turbidity" .
+
+<urn:example:image:ogc-ospd/algae-usecase/calculate-band:1.1.0> a prov:SoftwareAgent ;
+    pp:name "container image ogc-ospd/algae-usecase/calculate-band:1.1.0" .
+
+<urn:example:run:algae-bloom:calculate-band> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band> ;
+    prov:endedAtTime "2026-09-23T06:40:29+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/calculate-band> ] ;
+    prov:startedAtTime "2026-09-23T06:40:28+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:calculate-band:in:band_a>,
+        <urn:example:entity:calculate-band:in:band_c>,
+        <urn:example:entity:calculate-band:in:calc>,
+        <urn:example:entity:calculate-band:in:name> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ogc-ospd/algae-usecase/calculate-band:1.1.0> .
+
+<urn:example:entity:calculate-band:in:band_a> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/calculate-band#inputs/band_a> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/B01.tif> ] .
+
+<urn:example:entity:calculate-band:in:band_c> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/calculate-band#inputs/band_c> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03_60m.tiff> ] .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

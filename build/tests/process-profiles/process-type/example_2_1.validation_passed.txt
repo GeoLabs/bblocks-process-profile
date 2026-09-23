@@ -1,0 +1,13 @@
+Validation report for ospd.process-profiles.process-type - Process type register entry
+Generated 2026-09-23T14:02:36.064281+00:00
+=== Files ===
+Using examples/kindgrove-mangrove.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

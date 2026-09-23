@@ -1,0 +1,11 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] proc:inputs [ ns1:aoi [ ns1:bbox 1.59e+01,
+                        1.61e+01,
+                        9.515e+01,
+                        9.535e+01 ;
+                    ns1:crs "CRS84" ] ] ;
+    proc:response "document" .
+

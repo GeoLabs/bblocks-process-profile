@@ -1,0 +1,135 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <http://schema.org/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/algae-usecase-workflow-copernicus> dcterms:description """Finds Sentinel-2 products on Copernicus using filtering parameters
+and performs band calculation on retrieved Sentinel-2 products
+to evaluate algae bloom for water quality assessment.
+""" ;
+    dcterms:subject "Copernicus",
+        "OSPD",
+        "algae-bloom",
+        "demo",
+        "water-quality" ;
+    dcterms:title """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
+""" ;
+    pp:version "2.0.0" ;
+    proc:inputs [ ns3:aoi [ dcterms:description "" ;
+                    dcterms:title "aoi" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns3:cloud_cover [ dcterms:description "" ;
+                    dcterms:title "cloud_cover" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns3:collection [ dcterms:description "" ;
+                    dcterms:title "collection" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns3:date [ dcterms:description "" ;
+                    dcterms:title "date" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns3:delta [ dcterms:description "" ;
+                    dcterms:title "delta" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "4"^^rdf:JSON ;
+                            proc:type "integer" ] ] ;
+            ns3:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
+See https://documentation.dataspace.copernicus.eu/Registration.html 
+and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
+""" ;
+                    dcterms:title "S3 access key required to retrieve products hosted on a protected S3 location." ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns3:s3_secret_key [ dcterms:description """Access key to Copernicus data provider.
+See https://documentation.dataspace.copernicus.eu/Registration.html 
+and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
+""" ;
+                    dcterms:title "S3 secret key required to retrieve products hosted on a protected S3 location." ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value [ a ns4:Person ;
+                    ns4:email "francis.charette-migneault@crim.ca" ;
+                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns4:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
+        [ rdf:value """Finds Sentinel-2 products on Copernicus using filtering parameters
+and performs band calculation on retrieved Sentinel-2 products
+to evaluate algae bloom for water quality assessment.
+""" ;
+            proc:role schema:description ],
+        [ rdf:value "2.0.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
+""" ;
+            proc:role schema:name ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns2:chlorophyll_a [ dcterms:description "" ;
+                    dcterms:title "chlorophyll_a" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:chlorophyll_a_color [ dcterms:description "" ;
+                    dcterms:title "chlorophyll_a_color" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:chlorophyll_a_plot [ dcterms:description "" ;
+                    dcterms:title "chlorophyll_a_plot" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:cyanobacteria [ dcterms:description "" ;
+                    dcterms:title "cyanobacteria" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:cyanobacteria_color [ dcterms:description "" ;
+                    dcterms:title "cyanobacteria_color" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:cyanobacteria_plot [ dcterms:description "" ;
+                    dcterms:title "cyanobacteria_plot" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:turbidity [ dcterms:description "" ;
+                    dcterms:title "turbidity" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:turbidity_color [ dcterms:description "" ;
+                    dcterms:title "turbidity_color" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
+            ns2:turbidity_plot [ dcterms:description "" ;
+                    dcterms:title "turbidity_plot" ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ] .
+

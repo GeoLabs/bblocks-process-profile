@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Candidate entry for the OSPD process-type register (Activity 4). A process type classifies the\nactivities recorded in provenance: a provenance Activity of this type carries the entry `id` as\nits `activityType`. The entry is modelled as a SKOS concept; openEO equivalences use the SKOS\nmapping properties.\n",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "prefLabel",
+    "definition",
+    "inScheme",
+    "status",
+    "phase",
+    "profile",
+    "source",
+    "provenanceClass",
+    "openeoEquivalence"
+  ],
+  "properties": {
+    "id": {
+      "description": "IRI of the process type (also used as `activityType` in provenance records).",
+      "type": "string",
+      "format": "uri",
+      "x-jsonld-id": "@id"
+    },
+    "type": {
+      "const": "ProcessType",
+      "x-jsonld-id": "@type"
+    },
+    "prefLabel": {
+      "type": "string",
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "definition": {
+      "type": "string",
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#definition"
+    },
+    "inScheme": {
+      "description": "IRI of the process-type register (concept scheme) this entry is proposed to.",
+      "type": "string",
+      "format": "uri",
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
+      "x-jsonld-type": "@id"
+    },
+    "status": {
+      "description": "ISO 19135 item status. Entries produced here are candidates, hence `submitted` at most.",
+      "type": "string",
+      "enum": [
+        "submitted",
+        "valid",
+        "invalid",
+        "superseded",
+        "retired"
+      ],
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/status"
+    },
+    "phase": {
+      "description": "Position(s) in the six-phase workflow framework.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/filter-configuration",
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering",
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing",
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+          "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+        ]
+      },
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#broader",
+      "x-jsonld-type": "@id"
+    },
+    "profile": {
+      "description": "Identifier of the process-profile Building Block.",
+      "type": "string",
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/profile"
+    },
+    "processDescription": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "x-jsonld-id": "@id"
+        },
+        "version": {
+          "type": "string",
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/version"
+        }
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/processDescription"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "cwl",
+        "cwlClass",
+        "cwlId"
+      ],
+      "properties": {
+        "cwl": {
+          "description": "Pinned URL of the CWL document.",
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/cwl",
+          "x-jsonld-type": "@id"
+        },
+        "cwlClass": {
+          "enum": [
+            "CommandLineTool",
+            "Workflow",
+            "ExpressionTool"
+          ],
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/cwlClass"
+        },
+        "cwlId": {
+          "type": "string",
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/cwlId"
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "x-jsonld-id": "http://purl.org/dc/terms/license",
+          "x-jsonld-type": "@id"
+        }
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/source"
+    },
+    "provenanceClass": {
+      "description": "Class of the run records produced by executing this process.",
+      "type": "string",
+      "enum": [
+        "http://purl.org/wf4ever/wfprov#ProcessRun",
+        "http://purl.org/wf4ever/wfprov#WorkflowRun"
+      ],
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/provenanceClass",
+      "x-jsonld-type": "@id"
+    },
+    "cctDependencies": {
+      "description": "EOAP CWL custom types used by the CWL source.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^eoap\\.cct\\."
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/cctDependency"
+    },
+    "candidateCctDependencies": {
+      "description": "EOAP CWL custom types that could replace plain CWL types (not used by the source).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^eoap\\.cct\\."
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/candidateCctDependency"
+    },
+    "hasStep": {
+      "description": "Process types of the steps of a Workflow.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/hasStep",
+      "x-jsonld-type": "@id"
+    },
+    "exactMatch": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+      "x-jsonld-type": "@id"
+    },
+    "closeMatch": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "x-jsonld-type": "@id"
+    },
+    "relatedMatch": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+      "x-jsonld-type": "@id"
+    },
+    "openeoEquivalence": {
+      "type": "object",
+      "required": [
+        "level",
+        "rationale"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "exactMatch",
+            "closeMatch",
+            "none"
+          ],
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/equivalenceLevel"
+        },
+        "rationale": {
+          "type": "string",
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/rationale"
+        },
+        "decomposition": {
+          "description": "Ordered correspondence of the stages of a composite or opaque process.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "stage",
+              "level"
+            ],
+            "properties": {
+              "stage": {
+                "type": "string",
+                "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/stage"
+              },
+              "openeo": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^ogc\\.openeo\\."
+                },
+                "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/openeo"
+              },
+              "level": {
+                "enum": [
+                  "exactMatch",
+                  "closeMatch",
+                  "none"
+                ],
+                "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/equivalenceLevel"
+              },
+              "note": {
+                "type": "string",
+                "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#note"
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/decomposition",
+          "x-jsonld-container": "@list"
+        }
+      },
+      "x-jsonld-id": "https://geolabs.github.io/bblocks-process-profiles/def/openeoEquivalence"
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "ProcessType": "http://www.w3.org/2004/02/skos/core#Concept"
+  },
+  "x-jsonld-prefixes": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "pp": "https://geolabs.github.io/bblocks-process-profiles/def/"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "product": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-download-band-sentinel2-stac-item-0001/results/B03.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

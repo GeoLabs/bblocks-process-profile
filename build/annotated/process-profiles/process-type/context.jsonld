@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "ProcessType": "skos:Concept",
+    "id": "@id",
+    "type": "@type",
+    "prefLabel": "skos:prefLabel",
+    "definition": "skos:definition",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "status": "pp:status",
+    "phase": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "profile": "pp:profile",
+    "processDescription": {
+      "@context": {
+        "version": "pp:version"
+      },
+      "@id": "pp:processDescription"
+    },
+    "source": {
+      "@context": {
+        "cwl": {
+          "@id": "pp:cwl",
+          "@type": "@id"
+        },
+        "cwlClass": "pp:cwlClass",
+        "cwlId": "pp:cwlId",
+        "license": {
+          "@id": "http://purl.org/dc/terms/license",
+          "@type": "@id"
+        }
+      },
+      "@id": "pp:source"
+    },
+    "provenanceClass": {
+      "@id": "pp:provenanceClass",
+      "@type": "@id"
+    },
+    "cctDependencies": "pp:cctDependency",
+    "candidateCctDependencies": "pp:candidateCctDependency",
+    "hasStep": {
+      "@id": "pp:hasStep",
+      "@type": "@id"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@type": "@id"
+    },
+    "relatedMatch": {
+      "@id": "skos:relatedMatch",
+      "@type": "@id"
+    },
+    "openeoEquivalence": {
+      "@context": {
+        "level": "pp:equivalenceLevel",
+        "rationale": "pp:rationale",
+        "decomposition": {
+          "@context": {
+            "stage": "pp:stage",
+            "openeo": "pp:openeo",
+            "note": "skos:note"
+          },
+          "@id": "pp:decomposition",
+          "@container": "@list"
+        }
+      },
+      "@id": "pp:openeoEquivalence"
+    },
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "pp": "https://geolabs.github.io/bblocks-process-profiles/def/",
+    "@version": 1.1
+  }
+}

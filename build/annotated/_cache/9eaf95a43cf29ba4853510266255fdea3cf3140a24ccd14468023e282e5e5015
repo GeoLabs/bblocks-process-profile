@@ -1,0 +1,3531 @@
+{
+  "name": "OGC API Processes",
+  "abstract": "Schemas for the OGC API Processes standard\n",
+  "description": "Adds a flexible, JSON schema version agnostic documentation to the OGC API Processes standard, supporting further profiling by combining with other Building Blocks.\n",
+  "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/query",
+  "modified": "2026-08-05T20:11:40.034948",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"f9abb8c209d98a9868e50eabafe4915396673a37",
+      "shortCommitId": "\"f9abb8",
+      "date": "2026-08-05T09:14:53+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/GeoLabs/bblocks-ogcapi-processes",
+  "gitHubRepository": "https://github.com/GeoLabs/bblocks-ogcapi-processes/blob/master/",
+  "baseURL": "https://geolabs.github.io/bblocks-ogcapi-processes/",
+  "viewerURL": "https://geolabs.github.io/bblocks-ogcapi-processes/",
+  "validationReport": "https://geolabs.github.io/bblocks-ogcapi-processes/build/tests/report.html",
+  "validationReportJson": "https://geolabs.github.io/bblocks-ogcapi-processes/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.datetime",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "datetime parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/datetime/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/datetime/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/datetime/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/datetime/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/datetime/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.datetime"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.jobId",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "jobId parameter",
+      "itemClass": "parameter",
+      "description": "local identifier of a job",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/jobId/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/jobId/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/jobId/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/jobId/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/jobId/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.jobId"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.limit",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "limit parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/limit/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/limit/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/limit/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/limit/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/limit/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.limit"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.maxDuration",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "maxDuration parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/maxDuration/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/maxDuration/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/maxDuration/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/maxDuration/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/maxDuration/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.maxDuration"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.minDuration",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "minDuration parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/minDuration/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/minDuration/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/minDuration/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/minDuration/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/minDuration/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.minDuration"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.processIdPathParam",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "processIdPathParam parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/processIdPathParam/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/processIdPathParam/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/processIdPathParam/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/processIdPathParam/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/processIdPathParam/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.processIdPathParam"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.processIdQueryParam",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "processIdQueryParam parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/processIdQueryParam/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/processIdQueryParam/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/processIdQueryParam/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/processIdQueryParam/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/processIdQueryParam/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.processIdQueryParam"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.statusCode",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "statusCode schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/statusCode/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/statusCode/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/statusCode/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/statusCode/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/statusCode/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/statusCode/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.statusCode"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.type",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "type parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/type/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/type/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/type/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/type/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/type/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.type"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.confClasses",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "confClasses schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/confClasses/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/confClasses/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/confClasses/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/confClasses/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/confClasses/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/confClasses/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/confClasses/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.confClasses"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ExecuteSyncRawRef",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ExecuteSyncRawRef response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteSyncRawRef/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteSyncRawRef/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteSyncRawRef/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteSyncRawRef/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ExecuteSyncRawRef/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ExecuteSyncRawRef/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ExecuteSyncRawRef"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.exception",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "exception schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/exception/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/exception/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/exception/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/exception/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/exception/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/exception/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/exception/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.exception"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.additionalParameter",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "additionalParameter schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/additionalParameter/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/additionalParameter/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/additionalParameter/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/additionalParameter/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/additionalParameter/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/additionalParameter/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/additionalParameter/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.additionalParameter"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.bbox",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "bbox schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/bbox/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/bbox/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/bbox/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/bbox/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.bbox"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.binaryInputValue",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "binaryInputValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/binaryInputValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/binaryInputValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/binaryInputValue/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/binaryInputValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/binaryInputValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/binaryInputValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.binaryInputValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.binaryValue",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-05T00:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API - Processes - Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "binaryValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/binaryValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/binaryValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/binaryValue/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/binaryValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/binaryValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/binaryValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.binaryValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.format",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "format schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/format/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/format/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/format/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/format/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/format/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/format/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/format/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.format"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.common-core.confClasses",
+      "name": "Schema for confClasses schema",
+      "status": "under-development",
+      "dateTimeAddition": "2024-03-22T11:40:00+01:00",
+      "itemClass": "schema",
+      "register": "ogcapi-features",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-features",
+        "features"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/confClasses/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/confClasses/schema.json"
+      },
+      "abstract": "This building block corresponds to the schema for an OGC API Features confClasses",
+      "shaclShapes": {},
+      "remoteCacheDir": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/confClasses/remote_cache/",
+      "sourceSchema": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/confClasses.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/confClasses/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/common-core/confClasses/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-ogcapi-processes/blob/master/build/tests/api/processes/v1/schemas/common-core/confClasses/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/common-core/confClasses/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/common-core/confClasses/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.common-core.confClasses"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.common-core.exception",
+      "name": "Schema for exception schema",
+      "status": "under-development",
+      "dateTimeAddition": "2024-03-22T11:40:00+01:00",
+      "itemClass": "schema",
+      "register": "ogcapi-features",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-features",
+        "features"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/exception/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/exception/schema.json"
+      },
+      "abstract": "This building block corresponds to the schema for an OGC API Features exception",
+      "shaclShapes": {},
+      "remoteCacheDir": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/exception/remote_cache/",
+      "sourceSchema": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/exception.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/exception/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/common-core/exception/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/common-core/exception/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/common-core/exception/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.common-core.exception"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.metadata",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "metadata schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/metadata/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/metadata/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/metadata/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/metadata/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.metadata"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.subscriber",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "subscriber schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/subscriber/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/subscriber/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/subscriber/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/subscriber/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/subscriber/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/subscriber/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/subscriber/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.subscriber"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.link",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "link schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/link/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/link/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/link/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/link/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.link"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.jobControlOptions",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "jobControlOptions schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/jobControlOptions/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/jobControlOptions/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/jobControlOptions/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/jobControlOptions/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/jobControlOptions/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/jobControlOptions/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.jobControlOptions"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.transmissionMode",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "transmissionMode schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/transmissionMode/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/transmissionMode/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/transmissionMode/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/transmissionMode/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/transmissionMode/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/transmissionMode/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.transmissionMode"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.reference",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "reference schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/reference/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/reference/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/reference/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/reference/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/reference/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/reference/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/reference/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.reference"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.timeStamp",
+      "name": "Schema for timeStamp schema",
+      "status": "under-development",
+      "dateTimeAddition": "2024-03-22T11:40:00+01:00",
+      "itemClass": "datatype",
+      "register": "ogcapi-features",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-features",
+        "features"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/timeStamp/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/timeStamp/schema.json"
+      },
+      "abstract": "This property indicates the time and date when the response was generated",
+      "shaclShapes": {},
+      "remoteCacheDir": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/timeStamp/remote_cache/",
+      "sourceSchema": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/timeStamp.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/timeStamp/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/timeStamp/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/timeStamp/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.timeStamp"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.common-core.landingPage",
+      "name": "Schema for landingPage schema",
+      "status": "under-development",
+      "dateTimeAddition": "2024-03-22T11:40:00+01:00",
+      "itemClass": "schema",
+      "register": "ogcapi-features",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-features",
+        "features"
+      ],
+      "abstract": "This building block corresponds to the schema for an OGC API Features landingPage",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.ogc-utils.json-link"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/landingPage/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/landingPage/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/common-core/landingPage/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/landingPage/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/common-core/landingPage/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/common-core/landingPage/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/common-core/landingPage/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/common-core/landingPage/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.common-core.landingPage"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.parameters.status",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.178084",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "parameter"
+      ],
+      "name": "status parameter",
+      "itemClass": "parameter",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.statusCode"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/status/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/parameters/status/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/parameters/status/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/parameters/status/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/parameters/status/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.parameters.status"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ConformanceDeclaration",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ConformanceDeclaration response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.confClasses"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ConformanceDeclaration/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ConformanceDeclaration/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ConformanceDeclaration/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ConformanceDeclaration/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ConformanceDeclaration/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ConformanceDeclaration/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ConformanceDeclaration"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.InvalidParameter",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "InvalidParameter response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.exception"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/InvalidParameter/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/InvalidParameter/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/InvalidParameter/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/InvalidParameter/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/InvalidParameter/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/InvalidParameter/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.InvalidParameter"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.NotAllowed",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "NotAllowed response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.exception"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotAllowed/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotAllowed/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotAllowed/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotAllowed/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/NotAllowed/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/NotAllowed/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.NotAllowed"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.NotFound",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "NotFound response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.exception"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotFound/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotFound/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotFound/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotFound/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/NotFound/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/NotFound/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.NotFound"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.NotSupported",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "NotSupported response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.exception"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotSupported/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/NotSupported/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotSupported/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/NotSupported/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/NotSupported/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/NotSupported/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.NotSupported"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ServerError",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ServerError response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.exception"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ServerError/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ServerError/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ServerError/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ServerError/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ServerError/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ServerError/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ServerError"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.inputValueNoObject",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "inputValueNoObject schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.bbox",
+        "bblocks://ogc.api.processes.v1.schemas.binaryInputValue"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValueNoObject/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValueNoObject/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputValueNoObject/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValueNoObject/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputValueNoObject/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/inputValueNoObject/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/inputValueNoObject/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.inputValueNoObject"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.collectionValue",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-05T00:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API - Processes - Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "collectionValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.format"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/collectionValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/collectionValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/collectionValue/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/collectionValue/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/collectionValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/collectionValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/collectionValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.collectionValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.descriptionType",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "descriptionType schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.additionalParameter",
+        "bblocks://ogc.api.processes.v1.schemas.metadata"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/descriptionType/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/descriptionType/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/descriptionType/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/descriptionType/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.descriptionType"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.landingPage",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "landingPage schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/landingPage/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/landingPage/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/landingPage/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/landingPage/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/landingPage/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/landingPage/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/landingPage/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.landingPage"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.statusInfo",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "statusInfo schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.statusCode"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/statusInfo/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/statusInfo/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/statusInfo/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/statusInfo/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/statusInfo/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/statusInfo/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/statusInfo/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.statusInfo"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.output",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "output schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.transmissionMode",
+        "bblocks://ogc.api.processes.v1.schemas.format"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/output/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/output/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/output/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/output/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/output/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/output/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/output/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.output"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.schema",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "schema schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.reference"
+      ],
+      "ldContext": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/schema/schema.yaml",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/schema/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/schema/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/schema/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/schema/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.schema"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.swagger.schema",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "schema schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.reference"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/schema/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/schema/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/schema/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/schema/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/schema/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/swagger/schema/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/swagger/schema/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.swagger.schema"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.Conformance",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-02T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "Conformance path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.responses.ConformanceDeclaration"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Conformance/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/Conformance/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Conformance/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/Conformance/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/Conformance/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.Conformance"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.inputValue",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "inputValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.inputValueNoObject"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputValue/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputValue/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/inputValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/inputValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.inputValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.valueNoObject",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-05T00:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API - Processes - Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "valueNoObject schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.bbox",
+        "bblocks://ogc.api.processes.v1.schemas.collectionValue",
+        "bblocks://ogc.api.processes.v1.schemas.binaryValue"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/valueNoObject/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/valueNoObject/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/valueNoObject/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/valueNoObject/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/valueNoObject/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/valueNoObject/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/valueNoObject/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.valueNoObject"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.processSummary",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "processSummary schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.descriptionType",
+        "bblocks://ogc.api.processes.v1.schemas.transmissionMode",
+        "bblocks://ogc.api.processes.v1.schemas.jobControlOptions"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/processSummary/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/processSummary/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/processSummary/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/processSummary/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.processSummary"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.LandingPage",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "LandingPage response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.landingPage"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/LandingPage/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/LandingPage/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/LandingPage/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/LandingPage/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/LandingPage/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/LandingPage/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.LandingPage"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ExecuteAsync",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ExecuteAsync response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.statusInfo"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteAsync/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteAsync/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteAsync/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteAsync/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ExecuteAsync/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ExecuteAsync/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ExecuteAsync"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.Status",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "Status response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.statusInfo"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/Status/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/Status/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/Status/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/Status/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/Status/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/Status/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.Status"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.jobList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "jobList schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.statusInfo"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/jobList/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/jobList/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/jobList/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/jobList/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/jobList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/jobList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/jobList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.jobList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.inputDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "inputDescription schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.descriptionType",
+        "bblocks://ogc.api.processes.v1.schemas.schema"
+      ],
+      "ldContext": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputDescription/schema.yaml",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputDescription/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inputDescription/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-ogcapi-processes/blob/master/build/tests/api/processes/v1/schemas/inputDescription/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/inputDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/inputDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.inputDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.outputDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "outputDescription schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.descriptionType",
+        "bblocks://ogc.api.processes.v1.schemas.schema"
+      ],
+      "ldContext": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/outputDescription/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/outputDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/outputDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/outputDescription/schema.yaml",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/outputDescription/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/outputDescription/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/outputDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/outputDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/outputDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.outputDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.swagger.inputDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "inputDescription schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.swagger.schema",
+        "bblocks://ogc.api.processes.v1.schemas.descriptionType"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/inputDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/inputDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/inputDescription/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/inputDescription/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/inputDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/swagger/inputDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/swagger/inputDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.swagger.inputDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.swagger.outputDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "outputDescription schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.swagger.schema",
+        "bblocks://ogc.api.processes.v1.schemas.descriptionType"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/outputDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/outputDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/outputDescription/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/outputDescription/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/outputDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/swagger/outputDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/swagger/outputDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.swagger.outputDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.qualifiedInputValue",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "qualifiedInputValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.inputValue",
+        "bblocks://ogc.api.processes.v1.schemas.format"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedInputValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedInputValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/qualifiedInputValue/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedInputValue/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/qualifiedInputValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/qualifiedInputValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/qualifiedInputValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.qualifiedInputValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.value",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-05T00:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API - Processes - Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "value schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.valueNoObject"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/value/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/value/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/value/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/value/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/value/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/value/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/value/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.value"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.processList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "processList schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.processSummary"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processList/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processList/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/processList/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processList/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/processList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/processList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/processList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.processList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.LandingPage",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-02T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "LandingPage path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.responses.LandingPage"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/LandingPage/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/LandingPage/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/LandingPage/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/LandingPage/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/LandingPage/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.LandingPage"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.DismissJob",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-11T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "Dismiss Job",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.parameters.jobId",
+        "bblocks://ogc.api.processes.v1.responses.Status"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/DismissJob/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/DismissJob/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/DismissJob/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/DismissJob/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/DismissJob/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.DismissJob"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.Job",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-11T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "Job path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.parameters.jobId",
+        "bblocks://ogc.api.processes.v1.responses.Status"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Job/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/Job/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Job/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/Job/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/Job/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.Job"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.JobList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "JobList response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.jobList"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/JobList/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/JobList/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/JobList/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/JobList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/JobList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/JobList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.JobList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.process",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "process schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.outputDescription",
+        "bblocks://ogc.api.processes.v1.schemas.processSummary",
+        "bblocks://ogc.api.processes.v1.schemas.inputDescription"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/process/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/process/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/process/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/process/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.process"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.swagger.process",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "process schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.swagger.inputDescription",
+        "bblocks://ogc.api.processes.v1.schemas.processSummary",
+        "bblocks://ogc.api.processes.v1.schemas.swagger.outputDescription"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/process/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/process/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/process/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/swagger/process/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/swagger/process/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/swagger/process/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/swagger/process/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.swagger.process"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.inlineOrRefData",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "inlineOrRefData schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v1.schemas.inputValueNoObject"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inlineOrRefData/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inlineOrRefData/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inlineOrRefData/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inlineOrRefData/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/inlineOrRefData/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/inlineOrRefData/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/inlineOrRefData/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.inlineOrRefData"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.qualifiedValue",
+      "status": "under-development",
+      "dateTimeAddition": "2026-08-05T00:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API - Processes - Part 1: Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "qualifiedValue schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.value",
+        "bblocks://ogc.api.processes.v1.schemas.format"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedValue/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedValue/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/qualifiedValue/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedValue/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/qualifiedValue/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/qualifiedValue/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/qualifiedValue/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.qualifiedValue"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ProcessList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ProcessList response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.processList"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ProcessList/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ProcessList/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ProcessList/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ProcessList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ProcessList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ProcessList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ProcessList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.JobList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-02T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "JobList path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.JobList"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/JobList/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/JobList/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/JobList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/JobList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/JobList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.JobList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ProcessDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ProcessDescription response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.process"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ProcessDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ProcessDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ProcessDescription/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ProcessDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ProcessDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ProcessDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ProcessDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.swagger.ProcessDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ProcessDescription response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.swagger.process"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/swagger/ProcessDescription/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/swagger/ProcessDescription/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/swagger/ProcessDescription/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/swagger/ProcessDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/swagger/ProcessDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/swagger/ProcessDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.swagger.ProcessDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.execute",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "execute schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.subscriber",
+        "bblocks://ogc.api.processes.v1.schemas.output",
+        "bblocks://ogc.api.processes.v1.schemas.inlineOrRefData"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/execute/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/execute/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/execute/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/execute/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/execute/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/execute/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/execute/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.execute"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.schemas.results",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.046535",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "schema"
+      ],
+      "name": "results schema",
+      "itemClass": "schema",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.inlineOrRefData"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/results/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/results/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/results/schema.yaml",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/results/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/schemas/results/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/schemas/results/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/schemas/results/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.schemas.results"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.ProcessList",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-02T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "ProcessList path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.ProcessList"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/ProcessList/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/ProcessList/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/ProcessList/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/ProcessList/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/ProcessList/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.ProcessList"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.ProcessDescription",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-11T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "ProcessDescription path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.parameters.processIdPathParam",
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.ProcessDescription"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/ProcessDescription/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/ProcessDescription/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/ProcessDescription/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/ProcessDescription/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/ProcessDescription/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.ProcessDescription"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.ExecuteSync",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "ExecuteSync response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.results"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteSync/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/ExecuteSync/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteSync/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/ExecuteSync/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/ExecuteSync/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/ExecuteSync/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.ExecuteSync"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.responses.Results",
+      "status": "under-development",
+      "dateTimeAddition": "2025-10-22T15:29:12.118638",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Features - Part 1 - Core corrigendum",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "response"
+      ],
+      "name": "Results response",
+      "itemClass": "response",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.results"
+      ],
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/Results/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/responses/Results/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/Results/schema.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/responses/Results/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/responses/Results/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/responses/Results/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.responses.Results"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.Execution",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-02T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "Execute path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.ExecuteAsync",
+        "bblocks://ogc.api.processes.v1.schemas.results",
+        "bblocks://ogc.api.processes.v1.schemas.execute",
+        "bblocks://ogc.api.processes.v1.parameters.processIdPathParam",
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.ExecuteSync"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Execution/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/Execution/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/Execution/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/Execution/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/Execution/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.Execution"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.paths.JobResult",
+      "status": "under-development",
+      "dateTimeAddition": "2025-12-11T09:00:00.000000",
+      "register": "ogcapi-processes",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "path"
+      ],
+      "name": "Job result path",
+      "itemClass": "path",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.responses.NotFound",
+        "bblocks://ogc.api.processes.v1.responses.ServerError",
+        "bblocks://ogc.api.processes.v1.parameters.jobId",
+        "bblocks://ogc.api.processes.v1.responses.Results"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/JobResult/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/paths/JobResult/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/paths/JobResult/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/paths/JobResult/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/paths/JobResult/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.paths.JobResult"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.api.processes.v1.api",
+      "name": "OGC API - Processes: Part 1",
+      "status": "under-development",
+      "dateTimeAddition": "2024-03-22T11:40:00+01:00",
+      "itemClass": "api",
+      "register": "ogcapi-features",
+      "version": "0.1",
+      "dateOfLastChange": "2026-08-05",
+      "sources": [
+        {
+          "title": "OGC API Processes - Part 1 - Core",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ],
+      "tags": [
+        "ogcapi-processes",
+        "processes"
+      ],
+      "highlighted": true,
+      "abstract": "This building block corresponds to OGC API Processes",
+      "shaclShapes": {},
+      "dependsOn": [
+        "bblocks://ogc.api.processes.v1.paths.JobResult",
+        "bblocks://ogc.api.processes.v1.paths.Job",
+        "bblocks://ogc.api.processes.v1.paths.ProcessDescription",
+        "bblocks://ogc.api.processes.v1.paths.JobList",
+        "bblocks://ogc.api.processes.v1.paths.LandingPage",
+        "bblocks://ogc.api.processes.v1.paths.Conformance",
+        "bblocks://ogc.api.processes.v1.paths.ProcessList",
+        "bblocks://ogc.api.processes.v1.paths.Execution",
+        "bblocks://ogc.api.processes.v1.paths.DismissJob"
+      ],
+      "sourceOpenAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/api/openapi.yaml",
+      "openAPIDocument": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/api/openapi.yaml",
+      "sourceFiles": "https://geolabs.github.io/bblocks-ogcapi-processes/_sources/v1/api/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/json-full/api/processes/v1/api/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/build/generateddocs/markdown/api/processes/v1/api/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-ogcapi-processes/bblock/ogc.api.processes.v1.api"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-ogcapi-processes/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://geolabs.github.io/bblocks-ogcapi-processes/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

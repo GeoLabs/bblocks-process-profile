@@ -1,0 +1,10 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/mangrove_cli> pp:version "0.0.1" .
+
+[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/mangrove_cli> ] ;
+    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+            pp:href "https://github.com/GeoLabs/bblocks-eoap-cct/raw/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli" ;
+            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+
