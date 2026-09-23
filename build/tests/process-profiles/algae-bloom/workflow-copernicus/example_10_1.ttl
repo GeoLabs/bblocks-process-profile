@@ -222,10 +222,10 @@ id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/select_products" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products> ],
+            prov:agent id:925ed775-3f3c-444a-b740-a81e965f32e0 ],
         [ a prov:Association ;
-            prov:agent id:925ed775-3f3c-444a-b740-a81e965f32e0 ] ;
+            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:06.035275"^^xsd:dateTime ;
             prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] ;
@@ -233,6 +233,14 @@ id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:02.350383"^^xsd:dateTime ;
             prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392701"^^xsd:dateTime ;
+            prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/product_level> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392439"^^xsd:dateTime ;
+            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/date> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.392720"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/toi> ],
@@ -244,14 +252,6 @@ id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:02.392236"^^xsd:dateTime ;
             prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/collection> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392439"^^xsd:dateTime ;
-            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/date> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392701"^^xsd:dateTime ;
-            prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/product_level> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.392016"^^xsd:dateTime ;
             prov:entity id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2 ;
@@ -379,32 +379,32 @@ id:44c595c3-0138-459e-bff2-432829fe1bf3 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T09:31:01.086687"^^xsd:dateTime ;
             prov:hadActivity id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.347746"^^xsd:dateTime ;
-            prov:entity id:97f268f3-383e-43a2-ad2b-3212b43b5676 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/delta> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.347708"^^xsd:dateTime ;
-            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/date> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.347208"^^xsd:dateTime ;
-            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/collection> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.346187"^^xsd:dateTime ;
-            prov:entity id:c719b109-a5e5-414b-8e1a-2fa5262c9394 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/cloud_cover> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.348450"^^xsd:dateTime ;
-            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.346121"^^xsd:dateTime ;
             prov:entity id:cea98bc9-4a78-442d-a99a-eb4850b01d63 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.348133"^^xsd:dateTime ;
             prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ] ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.346187"^^xsd:dateTime ;
+            prov:entity id:c719b109-a5e5-414b-8e1a-2fa5262c9394 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/cloud_cover> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347208"^^xsd:dateTime ;
+            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/collection> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.348450"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347746"^^xsd:dateTime ;
+            prov:entity id:97f268f3-383e-43a2-ad2b-3212b43b5676 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/delta> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.347708"^^xsd:dateTime ;
+            prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/date> ] ;
     prov:startedAtTime "2026-09-23T09:31:01.086664"^^xsd:dateTime .
 
