@@ -1,10 +1,13 @@
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-process-profiles/def/process/algae-usecase-workflow-earth-search> pp:version "2.0.0" .
-
-[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/algae-usecase-workflow-earth-search> ] ;
-    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
-            pp:href "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-earth-search.cwl" ;
-            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+[] proc:inputs [ ns1:aoi [ ns1:href "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson" ;
+                    proc:type "application/geo+json" ] ;
+            ns1:cloud_cover 1e-01 ;
+            ns1:collection "sentinel-2-l2a" ;
+            ns1:delta 4 ;
+            ns1:toi "2019-06-25",
+                "2019-07-03" ] ;
+    proc:response "document" .
 

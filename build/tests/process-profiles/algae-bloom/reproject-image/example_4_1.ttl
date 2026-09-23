@@ -1,10 +1,10 @@
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-process-profiles/def/process/reproject-image> pp:version "1.0.0" .
-
-[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/reproject-image> ] ;
-    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
-            pp:href "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/reproject-image.cwl" ;
-            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+[] proc:inputs [ ns1:input_image [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:output_name "B03_60m" ;
+            ns1:output_resolution 60 ] ;
+    proc:response "document" .
 

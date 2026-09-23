@@ -84,8 +84,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "chlorophyll_a_color": {
@@ -93,8 +93,8 @@
       "description": "Pseudo-color representation of chlorophyll-a.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "chlorophyll_a_plot": {
@@ -102,8 +102,8 @@
       "description": "Plot representation of chlorophyll-a.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/png"
+        "contentMediaType": "image/png",
+        "contentEncoding": "binary"
       }
     },
     "cyanobacteria": {
@@ -111,8 +111,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "cyanobacteria_color": {
@@ -120,8 +120,8 @@
       "description": "Pseudo-color representation of cyanobacteria.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "cyanobacteria_plot": {
@@ -129,8 +129,8 @@
       "description": "Plot representation of cyanobacteria.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/png"
+        "contentMediaType": "image/png",
+        "contentEncoding": "binary"
       }
     },
     "turbidity": {
@@ -138,8 +138,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "turbidity_color": {
@@ -147,8 +147,8 @@
       "description": "Pseudo-color representation of turbidity.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     },
     "turbidity_plot": {
@@ -156,8 +156,8 @@
       "description": "Plot representation of turbidity.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/png"
+        "contentMediaType": "image/png",
+        "contentEncoding": "binary"
       }
     }
   },

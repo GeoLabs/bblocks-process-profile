@@ -49,18 +49,18 @@
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -107,8 +107,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     }
   },

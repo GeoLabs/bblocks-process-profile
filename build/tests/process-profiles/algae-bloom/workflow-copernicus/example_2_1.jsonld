@@ -69,8 +69,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "application/geo+json"
+        "contentMediaType": "application/geo+json",
+        "contentEncoding": "binary"
       },
       "minOccurs": 1,
       "maxOccurs": 1
@@ -122,8 +122,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -134,8 +134,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -146,8 +146,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/png"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -158,8 +158,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -170,8 +170,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -182,8 +182,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/png"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -194,8 +194,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -206,8 +206,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/tiff; application=geotiff"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -218,8 +218,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentEncoding": "binary",
-          "contentMediaType": "image/png"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     }

@@ -1,6 +1,103 @@
-{
-  "urls": [
-    "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_1_L2A",
-    "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A"
-  ]
-}
+[
+  {
+    "id": "urn:example:run:algae-bloom:select-products-sentinel2",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
+    "startedAtTime": "2026-09-23T06:26:24Z",
+    "used": [
+      "urn:example:entity:select-products-sentinel2:in:aoi",
+      "urn:example:entity:select-products-sentinel2:in:catalog",
+      "urn:example:entity:select-products-sentinel2:in:collection",
+      "urn:example:entity:select-products-sentinel2:in:product_level",
+      "urn:example:entity:select-products-sentinel2:in:toi",
+      "urn:example:entity:select-products-sentinel2:in:delta",
+      "urn:example:entity:select-products-sentinel2:in:cloud_cover"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145",
+      "urn:example:image:ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2"
+      }
+    ],
+    "endedAtTime": "2026-09-23T06:26:25Z"
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:aoi",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/aoi",
+    "links": [
+      {
+        "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
+        "rel": "item",
+        "type": "application/geo+json"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:catalog",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/catalog",
+    "value": "earth-search"
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:collection",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/collection",
+    "value": "sentinel-2-l2a"
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:product_level",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/product_level",
+    "value": "L2A"
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:toi",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/toi",
+    "value": [
+      "2019-06-25",
+      "2019-07-03"
+    ]
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:delta",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/delta",
+    "value": 4
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:in:cloud_cover",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/cloud_cover",
+    "value": 0.1
+  },
+  {
+    "id": "urn:example:entity:select-products-sentinel2:out:urls",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2#outputs/urls",
+    "wasGeneratedBy": "urn:example:run:algae-bloom:select-products-sentinel2",
+    "wasDerivedFrom": [
+      "urn:example:entity:select-products-sentinel2:in:aoi"
+    ],
+    "value": [
+      "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_1_L2A",
+      "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A"
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:image:ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0",
+    "provType": "prov:SoftwareAgent",
+    "name": "container image ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0"
+  }
+]

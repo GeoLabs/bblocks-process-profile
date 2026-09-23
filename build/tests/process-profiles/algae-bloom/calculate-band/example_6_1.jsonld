@@ -1,7 +1,92 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld",
-  "result": {
-    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-calculate-band-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
-    "type": "image/tiff; application=geotiff"
-  }
+  "@graph": [
+    {
+      "id": "urn:example:run:algae-bloom:calculate-band",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band",
+      "startedAtTime": "2026-09-23T06:40:28Z",
+      "used": [
+        "urn:example:entity:calculate-band:in:name",
+        "urn:example:entity:calculate-band:in:calc",
+        "urn:example:entity:calculate-band:in:band_a",
+        "urn:example:entity:calculate-band:in:band_c"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ogc-ospd/algae-usecase/calculate-band:1.1.0"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/calculate-band"
+        }
+      ],
+      "endedAtTime": "2026-09-23T06:40:29Z"
+    },
+    {
+      "id": "urn:example:entity:calculate-band:in:name",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/calculate-band#inputs/name",
+      "value": "S2A_29SPC_20190701_0_L2A_turbidity"
+    },
+    {
+      "id": "urn:example:entity:calculate-band:in:calc",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/calculate-band#inputs/calc",
+      "value": "(8.93*(C/A))-6.39"
+    },
+    {
+      "id": "urn:example:entity:calculate-band:in:band_a",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/calculate-band#inputs/band_a",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B01.tif",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ]
+    },
+    {
+      "id": "urn:example:entity:calculate-band:in:band_c",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/calculate-band#inputs/band_c",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03_60m.tiff",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ]
+    },
+    {
+      "id": "urn:example:entity:calculate-band:out:result",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/calculate-band#outputs/result",
+      "wasGeneratedBy": "urn:example:run:algae-bloom:calculate-band",
+      "wasDerivedFrom": [
+        "urn:example:entity:calculate-band:in:band_a",
+        "urn:example:entity:calculate-band:in:band_c"
+      ],
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-calculate-band-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ogc-ospd/algae-usecase/calculate-band:1.1.0",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ogc-ospd/algae-usecase/calculate-band:1.1.0"
+    }
+  ]
 }

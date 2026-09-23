@@ -73,37 +73,9 @@ told apart. With the generic profile this is only possible as a plain `prov:Enti
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
-**Manually corrected** (the raw transform output is kept as a separate example):
-
-- M-01/M-02 inputs.band_a: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_b: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_c: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_d: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_e: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_f: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_g: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_h: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_i: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_j: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_k: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_l: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_m: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_n: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_o: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_p: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_q: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_r: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_s: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_t: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_u: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_v: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_w: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_x: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_y: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_z: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
+No manual correction: the example is the unmodified transform output.
 
 ## Provenance view
 
@@ -137,7 +109,7 @@ Candidate entry `https://geolabs.github.io/bblocks-process-profiles/def/process-
 The CWL CommandLineTool is referenced, not copied: <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/calculate-band.cwl>.
 
 ### processDescription
-OGC API - Processes processDescription derived from the CWL (manually corrected, see description).
+OGC API - Processes processDescription derived from the CWL.
 #### json
 ```json
 {
@@ -210,18 +182,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -235,18 +207,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -260,18 +232,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -285,18 +257,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -310,18 +282,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -335,18 +307,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -360,18 +332,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -385,18 +357,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -410,18 +382,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -435,18 +407,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -460,18 +432,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -485,18 +457,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -510,18 +482,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -535,18 +507,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -560,18 +532,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -585,18 +557,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -610,18 +582,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -635,18 +607,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -660,18 +632,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -685,18 +657,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -710,18 +682,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -735,18 +707,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -760,18 +732,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -785,18 +757,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -810,18 +782,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -835,18 +807,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -860,8 +832,8 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     }
   },
@@ -949,18 +921,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -974,18 +946,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -999,18 +971,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1024,18 +996,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1049,18 +1021,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1074,18 +1046,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1099,18 +1071,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1124,18 +1096,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1149,18 +1121,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1174,18 +1146,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1199,18 +1171,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1224,18 +1196,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1249,18 +1221,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1274,18 +1246,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1299,18 +1271,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1324,18 +1296,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1349,18 +1321,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1374,18 +1346,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1399,18 +1371,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1424,18 +1396,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1449,18 +1421,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1474,18 +1446,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1499,18 +1471,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1524,18 +1496,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1549,18 +1521,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1574,18 +1546,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "oneOf": [
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff; application=geotiff"
+            "contentMediaType": "image/tiff; application=geotiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/tiff"
+            "contentMediaType": "image/tiff",
+            "contentEncoding": "binary"
           },
           {
             "type": "string",
-            "contentEncoding": "binary",
-            "contentMediaType": "image/jp2"
+            "contentMediaType": "image/jp2",
+            "contentEncoding": "binary"
           }
         ]
       },
@@ -1599,8 +1571,8 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/tiff; application=geotiff"
+        "contentMediaType": "image/tiff; application=geotiff",
+        "contentEncoding": "binary"
       }
     }
   },
@@ -1652,10 +1624,10 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ] ] ] ;
@@ -1668,33 +1640,33 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_d [ dcterms:description "" ;
                     dcterms:title "band_d" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_e [ dcterms:description "" ;
                     dcterms:title "band_e" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ] ] ] ;
@@ -1704,23 +1676,23 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_g [ dcterms:description "" ;
                     dcterms:title "band_g" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ] ] ] ;
@@ -1730,54 +1702,28 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_i [ dcterms:description "" ;
                     dcterms:title "band_i" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_j [ dcterms:description "" ;
                     dcterms:title "band_j" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns2:band_k [ dcterms:description "" ;
-                    dcterms:title "band_k" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns2:band_l [ dcterms:description "" ;
-                    dcterms:title "band_l" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -1789,6 +1735,32 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_k [ dcterms:description "" ;
+                    dcterms:title "band_k" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_l [ dcterms:description "" ;
+                    dcterms:title "band_l" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_m [ dcterms:description "" ;
                     dcterms:title "band_m" ;
                     proc:maxOccurs 1 ;
@@ -1808,19 +1780,6 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns2:band_o [ dcterms:description "" ;
-                    dcterms:title "band_o" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
@@ -1828,6 +1787,19 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:band_o [ dcterms:description "" ;
+                    dcterms:title "band_o" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_p [ dcterms:description "" ;
                     dcterms:title "band_p" ;
                     proc:maxOccurs 1 ;
@@ -1837,23 +1809,23 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_q [ dcterms:description "" ;
                     dcterms:title "band_q" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_r [ dcterms:description "" ;
                     dcterms:title "band_r" ;
                     proc:maxOccurs 1 ;
@@ -1863,10 +1835,10 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_s [ dcterms:description "" ;
                     dcterms:title "band_s" ;
                     proc:maxOccurs 1 ;
@@ -1876,20 +1848,20 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_t [ dcterms:description "" ;
                     dcterms:title "band_t" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ] ] ] ;
@@ -1899,10 +1871,10 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
@@ -1912,32 +1884,19 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_w [ dcterms:description "" ;
                     dcterms:title "band_w" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
-            ns2:band_x [ dcterms:description "" ;
-                    dcterms:title "band_x" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
@@ -1945,16 +1904,29 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_x [ dcterms:description "" ;
+                    dcterms:title "band_x" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_y [ dcterms:description "" ;
                     dcterms:title "band_y" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
@@ -1964,13 +1936,13 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:calc [ dcterms:description "Calculation to perform with band references." ;
                     dcterms:title "Calculation" ;
                     proc:maxOccurs 1 ;
@@ -1982,19 +1954,19 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
+    proc:metadata [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "Performs a calculation with bands." ;
             proc:role schema:name ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:email "francis.charette-migneault@crim.ca" ;
+                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns3:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
         [ rdf:value "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
             proc:role schema:description ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
         [ rdf:value "1.1.0" ;
             proc:role schema:softwareVersion ] ;
     proc:mutable true ;
@@ -2005,915 +1977,6 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:schema [ proc:type "string" ;
                             ns1:contentEncoding "binary" ;
                             ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] .
-
-
-```
-
-
-### Raw cwl-to-ogcprocess output
-Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
-#### json
-```json
-{
-  "id": "calculate-band",
-  "version": "1.1.0",
-  "title": "Performs a calculation with bands.",
-  "description": "Performs a calculation over JPEG bands and returns the resulting GeoTiff.",
-  "mutable": true,
-  "keywords": [
-    "Sentinel-2",
-    "OSPD",
-    "demo",
-    "calculation"
-  ],
-  "metadata": [
-    {
-      "role": "https://schema.org/name",
-      "value": "Performs a calculation with bands."
-    },
-    {
-      "role": "https://schema.org/description",
-      "value": "Performs a calculation over JPEG bands and returns the resulting GeoTiff."
-    },
-    {
-      "role": "https://schema.org/softwareVersion",
-      "value": "1.1.0"
-    },
-    {
-      "role": "https://schema.org/author",
-      "value": {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "identifier": "http://orcid.org/0000-0003-4862-3349",
-        "email": "francis.charette-migneault@crim.ca",
-        "name": "Francis Charette-Migneault"
-      }
-    },
-    {
-      "role": "https://schema.org/codeRepository",
-      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
-    },
-    {
-      "role": "https://schema.org/license",
-      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
-    }
-  ],
-  "inputs": {
-    "name": {
-      "title": "Output file name",
-      "description": "Name to apply for the output GeoTiff file.",
-      "schema": {
-        "type": "string"
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
-    },
-    "calc": {
-      "title": "Calculation",
-      "description": "Calculation to perform with band references.",
-      "schema": {
-        "type": "string"
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
-    },
-    "band_a": {
-      "title": "band_a",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_b": {
-      "title": "band_b",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_c": {
-      "title": "band_c",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_d": {
-      "title": "band_d",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_e": {
-      "title": "band_e",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_f": {
-      "title": "band_f",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_g": {
-      "title": "band_g",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_h": {
-      "title": "band_h",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_i": {
-      "title": "band_i",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_j": {
-      "title": "band_j",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_k": {
-      "title": "band_k",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_l": {
-      "title": "band_l",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_m": {
-      "title": "band_m",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_n": {
-      "title": "band_n",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_o": {
-      "title": "band_o",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_p": {
-      "title": "band_p",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_q": {
-      "title": "band_q",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_r": {
-      "title": "band_r",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_s": {
-      "title": "band_s",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_t": {
-      "title": "band_t",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_u": {
-      "title": "band_u",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_v": {
-      "title": "band_v",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_w": {
-      "title": "band_w",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_x": {
-      "title": "band_x",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_y": {
-      "title": "band_y",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_z": {
-      "title": "band_z",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    }
-  },
-  "outputs": {
-    "result": {
-      "title": "result",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      }
-    }
-  },
-  "jobControlOptions": [
-    "async-execute"
-  ],
-  "outputTransmission": [
-    "value",
-    "reference"
-  ]
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld",
-  "id": "calculate-band",
-  "version": "1.1.0",
-  "title": "Performs a calculation with bands.",
-  "description": "Performs a calculation over JPEG bands and returns the resulting GeoTiff.",
-  "mutable": true,
-  "keywords": [
-    "Sentinel-2",
-    "OSPD",
-    "demo",
-    "calculation"
-  ],
-  "metadata": [
-    {
-      "role": "https://schema.org/name",
-      "value": "Performs a calculation with bands."
-    },
-    {
-      "role": "https://schema.org/description",
-      "value": "Performs a calculation over JPEG bands and returns the resulting GeoTiff."
-    },
-    {
-      "role": "https://schema.org/softwareVersion",
-      "value": "1.1.0"
-    },
-    {
-      "role": "https://schema.org/author",
-      "value": {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "identifier": "http://orcid.org/0000-0003-4862-3349",
-        "email": "francis.charette-migneault@crim.ca",
-        "name": "Francis Charette-Migneault"
-      }
-    },
-    {
-      "role": "https://schema.org/codeRepository",
-      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
-    },
-    {
-      "role": "https://schema.org/license",
-      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
-    }
-  ],
-  "inputs": {
-    "name": {
-      "title": "Output file name",
-      "description": "Name to apply for the output GeoTiff file.",
-      "schema": {
-        "type": "string"
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
-    },
-    "calc": {
-      "title": "Calculation",
-      "description": "Calculation to perform with band references.",
-      "schema": {
-        "type": "string"
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
-    },
-    "band_a": {
-      "title": "band_a",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_b": {
-      "title": "band_b",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_c": {
-      "title": "band_c",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_d": {
-      "title": "band_d",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_e": {
-      "title": "band_e",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_f": {
-      "title": "band_f",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_g": {
-      "title": "band_g",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_h": {
-      "title": "band_h",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_i": {
-      "title": "band_i",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_j": {
-      "title": "band_j",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_k": {
-      "title": "band_k",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_l": {
-      "title": "band_l",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_m": {
-      "title": "band_m",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_n": {
-      "title": "band_n",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_o": {
-      "title": "band_o",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_p": {
-      "title": "band_p",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_q": {
-      "title": "band_q",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_r": {
-      "title": "band_r",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_s": {
-      "title": "band_s",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_t": {
-      "title": "band_t",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_u": {
-      "title": "band_u",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_v": {
-      "title": "band_v",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_w": {
-      "title": "band_w",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_x": {
-      "title": "band_x",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_y": {
-      "title": "band_y",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    },
-    "band_z": {
-      "title": "band_z",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      },
-      "minOccurs": 0,
-      "maxOccurs": 1
-    }
-  },
-  "outputs": {
-    "result": {
-      "title": "result",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      }
-    }
-  },
-  "jobControlOptions": [
-    "async-execute"
-  ],
-  "outputTransmission": [
-    "value",
-    "reference"
-  ]
-}
-```
-
-#### ttl
-```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://schema.org/> .
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
-@prefix proc: <https://w3id.org/ogc/api/processes/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <https://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-process-profiles/def/process/calculate-band> dcterms:description "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
-    dcterms:subject "OSPD",
-        "Sentinel-2",
-        "calculation",
-        "demo" ;
-    dcterms:title "Performs a calculation with bands." ;
-    pp:version "1.1.0" ;
-    proc:inputs [ ns2:band_a [ dcterms:description "" ;
-                    dcterms:title "band_a" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_b [ dcterms:description "" ;
-                    dcterms:title "band_b" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_c [ dcterms:description "" ;
-                    dcterms:title "band_c" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_d [ dcterms:description "" ;
-                    dcterms:title "band_d" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_e [ dcterms:description "" ;
-                    dcterms:title "band_e" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_f [ dcterms:description "" ;
-                    dcterms:title "band_f" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_g [ dcterms:description "" ;
-                    dcterms:title "band_g" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_h [ dcterms:description "" ;
-                    dcterms:title "band_h" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_i [ dcterms:description "" ;
-                    dcterms:title "band_i" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_j [ dcterms:description "" ;
-                    dcterms:title "band_j" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_k [ dcterms:description "" ;
-                    dcterms:title "band_k" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_l [ dcterms:description "" ;
-                    dcterms:title "band_l" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_m [ dcterms:description "" ;
-                    dcterms:title "band_m" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_n [ dcterms:description "" ;
-                    dcterms:title "band_n" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_o [ dcterms:description "" ;
-                    dcterms:title "band_o" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_p [ dcterms:description "" ;
-                    dcterms:title "band_p" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_q [ dcterms:description "" ;
-                    dcterms:title "band_q" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_r [ dcterms:description "" ;
-                    dcterms:title "band_r" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_s [ dcterms:description "" ;
-                    dcterms:title "band_s" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_t [ dcterms:description "" ;
-                    dcterms:title "band_t" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_u [ dcterms:description "" ;
-                    dcterms:title "band_u" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_v [ dcterms:description "" ;
-                    dcterms:title "band_v" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_w [ dcterms:description "" ;
-                    dcterms:title "band_w" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_x [ dcterms:description "" ;
-                    dcterms:title "band_x" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_y [ dcterms:description "" ;
-                    dcterms:title "band_y" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:band_z [ dcterms:description "" ;
-                    dcterms:title "band_z" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns2:calc [ dcterms:description "Calculation to perform with band references." ;
-                    dcterms:title "Calculation" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 1 ;
-                    proc:schema [ proc:type "string" ] ] ;
-            ns2:name [ dcterms:description "Name to apply for the output GeoTiff file." ;
-                    dcterms:title "Output file name" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 1 ;
-                    proc:schema [ proc:type "string" ] ] ] ;
-    proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ],
-        [ rdf:value "Performs a calculation with bands." ;
-            proc:role schema:name ],
-        [ rdf:value "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
-            proc:role schema:description ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ] ;
-    proc:mutable true ;
-    proc:outputTransmission "reference",
-        "value" ;
-    proc:outputs [ pp:result [ dcterms:description "" ;
-                    dcterms:title "result" ;
-                    proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ] .
 
 
 ```
@@ -11043,13 +10106,13 @@ id:248923b2-906c-4d76-867f-da6f12462902 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:667fa027-ed54-41eb-97a1-2dba34cda14d ;
-            prov:atTime "2026-09-23T08:40:32.099562"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/output_file> ],
-        [ a prov:Generation ;
             prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
             prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252525252520process_2/turbidity_color> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252525252520process_2/turbidity_color> ],
+        [ a prov:Generation ;
+            prov:activity id:667fa027-ed54-41eb-97a1-2dba34cda14d ;
+            prov:atTime "2026-09-23T08:40:32.099562"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/output_file> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:a2beee36554454e4c0090480d062bc893f3ae7cc ] ;
     cwlprov:basename "S2A_29SPC_20190701_0_L2A_turbidity_color.tif" ;
@@ -11060,13 +10123,13 @@ id:372c5307-8059-4cb2-afdb-5417b1e9d278 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
-            prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252520process_2/chlorophyll_a_plot> ],
-        [ a prov:Generation ;
             prov:activity id:404675d7-a7d3-463f-8754-35edf2fc0c25 ;
             prov:atTime "2026-09-23T08:40:34.302796"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/output_plot> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/output_plot> ],
+        [ a prov:Generation ;
+            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
+            prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252520process_2/chlorophyll_a_plot> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:1224781c8a82490664559a3b2e66fa3e14e09956 ] ;
     cwlprov:basename "S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png" ;
@@ -11077,13 +10140,13 @@ id:3a29ce4a-c70b-4cb5-ac90-5cc003d32df1 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
-            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252520process/chlorophyll_a_plot> ],
-        [ a prov:Generation ;
             prov:activity id:9e684a93-4ee7-4ace-b244-0bbaaa4fb10e ;
             prov:atTime "2026-09-23T08:35:40.163033"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/output_plot> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/output_plot> ],
+        [ a prov:Generation ;
+            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
+            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252520process/chlorophyll_a_plot> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:38185787e3c54223cfadb4c26c22b126ad624d21 ] ;
     cwlprov:basename "S2A_29SPC_20190701_1_L2A_chlorophyll_a_plot.png" ;
@@ -11145,13 +10208,13 @@ id:a1fdff0a-0d34-46cc-8ad6-0ec1bfee7ad2 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:eb258705-e788-4815-aaa8-8ce9fe8b95bd ;
-            prov:atTime "2026-09-23T08:40:28.335308"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/output_plot> ],
-        [ a prov:Generation ;
             prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
             prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252525252520process_2/cyanobacteria_plot> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252525252520process_2/cyanobacteria_plot> ],
+        [ a prov:Generation ;
+            prov:activity id:eb258705-e788-4815-aaa8-8ce9fe8b95bd ;
+            prov:atTime "2026-09-23T08:40:28.335308"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/output_plot> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:3822adba1b42a347ef376f9ac0e7259d0ba82b22 ] ;
     cwlprov:basename "S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png" ;
@@ -11162,13 +10225,13 @@ id:cc8be8e0-4b98-47f7-8c0c-a757d7a5eff4 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:448bbe1c-8732-4d0a-a0b2-01dcf453c5f1 ;
-            prov:atTime "2026-09-23T08:35:37.417156"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/output_file> ],
-        [ a prov:Generation ;
             prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
             prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252525252520process/turbidity_color> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252525252520process/turbidity_color> ],
+        [ a prov:Generation ;
+            prov:activity id:448bbe1c-8732-4d0a-a0b2-01dcf453c5f1 ;
+            prov:atTime "2026-09-23T08:35:37.417156"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/output_file> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:7c493f20c0ed3a9a2a729ce9e109ca30f4e9836a ] ;
     cwlprov:basename "S2A_29SPC_20190701_1_L2A_turbidity_color.tif" ;
@@ -11179,13 +10242,13 @@ id:d1872c35-1d75-47b2-8315-90b2bbf42c23 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
-            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252525252520process/cyanobacteria_plot> ],
-        [ a prov:Generation ;
             prov:activity id:6f1095f0-e7c1-47e1-96c0-c8fc3262cbd8 ;
             prov:atTime "2026-09-23T08:35:32.104232"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/output_plot> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/output_plot> ],
+        [ a prov:Generation ;
+            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
+            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%252525252520process/cyanobacteria_plot> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:876c7b4d7381ac5660a4507292c9324eb295a297 ] ;
     cwlprov:basename "S2A_29SPC_20190701_1_L2A_cyanobacteria_plot.png" ;
@@ -11196,13 +10259,13 @@ id:f82e4423-a8ac-41d1-9919-25b94a343f05 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:6f1095f0-e7c1-47e1-96c0-c8fc3262cbd8 ;
-            prov:atTime "2026-09-23T08:35:32.104232"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/output_file> ],
-        [ a prov:Generation ;
             prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
             prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252520process/cyanobacteria_color> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%2525252520process/cyanobacteria_color> ],
+        [ a prov:Generation ;
+            prov:activity id:6f1095f0-e7c1-47e1-96c0-c8fc3262cbd8 ;
+            prov:atTime "2026-09-23T08:35:32.104232"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/output_file> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:88d67511003f18c13b7cdc982f5796ab5ae261fc ] ;
     cwlprov:basename "S2A_29SPC_20190701_1_L2A_cyanobacteria_color.tif" ;
@@ -11502,13 +10565,13 @@ id:12b49a35-ae72-4b3d-933e-b2d03c6692b4 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
-            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%20process/chlorophyll_a> ],
-        [ a prov:Generation ;
             prov:activity id:af841592-5838-42f8-aa5d-95146384bc26 ;
             prov:atTime "2026-09-23T08:31:51.324170"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/result> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/result> ],
+        [ a prov:Generation ;
+            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
+            prov:atTime "2026-09-23T08:35:40.173722"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%20process/chlorophyll_a> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:32ae8712ff4f8b8b6b34af45257c41c16474dc98 ] ;
     cwlprov:basename "S2A_29SPC_20190701_1_L2A_chlorophyll_a.tiff" ;
@@ -11530,117 +10593,117 @@ id:159f4467-f8cc-430c-9f3c-88fbbac7801c a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:40:28.567857"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575237"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575257"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575298"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_j> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575368"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_q> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.574118"^^xsd:dateTime ;
-            prov:entity id:5811cb86-e667-4b42-bd25-995c414a260e ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_a> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_f> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:28.575326"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_m> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.574162"^^xsd:dateTime ;
-            prov:entity id:3dd21e1d-8350-48e9-bfe0-28b4a15b59ab ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_c> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575289"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575413"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_i> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575338"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575270"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_g> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575220"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575434"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_x> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575317"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_l> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575257"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_f> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575425"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_w> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575452"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_z> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575308"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_k> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575377"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_r> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575443"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_y> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575280"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.574628"^^xsd:dateTime ;
-            prov:entity data:81e487db73b1725c362decd3aac3a2c13f86d595 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/calc> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_v> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:28.575396"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_t> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575358"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575280"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_p> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_h> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575413"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575434"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_v> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_x> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575386"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575338"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_s> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_n> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:28.575404"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:28.575237"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_u> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_d> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575317"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_l> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:28.575201"^^xsd:dateTime ;
             prov:entity data:592104a468524cd5e063a0e9da39927566853012 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/name> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575270"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_g> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.574162"^^xsd:dateTime ;
+            prov:entity id:3dd21e1d-8350-48e9-bfe0-28b4a15b59ab ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_c> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575308"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_k> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575368"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575298"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_j> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575377"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575404"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575358"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575386"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575443"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_y> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:28.575347"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_o> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.574628"^^xsd:dateTime ;
+            prov:entity data:81e487db73b1725c362decd3aac3a2c13f86d595 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/calc> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:28.575247"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_e> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_e> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575289"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575452"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_z> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575425"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_w> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.574118"^^xsd:dateTime ;
+            prov:entity id:5811cb86-e667-4b42-bd25-995c414a260e ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:28.575220"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/band_b> ] .
 
 id:15e3229d-5bd8-408e-a96a-da5e4356b8d0 a prov:Agent,
         prov:SoftwareAgent ;
@@ -11651,10 +10714,10 @@ id:2140e929-bf51-4666-b8c5-c93b1ba365d6 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/reproject_b03_60m_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:fcd270b7-0276-4c6d-b13d-35cb00865823 ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m_2> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m_2> ],
+        [ a prov:Association ;
+            prov:agent id:fcd270b7-0276-4c6d-b13d-35cb00865823 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:39:38.352541"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -11682,10 +10745,10 @@ id:29af451f-402f-4925-b588-7d3cdc25c6f9 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b04_10m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:d9639ebc-984b-431c-a823-05a86eb32fb5 ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m> ],
+        [ a prov:Association ;
+            prov:agent id:d9639ebc-984b-431c-a823-05a86eb32fb5 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:27:22.493610"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -11693,13 +10756,13 @@ id:29af451f-402f-4925-b588-7d3cdc25c6f9 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:26:25.904018"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:25.961176"^^xsd:dateTime ;
-            prov:entity data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m/band> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:25.961572"^^xsd:dateTime ;
             prov:entity data:c80240b036ceef4fdcfb684013f5e78f2fd144e7 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m/product_url> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:25.961176"^^xsd:dateTime ;
+            prov:entity data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m/band> ] .
 
 id:2a9686ec-313f-4d80-93b4-f4867c661dd8 a wfprov:ProcessRun,
         prov:Activity ;
@@ -11761,10 +10824,10 @@ id:4db7406a-158b-48d8-8594-4e042177c7b6 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b04_10m_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2> ],
+            prov:agent id:b1a07bb1-efbb-400e-8886-bb197dbe7345 ],
         [ a prov:Association ;
-            prov:agent id:b1a07bb1-efbb-400e-8886-bb197dbe7345 ] ;
+            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:36:39.949967"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -11772,13 +10835,13 @@ id:4db7406a-158b-48d8-8594-4e042177c7b6 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:35:40.369662"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:40.379073"^^xsd:dateTime ;
-            prov:entity data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2/band> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:40.379720"^^xsd:dateTime ;
             prov:entity data:084a442888f71ba66d9e75fde8221f58dfaa6acf ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2/product_url> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:40.379073"^^xsd:dateTime ;
+            prov:entity data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b04_10m_2/band> ] .
 
 id:4e6424db-66b9-4389-81ca-0a3040fbfd07 a wf4ever:File,
         wfprov:Artifact,
@@ -11827,10 +10890,10 @@ id:57b7acfa-2232-4152-9c9c-c828c764753d a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/calculate_cyanobacteria" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:f24c1565-ee7f-4d30-9e3e-f439a7d3df25 ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria> ],
+        [ a prov:Association ;
+            prov:agent id:f24c1565-ee7f-4d30-9e3e-f439a7d3df25 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:30:01.871693"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -11838,6 +10901,62 @@ id:57b7acfa-2232-4152-9c9c-c828c764753d a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:29:45.564470"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691642"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691467"^^xsd:dateTime ;
+            prov:entity data:99bf64d1155bc89e1a330d0cf10036305f65955d ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691669"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_v> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691185"^^xsd:dateTime ;
+            prov:entity data:a71d74edcae981a17e7464331cb2525eeabd9092 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/calc> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691680"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_w> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691689"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_x> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691538"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.690347"^^xsd:dateTime ;
+            prov:entity id:6d7d32e8-319d-4d54-9cb2-1094ccae2bda ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691602"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_o> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691574"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_l> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691612"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.690422"^^xsd:dateTime ;
+            prov:entity id:374994f9-116d-48a7-9749-2f5d0a21702e ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_b> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691707"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_z> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.690440"^^xsd:dateTime ;
+            prov:entity id:4e86d762-9ac6-4702-8818-e66cfd5e6425 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_c> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:45.691652"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_t> ],
@@ -11846,9 +10965,9 @@ id:57b7acfa-2232-4152-9c9c-c828c764753d a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_q> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691504"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691593"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_f> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_n> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:45.691630"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -11858,97 +10977,41 @@ id:57b7acfa-2232-4152-9c9c-c828c764753d a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_j> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.690440"^^xsd:dateTime ;
-            prov:entity id:4e86d762-9ac6-4702-8818-e66cfd5e6425 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_c> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691484"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691523"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691669"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691495"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_e> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691593"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691642"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_s> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691707"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_z> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691185"^^xsd:dateTime ;
-            prov:entity data:a71d74edcae981a17e7464331cb2525eeabd9092 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/calc> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691538"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_i> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691574"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_l> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691699"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_y> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691689"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_x> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.690347"^^xsd:dateTime ;
-            prov:entity id:6d7d32e8-319d-4d54-9cb2-1094ccae2bda ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_a> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691661"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691612"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691467"^^xsd:dateTime ;
-            prov:entity data:99bf64d1155bc89e1a330d0cf10036305f65955d ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/name> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_h> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:45.691563"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_k> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691523"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691495"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_h> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_e> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691583"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691484"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_m> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_d> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.690422"^^xsd:dateTime ;
-            prov:entity id:374994f9-116d-48a7-9749-2f5d0a21702e ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_b> ],
+            prov:atTime "2026-09-23T08:29:45.691661"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:29:45.691504"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_f> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:45.691514"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_g> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691680"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691699"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_w> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_y> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:45.691602"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:29:45.691583"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_o> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria/band_m> ] .
 
 id:5c2f550b-8421-44b9-833c-1f6d2b83155f a prov:Entity ;
     prov:value "60"^^xsd:int .
@@ -11957,10 +11020,10 @@ id:60b3089e-0d3d-45d0-a4b9-10f73441289d a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/calculate_turbidity" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:a541ab4e-c3d9-4a7f-9b05-fa686586b70f ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity> ],
+        [ a prov:Association ;
+            prov:agent id:a541ab4e-c3d9-4a7f-9b05-fa686586b70f ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:35:34.710217"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -11968,69 +11031,41 @@ id:60b3089e-0d3d-45d0-a4b9-10f73441289d a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:35:32.394913"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408962"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_k> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409084"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409022"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408924"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408973"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_l> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408385"^^xsd:dateTime ;
-            prov:entity data:81e487db73b1725c362decd3aac3a2c13f86d595 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/calc> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409010"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_o> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408986"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_m> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.407551"^^xsd:dateTime ;
-            prov:entity id:ce4d56e2-f5b3-4c5f-bc54-5eead2341bda ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_c> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408899"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_f> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409113"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_w> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.409101"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_v> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408998"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_n> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408860"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_b> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.408887"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_e> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.407492"^^xsd:dateTime ;
-            prov:entity id:ac7fbdba-ab57-4cab-92ea-86425e0d72da ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_a> ],
+            prov:atTime "2026-09-23T08:35:32.408834"^^xsd:dateTime ;
+            prov:entity data:337c1d5047de712ebdd9cfe4e5bafaad9ed60ca1 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/name> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.408912"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_g> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408874"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.407492"^^xsd:dateTime ;
+            prov:entity id:ac7fbdba-ab57-4cab-92ea-86425e0d72da ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408935"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_d> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408951"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_j> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.409127"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -12040,45 +11075,73 @@ id:60b3089e-0d3d-45d0-a4b9-10f73441289d a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_r> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408935"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.409036"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_i> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_q> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.409060"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_s> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408951"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.408973"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_j> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_l> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408834"^^xsd:dateTime ;
-            prov:entity data:337c1d5047de712ebdd9cfe4e5bafaad9ed60ca1 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408998"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.409084"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_n> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408924"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.409113"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_w> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.409072"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_t> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409036"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_q> ],
+            prov:atTime "2026-09-23T08:35:32.407551"^^xsd:dateTime ;
+            prov:entity id:ce4d56e2-f5b3-4c5f-bc54-5eead2341bda ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_c> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.408860"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.409139"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_b> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_y> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:32.409150"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_z> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:32.409139"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:32.408986"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_y> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_m> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408385"^^xsd:dateTime ;
+            prov:entity data:81e487db73b1725c362decd3aac3a2c13f86d595 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/calc> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.409010"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_o> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408899"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408874"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_d> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.408962"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_k> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:32.409022"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity/band_p> ] .
 
 id:67aa2703-a2a1-434d-9a49-072e268b1de7 a prov:Agent,
         prov:SoftwareAgent ;
@@ -12113,117 +11176,117 @@ id:76594558-3301-40b6-b667-368e942831f2 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:39:45.590645"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597983"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_s> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597467"^^xsd:dateTime ;
-            prov:entity data:6b318d7d0eb73571432d45252f14693013f68feb ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598035"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_w> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597547"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598048"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_x> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597950"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598058"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_y> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:45.597514"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_e> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597489"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597920"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_m> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597940"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_o> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598067"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_z> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.596481"^^xsd:dateTime ;
-            prov:entity id:3dd21e1d-8350-48e9-bfe0-28b4a15b59ab ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_c> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598005"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597526"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_f> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597503"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597910"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_l> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597557"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_i> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.596439"^^xsd:dateTime ;
-            prov:entity id:5811cb86-e667-4b42-bd25-995c414a260e ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_a> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597973"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_r> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.598025"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597090"^^xsd:dateTime ;
-            prov:entity data:c6f40f302effca33768fc256bbb5dedaca044174 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/calc> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597893"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_k> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597994"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_t> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:45.597930"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_n> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598058"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597467"^^xsd:dateTime ;
+            prov:entity data:6b318d7d0eb73571432d45252f14693013f68feb ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598067"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_z> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:45.597537"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_g> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:45.597569"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:45.597893"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_j> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_k> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597489"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_b> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.596439"^^xsd:dateTime ;
+            prov:entity id:5811cb86-e667-4b42-bd25-995c414a260e ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597547"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598025"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_v> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.596481"^^xsd:dateTime ;
+            prov:entity id:3dd21e1d-8350-48e9-bfe0-28b4a15b59ab ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_c> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597910"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_l> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597526"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597950"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597920"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_m> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597503"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_d> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597983"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597090"^^xsd:dateTime ;
+            prov:entity data:c6f40f302effca33768fc256bbb5dedaca044174 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/calc> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598035"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_w> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597994"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_t> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597973"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597557"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598005"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.598048"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_x> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:45.597959"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_q> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597940"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_o> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:45.597569"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/band_j> ] .
 
 id:780ec89d-f9bc-4d68-a37b-36bb3230bca9 a prov:Agent,
         prov:SoftwareAgent ;
@@ -12239,13 +11302,13 @@ id:883ae32e-c86f-491e-bcaf-320d0badfa08 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:76594558-3301-40b6-b667-368e942831f2 ;
-            prov:atTime "2026-09-23T08:39:46.610597"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/result> ],
-        [ a prov:Generation ;
             prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
             prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%20process_2/chlorophyll_a> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%20process_2/chlorophyll_a> ],
+        [ a prov:Generation ;
+            prov:activity id:76594558-3301-40b6-b667-368e942831f2 ;
+            prov:atTime "2026-09-23T08:39:46.610597"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a_2/result> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:6947846b1796dd6e940e390f61208a85f45117b0 ] ;
     cwlprov:basename "S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff" ;
@@ -12304,9 +11367,9 @@ id:a9c6d5fa-9367-4ae4-b720-41f313d07f4c a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:5c2f550b-8421-44b9-833c-1f6d2b83155f ],
+            provext:member id:09792302-bb35-4042-a300-a2e7f2acf386 ],
         [ a provext:Membership ;
-            provext:member id:09792302-bb35-4042-a300-a2e7f2acf386 ] .
+            provext:member id:5c2f550b-8421-44b9-833c-1f6d2b83155f ] .
 
 id:ab87aed1-ceb2-4bf2-9ab2-f5e5de480e7e a prov:Agent,
         prov:SoftwareAgent ;
@@ -12317,10 +11380,10 @@ id:af841592-5838-42f8-aa5d-95146384bc26 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/calculate_chlorophyll_a" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a> ],
+            prov:agent id:c3a912fe-4417-4bd1-81a8-95e5654f7532 ],
         [ a prov:Association ;
-            prov:agent id:c3a912fe-4417-4bd1-81a8-95e5654f7532 ] ;
+            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:31:51.324117"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -12328,53 +11391,13 @@ id:af841592-5838-42f8-aa5d-95146384bc26 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:30:02.101602"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.125259"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_f> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.123656"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.125284"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_g> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128542"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.125327"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_i> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.129020"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_y> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:30:02.128682"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_t> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128973"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:30:02.128499"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_w> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.123575"^^xsd:dateTime ;
-            prov:entity data:5764e8024006b4e2959972b2ed8133b75af135e7 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128654"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_s> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128256"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_j> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128471"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_m> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_n> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:30:02.128612"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -12384,6 +11407,82 @@ id:af841592-5838-42f8-aa5d-95146384bc26 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_k> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.123575"^^xsd:dateTime ;
+            prov:entity data:5764e8024006b4e2959972b2ed8133b75af135e7 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.125327"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128256"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_j> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128542"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.122046"^^xsd:dateTime ;
+            prov:entity data:c6f40f302effca33768fc256bbb5dedaca044174 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/calc> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.129020"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.123630"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_b> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.118857"^^xsd:dateTime ;
+            prov:entity id:ac7fbdba-ab57-4cab-92ea-86425e0d72da ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.125259"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128563"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128937"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_v> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.125284"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_g> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128654"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128704"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128471"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_m> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128428"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_l> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.125306"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.128973"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_w> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:30:02.125207"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_e> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:30:02.130693"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_z> ],
@@ -12392,53 +11491,17 @@ id:af841592-5838-42f8-aa5d-95146384bc26 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_o> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128428"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_l> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:30:02.128998"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_x> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.123630"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:30:02.123656"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.125207"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_e> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128937"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128499"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.125306"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128563"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_q> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_d> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:30:02.118918"^^xsd:dateTime ;
             prov:entity id:ce4d56e2-f5b3-4c5f-bc54-5eead2341bda ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_c> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.122046"^^xsd:dateTime ;
-            prov:entity data:c6f40f302effca33768fc256bbb5dedaca044174 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/calc> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.128704"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:30:02.118857"^^xsd:dateTime ;
-            prov:entity id:ac7fbdba-ab57-4cab-92ea-86425e0d72da ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_a> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_chlorophyll_a/band_c> ] .
 
 id:b1a07bb1-efbb-400e-8886-bb197dbe7345 a prov:Agent,
         prov:SoftwareAgent ;
@@ -12470,10 +11533,10 @@ id:cb365be4-5b82-466e-a735-52203624488b a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b03_10m_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2> ],
+            prov:agent id:7e607c5d-519f-412b-9070-e1bcbc762376 ],
         [ a prov:Association ;
-            prov:agent id:7e607c5d-519f-412b-9070-e1bcbc762376 ] ;
+            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:38:35.792992"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -12481,25 +11544,25 @@ id:cb365be4-5b82-466e-a735-52203624488b a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:36:40.025061"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:36:40.030554"^^xsd:dateTime ;
-            prov:entity data:7c5d11a451cde788be37383d50239d7672a8cb1f ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2/band> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:36:40.031183"^^xsd:dateTime ;
             prov:entity data:084a442888f71ba66d9e75fde8221f58dfaa6acf ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2/product_url> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:36:40.030554"^^xsd:dateTime ;
+            prov:entity data:7c5d11a451cde788be37383d50239d7672a8cb1f ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b03_10m_2/band> ] .
 
 id:d0b679db-ef77-442f-a4c0-f093f5da8990 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
-            prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%25252525252520process_2/turbidity> ],
-        [ a prov:Generation ;
             prov:activity id:159f4467-f8cc-430c-9f3c-88fbbac7801c ;
             prov:atTime "2026-09-23T08:40:29.594121"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/result> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_turbidity_2/result> ],
+        [ a prov:Generation ;
+            prov:activity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ;
+            prov:atTime "2026-09-23T08:40:34.311312"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/workflow%25252525252520process_2/turbidity> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:c50376cb72b65a0dad365279023daa2af7208fc9 ] ;
     cwlprov:basename "S2A_29SPC_20190701_0_L2A_turbidity.tiff" ;
@@ -12549,53 +11612,93 @@ id:d9e128eb-1ddb-4b2e-b8e5-5c92defdc721 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:39:38.367140"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374374"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374442"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_i> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374355"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_g> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.373441"^^xsd:dateTime ;
+            prov:entity id:0f56a8bd-b5e1-4fb4-b83b-1ff1af10828a ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_b> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:38.373467"^^xsd:dateTime ;
             prov:entity id:51e7c370-3e40-44ef-9dad-344fdf984f23 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_c> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374335"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374384"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_e> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374473"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_s> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374492"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374535"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_y> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374510"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_w> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374451"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_q> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_j> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:38.374501"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_v> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374520"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_x> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:38.374305"^^xsd:dateTime ;
             prov:entity data:3082a66f519914584a632e0abf36aea5b5961253 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/name> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374520"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_x> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374483"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_t> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374365"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374460"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.373980"^^xsd:dateTime ;
+            prov:entity data:a71d74edcae981a17e7464331cb2525eeabd9092 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/calc> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:38.373379"^^xsd:dateTime ;
             prov:entity id:f93b46c9-cd7a-4d57-8c11-1356d6797057 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374346"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374324"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_d> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374335"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_e> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374535"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374423"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_n> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374545"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_z> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374414"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_m> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374451"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:38.374432"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_o> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:38.374395"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -12605,70 +11708,30 @@ id:d9e128eb-1ddb-4b2e-b8e5-5c92defdc721 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_l> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374346"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374473"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_f> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_s> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374545"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374510"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_z> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_w> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.373980"^^xsd:dateTime ;
-            prov:entity data:a71d74edcae981a17e7464331cb2525eeabd9092 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/calc> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374460"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374374"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_r> ],
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_i> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374423"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:39:38.374492"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374483"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_t> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374355"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_g> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374324"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374365"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.373441"^^xsd:dateTime ;
-            prov:entity id:0f56a8bd-b5e1-4fb4-b83b-1ff1af10828a ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374414"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_m> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374432"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_o> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374442"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:38.374384"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_j> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/calculate_cyanobacteria_2/band_u> ] .
 
 id:e2bfc5c3-1f75-4088-95f8-366b8283237b a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b02_10m_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2> ],
+            prov:agent id:b6170213-9472-4118-a656-1c72592c233b ],
         [ a prov:Association ;
-            prov:agent id:b6170213-9472-4118-a656-1c72592c233b ] ;
+            prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:39:33.104017"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -12676,13 +11739,13 @@ id:e2bfc5c3-1f75-4088-95f8-366b8283237b a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:38:35.866253"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:38:35.872518"^^xsd:dateTime ;
-            prov:entity data:36dea452bfe795afb42cf14b59c82a3127598281 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2/band> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:38:35.873196"^^xsd:dateTime ;
             prov:entity data:084a442888f71ba66d9e75fde8221f58dfaa6acf ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2/product_url> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:38:35.872518"^^xsd:dateTime ;
+            prov:entity data:36dea452bfe795afb42cf14b59c82a3127598281 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b02_10m_2/band> ] .
 
 id:e5d9b324-0df0-444b-b4d9-4e9ccb71c5a7 a prov:Entity ;
     prov:value "1000000"^^xsd:int .
@@ -12696,10 +11759,10 @@ id:f0d8a485-c284-4e61-883c-b97dff3b466f a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b01_60m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:43debe24-70e3-4566-871e-889b76d6357b ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b01_60m> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/download_b01_60m> ],
+        [ a prov:Association ;
+            prov:agent id:43debe24-70e3-4566-871e-889b76d6357b ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:29:43.327839"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -12752,17 +11815,17 @@ id:f6d76af7-483d-4435-9b74-e6f721878714 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:29:43.354293"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:43.442864"^^xsd:dateTime ;
-            prov:entity id:b9b1351c-627e-45d6-81a3-1283ea584ec8 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m/output_resolution> ],
+            prov:atTime "2026-09-23T08:29:43.441694"^^xsd:dateTime ;
+            prov:entity id:374994f9-116d-48a7-9749-2f5d0a21702e ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m/input_image> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:43.442889"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m/output_dimensions> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:29:43.441694"^^xsd:dateTime ;
-            prov:entity id:374994f9-116d-48a7-9749-2f5d0a21702e ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m/input_image> ],
+            prov:atTime "2026-09-23T08:29:43.442864"^^xsd:dateTime ;
+            prov:entity id:b9b1351c-627e-45d6-81a3-1283ea584ec8 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/reproject_b03_60m/output_resolution> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:29:43.442743"^^xsd:dateTime ;
             prov:entity data:3e70bde01ba4a6db2abce9619d91ad7a7e0db919 ;
@@ -12935,29 +11998,29 @@ id:404675d7-a7d3-463f-8754-35edf2fc0c25 a wfprov:ProcessRun,
             prov:entity data:53dc86e3cbc21ff9ef3ae5a5a8cc9f7d1a9942c8 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/color_scale> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:32.120366"^^xsd:dateTime ;
+            prov:entity data:3b70ed18810c540d946d852c94d6c9701138000a ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/plot_name> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:32.119821"^^xsd:dateTime ;
             prov:entity data:c9795ae1700fc9846a06b4c55a43850d79fc8c37 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/output_name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:32.119425"^^xsd:dateTime ;
-            prov:entity id:883ae32e-c86f-491e-bcaf-320d0badfa08 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/input_image> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:32.121023"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/clip_max> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:32.121035"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/clip_min> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:32.120366"^^xsd:dateTime ;
-            prov:entity data:3b70ed18810c540d946d852c94d6c9701138000a ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/plot_name> ],
+            prov:atTime "2026-09-23T08:40:32.119425"^^xsd:dateTime ;
+            prov:entity id:883ae32e-c86f-491e-bcaf-320d0badfa08 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/input_image> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:32.120997"^^xsd:dateTime ;
             prov:entity data:e059662a461e5d1b245f555149febc699f42b537 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/plot_title> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/plot_title> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:32.121035"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a_2/clip_min> ] .
 
 id:448bbe1c-8732-4d0a-a0b2-01dcf453c5f1 a wfprov:ProcessRun,
         prov:Activity ;
@@ -12974,9 +12037,9 @@ id:448bbe1c-8732-4d0a-a0b2-01dcf453c5f1 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:35:34.726244"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:34.735513"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/clip_min> ],
+            prov:atTime "2026-09-23T08:35:34.735472"^^xsd:dateTime ;
+            prov:entity data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/plot_title> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:34.735498"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -12990,17 +12053,17 @@ id:448bbe1c-8732-4d0a-a0b2-01dcf453c5f1 a wfprov:ProcessRun,
             prov:entity data:2b0824b4ba24b098adc7ce01881499891c48d2ea ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/color_scale> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:34.735472"^^xsd:dateTime ;
-            prov:entity data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/plot_title> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:34.733930"^^xsd:dateTime ;
-            prov:entity data:1a0e4fad40b7e324bd7ae77ac30e69a00173cd35 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/plot_name> ],
+            prov:atTime "2026-09-23T08:35:34.735513"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/clip_min> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:34.733267"^^xsd:dateTime ;
             prov:entity id:4e6424db-66b9-4389-81ca-0a3040fbfd07 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/input_image> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/input_image> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:34.733930"^^xsd:dateTime ;
+            prov:entity data:1a0e4fad40b7e324bd7ae77ac30e69a00173cd35 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity/plot_name> ] .
 
 id:5811cb86-e667-4b42-bd25-995c414a260e a wf4ever:File,
         wfprov:Artifact,
@@ -13019,10 +12082,10 @@ id:667fa027-ed54-41eb-97a1-2dba34cda14d a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/plot_turbidity_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:15e3229d-5bd8-408e-a96a-da5e4356b8d0 ],
-        [ a prov:Association ;
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
-            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2> ] ;
+            prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2> ],
+        [ a prov:Association ;
+            prov:agent id:15e3229d-5bd8-408e-a96a-da5e4356b8d0 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T08:40:32.099554"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
@@ -13030,25 +12093,13 @@ id:667fa027-ed54-41eb-97a1-2dba34cda14d a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:40:29.608049"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:29.616450"^^xsd:dateTime ;
-            prov:entity id:d0b679db-ef77-442f-a4c0-f093f5da8990 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/input_image> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:29.617135"^^xsd:dateTime ;
-            prov:entity data:2219e4fef3bb44cade72f7ef4d71d8d686197932 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/output_name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:29.617668"^^xsd:dateTime ;
-            prov:entity data:9f3f28fc82add0a4e71340746dfbbf9db167a541 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/plot_name> ],
+            prov:atTime "2026-09-23T08:40:29.616392"^^xsd:dateTime ;
+            prov:entity data:2b0824b4ba24b098adc7ce01881499891c48d2ea ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/color_scale> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:29.618529"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/clip_max> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:40:29.616392"^^xsd:dateTime ;
-            prov:entity data:2b0824b4ba24b098adc7ce01881499891c48d2ea ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/color_scale> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:29.618454"^^xsd:dateTime ;
             prov:entity data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c ;
@@ -13056,7 +12107,19 @@ id:667fa027-ed54-41eb-97a1-2dba34cda14d a wfprov:ProcessRun,
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:40:29.618548"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/clip_min> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/clip_min> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:29.617135"^^xsd:dateTime ;
+            prov:entity data:2219e4fef3bb44cade72f7ef4d71d8d686197932 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/output_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:29.616450"^^xsd:dateTime ;
+            prov:entity id:d0b679db-ef77-442f-a4c0-f093f5da8990 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/input_image> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:40:29.617668"^^xsd:dateTime ;
+            prov:entity data:9f3f28fc82add0a4e71340746dfbbf9db167a541 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_turbidity_2/plot_name> ] .
 
 id:6f1095f0-e7c1-47e1-96c0-c8fc3262cbd8 a wfprov:ProcessRun,
         prov:Activity ;
@@ -13073,33 +12136,33 @@ id:6f1095f0-e7c1-47e1-96c0-c8fc3262cbd8 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:31:51.394989"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:31:51.721547"^^xsd:dateTime ;
-            prov:entity id:fc882878-31a6-43ba-88a7-5c51bad2cef3 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/clip_max> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:31:51.723272"^^xsd:dateTime ;
-            prov:entity id:4b2d89fd-9ef0-45c2-a15e-f2e4c32bc7be ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/input_image> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:31:51.724390"^^xsd:dateTime ;
-            prov:entity data:dae6881b456c2247c2fe7bf59cb2d891427f2aec ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/plot_name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:31:51.724705"^^xsd:dateTime ;
-            prov:entity data:4ad2eab867b3280cabc93a14c615ab97b6b6575e ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/plot_title> ],
+            prov:atTime "2026-09-23T08:31:51.723232"^^xsd:dateTime ;
+            prov:entity data:1370052da0755d73768c0c75500107d3759bcc2d ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/color_scale> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:31:51.723855"^^xsd:dateTime ;
             prov:entity data:5cd4c929136b7ccfd44b3e4a9e543eaf5497e074 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/output_name> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:31:51.723272"^^xsd:dateTime ;
+            prov:entity id:4b2d89fd-9ef0-45c2-a15e-f2e4c32bc7be ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/input_image> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:31:51.724705"^^xsd:dateTime ;
+            prov:entity data:4ad2eab867b3280cabc93a14c615ab97b6b6575e ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/plot_title> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:31:51.721670"^^xsd:dateTime ;
             prov:entity id:e5d9b324-0df0-444b-b4d9-4e9ccb71c5a7 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/clip_min> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:31:51.723232"^^xsd:dateTime ;
-            prov:entity data:1370052da0755d73768c0c75500107d3759bcc2d ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/color_scale> ] .
+            prov:atTime "2026-09-23T08:31:51.724390"^^xsd:dateTime ;
+            prov:entity data:dae6881b456c2247c2fe7bf59cb2d891427f2aec ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/plot_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:31:51.721547"^^xsd:dateTime ;
+            prov:entity id:fc882878-31a6-43ba-88a7-5c51bad2cef3 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria/clip_max> ] .
 
 id:9e684a93-4ee7-4ace-b244-0bbaaa4fb10e a wfprov:ProcessRun,
         prov:Activity ;
@@ -13116,33 +12179,33 @@ id:9e684a93-4ee7-4ace-b244-0bbaaa4fb10e a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:35:37.443398"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:37.467615"^^xsd:dateTime ;
-            prov:entity data:714bad22665ac25a2625f9795548244c5862c173 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/plot_name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:37.464939"^^xsd:dateTime ;
-            prov:entity data:74f86325eb5176eac0be70c602f62dd4be091838 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/output_name> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:37.462789"^^xsd:dateTime ;
             prov:entity data:53dc86e3cbc21ff9ef3ae5a5a8cc9f7d1a9942c8 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/color_scale> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:37.469223"^^xsd:dateTime ;
-            prov:entity data:e059662a461e5d1b245f555149febc699f42b537 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/plot_title> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:37.469289"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/clip_max> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:35:37.463473"^^xsd:dateTime ;
-            prov:entity id:12b49a35-ae72-4b3d-933e-b2d03c6692b4 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/input_image> ],
+            prov:atTime "2026-09-23T08:35:37.464939"^^xsd:dateTime ;
+            prov:entity data:74f86325eb5176eac0be70c602f62dd4be091838 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/output_name> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:35:37.469315"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/clip_min> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/clip_min> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:37.469223"^^xsd:dateTime ;
+            prov:entity data:e059662a461e5d1b245f555149febc699f42b537 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/plot_title> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:37.467615"^^xsd:dateTime ;
+            prov:entity data:714bad22665ac25a2625f9795548244c5862c173 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/plot_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:35:37.463473"^^xsd:dateTime ;
+            prov:entity id:12b49a35-ae72-4b3d-933e-b2d03c6692b4 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_chlorophyll_a/input_image> ] .
 
 id:ac7fbdba-ab57-4cab-92ea-86425e0d72da a wf4ever:File,
         wfprov:Artifact,
@@ -13185,33 +12248,33 @@ id:eb258705-e788-4815-aaa8-8ce9fe8b95bd a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:39:46.623486"^^xsd:dateTime ;
             prov:hadActivity id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:46.629916"^^xsd:dateTime ;
-            prov:entity id:43a057a2-41ef-4082-bdfb-fb1186385f7d ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/clip_min> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:46.630760"^^xsd:dateTime ;
-            prov:entity id:f4eb96c4-9178-469a-94da-e74a9ec97592 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/input_image> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:46.629878"^^xsd:dateTime ;
-            prov:entity id:a0bf8c1c-f971-418d-9a40-667bb07dd0c4 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/clip_max> ],
+            prov:atTime "2026-09-23T08:39:46.630723"^^xsd:dateTime ;
+            prov:entity data:1370052da0755d73768c0c75500107d3759bcc2d ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/color_scale> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:46.631165"^^xsd:dateTime ;
             prov:entity data:b3573acf1e280c5c49f41a5a84acaedc59c5c096 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/output_name> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:46.629878"^^xsd:dateTime ;
+            prov:entity id:a0bf8c1c-f971-418d-9a40-667bb07dd0c4 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/clip_max> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:46.631484"^^xsd:dateTime ;
+            prov:entity data:4ea652b7d22b69e0d27d1a1ebce1e624f55373fd ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/plot_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:39:46.630760"^^xsd:dateTime ;
+            prov:entity id:f4eb96c4-9178-469a-94da-e74a9ec97592 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/input_image> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:39:46.631794"^^xsd:dateTime ;
             prov:entity data:4ad2eab867b3280cabc93a14c615ab97b6b6575e ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/plot_title> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:46.630723"^^xsd:dateTime ;
-            prov:entity data:1370052da0755d73768c0c75500107d3759bcc2d ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/color_scale> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:39:46.631484"^^xsd:dateTime ;
-            prov:entity data:4ea652b7d22b69e0d27d1a1ebce1e624f55373fd ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/plot_name> ] .
+            prov:atTime "2026-09-23T08:39:46.629916"^^xsd:dateTime ;
+            prov:entity id:43a057a2-41ef-4082-bdfb-fb1186385f7d ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/plot_cyanobacteria_2/clip_min> ] .
 
 data:084a442888f71ba66d9e75fde8221f58dfaa6acf a wfprov:Artifact,
         prov:Entity ;
@@ -13236,10 +12299,10 @@ id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 a wfprov:WorkflowRun,
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
             prov:hadPlan wf:main ] ;
     prov:qualifiedEnd [ a prov:End ;
-            prov:atTime "2026-09-23T08:40:34.311473"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:40.173908"^^xsd:dateTime ;
             prov:hadActivity id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ],
         [ a prov:End ;
-            prov:atTime "2026-09-23T08:35:40.173908"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:40:34.311473"^^xsd:dateTime ;
             prov:hadActivity id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ] ;
     prov:qualifiedStart [ a prov:Start ;
             prov:atTime "2026-09-23T08:26:24.435762"^^xsd:dateTime ;

@@ -1,10 +1,11 @@
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 
-<https://geolabs.github.io/bblocks-process-profiles/def/process/plot-image> pp:version "1.0.0" .
-
-[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/plot-image> ] ;
-    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
-            pp:href "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/plot-image.cwl" ;
-            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+[] proc:inputs [ ns1:color_scale "[[0,[73,111,242]],[4,[130,211,95]],[8,[254,253,5]],[12,[253,0,4]],[16,[142,32,38]],[20,[217,124,245]]]" ;
+            ns1:input_image [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:output_name "S2A_29SPC_20190701_0_L2A_turbidity_color" ;
+            ns1:plot_name "S2A_29SPC_20190701_0_L2A_turbidity_plot" ;
+            ns1:plot_title "Turbidity" ] ;
+    proc:response "document" .
 

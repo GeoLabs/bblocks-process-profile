@@ -1,15 +1,7 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
-  "inputs": {
-    "input_image": {
-      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03.tif",
-      "type": "image/tiff; application=geotiff"
-    },
-    "output_resolution": [
-      60,
-      60
-    ],
-    "output_name": "B03_60m"
-  },
-  "response": "document"
+  "result": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff",
+    "type": "image/tiff; application=geotiff"
+  }
 }

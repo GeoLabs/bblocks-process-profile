@@ -1,21 +1,33 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
-  "id": "urn:example:run:algae-bloom:reproject-image",
-  "type": "ProcessRun",
-  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",
-  "describedByProcess": "https://ospd.example.org/ogc-api/processes/reproject-image",
-  "usedInput": [
-    {
-      "id": "urn:example:entity:reproject-image:in:input_image"
-    },
-    {
-      "id": "urn:example:entity:reproject-image:in:output_resolution"
-    },
-    {
-      "id": "urn:example:entity:reproject-image:in:output_name"
-    }
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",
+  "type": "ProcessType",
+  "prefLabel": "Performs image reprojection.",
+  "definition": "Performs a reprojection over image bands and returns the resulting GeoTiff.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing"
   ],
-  "startedAtTime": "2026-09-23T06:39:37Z",
-  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
-  "wasPartOfWorkflowRun": "urn:example:run:algae-bloom:workflow-earth-search-process"
+  "profile": "ospd.process-profiles.algae-bloom.reproject-image",
+  "processDescription": {
+    "id": "reproject-image",
+    "version": "1.0.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/reproject-image.cwl",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "reproject-image",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.resample_spatial"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "As used in W1 the tool only changes the pixel size (gdalwarp `-tr 60 60`, nearest neighbour by default, no `-t_srs`): resample_spatial with `resolution: 60`, `projection: null`, `method: near`. Not an exactMatch: `output_dimensions` (`-ts`) has no openEO parameter, the output type is forced to Float32 (`-ot Float32`), and the tool works on a file rather than a data cube. Despite its name, no CRS transformation takes place."
+  }
 }

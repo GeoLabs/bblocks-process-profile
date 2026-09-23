@@ -1,16 +1,25 @@
-@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<urn:example:run:algae-bloom:plot-image> a wfprov:ProcessRun,
-        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image> ;
-    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/plot-image> ;
-    wfprov:usedInput <urn:example:entity:plot-image:in:color_scale>,
-        <urn:example:entity:plot-image:in:input_image>,
-        <urn:example:entity:plot-image:in:output_name>,
-        <urn:example:entity:plot-image:in:plot_name>,
-        <urn:example:entity:plot-image:in:plot_title> ;
-    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search-process> ;
-    prov:startedAtTime "2026-09-23T06:40:29+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.save_result> ;
+    skos:definition "Applies the specified color mapping with scaled bins to a geospatial image." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Plots an image with colors." ;
+    skos:relatedMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.clip>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.linear_scale_range> ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Partial: the export part (GeoTIFF + PNG) corresponds to save_result with a GTiff or PNG format; `clip_min`/`clip_max` correspond to math.clip. The colour mapping (`color_scale` bins) and the matplotlib figure (title, colour bar) have no stable openEO process (colour maps are back-end-specific format options)." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/plot-image> ;
+    pp:profile "ospd.process-profiles.algae-bloom.plot-image" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/plot-image.cwl> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "plot-image" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/plot-image> pp:version "1.0.0" .
 

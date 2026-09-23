@@ -129,8 +129,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "image/jp2"
+        "contentMediaType": "image/jp2",
+        "contentEncoding": "binary"
       }
     }
   },

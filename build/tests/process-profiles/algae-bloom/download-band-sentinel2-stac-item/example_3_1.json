@@ -1,99 +1,13 @@
 {
-  "id": "download-band-sentinel2-stac-item",
-  "version": "1.1.0",
-  "title": "Downloads Sentinel-2 GeoTiff from STAC Item.",
-  "description": "Downloads the GeoTiff band from the Sentinel-2 product STAC Item\nusing the requested band selection criteria. It is assumed that\nthe referenced STAC Item contains the desired GeoTiff Asset with\nthe 'common band name' associated to the band \n(see https://github.com/stac-extensions/eo#common-band-names).\n",
-  "mutable": true,
-  "keywords": [
-    "Sentinel-2",
-    "OSPD",
-    "demo"
-  ],
-  "metadata": [
-    {
-      "role": "https://schema.org/name",
-      "value": "Downloads Sentinel-2 GeoTiff from STAC Item."
-    },
-    {
-      "role": "https://schema.org/description",
-      "value": "Downloads the GeoTiff band from the Sentinel-2 product STAC Item\nusing the requested band selection criteria. It is assumed that\nthe referenced STAC Item contains the desired GeoTiff Asset with\nthe 'common band name' associated to the band \n(see https://github.com/stac-extensions/eo#common-band-names).\n"
-    },
-    {
-      "role": "https://schema.org/softwareVersion",
-      "value": "1.1.0"
-    },
-    {
-      "role": "https://schema.org/author",
-      "value": {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "identifier": "http://orcid.org/0000-0003-4862-3349",
-        "email": "francis.charette-migneault@crim.ca",
-        "name": "Francis Charette-Migneault"
-      }
-    },
-    {
-      "role": "https://schema.org/codeRepository",
-      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
-    },
-    {
-      "role": "https://schema.org/license",
-      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
-    }
-  ],
-  "inputs": {
-    "product_url": {
-      "title": "HTTPS URL to a Sentinel-2 product in STAC Item format.",
-      "description": "",
-      "schema": {
-        "type": "string"
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
-    },
-    "band": {
-      "title": "band",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "enum": [
-          "B01",
-          "B02",
-          "B03",
-          "B04",
-          "B05",
-          "B06",
-          "B07",
-          "B08",
-          "B8A",
-          "B09",
-          "B11",
-          "B12",
-          "AOT",
-          "SCL",
-          "TCI",
-          "WVP"
-        ]
-      },
-      "minOccurs": 1,
-      "maxOccurs": 1
+  "processDescription": {
+    "process": {
+      "id": "download-band-sentinel2-stac-item",
+      "version": "1.1.0"
     }
   },
-  "outputs": {
-    "product": {
-      "title": "product",
-      "description": "",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "application/octet-stream"
-      }
-    }
-  },
-  "jobControlOptions": [
-    "async-execute"
-  ],
-  "outputTransmission": [
-    "value",
-    "reference"
-  ]
+  "executionUnit": {
+    "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-stac-item.cwl",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
 }

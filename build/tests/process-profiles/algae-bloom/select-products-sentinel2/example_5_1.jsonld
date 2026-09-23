@@ -1,19 +1,7 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
-  "inputs": {
-    "aoi": {
-      "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
-      "type": "application/geo+json"
-    },
-    "catalog": "earth-search",
-    "collection": "sentinel-2-l2a",
-    "product_level": "L2A",
-    "toi": [
-      "2019-06-25",
-      "2019-07-03"
-    ],
-    "delta": 4,
-    "cloud_cover": 0.1
-  },
-  "response": "document"
+  "urls": [
+    "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_1_L2A",
+    "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A"
+  ]
 }

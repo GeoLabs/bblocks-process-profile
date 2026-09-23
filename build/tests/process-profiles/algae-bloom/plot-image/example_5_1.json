@@ -1,13 +1,10 @@
 {
-  "inputs": {
-    "input_image": {
-      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
-      "type": "image/tiff; application=geotiff"
-    },
-    "color_scale": "[[0,[73,111,242]],[4,[130,211,95]],[8,[254,253,5]],[12,[253,0,4]],[16,[142,32,38]],[20,[217,124,245]]]",
-    "output_name": "S2A_29SPC_20190701_0_L2A_turbidity_color",
-    "plot_name": "S2A_29SPC_20190701_0_L2A_turbidity_plot",
-    "plot_title": "Turbidity"
+  "output_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-plot-image-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+    "type": "image/tiff; application=geotiff"
   },
-  "response": "document"
+  "output_plot": {
+    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-plot-image-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+    "type": "image/png"
+  }
 }

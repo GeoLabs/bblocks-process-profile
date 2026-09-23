@@ -1,13 +1,16 @@
 {
-  "processDescription": {
-    "process": {
-      "id": "algae-usecase-workflow-earth-search",
-      "version": "2.0.0"
-    }
+  "inputs": {
+    "aoi": {
+      "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
+      "type": "application/geo+json"
+    },
+    "collection": "sentinel-2-l2a",
+    "toi": [
+      "2019-06-25",
+      "2019-07-03"
+    ],
+    "delta": 4,
+    "cloud_cover": 0.1
   },
-  "executionUnit": {
-    "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-earth-search.cwl",
-    "type": "application/cwl+yaml",
-    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
-  }
+  "response": "document"
 }

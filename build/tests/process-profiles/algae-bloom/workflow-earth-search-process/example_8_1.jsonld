@@ -1,144 +1,73 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
-  "run": {
-    "id": "urn:example:run:algae-bloom:workflow-earth-search-process",
-    "type": "WorkflowRun",
-    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-earth-search-process",
-    "describedByWorkflow": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process",
-    "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
-    "status": "successful",
-    "jobID": "algae-bloom-workflow-earth-search-process-0001",
-    "startedAtTime": "2026-09-23T06:26:24Z",
-    "endedAtTime": "2026-09-23T06:40:34Z",
-    "hadSubProcessRun": [
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/workflow-earth-search-process",
+  "type": "ProcessType",
+  "prefLabel": "Processing on Sentinel-2 L2A bands to evaluate algae bloom.",
+  "definition": "Performs band calculation on Sentinel-2 L2A product bands to evaluate algae bloom for water quality assessment from a specific STAC Item reference from Earth-Search platform. Reference bands are downloaded, processed, and returned as output with raw data, color map and plot visualization.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
+  "processDescription": {
+    "id": "algae-usecase-workflow-earth-search-process",
+    "version": "2.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/algae-usecase-workflow-earth-search-process.cwl",
+    "cwlClass": "Workflow",
+    "cwlId": "algae-usecase-workflow-earth-search-process",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.string-format"
+  ],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/calculate-band",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite (11 steps: 4 band downloads, 1 resampling, 3 band calculations, 3 renderings). In openEO this is one load_collection with band selection followed by a process graph.",
+    "decomposition": [
       {
-        "id": "urn:example:run:algae-bloom:download-band-sentinel2-stac-item"
+        "stage": "download_b0x (x4)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.load_collection",
+          "ogc.openeo.processes.cubes.filter_bands"
+        ],
+        "level": "closeMatch"
       },
       {
-        "id": "urn:example:run:algae-bloom:reproject-image"
+        "stage": "reproject_b03_60m",
+        "openeo": [
+          "ogc.openeo.processes.cubes.resample_spatial"
+        ],
+        "level": "closeMatch"
       },
       {
-        "id": "urn:example:run:algae-bloom:calculate-band"
+        "stage": "calculate_* (x3)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.reduce_dimension"
+        ],
+        "level": "closeMatch"
       },
       {
-        "id": "urn:example:run:algae-bloom:plot-image"
+        "stage": "plot_* (x3)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.save_result"
+        ],
+        "level": "closeMatch",
+        "note": "partial, no colour-ramp rendering"
       }
     ]
-  },
-  "engine": {
-    "@id": "urn:example:engine:cwltool-3.1.20260108082145",
-    "@type": "WorkflowEngine",
-    "name": "cwltool",
-    "version": "3.1.20260108082145"
-  },
-  "outputs": [
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/chlorophyll_a",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "6947846b1796dd6e940e390f61208a85f45117b0"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/chlorophyll_a_color",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "e6874b008b758679af8241dfbfb355b204b131b2"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/png",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/chlorophyll_a_plot",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "1224781c8a82490664559a3b2e66fa3e14e09956"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/cyanobacteria",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "065539f1417b6c8066de9420c143413de2cbcd97"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/cyanobacteria_color",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "ee28bfbb1143c5e869cc07962f87b8cfac6106f6"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/png",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/cyanobacteria_plot",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "3822adba1b42a347ef376f9ac0e7259d0ba82b22"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/turbidity",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "c50376cb72b65a0dad365279023daa2af7208fc9"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/tiff; application=geotiff",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/turbidity_color",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "a2beee36554454e4c0090480d062bc893f3ae7cc"
-      }
-    },
-    {
-      "id": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
-      "type": "Artifact",
-      "role": "output",
-      "mediaType": "image/png",
-      "describedByParameter": "https://ospd.example.org/ogc-api/processes/algae-usecase-workflow-earth-search-process#outputs/turbidity_plot",
-      "wasOutputFrom": "urn:example:run:algae-bloom:workflow-earth-search-process",
-      "checksum": {
-        "algorithm": "SHA-1",
-        "value": "8088de425841559ae78ca6328ecdf8bb0fe578d4"
-      }
-    }
-  ]
+  }
 }

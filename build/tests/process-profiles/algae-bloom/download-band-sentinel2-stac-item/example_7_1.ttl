@@ -1,42 +1,13 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<urn:example:entity:download-band-sentinel2-stac-item:out:product> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item#outputs/product> ;
-    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-download-band-sentinel2-stac-item-0001/results/B03.tif> ] ;
-    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
-    prov:wasGeneratedBy <urn:example:run:algae-bloom:download-band-sentinel2-stac-item> .
-
-<urn:example:entity:download-band-sentinel2-stac-item:in:band> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item#inputs/band> ;
-    rdf:value "B03" .
-
-<urn:example:entity:download-band-sentinel2-stac-item:in:product_url> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item#inputs/product_url> ;
-    rdf:value "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A" .
-
-<urn:example:image:ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0> a prov:SoftwareAgent ;
-    pp:name "container image ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0" .
-
-<urn:example:run:algae-bloom:download-band-sentinel2-stac-item> a prov:Activity,
+<urn:example:run:algae-bloom:download-band-sentinel2-stac-item> a wfprov:ProcessRun,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item> ;
-    prov:endedAtTime "2026-09-23T06:38:35+00:00"^^xsd:dateTime ;
-    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
-            prov:hadPlan <https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item> ] ;
-    prov:startedAtTime "2026-09-23T06:36:40+00:00"^^xsd:dateTime ;
-    prov:used <urn:example:entity:download-band-sentinel2-stac-item:in:band>,
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item> ;
+    wfprov:usedInput <urn:example:entity:download-band-sentinel2-stac-item:in:band>,
         <urn:example:entity:download-band-sentinel2-stac-item:in:product_url> ;
-    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
-        <urn:example:image:ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0> .
-
-<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
-    pp:name "cwltool 3.1.20260108082145" .
+    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search-process> ;
+    prov:startedAtTime "2026-09-23T06:36:40+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
 

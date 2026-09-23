@@ -69,7 +69,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentMediaType": "application/octet-stream"
+        "contentMediaType": "application/geo+json",
+        "contentEncoding": "binary"
       },
       "minOccurs": 1,
       "maxOccurs": 1
@@ -119,7 +120,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -130,7 +132,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -141,7 +144,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -152,7 +156,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -163,7 +168,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -174,7 +180,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -185,7 +192,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -196,7 +204,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/tiff; application=geotiff",
+          "contentEncoding": "binary"
         }
       }
     },
@@ -207,7 +216,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "contentMediaType": "application/octet-stream"
+          "contentMediaType": "image/png",
+          "contentEncoding": "binary"
         }
       }
     }

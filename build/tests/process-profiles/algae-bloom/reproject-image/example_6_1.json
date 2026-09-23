@@ -1,6 +1,78 @@
-{
-  "result": {
-    "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff",
-    "type": "image/tiff; application=geotiff"
+[
+  {
+    "id": "urn:example:run:algae-bloom:reproject-image",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",
+    "startedAtTime": "2026-09-23T06:39:37Z",
+    "used": [
+      "urn:example:entity:reproject-image:in:input_image",
+      "urn:example:entity:reproject-image:in:output_resolution",
+      "urn:example:entity:reproject-image:in:output_name"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145",
+      "urn:example:image:ogc-ospd/algae-usecase/reproject-image"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/reproject-image"
+      }
+    ],
+    "endedAtTime": "2026-09-23T06:39:38Z"
+  },
+  {
+    "id": "urn:example:entity:reproject-image:in:input_image",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject-image#inputs/input_image",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:reproject-image:in:output_resolution",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject-image#inputs/output_resolution",
+    "value": [
+      60,
+      60
+    ]
+  },
+  {
+    "id": "urn:example:entity:reproject-image:in:output_name",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject-image#inputs/output_name",
+    "value": "B03_60m"
+  },
+  {
+    "id": "urn:example:entity:reproject-image:out:result",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject-image#outputs/result",
+    "wasGeneratedBy": "urn:example:run:algae-bloom:reproject-image",
+    "wasDerivedFrom": [
+      "urn:example:entity:reproject-image:in:input_image"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:image:ogc-ospd/algae-usecase/reproject-image",
+    "provType": "prov:SoftwareAgent",
+    "name": "container image ogc-ospd/algae-usecase/reproject-image"
   }
-}
+]

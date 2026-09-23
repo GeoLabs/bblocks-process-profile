@@ -1,50 +1,14 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<urn:example:entity:reproject-image:out:result> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/reproject-image#outputs/result> ;
-    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff> ] ;
-    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
-    prov:wasDerivedFrom <urn:example:entity:reproject-image:in:input_image> ;
-    prov:wasGeneratedBy <urn:example:run:algae-bloom:reproject-image> .
-
-<urn:example:entity:reproject-image:in:output_name> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/reproject-image#inputs/output_name> ;
-    rdf:value "B03_60m" .
-
-<urn:example:entity:reproject-image:in:output_resolution> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/reproject-image#inputs/output_resolution> ;
-    rdf:value 60 .
-
-<urn:example:image:ogc-ospd/algae-usecase/reproject-image> a prov:SoftwareAgent ;
-    pp:name "container image ogc-ospd/algae-usecase/reproject-image" .
-
-<urn:example:run:algae-bloom:reproject-image> a prov:Activity,
+<urn:example:run:algae-bloom:reproject-image> a wfprov:ProcessRun,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image> ;
-    prov:endedAtTime "2026-09-23T06:39:38+00:00"^^xsd:dateTime ;
-    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
-            prov:hadPlan <https://ospd.example.org/ogc-api/processes/reproject-image> ] ;
-    prov:startedAtTime "2026-09-23T06:39:37+00:00"^^xsd:dateTime ;
-    prov:used <urn:example:entity:reproject-image:in:input_image>,
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/reproject-image> ;
+    wfprov:usedInput <urn:example:entity:reproject-image:in:input_image>,
         <urn:example:entity:reproject-image:in:output_name>,
         <urn:example:entity:reproject-image:in:output_resolution> ;
-    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
-        <urn:example:image:ogc-ospd/algae-usecase/reproject-image> .
-
-<urn:example:entity:reproject-image:in:input_image> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/reproject-image#inputs/input_image> ;
-    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03.tif> ] .
-
-<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
-    pp:name "cwltool 3.1.20260108082145" .
+    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search-process> ;
+    prov:startedAtTime "2026-09-23T06:39:37+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
 

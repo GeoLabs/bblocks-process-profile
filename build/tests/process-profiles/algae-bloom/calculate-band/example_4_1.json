@@ -1,13 +1,15 @@
 {
-  "processDescription": {
-    "process": {
-      "id": "calculate-band",
-      "version": "1.1.0"
+  "inputs": {
+    "name": "S2A_29SPC_20190701_0_L2A_turbidity",
+    "calc": "(8.93*(C/A))-6.39",
+    "band_a": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B01.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "band_c": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/B03_60m.tiff",
+      "type": "image/tiff; application=geotiff"
     }
   },
-  "executionUnit": {
-    "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/calculate-band.cwl",
-    "type": "application/cwl+yaml",
-    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
-  }
+  "response": "document"
 }

@@ -158,7 +158,7 @@ are provisional, pending a decision on the process-type register namespace.
     "version": "0.0.1"
   },
   "source": {
-    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
+    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
     "cwlClass": "CommandLineTool",
     "cwlId": "mangrove_cli",
     "license": "https://spdx.org/licenses/Apache-2.0"
@@ -266,7 +266,7 @@ are provisional, pending a decision on the process-type register namespace.
     "version": "0.0.1"
   },
   "source": {
-    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
+    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
     "cwlClass": "CommandLineTool",
     "cwlId": "mangrove_cli",
     "license": "https://spdx.org/licenses/Apache-2.0"
@@ -400,7 +400,7 @@ are provisional, pending a decision on the process-type register namespace.
     pp:profile "ospd.process-profiles.kindgrove.mangrove" ;
     pp:provenanceClass <http://purl.org/wf4ever/wfprov#ProcessRun> ;
     pp:source [ dcterms:license <https://spdx.org/licenses/Apache-2.0> ;
-            pp:cwl <https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli> ;
+            pp:cwl <https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli> ;
             pp:cwlClass "CommandLineTool" ;
             pp:cwlId "mangrove_cli" ] ;
     pp:status "submitted" .

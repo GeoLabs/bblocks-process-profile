@@ -1,33 +1,42 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
-  "id": "urn:example:run:algae-bloom:select-products-sentinel2",
-  "type": "ProcessRun",
-  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
-  "describedByProcess": "https://ospd.example.org/ogc-api/processes/select-products-sentinel2",
-  "usedInput": [
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:aoi"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:catalog"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:collection"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:product_level"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:toi"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:delta"
-    },
-    {
-      "id": "urn:example:entity:select-products-sentinel2:in:cloud_cover"
-    }
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
+  "type": "ProcessType",
+  "prefLabel": "Searches the specified catalog for Sentinel-2 products matching filtering criteria.",
+  "definition": "Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations. Returned matches will be either S3 or direct HTTPS references depending on the catalog.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering"
   ],
-  "startedAtTime": "2026-09-23T06:26:24Z",
-  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
-  "wasPartOfWorkflowRun": "urn:example:run:algae-bloom:workflow-earth-search"
+  "profile": "ospd.process-profiles.algae-bloom.select-products-sentinel2",
+  "processDescription": {
+    "id": "select-products-sentinel2",
+    "version": "1.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/select-products-sentinel2.cwl",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "select-products-sentinel2",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.geojson",
+    "eoap.cct.string-format"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection"
+  ],
+  "relatedMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.geojson",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.temporal-interval",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.collection-id",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.metadata-filter"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "Same filter semantics as load_collection's `id` (collection), `spatial_extent` (aoi), `temporal_extent` (date\u00b1delta or toi) and `properties` (eo:cloud_cover) parameters. Not an exactMatch: the tool only selects (returns product URLs) and does not load data; the `catalog` switch (copernicus / earth-search) is a back-end choice with no openEO parameter; `date`+`delta` must be turned into an interval; the Earth-Search branch filters `0 < eo:cloud_cover < cloud_cover` (strict, excludes 0) where an openEO `lte` filter would be expected."
+  }
 }

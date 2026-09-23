@@ -1,18 +1,41 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
-  "id": "urn:example:run:algae-bloom:download-band-sentinel2-stac-item",
-  "type": "ProcessRun",
-  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item",
-  "describedByProcess": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item",
-  "usedInput": [
-    {
-      "id": "urn:example:entity:download-band-sentinel2-stac-item:in:product_url"
-    },
-    {
-      "id": "urn:example:entity:download-band-sentinel2-stac-item:in:band"
-    }
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item",
+  "type": "ProcessType",
+  "prefLabel": "Downloads Sentinel-2 GeoTiff from STAC Item.",
+  "definition": "Downloads the GeoTiff band from the Sentinel-2 product STAC Item using the requested band selection criteria. It is assumed that the referenced STAC Item contains the desired GeoTiff Asset with the 'common band name' associated to the band (see https://github.com/stac-extensions/eo#common-band-names).",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval"
   ],
-  "startedAtTime": "2026-09-23T06:36:40Z",
-  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
-  "wasPartOfWorkflowRun": "urn:example:run:algae-bloom:workflow-earth-search-process"
+  "profile": "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item",
+  "processDescription": {
+    "id": "download-band-sentinel2-stac-item",
+    "version": "1.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-stac-item.cwl",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "download-band-sentinel2-stac-item",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.string-format",
+    "eoap.cct.stac"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands"
+  ],
+  "relatedMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.band-name",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.stac"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "Retrieves one band of one product: load_collection with `bands` (or filter_bands) over a single-item extent. The closest openEO process, `load_stac`, is only an openEO proposal and out of the register's scope. The band is chosen by Sentinel-2 band id (B01..B12), matched to STAC `eo:common_name` assets inside the tool, where openEO uses collection band names directly."
+  }
 }

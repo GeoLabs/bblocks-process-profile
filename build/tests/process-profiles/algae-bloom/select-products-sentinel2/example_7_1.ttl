@@ -1,70 +1,18 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<urn:example:entity:select-products-sentinel2:out:urls> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#outputs/urls> ;
-    rdf:value "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A",
-        "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_1_L2A" ;
-    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
-    prov:wasDerivedFrom <urn:example:entity:select-products-sentinel2:in:aoi> ;
-    prov:wasGeneratedBy <urn:example:run:algae-bloom:select-products-sentinel2> .
-
-<urn:example:entity:select-products-sentinel2:in:catalog> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/catalog> ;
-    rdf:value "earth-search" .
-
-<urn:example:entity:select-products-sentinel2:in:cloud_cover> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/cloud_cover> ;
-    rdf:value 1e-01 .
-
-<urn:example:entity:select-products-sentinel2:in:collection> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/collection> ;
-    rdf:value "sentinel-2-l2a" .
-
-<urn:example:entity:select-products-sentinel2:in:delta> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/delta> ;
-    rdf:value 4 .
-
-<urn:example:entity:select-products-sentinel2:in:product_level> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/product_level> ;
-    rdf:value "L2A" .
-
-<urn:example:entity:select-products-sentinel2:in:toi> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/toi> ;
-    rdf:value "2019-06-25",
-        "2019-07-03" .
-
-<urn:example:image:ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0> a prov:SoftwareAgent ;
-    pp:name "container image ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0" .
-
-<urn:example:run:algae-bloom:select-products-sentinel2> a prov:Activity,
+<urn:example:run:algae-bloom:select-products-sentinel2> a wfprov:ProcessRun,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2> ;
-    prov:endedAtTime "2026-09-23T06:26:25+00:00"^^xsd:dateTime ;
-    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
-            prov:hadPlan <https://ospd.example.org/ogc-api/processes/select-products-sentinel2> ] ;
-    prov:startedAtTime "2026-09-23T06:26:24+00:00"^^xsd:dateTime ;
-    prov:used <urn:example:entity:select-products-sentinel2:in:aoi>,
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/select-products-sentinel2> ;
+    wfprov:usedInput <urn:example:entity:select-products-sentinel2:in:aoi>,
         <urn:example:entity:select-products-sentinel2:in:catalog>,
         <urn:example:entity:select-products-sentinel2:in:cloud_cover>,
         <urn:example:entity:select-products-sentinel2:in:collection>,
         <urn:example:entity:select-products-sentinel2:in:delta>,
         <urn:example:entity:select-products-sentinel2:in:product_level>,
         <urn:example:entity:select-products-sentinel2:in:toi> ;
-    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
-        <urn:example:image:ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0> .
-
-<urn:example:entity:select-products-sentinel2:in:aoi> a prov:Entity,
-        <https://ospd.example.org/ogc-api/processes/select-products-sentinel2#inputs/aoi> ;
-    rdfs:seeAlso [ dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson> ] .
-
-<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
-    pp:name "cwltool 3.1.20260108082145" .
+    wfprov:wasPartOfWorkflowRun <urn:example:run:algae-bloom:workflow-earth-search> ;
+    prov:startedAtTime "2026-09-23T06:26:24+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
 

@@ -1,17 +1,93 @@
 {
   "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld",
-  "inputs": {
-    "aoi": {
-      "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
-      "type": "application/geo+json"
+  "chlorophyll_a": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_chlorophyll_a.tiff",
+      "type": "image/tiff; application=geotiff"
     },
-    "collection": "sentinel-2-l2a",
-    "toi": [
-      "2019-06-25",
-      "2019-07-03"
-    ],
-    "delta": 4,
-    "cloud_cover": 0.1
-  },
-  "response": "document"
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "chlorophyll_a_color": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_chlorophyll_a_color.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "chlorophyll_a_plot": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_chlorophyll_a_plot.png",
+      "type": "image/png"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png",
+      "type": "image/png"
+    }
+  ],
+  "cyanobacteria": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_cyanobacteria.tiff",
+      "type": "image/tiff; application=geotiff"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "cyanobacteria_color": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_cyanobacteria_color.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "cyanobacteria_plot": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_cyanobacteria_plot.png",
+      "type": "image/png"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png",
+      "type": "image/png"
+    }
+  ],
+  "turbidity": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_turbidity.tiff",
+      "type": "image/tiff; application=geotiff"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "turbidity_color": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_turbidity_color.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+      "type": "image/tiff; application=geotiff"
+    }
+  ],
+  "turbidity_plot": [
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_1_L2A_turbidity_plot.png",
+      "type": "image/png"
+    },
+    {
+      "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-0001/results/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+      "type": "image/png"
+    }
+  ]
 }

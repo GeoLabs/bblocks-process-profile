@@ -128,7 +128,8 @@
       "description": "",
       "schema": {
         "type": "string",
-        "contentMediaType": "application/octet-stream"
+        "contentMediaType": "image/jp2",
+        "contentEncoding": "binary"
       }
     }
   },

@@ -80,8 +80,8 @@
       "description": "Polygon defining the area of interest.",
       "schema": {
         "type": "string",
-        "contentEncoding": "binary",
-        "contentMediaType": "application/geo+json"
+        "contentMediaType": "application/geo+json",
+        "contentEncoding": "binary"
       },
       "minOccurs": 1,
       "maxOccurs": 1
