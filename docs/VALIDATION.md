@@ -3,8 +3,16 @@
 ## Authoritative validation: passing (2026-09-23)
 
 `./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`) run on a machine with
-network access: **14/14 building blocks, 111/111 example snippets, 0 errors**, 109 SHACL
-validations conform, no empty RDF graph, no `file:///` IRI.
+network access: **20/20 building blocks, 161/161 example snippets, 0 errors**, 159 SHACL
+validations conform, no empty RDF graph, no `file:///` IRI. The 20th block and the jump from
+111 to 161 snippets is a third reference workflow, W3 Water Bodies (`docs/OPEN-QUESTIONS.md`
+Q-W3-RUN), six building blocks (`water-bodies`, `detect-water-body`, `crop`, `norm-diff`, `otsu`,
+`stac`) added the same way as W1/W2: a real `cwltool --provenance` run, no illustrative examples.
+It also surfaced a mapping gap neither W1 nor W2 exercises (`docs/DEVIATIONS.md` M-13: a packed
+`$graph` document with more than one top-level `Workflow` always converts the *first* one,
+regardless of which `element` was requested) and needed one local, non-upstream CWL patch to run
+at all (M-13's sibling on the execution side, U-06: `NetworkAccess` with no namespace prefix is
+not valid CWL).
 
 `eoap.cct.cwl-to-ogcprocess` (`GeoLabs/bblocks-eoap-cct`, commit `291a741`, pinned in
 `scripts/sources.yaml`) now resolves CWL `format` into `contentMediaType`/`contentEncoding` and

@@ -48,8 +48,9 @@ formulas come from Se2WaQ (Potes et al. 2018; Toming et al. 2016), per the base 
 
 **CWL specifics.**
 - 28 inputs: `name`, `calc` and 26 optional `File?` bands `band_a`..`band_z`, each accepting
-  `ogc:geotiff | iana:image/tiff | iana:image/jp2`. The transform maps each to an octet-stream
-  string (M-01) and loses the multi-format choice (M-02).
+  `ogc:geotiff | iana:image/tiff | iana:image/jp2`. The transform resolves each to a `oneOf`
+  of one binary schema per format (M-01/M-02, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess`
+  itself).
 - `calc` is an unconstrained string evaluated as Python: the processDescription cannot say
   which band letters are required, so the process is only meaningful with its callers'
   `valueFrom` expressions. This is the main profiling limit of the tool.

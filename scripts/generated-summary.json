@@ -516,5 +516,168 @@
     "cct": [],
     "inputs": 7,
     "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.water-bodies",
+    "key": "water-bodies",
+    "class": "Workflow",
+    "pd_id": "water-bodies",
+    "phases": [
+      "data-retrieval",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite: a CWL Workflow scattering a per-item sub-workflow over the STAC item list, then aggregating the results into one STAC catalog. The openEO equivalent would be a user-defined process graph, which has no Building Block of its own; the correspondence is carried by the steps.",
+      "decomposition": [
+        {
+          "stage": "node_water_bodies (detect_water_body, scatter over stac_items)",
+          "openeo": [],
+          "level": "none",
+          "note": "see osc.process-profiles.water-bodies.detect-water-body"
+        },
+        {
+          "stage": "node_stac",
+          "openeo": [
+            "ogc.openeo.processes.cubes.save_result"
+          ],
+          "level": "closeMatch"
+        }
+      ]
+    },
+    "corrections": [
+      "M-05 outputs.stac: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": true,
+    "cct": [],
+    "inputs": 4,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.detect-water-body",
+    "key": "detect-water-body",
+    "class": "Workflow",
+    "pd_id": "detect_water_body",
+    "phases": [
+      "data-retrieval",
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite (3 steps: band crop scattered over 2 bands, NDWI, Otsu threshold). In openEO this is one load_collection with band selection followed by a short process graph.",
+      "decomposition": [
+        {
+          "stage": "node_crop (x2, scatter over bands)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection",
+            "ogc.openeo.processes.cubes.filter_bands"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "node_normalized_difference",
+          "openeo": [
+            "ogc.openeo.processes.math.indices.normalized_difference"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "node_otsu",
+          "openeo": [],
+          "level": "none",
+          "note": "no stable Otsu-threshold process in openEO"
+        }
+      ]
+    },
+    "corrections": [],
+    "execution": true,
+    "cct": [],
+    "inputs": 4,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.crop",
+    "key": "crop",
+    "class": "CommandLineTool",
+    "pd_id": "crop",
+    "phases": [
+      "data-retrieval"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands"
+      ],
+      "rationale": "load_collection with a spatial_extent (aoi) and a single band selected (filter_bands); the STAC item is given by URL rather than resolved by collection/date/bbox search, and the windowed COG read (no full download) is an implementation detail openEO back-ends make transparently."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 4,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.norm-diff",
+    "key": "norm-diff",
+    "class": "CommandLineTool",
+    "pd_id": "norm_diff",
+    "phases": [
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.math.indices.normalized_difference"
+      ],
+      "rationale": "Exact index formula, generic over which two bands are passed: NDWI (green, nir) in this workflow, same as `ogc.openeo.processes.math.indices.normalized_difference` used for NDVI elsewhere in this register (`kindgrove.mangrove`) -- it is the caller's band choice, not the tool, that names the index."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 1,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.otsu",
+    "key": "otsu",
+    "class": "CommandLineTool",
+    "pd_id": "otsu",
+    "phases": [
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "openEO has no built-in Otsu (automatic histogram) threshold process; the closest primitive, `ogc.openeo.processes.comparison.gt`, only compares against a caller-supplied constant, not a threshold the process computes itself."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 1,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.water-bodies.stac",
+    "key": "stac",
+    "class": "CommandLineTool",
+    "pd_id": "stac",
+    "phases": [
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.save_result"
+      ],
+      "rationale": "Writes the final rasters to a self-describing output collection; save_result's STAC-catalog output option is the closest openEO equivalent to hand-assembling one."
+    },
+    "corrections": [
+      "M-05 outputs.stac_catalog: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 2,
+    "outputs": 1
   }
 ]

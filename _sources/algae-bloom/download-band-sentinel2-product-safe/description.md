@@ -28,7 +28,8 @@ authenticated) and extracts `T<tile>_<datetime>_<band>_<res>.jp2`.
   redacts them in the log (`(secret-<uuid>)`), but the transform exposes them as plain
   `string` inputs (M-04).
 - `resolution` is `null | enum` (optional enum), `debug` an optional boolean with default.
-- Output `product` is `File` with `format: iana:image/jp2`, dropped by the transform (M-01).
+- Output `product` is `File` with `format: iana:image/jp2`, resolved by the transform to
+  `contentMediaType: image/jp2` (M-01, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess` itself).
 
 **Provenance.** Secret inputs must be recorded as entities without value (GP-5): the generic
 profile has no redaction convention, the example records the input entity with no `value`.

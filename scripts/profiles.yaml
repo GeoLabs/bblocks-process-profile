@@ -201,7 +201,9 @@ processes:
       **CWL specifics.** `product_url` is a plain `string` holding an HTTPS STAC Item URL
       (candidate `eoap.cct.string-format` URI, or `eoap.cct.stac` Item if the Item itself were
       passed). `band` is an enum of 16 values. Output `product` is `File` with
-      `format: ogc:geotiff`, dropped by the transform (M-01).
+      `format: ogc:geotiff`, resolved by the transform to
+      `contentMediaType: image/tiff; application=geotiff` (M-01, fixed 2026-09-23 in
+      `eoap.cct.cwl-to-ogcprocess` itself).
 
       **Provenance.** The downloaded band is the first file entity of the chain; its
       `wasDerivedFrom` is the STAC Item (remote, not an output of the run), which
@@ -239,7 +241,8 @@ processes:
         redacts them in the log (`(secret-<uuid>)`), but the transform exposes them as plain
         `string` inputs (M-04).
       - `resolution` is `null | enum` (optional enum), `debug` an optional boolean with default.
-      - Output `product` is `File` with `format: iana:image/jp2`, dropped by the transform (M-01).
+      - Output `product` is `File` with `format: iana:image/jp2`, resolved by the transform to
+        `contentMediaType: image/jp2` (M-01, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess` itself).
 
       **Provenance.** Secret inputs must be recorded as entities without value (GP-5): the generic
       profile has no redaction convention, the example records the input entity with no `value`.
@@ -320,8 +323,9 @@ processes:
 
       **CWL specifics.**
       - 28 inputs: `name`, `calc` and 26 optional `File?` bands `band_a`..`band_z`, each accepting
-        `ogc:geotiff | iana:image/tiff | iana:image/jp2`. The transform maps each to an octet-stream
-        string (M-01) and loses the multi-format choice (M-02).
+        `ogc:geotiff | iana:image/tiff | iana:image/jp2`. The transform resolves each to a `oneOf`
+        of one binary schema per format (M-01/M-02, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess`
+        itself).
       - `calc` is an unconstrained string evaluated as Python: the processDescription cannot say
         which band letters are required, so the process is only meaningful with its callers'
         `valueFrom` expressions. This is the main profiling limit of the tool.
@@ -365,7 +369,8 @@ processes:
       hidden in a literal: could be typed as an array of `[number, [r,g,b]]` in the
       processDescription, but CWL cannot declare it). Outputs are globbed with
       `$(runtime.outdir)/*.tif` / `*.png`, so any extra file would break the step. Output formats
-      `ogc:geotiff` and `iana:image/png` are dropped by the transform (M-01).
+      `ogc:geotiff` and `iana:image/png` are resolved by the transform to their respective
+      media types (M-01, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess` itself).
 
       **Provenance.** Two outputs derived from one input; `color_scale` is the parameter that
       makes the rendering reproducible.
@@ -518,3 +523,226 @@ processes:
     stac_catalog: [result]
     results:
       result: {href: catalog.json, type: application/json, stac: true}
+
+  # ---------------------------------------------------------------- W3 water-bodies (OGC EO
+  # Application Package Hands-On, Terradue): a real two-level scatter (per STAC item, per band),
+  # neither W1 nor W2 exercises. Source: gfenoy/mastering-app-package, `main` -- a live OGC API -
+  # Processes deployment reference the author does not want this repo's tooling touching; running
+  # it needs a local-only patch, never applied to the clone (docs/DEVIATIONS.md U-06).
+  - key: water-bodies
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: water-bodies}
+    phases: [data-retrieval, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.bbox, eoap.cct.string-format]
+    steps: [detect-water-body, stac]
+    openeo:
+      level: none
+      rationale: >-
+        Composite: a CWL Workflow scattering a per-item sub-workflow over the STAC item list, then
+        aggregating the results into one STAC catalog. The openEO equivalent would be a
+        user-defined process graph, which has no Building Block of its own; the correspondence is
+        carried by the steps.
+      decomposition:
+        - {stage: "node_water_bodies (detect_water_body, scatter over stac_items)", openeo: [], level: none, note: "see osc.process-profiles.water-bodies.detect-water-body"}
+        - {stage: node_stac, openeo: [ogc.openeo.processes.cubes.save_result], level: closeMatch}
+    run: {prov: water-bodies}
+    execute:
+      inputs:
+        aoi: "-121.399,39.834,-120.74,40.472"
+        epsg: "EPSG:4326"
+        stac_items:
+          - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+          - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+    stac_catalog: [stac]
+    results:
+      stac: {href: catalog.json, type: application/json, stac: true}
+
+  - key: detect-water-body
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: detect_water_body}
+    phases: [data-retrieval, scientific-computation]
+    cct: []
+    cct_candidates: [eoap.cct.bbox, eoap.cct.string-format]
+    steps: [crop, norm-diff, otsu]
+    parents: [water-bodies]
+    openeo:
+      level: none
+      rationale: >-
+        Composite (3 steps: band crop scattered over 2 bands, NDWI, Otsu threshold). In openEO
+        this is one load_collection with band selection followed by a short process graph.
+      decomposition:
+        - {stage: "node_crop (x2, scatter over bands)", openeo: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands], level: closeMatch}
+        - {stage: node_normalized_difference, openeo: [ogc.openeo.processes.math.indices.normalized_difference], level: closeMatch}
+        - {stage: node_otsu, openeo: [], level: none, note: "no stable Otsu-threshold process in openEO"}
+    analysis: |
+      **Behaviour.** Crops the requested `bands` (scatter) of one STAC `item` to `aoi`/`epsg`,
+      computes their normalized difference, then an Otsu binary threshold on the result.
+
+      **CWL specifics.** `bands` fixes the crop order and therefore which raster `node_normalized_difference`
+      treats as the minuend: with the workflow default (`green`, `nir`) the index computed is NDWI,
+      but nothing in the processDescription says so -- `norm-diff` itself is generic (see that profile).
+
+      **Provenance.** Composite of `crop` x2, `norm-diff`, `otsu`; see each for its own gaps.
+    run: {prov: water-bodies, step: main, iteration: 1}
+    execute:
+      inputs:
+        aoi: "-121.399,39.834,-120.74,40.472"
+        epsg: "EPSG:4326"
+        item: "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+        bands: [green, nir]
+    results:
+      detected_water_body: {href: otsu.tif, type: geotiff}
+
+  - key: crop
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: crop}
+    label: Crop a Sentinel-2 COG band to an area of interest
+    definition: >-
+      Cloud-native windowed read of one Sentinel-2 COG band asset of a STAC item, cropped to the
+      area of interest and reprojected to the requested CRS.
+    phases: [data-retrieval]
+    cct: []
+    cct_candidates: [eoap.cct.bbox, eoap.cct.stac, eoap.cct.string-format]
+    parents: [detect-water-body]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands]
+      rationale: >-
+        load_collection with a spatial_extent (aoi) and a single band selected (filter_bands); the
+        STAC item is given by URL rather than resolved by collection/date/bbox search, and the
+        windowed COG read (no full download) is an implementation detail openEO back-ends make
+        transparently.
+    analysis: |
+      **Behaviour.** `python -m app`, `ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0`.
+      Reads one asset of the given STAC item directly over the network (`NetworkAccess`; no `File`
+      input -- `item` is a plain STAC item URL string), windowed-reads and reprojects the requested
+      `band` to `epsg` cropped to `aoi`, writes one GeoTIFF (`crop_<band>.tif`).
+
+      **CWL specifics.** `item`, `aoi`, `epsg`, `band` are all plain strings: `item` is a STAC Item
+      URL (candidate `eoap.cct.stac` or `eoap.cct.string-format`), `aoi` a comma-separated bbox
+      (candidate `eoap.cct.bbox`, but as one string, not the object EOAP's own BBox type expects).
+      `band` is an unconstrained string (`green`, `nir`, ...), not an enum: any STAC asset key the
+      item happens to expose is accepted, so an invalid band name fails only at execution.
+
+      **Provenance.** No input is a `File`: `aoi`/`epsg`/`item`/`band` are literal-valued entities;
+      the network fetch itself leaves no provenance trace beyond the output file (GP-3, GP-4).
+    run: {prov: water-bodies, step: node_crop, iteration: 1}
+    execute:
+      inputs:
+        item: "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+        aoi: "-121.399,39.834,-120.74,40.472"
+        epsg: "EPSG:4326"
+        band: green
+    results:
+      cropped: {href: crop_green.tif, type: geotiff}
+
+  - key: norm-diff
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: norm_diff}
+    label: Normalized difference between two rasters
+    definition: Computes the normalized difference index ((A-B)/(A+B)) of two co-registered rasters.
+    phases: [scientific-computation]
+    cct: []
+    cct_candidates: []
+    parents: [detect-water-body]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.math.indices.normalized_difference]
+      rationale: >-
+        Exact index formula, generic over which two bands are passed: NDWI (green, nir) in this
+        workflow, same as `ogc.openeo.processes.math.indices.normalized_difference` used for NDVI
+        elsewhere in this register (`kindgrove.mangrove`) -- it is the caller's band choice, not
+        the tool, that names the index.
+    analysis: |
+      **Behaviour.** `python -m app`, `ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0`.
+      Reads the two cropped band rasters (positional `rasters: File[]`, order fixed by `node_crop`'s
+      scatter order over `bands`: green first, nir second in this workflow) and writes
+      `(A-B)/(A+B)` as one GeoTIFF (`norm_diff.tif`).
+
+      **CWL specifics.** `rasters` is `File[]` with **no positional labels**: which raster is the
+      minuend and which the subtrahend depends entirely on array order, not expressed anywhere in
+      the processDescription (an unconstrained `array` of File binary schemas).
+
+      **Provenance.** Two file inputs, one file output; a plain `wasDerivedFrom` chain (GP-3/GP-4
+      do not apply, both endpoints are files).
+    run: {prov: water-bodies, step: node_normalized_difference, iteration: 1}
+    execute:
+      inputs:
+        rasters:
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif", type: "image/tiff; application=geotiff"}
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif", type: "image/tiff; application=geotiff"}
+    results:
+      ndwi: {href: norm_diff.tif, type: geotiff}
+
+  - key: otsu
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: otsu}
+    label: Otsu binary threshold
+    definition: Thresholds a single-band raster into a binary mask using Otsu's method.
+    phases: [scientific-computation]
+    cct: []
+    cct_candidates: []
+    parents: [detect-water-body]
+    openeo:
+      level: none
+      rationale: >-
+        openEO has no built-in Otsu (automatic histogram) threshold process; the closest primitive,
+        `ogc.openeo.processes.comparison.gt`, only compares against a caller-supplied constant, not
+        a threshold the process computes itself.
+    analysis: |
+      **Behaviour.** `python -m app`, `ghcr.io/terradue/ogc-eo-application-package-hands-on/otsu:1.5.0`.
+      Computes an Otsu threshold on the input raster's histogram and writes a binary (water /
+      not-water) mask GeoTIFF (`otsu.tif`).
+
+      **Provenance.** One file input, one file output.
+    run: {prov: water-bodies, step: node_otsu, iteration: 1}
+    execute:
+      inputs:
+        raster: {href: norm_diff.tif, type: geotiff}
+    results:
+      binary_mask_item: {href: otsu.tif, type: geotiff}
+
+  - key: stac
+    workflow: water-bodies
+    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: stac}
+    label: Assemble a STAC catalog of detected water bodies
+    definition: >-
+      Writes a STAC Catalog with one Item per input identifier, each carrying the corresponding
+      water-body raster as an asset.
+    phases: [export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.stac]
+    parents: [water-bodies]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.save_result]
+      rationale: >-
+        Writes the final rasters to a self-describing output collection; save_result's STAC-catalog
+        output option is the closest openEO equivalent to hand-assembling one.
+    analysis: |
+      **Behaviour.** `python -m app`, `ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0`.
+      Pairs each `item` (a STAC item URL, in order) with the matching `rasters` entry (in order,
+      the same positional-array coupling as `norm-diff`) and writes a root `catalog.json` plus one
+      per-item sub-folder holding that item's own STAC JSON and its water-body raster asset.
+
+      **CWL specifics.** Output `stac_catalog` is a `Directory`, mapped by the transform to a STAC
+      **Collection**; the run record shows the tool itself writes a STAC **Catalog**
+      (`catalog.json`, `"type": "Catalog"`) with one Item per input identifier: corrected (M-05),
+      the same gap as `kindgrove.mangrove` / `kindgrove.mangrove-workflow`.
+
+      **Provenance.** Two array inputs coupled positionally (GP-3: neither is itself a file-typed
+      entity that could carry `wasDerivedFrom` to the water-body rasters it packages); the output
+      directory's members are the register's own `execution` bundle's per-file artefacts (GP-10).
+    run: {prov: water-bodies, step: node_stac}
+    execute:
+      inputs:
+        item:
+          - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+          - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+        rasters:
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif", type: "image/tiff; application=geotiff"}
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif", type: "image/tiff; application=geotiff"}
+    stac_catalog: [stac_catalog]
+    results:
+      stac_catalog: {href: catalog.json, type: application/json, stac: true}

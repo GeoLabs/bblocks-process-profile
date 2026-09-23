@@ -22,7 +22,9 @@ downloads it as `<band>.tif` (COG from the Earth-Search Sentinel-2 L2A collectio
 **CWL specifics.** `product_url` is a plain `string` holding an HTTPS STAC Item URL
 (candidate `eoap.cct.string-format` URI, or `eoap.cct.stac` Item if the Item itself were
 passed). `band` is an enum of 16 values. Output `product` is `File` with
-`format: ogc:geotiff`, dropped by the transform (M-01).
+`format: ogc:geotiff`, resolved by the transform to
+`contentMediaType: image/tiff; application=geotiff` (M-01, fixed 2026-09-23 in
+`eoap.cct.cwl-to-ogcprocess` itself).
 
 **Provenance.** The downloaded band is the first file entity of the chain; its
 `wasDerivedFrom` is the STAC Item (remote, not an output of the run), which

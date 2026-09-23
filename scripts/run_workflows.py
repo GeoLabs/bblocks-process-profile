@@ -27,6 +27,13 @@ only reads what this script (or you) put there. --no-fetch skips this step.
 
 Running the W1 package needs the deviations of docs/DEVIATIONS.md U-03..U-05; --build-images
 applies U-03 (build `base` first, tag `reproject-image:latest`) and, on arm64 hosts, U-04.
+
+A run's `workflow.patch` (docs/DEVIATIONS.md U-06) is a list of `{find, replace}` text
+substitutions applied to a *copy* of the CWL file in a temporary directory before it is handed to
+cwltool -- the pinned clone on disk, and the upstream repository, are never written to. This is
+for a source whose default branch is itself a live deployment reference the author does not want
+this script touching; each `find` must match exactly once, so a fix landing upstream turns into a
+loud failure here (remove the patch) rather than a silent no-op.
 """
 import argparse
 import getpass
@@ -116,6 +123,31 @@ def build_w1_images(w1_root: Path):
             sys.exit("calculate-band arm64 fix failed")
 
 
+def cwl_target(run, workdir: Path, tmp: Path) -> str:
+    """The path (+ `#element` fragment) cwltool gets for this run's workflow. Unpatched, this is
+    the clone's own file, referenced workdir-relative exactly as before. When `workflow.patch` is
+    set (docs/DEVIATIONS.md U-06), a *copy* is written under `tmp` with the substitutions applied
+    and its absolute path is returned instead -- the clone is never modified."""
+    wf = run["workflow"]
+    src = workdir / wf["file"]
+    frag = f"#{wf['element']}" if wf.get("element") else ""
+    patch = wf.get("patch")
+    if not patch:
+        return wf["file"] + frag
+    if not src.is_file():
+        sys.exit(f"{run['_name']}: workflow file {src} not found (is the clone checked out under --sources-root?)")
+    text = src.read_text()
+    for sub in patch:
+        n = text.count(sub["find"])
+        if n != 1:
+            sys.exit(f"{run['_name']}: patch anchor found {n} times (expected 1) in {src}:\n  {sub['find']!r}\n"
+                     "the upstream file has changed -- update or remove this patch in scripts/sources.yaml")
+        text = text.replace(sub["find"], sub["replace"])
+    out = tmp / src.name
+    out.write_text(text)
+    return str(out) + frag
+
+
 def job_file(run, workdir: Path, tmp: Path) -> Path:
     """The job cwltool gets: the clone's example job, with secrets filled from the environment,
     or the inline `inputs:` of the run. Written under `tmp`, never into the clone."""
@@ -152,7 +184,6 @@ def run_one(name, run, sources, sources_root: Path, runs_root: Path, force: bool
         return True
     src = sources[run["workflow"]["repo"]]
     workdir = sources_root / src["clone"] / src["base_path"]
-    target = run["workflow"]["file"] + (f"#{run['workflow']['element']}" if run["workflow"].get("element") else "")
     results = Path(run.get("results", str(bag) + "-results"))
     results = results if results.is_absolute() else runs_root / results
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -161,6 +192,7 @@ def run_one(name, run, sources, sources_root: Path, runs_root: Path, force: bool
 
     with tempfile.TemporaryDirectory(prefix=f"{name}-") as tmp:
         tmp = Path(tmp)
+        target = cwl_target(run, workdir, tmp)
         job = job_file(run, workdir, tmp)
         tmp_bag = tmp / "ro"
         tmp_out = tmp / "out"

@@ -28,7 +28,8 @@ image, writes a colourised GeoTIFF (`<output_name>.tif`) and a PNG figure (`<plo
 hidden in a literal: could be typed as an array of `[number, [r,g,b]]` in the
 processDescription, but CWL cannot declare it). Outputs are globbed with
 `$(runtime.outdir)/*.tif` / `*.png`, so any extra file would break the step. Output formats
-`ogc:geotiff` and `iana:image/png` are dropped by the transform (M-01).
+`ogc:geotiff` and `iana:image/png` are resolved by the transform to their respective
+media types (M-01, fixed 2026-09-23 in `eoap.cct.cwl-to-ogcprocess` itself).
 
 **Provenance.** Two outputs derived from one input; `color_scale` is the parameter that
 makes the rendering reproducible.

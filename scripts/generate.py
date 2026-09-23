@@ -416,7 +416,10 @@ def _files_in(art):
     if "file" in art:
         return [{"path": art["file"], "sha1": art["sha1"], "size": art["size"]}]
     if "dir" in art:
-        return art["files"]
+        # a `glob: '.'` Directory output captures the whole working directory, including hidden
+        # files the execution host leaves behind (e.g. macOS Rosetta's `.cache/rosetta` under
+        # emulation) that are not a declared CWL output and never get a checksum.
+        return [f for f in art["files"] if not any(p.startswith(".") for p in f["path"].split("/"))]
     if "list" in art:
         return [f for x in art["list"] for f in _files_in(x)]
     return []
@@ -435,8 +438,14 @@ def load_process(proc, sources, roots):
     top = {k: v for k, v in doc.items() if k != "$graph"}
     el = next(e for e in doc["$graph"] if e.get("id") == element)
     if el.get("class") == "Workflow":
-        # the transform itself selects the first Workflow of the packed document
-        return doc, el, url + "#" + element
+        # the transform itself selects the *first* Workflow of the packed document (its own
+        # `map(select(.class == "Workflow")) | first`); a document with only one top-level
+        # Workflow (W1, W2) always hits the right one regardless of order, but water-bodies packs
+        # two (`water-bodies`, `detect_water_body`) -- reorder $graph so the requested element is
+        # first, leaving every other member (including the ones it steps into) untouched.
+        reordered = dict(doc)
+        reordered["$graph"] = [el] + [e for e in doc["$graph"] if e is not el]
+        return reordered, el, url + "#" + element
     iso = copy.deepcopy(top)  # M-03: tool inherits document-level annotations
     iso.update(copy.deepcopy(el))
     return iso, el, url + "#" + element
@@ -780,7 +789,8 @@ def md_openeo(oe):
 
 
 def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key, eoap_commit):
-    wf = {"algae-bloom": "W1 Algae Bloom", "kindgrove": "W2 KindGrove"}[proc["workflow"]]
+    wf = {"algae-bloom": "W1 Algae Bloom", "kindgrove": "W2 KindGrove",
+          "water-bodies": "W3 Water Bodies"}[proc["workflow"]]
     ins = cwl_items(cwl_el.get("inputs"))
     outs = cwl_items(cwl_el.get("outputs"))
     parts = [
@@ -954,6 +964,7 @@ def main():
     ap.add_argument("--sources-root", type=Path, default=ROOT.parent)
     ap.add_argument("--w1", type=Path)
     ap.add_argument("--w2", type=Path)
+    ap.add_argument("--w3", type=Path)
     ap.add_argument("--eoap-cct", type=Path)
     ap.add_argument("--runs-root", type=Path,
                     help="directory holding the CWLProv research objects named in scripts/sources.yaml `runs:` "
@@ -965,7 +976,8 @@ def main():
     d, procs = cfg["defaults"], cfg["processes"]
     by_key = {p["key"]: p for p in procs}
     roots = {"w1": a.w1 or a.sources_root / sources["w1"]["clone"],
-             "w2": a.w2 or a.sources_root / sources["w2"]["clone"]}
+             "w2": a.w2 or a.sources_root / sources["w2"]["clone"],
+             "w3": a.w3 or a.sources_root / sources["w3"]["clone"]}
     eoap = a.eoap_cct or a.sources_root / sources["eoap_cct"]["clone"]
     jq_path = eoap / sources["eoap_cct"]["transform"]
     # real run records: local research objects, never downloaded (like the CWL clones)

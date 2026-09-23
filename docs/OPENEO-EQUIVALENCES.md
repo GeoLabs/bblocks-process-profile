@@ -19,7 +19,7 @@ process equivalence. Composite and opaque processes carry a stage-by-stage `deco
 process-type entry. openEO `proposals/` (e.g. `load_stac`) are out of scope because
 bblocks-openeo only models stable processes.
 
-## Decisions
+## Decisions (to be confirmed by Gérald before commit)
 
 | # | Profile | Level | exactMatch / closeMatch | relatedMatch | Rationale (short) |
 |---|---|---|---|---|---|
@@ -36,5 +36,11 @@ bblocks-openeo only models stable processes.
 | E11 | `kindgrove.mangrove-workflow` | none | — | — | Composite of a BBox-unpacking helper and one opaque tool; the openEO equivalent is a process graph (see the `mangrove` profile for the stage-by-stage decomposition). |
 | E12 | `kindgrove.parse-aoi` | none | — | `types.bounding-box` | Structural helper: unpacks an OGC BBox record into west/south/east/north floats and emits a constant `output_dir` ("outputs"). |
 | E13 | `kindgrove.mangrove` | none | — | — | Opaque: one ipython2cwl binary running the whole notebook. |
+| E14 | `water-bodies.water-bodies` | none | — | — | Composite: a CWL Workflow scattering a per-item sub-workflow over the STAC item list, then aggregating the results into one STAC catalog. |
+| E15 | `water-bodies.detect-water-body` | none | — | — | Composite (3 steps: band crop scattered over 2 bands, NDWI, Otsu threshold). |
+| E16 | `water-bodies.crop` | closeMatch | `processes.cubes.load_collection`, `processes.cubes.filter_bands` | — | load_collection with a spatial_extent (aoi) and a single band selected (filter_bands); the STAC item is given by URL rather than resolved by collection/date/bbox search, and the windowed COG read (no full download) is an implementation detail openEO back-ends make transparently.. |
+| E17 | `water-bodies.norm-diff` | closeMatch | `processes.math.indices.normalized_difference` | — | Exact index formula, generic over which two bands are passed: NDWI (green, nir) in this workflow, same as `ogc.openeo.processes.math.indices.normalized_difference` used for NDVI elsewhere in this register (`kindgrove.mangrove`) -- it is the caller's band choice, not the tool, that names the index.. |
+| E18 | `water-bodies.otsu` | none | — | — | openEO has no built-in Otsu (automatic histogram) threshold process; the closest primitive, `ogc.openeo.processes.comparison.gt`, only compares against a caller-supplied constant, not a threshold the process computes itself.. |
+| E19 | `water-bodies.stac` | closeMatch | `processes.cubes.save_result` | — | Writes the final rasters to a self-describing output collection; save_result's STAC-catalog output option is the closest openEO equivalent to hand-assembling one.. |
 
 Full rationale and decompositions: each profile's `description.md` and `examples/process-type.json`.
