@@ -1,0 +1,6 @@
+{
+  "cropped": {
+    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

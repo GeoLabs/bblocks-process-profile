@@ -1,0 +1,61 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
+  "type": "ProcessType",
+  "prefLabel": "Water body detection based on NDWI and otsu threshold",
+  "definition": "Water body detection based on NDWI and otsu threshold",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation"
+  ],
+  "profile": "ospd.process-profiles.water-bodies.detect-water-body",
+  "processDescription": {
+    "id": "detect_water_body",
+    "version": "1.4.1"
+  },
+  "source": {
+    "cwl": "https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#detect_water_body",
+    "cwlClass": "Workflow",
+    "cwlId": "detect_water_body",
+    "license": "https://spdx.org/licenses/CC-BY-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox",
+    "eoap.cct.string-format"
+  ],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/norm-diff",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/otsu"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite (3 steps: band crop scattered over 2 bands, NDWI, Otsu threshold). In openEO this is one load_collection with band selection followed by a short process graph.",
+    "decomposition": [
+      {
+        "stage": "node_crop (x2, scatter over bands)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.load_collection",
+          "ogc.openeo.processes.cubes.filter_bands"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "node_normalized_difference",
+        "openeo": [
+          "ogc.openeo.processes.math.indices.normalized_difference"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "node_otsu",
+        "openeo": [],
+        "level": "none",
+        "note": "no stable Otsu-threshold process in openEO"
+      }
+    ]
+  }
+}

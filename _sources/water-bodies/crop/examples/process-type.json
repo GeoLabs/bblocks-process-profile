@@ -1,0 +1,37 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
+  "type": "ProcessType",
+  "prefLabel": "Crop a Sentinel-2 COG band to an area of interest",
+  "definition": "Cloud-native windowed read of one Sentinel-2 COG band asset of a STAC item, cropped to the area of interest and reprojected to the requested CRS.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval"
+  ],
+  "profile": "ospd.process-profiles.water-bodies.crop",
+  "processDescription": {
+    "id": "crop",
+    "version": "1.4.1"
+  },
+  "source": {
+    "cwl": "https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#crop",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "crop",
+    "license": "https://spdx.org/licenses/CC-BY-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox",
+    "eoap.cct.stac",
+    "eoap.cct.string-format"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "load_collection with a spatial_extent (aoi) and a single band selected (filter_bands); the STAC item is given by URL rather than resolved by collection/date/bbox search, and the windowed COG read (no full download) is an implementation detail openEO back-ends make transparently."
+  }
+}
