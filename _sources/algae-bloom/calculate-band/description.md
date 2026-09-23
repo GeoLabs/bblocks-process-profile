@@ -62,37 +62,9 @@ told apart. With the generic profile this is only possible as a plain `prov:Enti
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
-**Manually corrected** (the raw transform output is kept as a separate example):
-
-- M-01/M-02 inputs.band_a: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_b: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_c: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_d: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_e: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_f: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_g: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_h: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_i: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_j: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_k: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_l: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_m: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_n: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_o: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_p: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_q: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_r: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_s: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_t: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_u: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_v: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_w: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_x: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_y: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01/M-02 inputs.band_z: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
+No manual correction: the example is the unmodified transform output.
 
 ## Provenance view
 

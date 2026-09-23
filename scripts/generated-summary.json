@@ -31,18 +31,7 @@
         }
       ]
     },
-    "corrections": [
-      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": true,
     "cct": [],
     "inputs": 6,
@@ -95,17 +84,7 @@
         }
       ]
     },
-    "corrections": [
-      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": true,
     "cct": [],
     "inputs": 1,
@@ -143,16 +122,6 @@
       ]
     },
     "corrections": [
-      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
       "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
       "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
     ],
@@ -201,15 +170,6 @@
       ]
     },
     "corrections": [
-      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
-      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
       "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
       "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
     ],
@@ -239,9 +199,7 @@
       ],
       "rationale": "Same filter semantics as load_collection's `id` (collection), `spatial_extent` (aoi), `temporal_extent` (date±delta or toi) and `properties` (eo:cloud_cover) parameters. Not an exactMatch: the tool only selects (returns product URLs) and does not load data; the `catalog` switch (copernicus / earth-search) is a back-end choice with no openEO parameter; `date`+`delta` must be turned into an interval; the Earth-Search branch filters `0 < eo:cloud_cover < cloud_cover` (strict, excludes 0) where an openEO `lte` filter would be expected."
     },
-    "corrections": [
-      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": false,
     "cct": [],
     "inputs": 8,
@@ -267,9 +225,7 @@
       ],
       "rationale": "Retrieves one band of one product: load_collection with `bands` (or filter_bands) over a single-item extent. The closest openEO process, `load_stac`, is only an openEO proposal and out of the register's scope. The band is chosen by Sentinel-2 band id (B01..B12), matched to STAC `eo:common_name` assets inside the tool, where openEO uses collection band names directly."
     },
-    "corrections": [
-      "M-01 outputs.product: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": false,
     "cct": [],
     "inputs": 2,
@@ -295,7 +251,6 @@
       "rationale": "Same operation as the STAC-Item variant (one band of one product) but reading the SAFE archive on S3 with user credentials and a `resolution` selector (10m/20m/60m). openEO has no credential parameters (handled by the back-end) and chooses native resolution per band; choosing another resolution is resample_spatial territory."
     },
     "corrections": [
-      "M-01 outputs.product: contentMediaType from CWL format `iana:image/jp2` -> `image/jp2`; contentEncoding binary",
       "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
       "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
     ],
@@ -319,10 +274,7 @@
       ],
       "rationale": "As used in W1 the tool only changes the pixel size (gdalwarp `-tr 60 60`, nearest neighbour by default, no `-t_srs`): resample_spatial with `resolution: 60`, `projection: null`, `method: near`. Not an exactMatch: `output_dimensions` (`-ts`) has no openEO parameter, the output type is forced to Float32 (`-ot Float32`), and the tool works on a file rather than a data cube. Despite its name, no CRS transformation takes place."
     },
-    "corrections": [
-      "M-01/M-02 inputs.input_image: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": false,
     "cct": [],
     "inputs": 4,
@@ -379,35 +331,7 @@
         }
       ]
     },
-    "corrections": [
-      "M-01/M-02 inputs.band_a: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_b: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_c: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_d: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_e: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_f: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_g: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_h: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_i: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_j: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_k: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_l: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_m: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_n: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_o: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_p: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_q: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_r: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_s: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_t: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_u: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_v: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_w: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_x: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_y: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01/M-02 inputs.band_z: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": false,
     "cct": [],
     "inputs": 28,
@@ -432,11 +356,7 @@
       ],
       "rationale": "Partial: the export part (GeoTIFF + PNG) corresponds to save_result with a GTiff or PNG format; `clip_min`/`clip_max` correspond to math.clip. The colour mapping (`color_scale` bins) and the matplotlib figure (title, colour bar) have no stable openEO process (colour maps are back-end-specific format options)."
     },
-    "corrections": [
-      "M-01/M-02 inputs.input_image: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
-      "M-01 outputs.output_file: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
-      "M-01 outputs.output_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
-    ],
+    "corrections": [],
     "execution": false,
     "cct": [],
     "inputs": 7,

@@ -4,7 +4,7 @@ Process profile of **`mangrove-workflow`** (Workflow, W2 KindGrove).
 
 ## Source
 
-- CWL: [mangrove-workflow.cwl#mangrove-workflow](https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove-workflow) (pinned commit `c27c60d`, license <https://spdx.org/licenses/Apache-2.0>). Referenced, not copied.
+- CWL: [mangrove-workflow.cwl#mangrove-workflow](https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove-workflow) (pinned commit `291a741`, license <https://spdx.org/licenses/Apache-2.0>). Referenced, not copied.
 - Six-phase position: Filter configuration → Selection / filtering → Data retrieval → Pre-processing → Scientific computation → Export / aggregation
 - EOAP CWL custom types used: `eoap.cct.bbox`
 - Steps (profiles): `ospd.process-profiles.kindgrove.parse-aoi`, `ospd.process-profiles.kindgrove.mangrove`
@@ -17,7 +17,7 @@ Process profile of **`mangrove-workflow`** (Workflow, W2 KindGrove).
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
 **Manually corrected** (the raw transform output is kept as a separate example):
 

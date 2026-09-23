@@ -4,7 +4,7 @@ Process profile of **`parse_aoi`** (CommandLineTool, W2 KindGrove).
 
 ## Source
 
-- CWL: [mangrove-workflow.cwl#parse_aoi](https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#parse_aoi) (pinned commit `c27c60d`, license <https://spdx.org/licenses/Apache-2.0>). Referenced, not copied.
+- CWL: [mangrove-workflow.cwl#parse_aoi](https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#parse_aoi) (pinned commit `291a741`, license <https://spdx.org/licenses/Apache-2.0>). Referenced, not copied.
 - Six-phase position: Filter configuration
 - EOAP CWL custom types used: `eoap.cct.bbox`
 - Used by: `ospd.process-profiles.kindgrove.mangrove-workflow`
@@ -34,7 +34,7 @@ little use; it is profiled because it is a separately deployable CWL process.
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
 No manual correction: the example is the unmodified transform output.
 

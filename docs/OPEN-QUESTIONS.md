@@ -9,7 +9,7 @@ CWL files linked, not copied; openEO equivalence levels as in the Step 0 table.
 | ID | Question |
 |---|---|
 | Q-LIC | **Derived text from CC-BY-NC-SA-4.0 files.** The W1 CWL files are linked, not copied, but the generated processDescriptions and process-type entries reproduce their `label`/`doc` texts and the input/output names, and the run examples reuse file names from the CRIM logs. Is that acceptable in an Apache-2.0 repository with attribution, or should the W1 descriptive texts be replaced / that subtree be licensed CC-BY-NC-SA? |
-| Q-BUILD | **Resolved** `./build.sh` passes (see `docs/VALIDATION.md`); it first required a JSON-LD context per profile. |
+| Q-BUILD | **Resolved 2026-09-22.** `./build.sh` passes (see `docs/VALIDATION.md`); it first required a JSON-LD context per profile. |
 | Q-PUB | Are `https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json` and `https://geolabs.github.io/bblock-ogcapi-processes-part2/build/register.json` published? Neither repository contains a `build/` directory. If not, the build cannot resolve `ogc.bbr.provenance.*` / `ogc.api.processes.v2.*` (workaround for local testing: `bblocks-config-local.yaml.example`). |
 
 ## Sources and examples
@@ -48,6 +48,6 @@ CWL files linked, not copied; openEO equivalence levels as in the Step 0 table.
 | Q-IRI | Process-type IRIs, phase IRIs and the `pp:` vocabulary are provisional under `https://geolabs.github.io/bblocks-process-profiles/def/`. Where will the Activity 4 process-type register live? |
 | Q-STATUS | Process-type entries use ISO 19135 status `submitted`. Right value for candidates that have not been submitted anywhere yet? |
 | Q-STRICT | Profile strictness: the profile pins the process `id` and the input/output **names** only (not `version`, not the I/O schemas). Tighter or looser? |
-| Q-IMPORT | eoap-cct imported from the GeoLabs origin; the generic provenance profile imports the incubator fork (GP-8), so `eoap.cct.*` appears twice in the import graph. Check the build does not complain; otherwise align both on the origin. |
+| Q-IMPORT | **Resolved 2026-09-23.** The collision was real, not hypothetical: `bblocks-postprocess` silently let the incubator copy win over the GeoLabs one (GP-8). Fixed by repointing `bblocks-generic-provenance-profile`'s own import, not by reordering ours. |
 | Q-ENTITYTYPE | Binding entities to input/output names uses `entityType = <processDescription>#inputs/<name>` (GP-12). Acceptable as an interim convention? |
 | Q-U01 | Report U-01 (`oneOf` in execute/results) to ogcincubator/bblocks-ogcapi-processes and to the GeoLabs fork? |

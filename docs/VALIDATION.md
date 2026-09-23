@@ -1,10 +1,18 @@
 # Validation status
 
-## Authoritative validation: passing
+## Authoritative validation: passing (2026-09-23)
 
 `./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`) run on a machine with
-network access: **14/14 building blocks, 118/118 example snippets, 0 errors**, 116 SHACL
+network access: **14/14 building blocks, 111/111 example snippets, 0 errors**, 109 SHACL
 validations conform, no empty RDF graph, no `file:///` IRI.
+
+`eoap.cct.cwl-to-ogcprocess` (`GeoLabs/bblocks-eoap-cct`, commit `291a741`, pinned in
+`scripts/sources.yaml`) now resolves CWL `format` into `contentMediaType`/`contentEncoding` and
+multi-format `oneOf` itself (`docs/DEVIATIONS.md` M-01/M-02): 7 of the 10 W1 profiles are now
+unmodified transform output, with 7 fewer example snippets than before (the
+`processDescription.raw.json` example only exists for a `manually-corrected` profile). The
+`eoap.cct.*` import collision (GP-8/Q-IMPORT) is also fixed, at its source in
+`GeoLabs/bblocks-generic-provenance-profile`.
 
 Thirteen of those snippets are the run records as **W3C PROV-JSONLD** (`examples/cwlprov.jsonld`,
 validated against `ogc.ogc-utils.prov.w3c-prov-jsonld` from the experimental
@@ -77,4 +85,4 @@ bblock-ogcapi-processes-part2 (GeoLabs); opengeospatial/bblocks (as `bblocks`);
 opengeospatial/bblocks-postprocess.
 
 Not covered by the pre-check: JSON-LD uplift and SHACL, transforms, format assertions, doc
-generation, and the behaviour of the duplicate `eoap.cct.*` import (Q-IMPORT).
+generation.

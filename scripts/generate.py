@@ -779,7 +779,7 @@ def md_openeo(oe):
     return "\n".join(lines)
 
 
-def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key):
+def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key, eoap_commit):
     wf = {"algae-bloom": "W1 Algae Bloom", "kindgrove": "W2 KindGrove"}[proc["workflow"]]
     ins = cwl_items(cwl_el.get("inputs"))
     outs = cwl_items(cwl_el.get("outputs"))
@@ -814,7 +814,7 @@ def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_k
         parts += ["", "## Analysis", "", proc["analysis"].strip()]
     parts += ["", "## processDescription derivation", "",
               "Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct "
-              f"`c27c60d`, inline variant)."]
+              f"`{eoap_commit[:7]}`, inline variant)."]
     if corrections:
         parts += ["", "**Manually corrected** (the raw transform output is kept as a separate example):", ""]
         parts += [f"- {c}" for c in corrections]
@@ -1041,7 +1041,7 @@ def main():
         dump_yaml(out / "schema.yaml", profile_schema(proc, pd, cwl_el, has_exec))
         dump_yaml(out / "examples.yaml", examples_yaml(proc, cwl_el, url, corrected, has_exec))
         dump_json(out / "bblock.json", bblock_json(proc, pd, cwl_el, corrections, has_exec, by_key))
-        (out / "description.md").write_text(description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key))
+        (out / "description.md").write_text(description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key, sources["eoap_cct"]["commit"]))
 
         summary.append({"id": bb_id(proc), "key": proc["key"], "class": cwl_el["class"], "pd_id": pd["id"],
                         "phases": proc["phases"], "openeo": proc["openeo"], "corrections": corrections,

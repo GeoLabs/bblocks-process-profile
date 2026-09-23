@@ -23,20 +23,9 @@ Process profile of **`algae-usecase-workflow-earth-search`** (Workflow, W1 Algae
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
-**Manually corrected** (the raw transform output is kept as a separate example):
-
-- M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary
-- M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary
-- M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary
-- M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
-- M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary
+No manual correction: the example is the unmodified transform output.
 
 ## Provenance view
 

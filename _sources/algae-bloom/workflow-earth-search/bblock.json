@@ -33,11 +33,9 @@
     "process profile",
     "CWL",
     "Workflow",
-    "algae-bloom",
-    "manually-corrected"
+    "algae-bloom"
   ],
   "sourceSchema": "schema.yaml",
   "maturity": "development",
-  "highlighted": true,
   "group": "W1 Algae Bloom"
 }

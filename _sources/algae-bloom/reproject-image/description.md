@@ -33,12 +33,9 @@ parameter entity (`output_resolution`, literal array).
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
-**Manually corrected** (the raw transform output is kept as a separate example):
-
-- M-01/M-02 inputs.input_image: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']
-- M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary
+No manual correction: the example is the unmodified transform output.
 
 ## Provenance view
 

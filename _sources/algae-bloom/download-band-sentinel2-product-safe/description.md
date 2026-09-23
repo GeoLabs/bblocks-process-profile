@@ -35,11 +35,10 @@ profile has no redaction convention, the example records the input entity with n
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
 **Manually corrected** (the raw transform output is kept as a separate example):
 
-- M-01 outputs.product: contentMediaType from CWL format `iana:image/jp2` -> `image/jp2`; contentEncoding binary
 - M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true
 - M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true
 

@@ -37,8 +37,7 @@
     "process profile",
     "CWL",
     "CommandLineTool",
-    "algae-bloom",
-    "manually-corrected"
+    "algae-bloom"
   ],
   "sourceSchema": "schema.yaml",
   "maturity": "development",

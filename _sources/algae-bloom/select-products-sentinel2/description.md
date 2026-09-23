@@ -43,11 +43,9 @@ selection to each scattered download (`product_url`).
 
 ## processDescription derivation
 
-Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `c27c60d`, inline variant).
+Derived with the `eoap.cct.cwl-to-ogcprocess` jq transform (bblocks-eoap-cct `291a741`, inline variant).
 
-**Manually corrected** (the raw transform output is kept as a separate example):
-
-- M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary
+No manual correction: the example is the unmodified transform output.
 
 ## Provenance view
 

@@ -11,13 +11,13 @@ w1:
 w2:
   title: W2 KindGrove mangrove biomass (Starling Foundries / GeoLabs)
   repo: https://github.com/GeoLabs/bblocks-eoap-cct
-  commit: c27c60d2755c01f69bd7f1bd0903b6388d375e58
+  commit: 291a741c3f2b61da7607f1dbb7a777134374227d
   clone: bblocks-eoap-cct
   base_path: _sources/cwl-to-ogcprocess/examples
   license: https://spdx.org/licenses/Apache-2.0
 eoap_cct:
   repo: https://github.com/GeoLabs/bblocks-eoap-cct
-  commit: c27c60d2755c01f69bd7f1bd0903b6388d375e58
+  commit: 291a741c3f2b61da7607f1dbb7a777134374227d
   clone: bblocks-eoap-cct
   transform: _sources/cwl-to-ogcprocess/transforms/cwl-to-ogcprocess.jq
 
