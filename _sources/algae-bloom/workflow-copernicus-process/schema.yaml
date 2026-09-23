@@ -1,0 +1,137 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `algae-usecase-workflow-copernicus-process`
+  (CWL Workflow). Pins the process id and the input/output names; the input/output schemas are those derived
+  from the CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: algae-usecase-workflow-copernicus-process
+    inputs:
+      type: object
+      required:
+      - product_url
+      - s3_access_key
+      - s3_secret_key
+      propertyNames:
+        enum:
+        - product_url
+        - s3_access_key
+        - s3_secret_key
+    outputs:
+      type: object
+      required:
+      - chlorophyll_a
+      - chlorophyll_a_color
+      - chlorophyll_a_plot
+      - cyanobacteria
+      - cyanobacteria_color
+      - cyanobacteria_plot
+      - turbidity
+      - turbidity_color
+      - turbidity_plot
+      propertyNames:
+        enum:
+        - chlorophyll_a
+        - chlorophyll_a_color
+        - chlorophyll_a_plot
+        - cyanobacteria
+        - cyanobacteria_color
+        - cyanobacteria_plot
+        - turbidity
+        - turbidity_color
+        - turbidity_plot
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+  provenance:
+    $ref: bblocks://ogc.bbr.provenance.provenance
+  processTypeEntry:
+    $ref: bblocks://ospd.process-profiles.process-type
+  w3cProvJsonLd:
+    $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld
+  execute:
+    description: Execute request for this process. Built on the processDescription input schemas and on
+      ogc.api.processes.v1.schemas.link / qualifiedInputValue, because ogc.api.processes.v1.schemas.execute
+      rejects plain strings and numbers (upstream issue U-01).
+    type: object
+    required:
+    - inputs
+    properties:
+      inputs:
+        type: object
+        required:
+        - product_url
+        - s3_access_key
+        - s3_secret_key
+        propertyNames:
+          enum:
+          - product_url
+          - s3_access_key
+          - s3_secret_key
+        additionalProperties:
+          anyOf:
+          - $ref: bblocks://ogc.api.processes.v1.schemas.link
+          - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
+          - type:
+            - string
+            - number
+            - integer
+            - boolean
+            - array
+            - object
+      outputs:
+        type: object
+        propertyNames:
+          enum:
+          - chlorophyll_a
+          - chlorophyll_a_color
+          - chlorophyll_a_plot
+          - cyanobacteria
+          - cyanobacteria_color
+          - cyanobacteria_plot
+          - turbidity
+          - turbidity_color
+          - turbidity_plot
+      response:
+        enum:
+        - raw
+        - document
+  results:
+    description: Results document (response=document) for this process (see U-01).
+    type: object
+    propertyNames:
+      enum:
+      - chlorophyll_a
+      - chlorophyll_a_color
+      - chlorophyll_a_plot
+      - cyanobacteria
+      - cyanobacteria_color
+      - cyanobacteria_plot
+      - turbidity
+      - turbidity_color
+      - turbidity_plot
+    additionalProperties:
+      anyOf:
+      - $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type: array
+        items:
+          $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type:
+        - string
+        - number
+        - integer
+        - boolean
+        - array
+        - object
+  execution:
+    $ref: bblocks://ogc.bbr.provenance.execution

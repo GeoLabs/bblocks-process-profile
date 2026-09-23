@@ -1,0 +1,63 @@
+- title: Source CWL (referenced)
+  content: 'The CWL CommandLineTool is referenced, not copied: <https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/download-band-sentinel2-product-safe.cwl>.'
+- title: processDescription
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  content: OGC API - Processes processDescription derived from the CWL (manually corrected, see description).
+  snippets:
+  - language: json
+    ref: examples/processDescription.json
+- title: Raw cwl-to-ogcprocess output
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  content: Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
+  snippets:
+  - language: json
+    ref: examples/processDescription.raw.json
+    schema-ref: '#/$defs/rawProcessDescription'
+- title: OGC Application Package (deploy)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  content: 'Part 2 deploy body: the execution unit is a link to the pinned CWL.'
+  snippets:
+  - language: json
+    ref: examples/ogcapppkg.json
+    schema-ref: '#/$defs/applicationPackage'
+- title: Execute request
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/execute.json
+    schema-ref: '#/$defs/execute'
+- title: Results
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/results.json
+    schema-ref: '#/$defs/results'
+- title: Provenance view (generic provenance profile)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  content: W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
+  snippets:
+  - language: json
+    ref: examples/provenance.json
+    schema-ref: '#/$defs/provenance'
+- title: Process run (wfprov:ProcessRun, gap GP-1)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/process-run.json
+    schema-ref: '#/$defs/processRun'
+- title: Process-type register entry (Activity 4)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/process-type.json
+    schema-ref: '#/$defs/processTypeEntry'
+- title: Run record, W3C PROV-JSONLD (cwltool CWLProv bundle)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  content: 'The CWLProv bundle of the run record that holds this profile''s activity, re-serialised as
+    PROV-JSONLD by the `prov` library (mentions of nested bundles rewritten as `specializationOf` + `prov:asInBundle`,
+    see that block''s notes), validated against `ogc.ogc-utils.prov.w3c-prov-jsonld` and read as RDF through
+    its own context: the PROV-O graph here is the engine''s, not this register''s provenance view.'
+  snippets:
+  - language: jsonld
+    ref: examples/cwlprov.jsonld
+    schema-ref: '#/$defs/w3cProvJsonLd'

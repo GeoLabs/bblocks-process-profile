@@ -1,0 +1,122 @@
+{
+  "id": "reproject-image",
+  "version": "1.0.0",
+  "title": "Performs image reprojection.",
+  "description": "Performs a reprojection over image bands and returns the resulting GeoTiff.",
+  "mutable": true,
+  "keywords": [
+    "OSPD",
+    "demo",
+    "reprojection"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Performs image reprojection."
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Performs a reprojection over image bands and returns the resulting GeoTiff."
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.0.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "identifier": "http://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@crim.ca",
+        "name": "Francis Charette-Migneault"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    }
+  ],
+  "inputs": {
+    "input_image": {
+      "title": "input_image",
+      "description": "",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff; application=geotiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/tiff"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "binary",
+            "contentMediaType": "image/jp2"
+          }
+        ]
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "output_dimensions": {
+      "title": "output_dimensions",
+      "description": "Output dimensions for (width, height) of the output image.",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "output_resolution": {
+      "title": "output_resolution",
+      "description": "Output resolution for (width, height) of the output image.",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "output_name": {
+      "title": "Output file name",
+      "description": "Name to apply for the output GeoTiff file.",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "result",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "binary",
+        "contentMediaType": "image/tiff; application=geotiff"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process profile: plot-image",
+  "abstract": "OGC API - Processes profile of the CWL CommandLineTool `plot-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-22T00:00:00Z",
+  "dateOfLastChange": "2026-09-22",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "process-profiles",
+  "dependsOn": [
+    "ogc.api.processes.v1.schemas.process",
+    "ogc.api.processes.v2.schemas.staticIndicator",
+    "ogc.api.processes.v2.schemas.ogcapppkg",
+    "ogc.bbr.provenance.provenance",
+    "ospd.process-profiles.process-type",
+    "eoap.cct.cwl-to-ogcprocess",
+    "ogc.ogc-utils.prov.w3c-prov-jsonld",
+    "ogc.bbr.wf4ever.wfprov.ProcessRun"
+  ],
+  "seeAlso": [
+    "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
+    "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
+    "ogc.openeo.processes.cubes.save_result",
+    "ogc.openeo.processes.math.clip",
+    "ogc.openeo.processes.math.linear_scale_range",
+    "ogc.api.processes.part1.requirements.core"
+  ],
+  "conformanceClasses": [
+    "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+  ],
+  "scope": "dev",
+  "tags": [
+    "OSPD",
+    "process profile",
+    "CWL",
+    "CommandLineTool",
+    "algae-bloom",
+    "manually-corrected"
+  ],
+  "sourceSchema": "schema.yaml",
+  "maturity": "development",
+  "group": "W1 Algae Bloom"
+}

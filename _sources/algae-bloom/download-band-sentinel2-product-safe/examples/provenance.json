@@ -1,0 +1,78 @@
+[
+  {
+    "id": "urn:example:run:algae-bloom:download-band-sentinel2-product-safe",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe",
+    "startedAtTime": "2026-09-23T07:31:29Z",
+    "used": [
+      "urn:example:entity:download-band-sentinel2-product-safe:in:product_url",
+      "urn:example:entity:download-band-sentinel2-product-safe:in:band",
+      "urn:example:entity:download-band-sentinel2-product-safe:in:resolution",
+      "urn:example:entity:download-band-sentinel2-product-safe:in:s3_access_key",
+      "urn:example:entity:download-band-sentinel2-product-safe:in:s3_secret_key"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145",
+      "urn:example:image:ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe"
+      }
+    ],
+    "endedAtTime": "2026-09-23T07:31:32Z"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:in:product_url",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#inputs/product_url",
+    "value": "s3:///eodata/Sentinel-2/MSI/L2A/2019/07/01/S2A_MSIL2A_20190701T110621_N0212_R137_T29SPC_20190701T120906.SAFE"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:in:band",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#inputs/band",
+    "value": "B03"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:in:resolution",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#inputs/resolution",
+    "value": "60m"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:in:s3_access_key",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#inputs/s3_access_key"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:in:s3_secret_key",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#inputs/s3_secret_key"
+  },
+  {
+    "id": "urn:example:entity:download-band-sentinel2-product-safe:out:product",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-product-safe#outputs/product",
+    "wasGeneratedBy": "urn:example:run:algae-bloom:download-band-sentinel2-product-safe",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-download-band-sentinel2-product-safe-0001/results/T29SPC_20190701T110621_B03_60m.jp2",
+        "rel": "item",
+        "type": "image/jp2"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:image:ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0",
+    "provType": "prov:SoftwareAgent",
+    "name": "container image ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0"
+  }
+]

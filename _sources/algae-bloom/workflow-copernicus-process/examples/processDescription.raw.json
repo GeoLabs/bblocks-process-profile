@@ -1,0 +1,160 @@
+{
+  "id": "algae-usecase-workflow-copernicus-process",
+  "version": "2.1.0",
+  "title": "Processing on Sentinel-2 bands to evaluate algae bloom.\n",
+  "description": "Performs band calculation on Sentinel-2 product bands\nto evaluate algae bloom for water quality assessment.\n",
+  "mutable": true,
+  "keywords": [
+    "water-quality",
+    "algae-bloom",
+    "Copernicus",
+    "OSPD",
+    "demo"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Processing on Sentinel-2 bands to evaluate algae bloom.\n"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Performs band calculation on Sentinel-2 product bands\nto evaluate algae bloom for water quality assessment.\n"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "2.1.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "identifier": "http://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@crim.ca",
+        "name": "Francis Charette-Migneault"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    },
+    {
+      "role": "https://schema.org/isBasedOn",
+      "value": "https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/se2waq/"
+    }
+  ],
+  "inputs": {
+    "product_url": {
+      "title": "Sentinel-2 SAFE product S3 reference",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "s3_access_key": {
+      "title": "S3 access key required if found products are hosted on a protected S3 location.",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "s3_secret_key": {
+      "title": "S3 secret key required if found products are hosted on a protected S3 location.",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "chlorophyll_a": {
+      "title": "chlorophyll_a",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "chlorophyll_a_color": {
+      "title": "chlorophyll_a_color",
+      "description": "Pseudo-color representation of chlorophyll-a.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "chlorophyll_a_plot": {
+      "title": "chlorophyll_a_plot",
+      "description": "Plot representation of chlorophyll-a.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria": {
+      "title": "cyanobacteria",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria_color": {
+      "title": "cyanobacteria_color",
+      "description": "Pseudo-color representation of cyanobacteria.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria_plot": {
+      "title": "cyanobacteria_plot",
+      "description": "Plot representation of cyanobacteria.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity": {
+      "title": "turbidity",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity_color": {
+      "title": "turbidity_color",
+      "description": "Pseudo-color representation of turbidity.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity_plot": {
+      "title": "turbidity_plot",
+      "description": "Plot representation of turbidity.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

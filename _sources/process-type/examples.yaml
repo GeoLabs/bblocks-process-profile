@@ -1,0 +1,10 @@
+- title: reproject-image (closeMatch)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/reproject-image.json
+- title: KindGrove mangrove (none, with decomposition)
+  base-uri: https://geolabs.github.io/bblocks-process-profiles/def/process/
+  snippets:
+  - language: json
+    ref: examples/kindgrove-mangrove.json

@@ -1,0 +1,36 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/plot-image",
+  "type": "ProcessType",
+  "prefLabel": "Plots an image with colors.",
+  "definition": "Applies the specified color mapping with scaled bins to a geospatial image.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.algae-bloom.plot-image",
+  "processDescription": {
+    "id": "plot-image",
+    "version": "1.0.0"
+  },
+  "source": {
+    "cwl": "https://github.com/crim-ca/ogc-ospd-phase1/blob/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/plot-image.cwl",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "plot-image",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.save_result"
+  ],
+  "relatedMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.clip",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.math.linear_scale_range"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "Partial: the export part (GeoTIFF + PNG) corresponds to save_result with a GTiff or PNG format; `clip_min`/`clip_max` correspond to math.clip. The colour mapping (`color_scale` bins) and the matplotlib figure (title, colour bar) have no stable openEO process (colour maps are back-end-specific format options)."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "id": "algae-usecase-workflow-earth-search-process",
+  "version": "2.1.0",
+  "title": "Processing on Sentinel-2 L2A bands to evaluate algae bloom.\n",
+  "description": "Performs band calculation on Sentinel-2 L2A product bands\nto evaluate algae bloom for water quality assessment\nfrom a specific STAC Item reference from Earth-Search platform.\nReference bands are downloaded, processed, and returned as output\nwith raw data, color map and plot visualization.\n",
+  "mutable": true,
+  "keywords": [
+    "water-quality",
+    "algae-bloom",
+    "earth-search",
+    "OSPD",
+    "demo"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Processing on Sentinel-2 L2A bands to evaluate algae bloom.\n"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Performs band calculation on Sentinel-2 L2A product bands\nto evaluate algae bloom for water quality assessment\nfrom a specific STAC Item reference from Earth-Search platform.\nReference bands are downloaded, processed, and returned as output\nwith raw data, color map and plot visualization.\n"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "2.1.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "identifier": "http://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@crim.ca",
+        "name": "Francis Charette-Migneault"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    },
+    {
+      "role": "https://schema.org/isBasedOn",
+      "value": "https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/se2waq/"
+    }
+  ],
+  "inputs": {
+    "product_url": {
+      "title": "STAC Item URL",
+      "description": "The STAC Item should contain Assets with Sentinel-2 product bands.",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "chlorophyll_a": {
+      "title": "chlorophyll_a",
+      "description": "Raw data of chlorophyll-a calculation.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "chlorophyll_a_color": {
+      "title": "chlorophyll_a_color",
+      "description": "Pseudo-color representation of chlorophyll-a.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "chlorophyll_a_plot": {
+      "title": "chlorophyll_a_plot",
+      "description": "Plot representation of chlorophyll-a.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria": {
+      "title": "cyanobacteria",
+      "description": "Raw data of cyanobacteria calculation.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria_color": {
+      "title": "cyanobacteria_color",
+      "description": "Pseudo-color representation of cyanobacteria.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "cyanobacteria_plot": {
+      "title": "cyanobacteria_plot",
+      "description": "Plot representation of cyanobacteria.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity": {
+      "title": "turbidity",
+      "description": "Raw data of turbidity calculation.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity_color": {
+      "title": "turbidity_color",
+      "description": "Pseudo-color representation of turbidity.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "turbidity_plot": {
+      "title": "turbidity_plot",
+      "description": "Plot representation of turbidity.",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

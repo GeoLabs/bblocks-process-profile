@@ -1,0 +1,600 @@
+[
+  {
+    "id": "ospd.process-profiles.algae-bloom.workflow-earth-search",
+    "key": "workflow-earth-search",
+    "class": "Workflow",
+    "pd_id": "algae-usecase-workflow-earth-search",
+    "phases": [
+      "filter-configuration",
+      "selection-filtering",
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite: a CWL Workflow scattering a per-product subworkflow over the product list. The openEO equivalent would be a user-defined process graph, which has no Building Block of its own; the correspondence is carried by the steps.",
+      "decomposition": [
+        {
+          "stage": "select_products",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "process (scatter over urls)",
+          "openeo": [],
+          "level": "none",
+          "note": "openEO has no scatter over products; a collection is loaded as one data cube."
+        }
+      ]
+    },
+    "corrections": [
+      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
+    ],
+    "execution": true,
+    "cct": [],
+    "inputs": 6,
+    "outputs": 9
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
+    "key": "workflow-earth-search-process",
+    "class": "Workflow",
+    "pd_id": "algae-usecase-workflow-earth-search-process",
+    "phases": [
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite (11 steps: 4 band downloads, 1 resampling, 3 band calculations, 3 renderings). In openEO this is one load_collection with band selection followed by a process graph.",
+      "decomposition": [
+        {
+          "stage": "download_b0x (x4)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection",
+            "ogc.openeo.processes.cubes.filter_bands"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "reproject_b03_60m",
+          "openeo": [
+            "ogc.openeo.processes.cubes.resample_spatial"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "calculate_* (x3)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.reduce_dimension"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "plot_* (x3)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.save_result"
+          ],
+          "level": "closeMatch",
+          "note": "partial, no colour-ramp rendering"
+        }
+      ]
+    },
+    "corrections": [
+      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
+    ],
+    "execution": true,
+    "cct": [],
+    "inputs": 1,
+    "outputs": 9
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.workflow-copernicus",
+    "key": "workflow-copernicus",
+    "class": "Workflow",
+    "pd_id": "algae-usecase-workflow-copernicus",
+    "phases": [
+      "filter-configuration",
+      "selection-filtering",
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite; same structure as the Earth-Search variant but over Copernicus Data Space (SAFE products on S3, credentials required). openEO hides credentials in the back-end.",
+      "decomposition": [
+        {
+          "stage": "select_products",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "process (scatter over urls)",
+          "openeo": [],
+          "level": "none"
+        }
+      ]
+    },
+    "corrections": [
+      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
+      "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
+    ],
+    "execution": true,
+    "cct": [],
+    "inputs": 7,
+    "outputs": 9
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
+    "key": "workflow-copernicus-process",
+    "class": "Workflow",
+    "pd_id": "algae-usecase-workflow-copernicus-process",
+    "phases": [
+      "data-retrieval",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite (11 steps). No resampling step: the SAFE product already provides 60 m bands, so B03 60 m is downloaded directly instead of being resampled.",
+      "decomposition": [
+        {
+          "stage": "download_b0x (x5)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection",
+            "ogc.openeo.processes.cubes.filter_bands"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "calculate_* (x3)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.reduce_dimension"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "plot_* (x3)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.save_result"
+          ],
+          "level": "closeMatch",
+          "note": "partial"
+        }
+      ]
+    },
+    "corrections": [
+      "M-01 outputs.chlorophyll_a: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.chlorophyll_a_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.cyanobacteria_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-01 outputs.turbidity: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_color: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.turbidity_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary",
+      "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
+      "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
+    ],
+    "execution": true,
+    "cct": [],
+    "inputs": 3,
+    "outputs": 9
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.select-products-sentinel2",
+    "key": "select-products-sentinel2",
+    "class": "CommandLineTool",
+    "pd_id": "select-products-sentinel2",
+    "phases": [
+      "selection-filtering"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection"
+      ],
+      "relatedMatch": [
+        "ogc.openeo.types.geojson",
+        "ogc.openeo.types.temporal-interval",
+        "ogc.openeo.types.collection-id",
+        "ogc.openeo.types.metadata-filter"
+      ],
+      "rationale": "Same filter semantics as load_collection's `id` (collection), `spatial_extent` (aoi), `temporal_extent` (date±delta or toi) and `properties` (eo:cloud_cover) parameters. Not an exactMatch: the tool only selects (returns product URLs) and does not load data; the `catalog` switch (copernicus / earth-search) is a back-end choice with no openEO parameter; `date`+`delta` must be turned into an interval; the Earth-Search branch filters `0 < eo:cloud_cover < cloud_cover` (strict, excludes 0) where an openEO `lte` filter would be expected."
+    },
+    "corrections": [
+      "M-01 inputs.aoi: contentMediaType from CWL format `iana:application/geo+json` -> `application/geo+json`; contentEncoding binary"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 8,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item",
+    "key": "download-band-sentinel2-stac-item",
+    "class": "CommandLineTool",
+    "pd_id": "download-band-sentinel2-stac-item",
+    "phases": [
+      "data-retrieval"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands"
+      ],
+      "relatedMatch": [
+        "ogc.openeo.types.band-name",
+        "ogc.openeo.types.stac"
+      ],
+      "rationale": "Retrieves one band of one product: load_collection with `bands` (or filter_bands) over a single-item extent. The closest openEO process, `load_stac`, is only an openEO proposal and out of the register's scope. The band is chosen by Sentinel-2 band id (B01..B12), matched to STAC `eo:common_name` assets inside the tool, where openEO uses collection band names directly."
+    },
+    "corrections": [
+      "M-01 outputs.product: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 2,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe",
+    "key": "download-band-sentinel2-product-safe",
+    "class": "CommandLineTool",
+    "pd_id": "download-band-sentinel2-product-safe",
+    "phases": [
+      "data-retrieval"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands"
+      ],
+      "relatedMatch": [
+        "ogc.openeo.types.band-name"
+      ],
+      "rationale": "Same operation as the STAC-Item variant (one band of one product) but reading the SAFE archive on S3 with user credentials and a `resolution` selector (10m/20m/60m). openEO has no credential parameters (handled by the back-end) and chooses native resolution per band; choosing another resolution is resample_spatial territory."
+    },
+    "corrections": [
+      "M-01 outputs.product: contentMediaType from CWL format `iana:image/jp2` -> `image/jp2`; contentEncoding binary",
+      "M-04 inputs.s3_access_key: declared in cwltool:Secrets -> writeOnly: true",
+      "M-04 inputs.s3_secret_key: declared in cwltool:Secrets -> writeOnly: true"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 6,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.reproject-image",
+    "key": "reproject-image",
+    "class": "CommandLineTool",
+    "pd_id": "reproject-image",
+    "phases": [
+      "pre-processing"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.resample_spatial"
+      ],
+      "rationale": "As used in W1 the tool only changes the pixel size (gdalwarp `-tr 60 60`, nearest neighbour by default, no `-t_srs`): resample_spatial with `resolution: 60`, `projection: null`, `method: near`. Not an exactMatch: `output_dimensions` (`-ts`) has no openEO parameter, the output type is forced to Float32 (`-ot Float32`), and the tool works on a file rather than a data cube. Despite its name, no CRS transformation takes place."
+    },
+    "corrections": [
+      "M-01/M-02 inputs.input_image: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 4,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.calculate-band",
+    "key": "calculate-band",
+    "class": "CommandLineTool",
+    "pd_id": "calculate-band",
+    "phases": [
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.reduce_dimension"
+      ],
+      "relatedMatch": [
+        "ogc.openeo.processes.math.divide",
+        "ogc.openeo.processes.math.power",
+        "ogc.openeo.processes.math.multiply",
+        "ogc.openeo.processes.math.subtract"
+      ],
+      "rationale": "Generic band math (gdal_calc.py with a Python/numpy expression over up to 26 bands A..Z): openEO expresses it as reduce_dimension over the `bands` dimension with a callback built from math processes. closeMatch at the generic level; each W1 instance is a fixed chain of math processes (see decomposition). The expression is free text in CWL, a process graph in openEO.",
+      "decomposition": [
+        {
+          "stage": "chlorophyll_a = 4.26*((C/A)**3.94), A=B01 60m, C=B03 60m",
+          "openeo": [
+            "ogc.openeo.processes.math.divide",
+            "ogc.openeo.processes.math.power",
+            "ogc.openeo.processes.math.multiply"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "cyanobacteria = 115530*(((B*C)/A)**2.38), A=B02, B=B03, C=B04 (10m)",
+          "openeo": [
+            "ogc.openeo.processes.math.multiply",
+            "ogc.openeo.processes.math.divide",
+            "ogc.openeo.processes.math.power"
+          ],
+          "level": "closeMatch",
+          "note": "coefficient is 115530 in the Earth-Search variant, 115530.31 in the Copernicus variant"
+        },
+        {
+          "stage": "turbidity = (8.93*(C/A))-6.39, A=B01 60m, C=B03 60m",
+          "openeo": [
+            "ogc.openeo.processes.math.divide",
+            "ogc.openeo.processes.math.multiply",
+            "ogc.openeo.processes.math.subtract"
+          ],
+          "level": "closeMatch"
+        }
+      ]
+    },
+    "corrections": [
+      "M-01/M-02 inputs.band_a: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_b: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_c: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_d: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_e: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_f: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_g: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_h: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_i: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_j: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_k: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_l: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_m: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_n: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_o: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_p: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_q: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_r: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_s: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_t: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_u: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_v: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_w: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_x: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_y: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01/M-02 inputs.band_z: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01 outputs.result: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 28,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.algae-bloom.plot-image",
+    "key": "plot-image",
+    "class": "CommandLineTool",
+    "pd_id": "plot-image",
+    "phases": [
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.save_result"
+      ],
+      "relatedMatch": [
+        "ogc.openeo.processes.math.clip",
+        "ogc.openeo.processes.math.linear_scale_range"
+      ],
+      "rationale": "Partial: the export part (GeoTIFF + PNG) corresponds to save_result with a GTiff or PNG format; `clip_min`/`clip_max` correspond to math.clip. The colour mapping (`color_scale` bins) and the matplotlib figure (title, colour bar) have no stable openEO process (colour maps are back-end-specific format options)."
+    },
+    "corrections": [
+      "M-01/M-02 inputs.input_image: CWL format list ['ogc:geotiff', 'iana:image/tiff', 'iana:image/jp2'] -> oneOf ['image/tiff; application=geotiff', 'image/tiff', 'image/jp2']",
+      "M-01 outputs.output_file: contentMediaType from CWL format `ogc:geotiff` -> `image/tiff; application=geotiff`; contentEncoding binary",
+      "M-01 outputs.output_plot: contentMediaType from CWL format `iana:image/png` -> `image/png`; contentEncoding binary"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 7,
+    "outputs": 2
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove.mangrove-workflow",
+    "key": "mangrove-workflow",
+    "class": "Workflow",
+    "pd_id": "mangrove-workflow",
+    "phases": [
+      "filter-configuration",
+      "selection-filtering",
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite of a BBox-unpacking helper and one opaque tool; the openEO equivalent is a process graph (see the `mangrove` profile for the stage-by-stage decomposition). `stac.yaml` is imported in `SchemaDefRequirement` but unused.",
+      "decomposition": [
+        {
+          "stage": "parse_aoi",
+          "openeo": [],
+          "level": "none",
+          "note": "structural; bounding box is a native openEO parameter type"
+        },
+        {
+          "stage": "step_1 (mangrove_cli)",
+          "openeo": [],
+          "level": "none",
+          "note": "see ospd.process-profiles.kindgrove.mangrove"
+        }
+      ]
+    },
+    "corrections": [
+      "M-05 outputs.stac: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": true,
+    "cct": [
+      "eoap.cct.bbox"
+    ],
+    "inputs": 3,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove.parse-aoi",
+    "key": "parse-aoi",
+    "class": "CommandLineTool",
+    "pd_id": "parse_aoi",
+    "phases": [
+      "filter-configuration"
+    ],
+    "openeo": {
+      "level": "none",
+      "relatedMatch": [
+        "ogc.openeo.types.bounding-box"
+      ],
+      "rationale": "Structural helper: unpacks an OGC BBox record into west/south/east/north floats and emits a constant `output_dir` (\"outputs\"). No openEO process does this, because openEO passes a bounding box object directly (`ogc.openeo.types.bounding-box`, relatedMatch at type level)."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [
+      "eoap.cct.bbox"
+    ],
+    "inputs": 1,
+    "outputs": 5
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove.mangrove",
+    "key": "mangrove",
+    "class": "CommandLineTool",
+    "pd_id": "mangrove_cli",
+    "phases": [
+      "selection-filtering",
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Opaque: one ipython2cwl binary running the whole notebook. No single openEO process; each notebook stage has a closeMatch (decomposition). run_udf could wrap the binary but expects a data cube in and out, which this tool does not follow (it searches and downloads its own data).",
+      "decomposition": [
+        {
+          "stage": "STAC search, Earth-Search sentinel-2-l2a, bbox, cloud cover, last N days",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "NDVI (nir-red)/(nir+red+1e-8)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.ndvi",
+            "ogc.openeo.processes.math.indices.normalized_difference"
+          ],
+          "level": "closeMatch",
+          "note": "epsilon 1e-8 in the denominator"
+        },
+        {
+          "stage": "NDWI (green-nir)/(green+nir+1e-8)",
+          "openeo": [
+            "ogc.openeo.processes.math.indices.normalized_difference"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "SAVI ((nir-red)/(nir+red+0.5))*1.5",
+          "openeo": [],
+          "level": "none",
+          "note": "no stable process; composition of add/subtract/divide/multiply"
+        },
+        {
+          "stage": "mangrove mask: 0.3<NDVI<0.9 and NDWI>-0.3 and SAVI>0.2",
+          "openeo": [
+            "ogc.openeo.processes.comparison.gt",
+            "ogc.openeo.processes.comparison.lt",
+            "ogc.openeo.processes.logic.and",
+            "ogc.openeo.processes.cubes.mask"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "biomass = 250.5*NDVI - 75.2",
+          "openeo": [
+            "ogc.openeo.processes.cubes.apply",
+            "ogc.openeo.processes.math.multiply",
+            "ogc.openeo.processes.math.subtract"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "carbon stock and totals (IPCC carbon fraction 0.47)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.aggregate_spatial",
+            "ogc.openeo.processes.math.sum",
+            "ogc.openeo.processes.math.multiply"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "export CSV + GeoTIFF",
+          "openeo": [
+            "ogc.openeo.processes.cubes.save_result"
+          ],
+          "level": "closeMatch",
+          "note": "CSV summaries are not a raster format"
+        }
+      ]
+    },
+    "corrections": [
+      "M-05 outputs.result: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 7,
+    "outputs": 1
+  }
+]

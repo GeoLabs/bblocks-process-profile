@@ -1,0 +1,68 @@
+[
+  {
+    "id": "urn:example:run:kindgrove:mangrove-workflow",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove-workflow",
+    "startedAtTime": "2026-09-23T08:01:10Z",
+    "used": [
+      "urn:example:entity:mangrove-workflow:in:aoi",
+      "urn:example:entity:mangrove-workflow:in:cloud_cover_max",
+      "urn:example:entity:mangrove-workflow:in:days_back"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/mangrove-workflow"
+      }
+    ],
+    "endedAtTime": "2026-09-23T08:03:17Z"
+  },
+  {
+    "id": "urn:example:entity:mangrove-workflow:in:aoi",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#inputs/aoi",
+    "value": {
+      "bbox": [
+        95.15,
+        15.9,
+        95.35,
+        16.1
+      ],
+      "crs": "CRS84"
+    }
+  },
+  {
+    "id": "urn:example:entity:mangrove-workflow:in:cloud_cover_max",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#inputs/cloud_cover_max",
+    "value": 20
+  },
+  {
+    "id": "urn:example:entity:mangrove-workflow:in:days_back",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#inputs/days_back",
+    "value": 90
+  },
+  {
+    "id": "urn:example:entity:mangrove-workflow:out:stac",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+    "wasGeneratedBy": "urn:example:run:kindgrove:mangrove-workflow",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/catalog.json",
+        "rel": "item",
+        "type": "application/json"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  }
+]

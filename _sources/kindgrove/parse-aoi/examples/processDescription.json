@@ -1,0 +1,137 @@
+{
+  "id": "parse_aoi",
+  "version": "0.0.1",
+  "title": "parse_aoi",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "keywords": [
+    "OSPD",
+    "mangrove",
+    "biomass"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "parse_aoi"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "0.0.1"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cameron Sajedi"
+      }
+    },
+    {
+      "role": "https://schema.org/contributor",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Gérald Fenoy",
+        "identifier": "https://orcid.org/0000-0002-9617-8641"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://github.com/starling-foundries/KindGrove"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme"
+    }
+  ],
+  "inputs": {
+    "aoi": {
+      "title": "Area of interest",
+      "description": "Area of interest defined as a bounding box",
+      "schema": {
+        "type": "object",
+        "required": [
+          "bbox"
+        ],
+        "properties": {
+          "bbox": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "oneOf": [
+              {
+                "minItems": 4,
+                "maxItems": 4,
+                "description": "2D bbox"
+              },
+              {
+                "minItems": 6,
+                "maxItems": 6,
+                "description": "3D bbox"
+              }
+            ]
+          },
+          "crs": {
+            "type": "string",
+            "enum": [
+              "CRS84",
+              "CRS84h"
+            ],
+            "default": "CRS84"
+          }
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "west": {
+      "title": "west",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "south": {
+      "title": "south",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "east": {
+      "title": "east",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "north": {
+      "title": "north",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "output_dir": {
+      "title": "output_dir",
+      "description": "",
+      "schema": {
+        "type": "string"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

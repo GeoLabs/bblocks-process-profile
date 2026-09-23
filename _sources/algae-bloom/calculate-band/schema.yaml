@@ -1,0 +1,179 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `calculate-band` (CWL CommandLineTool).
+  Pins the process id and the input/output names; the input/output schemas are those derived from the
+  CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: calculate-band
+    inputs:
+      type: object
+      required:
+      - name
+      - calc
+      - band_a
+      - band_b
+      - band_c
+      - band_d
+      - band_e
+      - band_f
+      - band_g
+      - band_h
+      - band_i
+      - band_j
+      - band_k
+      - band_l
+      - band_m
+      - band_n
+      - band_o
+      - band_p
+      - band_q
+      - band_r
+      - band_s
+      - band_t
+      - band_u
+      - band_v
+      - band_w
+      - band_x
+      - band_y
+      - band_z
+      propertyNames:
+        enum:
+        - name
+        - calc
+        - band_a
+        - band_b
+        - band_c
+        - band_d
+        - band_e
+        - band_f
+        - band_g
+        - band_h
+        - band_i
+        - band_j
+        - band_k
+        - band_l
+        - band_m
+        - band_n
+        - band_o
+        - band_p
+        - band_q
+        - band_r
+        - band_s
+        - band_t
+        - band_u
+        - band_v
+        - band_w
+        - band_x
+        - band_y
+        - band_z
+    outputs:
+      type: object
+      required:
+      - result
+      propertyNames:
+        enum:
+        - result
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+  provenance:
+    $ref: bblocks://ogc.bbr.provenance.provenance
+  processTypeEntry:
+    $ref: bblocks://ospd.process-profiles.process-type
+  w3cProvJsonLd:
+    $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld
+  execute:
+    description: Execute request for this process. Built on the processDescription input schemas and on
+      ogc.api.processes.v1.schemas.link / qualifiedInputValue, because ogc.api.processes.v1.schemas.execute
+      rejects plain strings and numbers (upstream issue U-01).
+    type: object
+    required:
+    - inputs
+    properties:
+      inputs:
+        type: object
+        required:
+        - name
+        - calc
+        propertyNames:
+          enum:
+          - name
+          - calc
+          - band_a
+          - band_b
+          - band_c
+          - band_d
+          - band_e
+          - band_f
+          - band_g
+          - band_h
+          - band_i
+          - band_j
+          - band_k
+          - band_l
+          - band_m
+          - band_n
+          - band_o
+          - band_p
+          - band_q
+          - band_r
+          - band_s
+          - band_t
+          - band_u
+          - band_v
+          - band_w
+          - band_x
+          - band_y
+          - band_z
+        additionalProperties:
+          anyOf:
+          - $ref: bblocks://ogc.api.processes.v1.schemas.link
+          - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
+          - type:
+            - string
+            - number
+            - integer
+            - boolean
+            - array
+            - object
+      outputs:
+        type: object
+        propertyNames:
+          enum:
+          - result
+      response:
+        enum:
+        - raw
+        - document
+  results:
+    description: Results document (response=document) for this process (see U-01).
+    type: object
+    propertyNames:
+      enum:
+      - result
+    additionalProperties:
+      anyOf:
+      - $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type: array
+        items:
+          $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type:
+        - string
+        - number
+        - integer
+        - boolean
+        - array
+        - object
+  processRun:
+    $ref: bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun

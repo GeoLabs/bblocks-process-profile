@@ -1,0 +1,80 @@
+# Validation status
+
+## Authoritative validation: passing (2026-09-23)
+
+`./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`) run on a machine with
+network access: **14/14 building blocks, 118/118 example snippets, 0 errors**, 116 SHACL
+validations conform, no empty RDF graph, no `file:///` IRI.
+
+Thirteen of those snippets are the run records as **W3C PROV-JSONLD** (`examples/cwlprov.jsonld`,
+validated against `ogc.ogc-utils.prov.w3c-prov-jsonld` from the experimental
+`bblocks-prov-jsonld-alt` register, read as RDF through their own context): the only examples
+whose PROV-O graph is cwltool's rather than this register's, and the first on which the PROV SHACL
+shapes have real focus nodes (`docs/OPEN-QUESTIONS.md` Q-W3C). What the provenance-view validation
+itself checks is documented under Q-PROV-SCHEMA: less than the wording suggests.
+
+Since 2026-09-23 the run-derived examples of all 13 profiles are built from real
+`cwltool --provenance` research objects (`scripts/sources.yaml` `runs:` — `w1-earth-search`,
+`w1-copernicus`, `w2-pinned`; `docs/OPEN-QUESTIONS.md` Q-W1-LOG / Q-W1-COPERNICUS / Q-W2-RUN). The
+CRIM run logs of 2024 are no longer read and there are no illustrative examples left. The JSON-LD contexts follow the Wf4Ever and generic-provenance vocabularies
+(`wfprov:ProcessRun`, `prov:wasAssociatedWith`, `rdfs:seeAlso` links) rather than a local `pp:`
+mapping; the one known residue is `outputs[].type` in the four W1 `execution` bundles, which the
+processDescription's `outputs` binding turns into a `proc:type` literal.
+
+It did not pass at first. The register was bootstrapped where the build could not run (egress
+policy blocking `ghcr.io`, `registry-1.docker.io`, `pypi.org`, `*.github.io`,
+`raw.githubusercontent.com`), and the first real build gave **1/14**: only `process-type` passed.
+All 79 failures were the same check — `**Empty** output Turtle` — which bblocks-postprocess
+hard-codes as an error and which the offline pre-check cannot see, since it does not run the
+JSON-LD uplift. Cause: no profile had a JSON-LD context, so the context derived from the
+`ogc.api.processes.*` annotations bound none of the properties the examples use and every
+snippet uplifted to nothing. The 1–2 examples per profile that did pass only did so because
+`type` happened to be the single mapped term (`[] proc:type "ProcessRun"`).
+
+Fix, in `scripts/generate.py`: a shared `PROFILE_CONTEXT` written to every profile as
+`context.jsonld` (`@vocab` re-scoped under `inputs`/`outputs`; `$defs` payloads reached through
+`x-jsonld-extra-terms`), and a `base-uri` on every example. Two alternatives were measured on
+the same build and rejected: splitting each profile into one building block per payload
+(26/102 — the OGC API - Processes bblocks have no annotations to inherit) and inlining
+`@context` in the example files (75/102 with 13 new JSON Schema failures, `propertyNames: enum`
+rejects `@context`; array-rooted `provenance.json` cannot carry one). See `CLAUDE.md`.
+
+A data bug surfaced by the fix: `scripts/profiles.yaml` had an unquoted flow-mapping value
+`note: partial, no colour-ramp rendering`, parsed as a stray key that became an invalid IRI once a
+`@vocab` existed. Quoted.
+
+To run it:
+
+```bash
+./build.sh          # validate + build into build/
+./view.sh           # http://localhost:9090
+```
+
+If the generic provenance profile or the Part 2 register are not published on GitHub Pages
+(Q-PUB), copy `bblocks-config-local.yaml.example` to `bblocks-config-local.yaml` (git-ignored),
+adjust the paths to local builds of those registers and mount them with `.volumes`
+(bblocks-postprocess `url-mappings`, see
+<https://ogcincubator.github.io/bblocks-docs/create/imports#local-url-mappings-for-testing>).
+
+## Offline pre-check (done)
+
+`scripts/validate_offline.py --deps-root DIR` resolves `bblocks://` identifiers and published
+register URLs to local clones and validates with `jsonschema` (Draft 2020-12). Result at bootstrap:
+**144/144 checks passed**:
+
+- `bblocks-config.yaml`, 14 `bblock.json`, 14 `examples.yaml` against the bblocks-postprocess
+  metadata schemas;
+- 102 example snippets against their schema (default or `schema-ref`), with every reference
+  resolved locally (no unresolved reference);
+- 13 negative checks: each profile rejects the processDescription of another process.
+
+Spot checks confirmed the resolution is real (e.g. an execution artifact without `checksum`, an
+engine without `@id`, a run with `status: running`, an unknown execute input are all rejected).
+
+Clones used (`--deps-root`): bblock-prov-schema, bblocks-wf4ever and bblocks-cwl (ogcincubator);
+bblocks-ogcapi-processes, bblocks-eoap-cct, bblocks-openeo, bblocks-generic-provenance-profile,
+bblock-ogcapi-processes-part2 (GeoLabs); opengeospatial/bblocks (as `bblocks`);
+opengeospatial/bblocks-postprocess.
+
+Not covered by the pre-check: JSON-LD uplift and SHACL, transforms, format assertions, doc
+generation, and the behaviour of the duplicate `eoap.cct.*` import (Q-IMPORT).

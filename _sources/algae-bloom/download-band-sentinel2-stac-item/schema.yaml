@@ -1,0 +1,101 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `download-band-sentinel2-stac-item`
+  (CWL CommandLineTool). Pins the process id and the input/output names; the input/output schemas are
+  those derived from the CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: download-band-sentinel2-stac-item
+    inputs:
+      type: object
+      required:
+      - product_url
+      - band
+      propertyNames:
+        enum:
+        - product_url
+        - band
+    outputs:
+      type: object
+      required:
+      - product
+      propertyNames:
+        enum:
+        - product
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+  provenance:
+    $ref: bblocks://ogc.bbr.provenance.provenance
+  processTypeEntry:
+    $ref: bblocks://ospd.process-profiles.process-type
+  w3cProvJsonLd:
+    $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld
+  execute:
+    description: Execute request for this process. Built on the processDescription input schemas and on
+      ogc.api.processes.v1.schemas.link / qualifiedInputValue, because ogc.api.processes.v1.schemas.execute
+      rejects plain strings and numbers (upstream issue U-01).
+    type: object
+    required:
+    - inputs
+    properties:
+      inputs:
+        type: object
+        required:
+        - product_url
+        - band
+        propertyNames:
+          enum:
+          - product_url
+          - band
+        additionalProperties:
+          anyOf:
+          - $ref: bblocks://ogc.api.processes.v1.schemas.link
+          - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
+          - type:
+            - string
+            - number
+            - integer
+            - boolean
+            - array
+            - object
+      outputs:
+        type: object
+        propertyNames:
+          enum:
+          - product
+      response:
+        enum:
+        - raw
+        - document
+  results:
+    description: Results document (response=document) for this process (see U-01).
+    type: object
+    propertyNames:
+      enum:
+      - product
+    additionalProperties:
+      anyOf:
+      - $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type: array
+        items:
+          $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type:
+        - string
+        - number
+        - integer
+        - boolean
+        - array
+        - object
+  processRun:
+    $ref: bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun

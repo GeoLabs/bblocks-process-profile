@@ -1,0 +1,17 @@
+{
+  "id": "urn:example:run:algae-bloom:download-band-sentinel2-stac-item",
+  "type": "ProcessRun",
+  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-stac-item",
+  "describedByProcess": "https://ospd.example.org/ogc-api/processes/download-band-sentinel2-stac-item",
+  "usedInput": [
+    {
+      "id": "urn:example:entity:download-band-sentinel2-stac-item:in:product_url"
+    },
+    {
+      "id": "urn:example:entity:download-band-sentinel2-stac-item:in:band"
+    }
+  ],
+  "startedAtTime": "2026-09-23T06:36:40Z",
+  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+  "wasPartOfWorkflowRun": "urn:example:run:algae-bloom:workflow-earth-search-process"
+}

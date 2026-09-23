@@ -1,0 +1,1113 @@
+{
+  "@context": [
+    {
+      "wfprov": "http://purl.org/wf4ever/wfprov#",
+      "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+      "cwlprov": "https://w3id.org/cwl/prov#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "schema": "http://schema.org/",
+      "orcid": "https://orcid.org/",
+      "id": "urn:uuid:",
+      "data": "urn:hash::sha1:",
+      "sha256": "nih:sha-256;",
+      "researchobject": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/",
+      "metadata": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/metadata/",
+      "provenance": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/metadata/provenance/",
+      "wf": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#",
+      "input": "arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/primary-job.json#",
+      "wf4ever": "http://purl.org/wf4ever/wf4ever#"
+    },
+    "https://openprovenance.org/prov-jsonld/context.jsonld"
+  ],
+  "@graph": [
+    {
+      "@type": "Agent",
+      "@id": "id:5001cc2f-8b7b-4b93-9043-8ce09886304f"
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "type": [
+        "wfprov:WorkflowEngine",
+        "prov:SoftwareAgent"
+      ],
+      "label": [
+        {
+          "@value": "cwltool 3.1.20260108082145"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "id:925ed775-3f3c-444a-b740-a81e965f32e0",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "cwlprov:image": [
+        {
+          "@value": "ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Container execution of image ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0"
+        }
+      ]
+    },
+    {
+      "@type": "Start",
+      "activity": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "starter": "id:5001cc2f-8b7b-4b93-9043-8ce09886304f",
+      "time": "2026-09-23T09:31:01.086649"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "starter": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "time": "2026-09-23T09:31:01.086687"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "starter": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:31:02.350383"
+    },
+    {
+      "@type": "Start",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "starter": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:31:06.036894"
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "startTime": "2026-09-23T09:31:01.086664",
+      "type": [
+        "wfprov:WorkflowRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/select_products"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Run of workflow/packed.cwl#main/algae-usecase-workflow-copernicus/process"
+        }
+      ]
+    },
+    {
+      "@type": "Activity",
+      "@id": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "prov:has_provenance": [
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.nt",
+          "@type": "xsd:QName"
+        },
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.jsonld",
+          "@type": "xsd:QName"
+        },
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.json",
+          "@type": "xsd:QName"
+        },
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.xml",
+          "@type": "xsd:QName"
+        },
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.provn",
+          "@type": "xsd:QName"
+        },
+        {
+          "@value": "provenance:workflow_20process.0470b6f9-f5c0-484c-bb2e-534806f95d65.cwlprov.ttl",
+          "@type": "xsd:QName"
+        }
+      ]
+    },
+    {
+      "@type": "Association",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/select_products"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "agent": "id:925ed775-3f3c-444a-b740-a81e965f32e0"
+    },
+    {
+      "@type": "Association",
+      "activity": "id:0470b6f9-f5c0-484c-bb2e-534806f95d65",
+      "agent": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "plan": "wf:main/algae-usecase-workflow-copernicus/process"
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "type": [
+        "wfdesc:Workflow",
+        "prov:Plan"
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/select_products",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main",
+      "wfdesc:hasSubProcess": [
+        {
+          "@value": "wf:main/process",
+          "@type": "xsd:QName"
+        }
+      ],
+      "label": [
+        {
+          "@value": "Prospective provenance"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/select_products",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "wf:main/process",
+      "type": [
+        "wfdesc:Process",
+        "prov:Plan"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:09b3c69758a531dc4f198b8a083607dc5a617e4f",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:09b3c69758a531dc4f198b8a083607dc5a617e4f",
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:cea98bc9-4a78-442d-a99a-eb4850b01d63",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "algae-usecase-region.geojson"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "algae-usecase-region"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".geojson"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:c719b109-a5e5-414b-8e1a-2fa5262c9394",
+      "value": [
+        {
+          "@value": "0.1",
+          "@type": "xsd:double"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:d184cbedd77b80cede3f63388a471a8634278cf3",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "SENTINEL-2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:d184cbedd77b80cede3f63388a471a8634278cf3",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "SENTINEL-2"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "2019-06-29"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "2019-06-29"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:97f268f3-383e-43a2-ad2b-3212b43b5676",
+      "value": [
+        {
+          "@value": "4",
+          "@type": "xsd:int"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-bf20402e-6bb5-4f48-bf22-6d3ef7bff99c)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "(secret-12440283-71a1-46b4-9702-9c8e432a31e6)"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:653d2ec7-333d-431e-81c5-d30c4c02282a",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "algae-usecase-region.geojson"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "algae-usecase-region"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".geojson"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:8bfeb7b030ae1994f504c6c9ec46111b90434378",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "copernicus"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2",
+      "value": [
+        {
+          "@value": "0.1",
+          "@type": "xsd:double"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:fc839955-c480-42b7-a657-730494fc154e",
+      "value": [
+        {
+          "@value": "4",
+          "@type": "xsd:int"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:632ab110c744c188c9ae98cb2c6b74767894037a",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "L2A"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "cwlprov:None",
+      "label": [
+        {
+          "@value": "None"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae",
+      "type": [
+        "wfprov:Artifact"
+      ],
+      "value": [
+        {
+          "@value": "s3:///eodata/Sentinel-2/MSI/L2A_N0500/2019/07/01/S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542.SAFE"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:7d2099b8-1e52-4533-8140-dfb685676d26",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:3b00d9df28c7548e79088d660b1d416953bdb464"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:a47fc7dc-2f9a-4925-aacf-c93722a523cd",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:e6006027bca29c0e9abb13482a5deea81527097b"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:398fcc75-135c-469b-88f3-3e233dd75a21",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:9cf89d0572c2a7632f7e096b040d37f8a99b4307"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_chlorophyll_a_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:a5265478-cf9f-4fdd-9446-cb47cfe5629a",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b90b2dee65d0b638143e2788b825e245dbe9c4bb"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:af10a7c3-f90c-434e-820f-0ce388d38dcf",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:6627362d-c06e-46d9-9217-cb29e2dc2c49",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1b832fde3fc0d94955508d006d745a0a9e9b9596"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:d7988ddd-8e9e-4bba-aaa5-4cc0ed49fd4e",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity.tiff"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tiff"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:fcab6658-7e8a-4045-9086-8daf16ffa739",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:823dc9c0e24073601b98c7ac80d545355715c6f5"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color.tif"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_color"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".tif"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:759b68d0-f11e-471f-9055-67965a9955c9",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "data:92c53811eb6d7bad871be5ebee515b4f95e0336a"
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "cwlprov:basename": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot.png"
+        }
+      ],
+      "cwlprov:nameroot": [
+        {
+          "@value": "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_turbidity_plot"
+        }
+      ],
+      "cwlprov:nameext": [
+        {
+          "@value": ".png"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "id:d6c2d96d-b204-406d-90a1-122d95408dfc",
+      "type": [
+        "prov:Collection",
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:cea98bc9-4a78-442d-a99a-eb4850b01d63",
+      "generalEntity": "data:09b3c69758a531dc4f198b8a083607dc5a617e4f"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:653d2ec7-333d-431e-81c5-d30c4c02282a",
+      "generalEntity": "data:09b3c69758a531dc4f198b8a083607dc5a617e4f"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a",
+      "generalEntity": "data:3b00d9df28c7548e79088d660b1d416953bdb464"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36",
+      "generalEntity": "data:e6006027bca29c0e9abb13482a5deea81527097b"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:ed443e92-82d0-40c9-b63e-724fba739364",
+      "generalEntity": "data:9cf89d0572c2a7632f7e096b040d37f8a99b4307"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12",
+      "generalEntity": "data:b90b2dee65d0b638143e2788b825e245dbe9c4bb"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:29f23348-9547-4fef-b002-ceefd5b2471b",
+      "generalEntity": "data:b42b9a24d33c0b4d0dd3f9942c1c30b83eef37c1"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:7e671680-4e90-4584-89b1-36260f670af1",
+      "generalEntity": "data:1b832fde3fc0d94955508d006d745a0a9e9b9596"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f",
+      "generalEntity": "data:1e0302087d93ff81d5ec6b3a7a63ad7d0daec758"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1",
+      "generalEntity": "data:823dc9c0e24073601b98c7ac80d545355715c6f5"
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "id:3b413d9a-adab-454b-8670-0cf37423eec6",
+      "generalEntity": "data:92c53811eb6d7bad871be5ebee515b4f95e0336a"
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "id:cea98bc9-4a78-442d-a99a-eb4850b01d63",
+      "time": "2026-09-23T09:31:02.346121",
+      "role": [
+        "wf:main/aoi"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "id:c719b109-a5e5-414b-8e1a-2fa5262c9394",
+      "time": "2026-09-23T09:31:02.346187",
+      "role": [
+        "wf:main/cloud_cover"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "data:d184cbedd77b80cede3f63388a471a8634278cf3",
+      "time": "2026-09-23T09:31:02.347208",
+      "role": [
+        "wf:main/collection"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191",
+      "time": "2026-09-23T09:31:02.347708",
+      "role": [
+        "wf:main/date"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "id:97f268f3-383e-43a2-ad2b-3212b43b5676",
+      "time": "2026-09-23T09:31:02.347746",
+      "role": [
+        "wf:main/delta"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "data:b75fa50f91a9dd377927a83994bff64245718790",
+      "time": "2026-09-23T09:31:02.348133",
+      "role": [
+        "wf:main/s3_access_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "entity": "data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570",
+      "time": "2026-09-23T09:31:02.348450",
+      "role": [
+        "wf:main/s3_secret_key"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "id:653d2ec7-333d-431e-81c5-d30c4c02282a",
+      "time": "2026-09-23T09:31:02.391633",
+      "role": [
+        "wf:main/select_products/aoi"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "data:8bfeb7b030ae1994f504c6c9ec46111b90434378",
+      "time": "2026-09-23T09:31:02.391980",
+      "role": [
+        "wf:main/select_products/catalog"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2",
+      "time": "2026-09-23T09:31:02.392016",
+      "role": [
+        "wf:main/select_products/cloud_cover"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "data:d184cbedd77b80cede3f63388a471a8634278cf3",
+      "time": "2026-09-23T09:31:02.392236",
+      "role": [
+        "wf:main/select_products/collection"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191",
+      "time": "2026-09-23T09:31:02.392439",
+      "role": [
+        "wf:main/select_products/date"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "id:fc839955-c480-42b7-a657-730494fc154e",
+      "time": "2026-09-23T09:31:02.392462",
+      "role": [
+        "wf:main/select_products/delta"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "data:632ab110c744c188c9ae98cb2c6b74767894037a",
+      "time": "2026-09-23T09:31:02.392701",
+      "role": [
+        "wf:main/select_products/product_level"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "entity": "cwlprov:None",
+      "time": "2026-09-23T09:31:02.392720",
+      "role": [
+        "wf:main/select_products/toi"
+      ]
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:7d2099b8-1e52-4533-8140-dfb685676d26",
+      "entity": "data:5e7cb55727e375cb72dac733c05c4c81c30ffaae"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:a47fc7dc-2f9a-4925-aacf-c93722a523cd",
+      "entity": "id:7fb56c04-4cb6-45f5-923c-390c6520ae3a"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:398fcc75-135c-469b-88f3-3e233dd75a21",
+      "entity": "id:8fe98067-8e97-40b6-a99a-cf787f26fa36"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:a5265478-cf9f-4fdd-9446-cb47cfe5629a",
+      "entity": "id:ed443e92-82d0-40c9-b63e-724fba739364"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:af10a7c3-f90c-434e-820f-0ce388d38dcf",
+      "entity": "id:1855b873-514a-46e8-85f9-7e6fdd5c1c12"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:6627362d-c06e-46d9-9217-cb29e2dc2c49",
+      "entity": "id:29f23348-9547-4fef-b002-ceefd5b2471b"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:d7988ddd-8e9e-4bba-aaa5-4cc0ed49fd4e",
+      "entity": "id:7e671680-4e90-4584-89b1-36260f670af1"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:fcab6658-7e8a-4045-9086-8daf16ffa739",
+      "entity": "id:0a64bae7-5f25-441b-b114-51f6437fb00f"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:759b68d0-f11e-471f-9055-67965a9955c9",
+      "entity": "id:a9c95e1a-ef39-4627-8292-d1020e85dfa1"
+    },
+    {
+      "@type": "Membership",
+      "collection": "id:d6c2d96d-b204-406d-90a1-122d95408dfc",
+      "entity": "id:3b413d9a-adab-454b-8670-0cf37423eec6"
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:7d2099b8-1e52-4533-8140-dfb685676d26",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "time": "2026-09-23T09:31:06.035288",
+      "role": [
+        "wf:main/select_products/urls"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:a47fc7dc-2f9a-4925-aacf-c93722a523cd",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/chlorophyll_a"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:398fcc75-135c-469b-88f3-3e233dd75a21",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/chlorophyll_a_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:a5265478-cf9f-4fdd-9446-cb47cfe5629a",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/chlorophyll_a_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:af10a7c3-f90c-434e-820f-0ce388d38dcf",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/cyanobacteria"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:6627362d-c06e-46d9-9217-cb29e2dc2c49",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/cyanobacteria_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:d7988ddd-8e9e-4bba-aaa5-4cc0ed49fd4e",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/cyanobacteria_plot"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:fcab6658-7e8a-4045-9086-8daf16ffa739",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/turbidity"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:759b68d0-f11e-471f-9055-67965a9955c9",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/turbidity_color"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "id:d6c2d96d-b204-406d-90a1-122d95408dfc",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:33:59.467940",
+      "role": [
+        "wf:main/primary/turbidity_plot"
+      ]
+    },
+    {
+      "@type": "End",
+      "activity": "id:3b68ba23-95c2-48fc-92bb-753f98188bf2",
+      "ender": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "time": "2026-09-23T09:31:06.035275"
+    },
+    {
+      "@type": "End",
+      "activity": "id:44c595c3-0138-459e-bff2-432829fe1bf3",
+      "ender": "id:63709288-2770-4d4f-97fa-3e8ff70d0b32",
+      "time": "2026-09-23T09:33:59.469201"
+    }
+  ]
+}

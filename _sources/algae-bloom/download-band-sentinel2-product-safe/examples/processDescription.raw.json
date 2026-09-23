@@ -1,0 +1,141 @@
+{
+  "id": "download-band-sentinel2-product-safe",
+  "version": "1.1.0",
+  "title": "Downloads Copernicus products.",
+  "description": "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest.",
+  "mutable": true,
+  "keywords": [
+    "Sentinel-2",
+    "OSPD",
+    "demo"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Downloads Copernicus products."
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest."
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.1.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "identifier": "http://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@crim.ca",
+        "name": "Francis Charette-Migneault"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://gitlab.ogc.org/ogc/ogc-ospd"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    }
+  ],
+  "inputs": {
+    "product_url": {
+      "title": "S3 URL to a Sentinel-2 product in SAFE format.",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "s3_access_key": {
+      "title": "S3 access key required to retrieve products hosted on a protected S3 location.",
+      "description": "Access key to Copernicus data provider.\nSee https://documentation.dataspace.copernicus.eu/Registration.html \nand https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.\n",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "s3_secret_key": {
+      "title": "S3 secret key required to retrieve products hosted on a protected S3 location.",
+      "description": "Secret key to Copernicus data provider.\nSee https://documentation.dataspace.copernicus.eu/Registration.html \nand https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.\n",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "resolution": {
+      "title": "resolution",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "10m",
+          "20m",
+          "60m"
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "band": {
+      "title": "band",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B8A",
+          "B09",
+          "B11",
+          "B12",
+          "AOT",
+          "SCL",
+          "TCI",
+          "WVP"
+        ]
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "debug": {
+      "title": "debug",
+      "description": "",
+      "schema": {
+        "type": "boolean",
+        "default": false
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "product": {
+      "title": "product",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://geolabs.github.io/bblocks-process-profiles/def/",
+    "pp": "https://geolabs.github.io/bblocks-process-profiles/def/",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "id": "@id",
+    "type": "@type",
+    "ProcessRun": "wfprov:ProcessRun",
+    "WorkflowRun": "wfprov:WorkflowRun",
+    "WorkflowEngine": "wfprov:WorkflowEngine",
+    "Artifact": "wfprov:Artifact",
+    "ProcessType": "skos:Concept",
+    "title": "dct:title",
+    "description": "dct:description",
+    "keywords": "dct:subject",
+    "version": "pp:version",
+    "mutable": "proc:mutable",
+    "jobControlOptions": "proc:jobControlOptions",
+    "outputTransmission": "proc:outputTransmission",
+    "metadata": "proc:metadata",
+    "role": {
+      "@id": "proc:role",
+      "@type": "@id"
+    },
+    "inputs": {
+      "@id": "proc:inputs",
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-process-profiles/def/input/"
+      }
+    },
+    "outputs": {
+      "@id": "proc:outputs",
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-process-profiles/def/output/"
+      }
+    },
+    "links": {
+      "@id": "rdfs:seeAlso",
+      "@context": {
+        "href": {
+          "@id": "oa:hasTarget",
+          "@type": "@id"
+        },
+        "rel": {
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id",
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          }
+        },
+        "type": "dct:type",
+        "title": "rdfs:label"
+      }
+    },
+    "response": "proc:response",
+    "executionUnit": "proc:executionUnit",
+    "processDescription": "pp:processDescription",
+    "result": "pp:result",
+    "engine": "pp:engine",
+    "run": "pp:run",
+    "provType": {
+      "@id": "@type",
+      "@type": "@vocab"
+    },
+    "provName": "rdfs:label",
+    "activityType": {
+      "@id": "@type",
+      "@type": "@id"
+    },
+    "entityType": {
+      "@id": "@type",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation"
+    },
+    "agent": {
+      "@id": "prov:agent",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "value": "rdf:value",
+    "describedByProcess": {
+      "@id": "wfprov:describedByProcess",
+      "@type": "@id"
+    },
+    "describedByWorkflow": {
+      "@id": "wfprov:describedByWorkflow",
+      "@type": "@id"
+    },
+    "usedInput": {
+      "@id": "wfprov:usedInput",
+      "@type": "@id"
+    },
+    "wasEnactedBy": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasPartOfWorkflowRun": {
+      "@id": "wfprov:wasPartOfWorkflowRun",
+      "@type": "@id"
+    },
+    "hadSubProcessRun": {
+      "@id": "wfprov:hadSubProcessRun",
+      "@type": "@id"
+    },
+    "wasOutputFrom": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "prefLabel": "skos:prefLabel",
+    "definition": "skos:definition",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "status": "pp:status",
+    "phase": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "profile": "pp:profile",
+    "source": "pp:source",
+    "cwl": {
+      "@id": "pp:cwl",
+      "@type": "@id"
+    },
+    "cwlClass": "pp:cwlClass",
+    "cwlId": "pp:cwlId",
+    "provenanceClass": {
+      "@id": "pp:provenanceClass",
+      "@type": "@id"
+    },
+    "cctDependencies": "pp:cctDependency",
+    "candidateCctDependencies": "pp:candidateCctDependency",
+    "hasStep": {
+      "@id": "pp:hasStep",
+      "@type": "@id"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@type": "@id"
+    },
+    "relatedMatch": {
+      "@id": "skos:relatedMatch",
+      "@type": "@id"
+    },
+    "openeoEquivalence": "pp:openeoEquivalence",
+    "level": "pp:equivalenceLevel",
+    "rationale": "pp:rationale",
+    "decomposition": {
+      "@id": "pp:decomposition",
+      "@container": "@list"
+    },
+    "stage": "pp:stage",
+    "openeo": "pp:openeo",
+    "note": "skos:note"
+  }
+}

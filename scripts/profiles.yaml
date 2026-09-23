@@ -1,0 +1,520 @@
+# Hand-written input for generate.py: the Step 0 table plus per-process analysis and examples.
+# Everything that is not derived from the CWL lives here.
+#
+# phase slugs: filter-configuration, selection-filtering, data-retrieval, pre-processing,
+#              scientific-computation, export-aggregation
+# openEO targets are Building Block identifiers of GeoLabs/bblocks-openeo (all checked to exist
+# in its build/register.json at 39119db).
+#
+# Example values: run-derived values (times, engine, container image, output names, checksums)
+# come from real `cwltool --provenance` research objects declared in sources.yaml `runs:`
+# (`run: {prov: <run>, step: <plan leaf>, iteration: <scatter iteration>}`); every profile has one,
+# there are no illustrative examples. The CRIM run logs of 2024 shipped with the W1 source are no
+# longer read (docs/OPEN-QUESTIONS.md Q-W1-LOG).
+
+defaults:
+  job_base: https://ospd.example.org/ogc-api/jobs
+  media:
+    geotiff: "image/tiff; application=geotiff"
+    tiff: image/tiff
+    jp2: image/jp2
+    png: image/png
+    geojson: application/geo+json
+
+processes:
+
+  # ---------------------------------------------------------------- W1 workflows
+  - key: workflow-earth-search
+    workflow: algae-bloom
+    source: {repo: w1, file: algae-usecase-workflow-earth-search.cwl}
+    phases: [filter-configuration, selection-filtering, data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.geojson, eoap.cct.string-format]
+    steps: [select-products-sentinel2, workflow-earth-search-process]
+    openeo:
+      level: none
+      rationale: >-
+        Composite: a CWL Workflow scattering a per-product subworkflow over the product list. The
+        openEO equivalent would be a user-defined process graph, which has no Building Block of
+        its own; the correspondence is carried by the steps.
+      decomposition:
+        - {stage: select_products, openeo: [ogc.openeo.processes.cubes.load_collection], level: closeMatch}
+        - {stage: process (scatter over urls), openeo: [], level: none, note: "openEO has no scatter over products; a collection is loaded as one data cube."}
+    run: {prov: w1-earth-search}
+    execute:
+      inputs:
+        aoi: {href: "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson", type: application/geo+json}
+        collection: sentinel-2-l2a
+        toi: ["2019-06-25", "2019-07-03"]
+        delta: 4
+        cloud_cover: 0.1
+
+  - key: workflow-earth-search-process
+    workflow: algae-bloom
+    source: {repo: w1, file: algae-usecase-workflow-earth-search-process.cwl}
+    phases: [data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.string-format]
+    steps: [download-band-sentinel2-stac-item, reproject-image, calculate-band, plot-image]
+    openeo:
+      level: none
+      rationale: >-
+        Composite (11 steps: 4 band downloads, 1 resampling, 3 band calculations, 3 renderings).
+        In openEO this is one load_collection with band selection followed by a process graph.
+      decomposition:
+        - {stage: download_b0x (x4), openeo: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands], level: closeMatch}
+        - {stage: reproject_b03_60m, openeo: [ogc.openeo.processes.cubes.resample_spatial], level: closeMatch}
+        - {stage: calculate_* (x3), openeo: [ogc.openeo.processes.cubes.reduce_dimension], level: closeMatch}
+        - {stage: plot_* (x3), openeo: [ogc.openeo.processes.cubes.save_result], level: closeMatch, note: "partial, no colour-ramp rendering"}
+    # the scattered sub-workflow is re-rooted as `main` in its own bundle; iteration 2 is _0_L2A
+    run: {prov: w1-earth-search, step: main, iteration: 2}
+    execute:
+      inputs:
+        product_url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+    results_single: true
+
+  - key: workflow-copernicus
+    workflow: algae-bloom
+    source: {repo: w1, file: algae-usecase-workflow-copernicus.cwl}
+    phases: [filter-configuration, selection-filtering, data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.geojson, eoap.cct.string-format]
+    steps: [select-products-sentinel2, workflow-copernicus-process]
+    openeo:
+      level: none
+      rationale: >-
+        Composite; same structure as the Earth-Search variant but over Copernicus Data Space
+        (SAFE products on S3, credentials required). openEO hides credentials in the back-end.
+      decomposition:
+        - {stage: select_products, openeo: [ogc.openeo.processes.cubes.load_collection], level: closeMatch}
+        - {stage: process (scatter over urls), openeo: [], level: none}
+    run: {prov: w1-copernicus}
+    execute:
+      inputs:
+        aoi: {href: "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson", type: application/geo+json}
+        collection: SENTINEL-2
+        date: "2019-06-29"
+        delta: 4
+        cloud_cover: 0.1
+        s3_access_key: "<redacted>"
+        s3_secret_key: "<redacted>"
+    secrets: [s3_access_key, s3_secret_key]
+
+  - key: workflow-copernicus-process
+    workflow: algae-bloom
+    source: {repo: w1, file: algae-usecase-workflow-copernicus-process.cwl}
+    phases: [data-retrieval, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.string-format]
+    steps: [download-band-sentinel2-product-safe, calculate-band, plot-image]
+    openeo:
+      level: none
+      rationale: >-
+        Composite (11 steps). No resampling step: the SAFE product already provides 60 m bands,
+        so B03 60 m is downloaded directly instead of being resampled.
+      decomposition:
+        - {stage: download_b0x (x5), openeo: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands], level: closeMatch}
+        - {stage: calculate_* (x3), openeo: [ogc.openeo.processes.cubes.reduce_dimension], level: closeMatch}
+        - {stage: plot_* (x3), openeo: [ogc.openeo.processes.cubes.save_result], level: closeMatch, note: partial}
+    run: {prov: w1-copernicus, step: main, iteration: 1}
+    execute:
+      inputs:
+        product_url: s3:///eodata/Sentinel-2/MSI/L2A/2019/07/01/S2A_MSIL2A_20190701T110621_N0212_R137_T29SPC_20190701T120906.SAFE
+        s3_access_key: "<redacted>"
+        s3_secret_key: "<redacted>"
+    secrets: [s3_access_key, s3_secret_key]
+    results_single: true
+
+  # ---------------------------------------------------------------- W1 CommandLineTools
+  - key: select-products-sentinel2
+    workflow: algae-bloom
+    source: {repo: w1, file: select-products-sentinel2.cwl}
+    phases: [selection-filtering]
+    cct: []
+    cct_candidates: [eoap.cct.geojson, eoap.cct.string-format]
+    parents: [workflow-earth-search, workflow-copernicus]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection]
+      relatedMatch: [ogc.openeo.types.geojson, ogc.openeo.types.temporal-interval, ogc.openeo.types.collection-id, ogc.openeo.types.metadata-filter]
+      rationale: >-
+        Same filter semantics as load_collection's `id` (collection), `spatial_extent` (aoi),
+        `temporal_extent` (date±delta or toi) and `properties` (eo:cloud_cover) parameters. Not an
+        exactMatch: the tool only selects (returns product URLs) and does not load data; the
+        `catalog` switch (copernicus / earth-search) is a back-end choice with no openEO parameter;
+        `date`+`delta` must be turned into an interval; the Earth-Search branch filters
+        `0 < eo:cloud_cover < cloud_cover` (strict, excludes 0) where an openEO `lte` filter would
+        be expected.
+    analysis: |
+      **Behaviour.** Queries either the Copernicus Data Space OData catalogue
+      (`catalog: copernicus`, returns `s3:///eodata/...SAFE` URLs) or the Element84 Earth-Search
+      STAC API (`catalog: earth-search`, returns STAC Item URLs). The JSON list is written to
+      stdout, captured as `collection-urls.json` and parsed with `outputEval` into `string[]`.
+
+      **CWL specifics that matter for the profile.**
+      - `aoi` is a `File` with `format: iana:application/geo+json` (a GeoJSON *Polygon* geometry
+        in the example, not a Feature): candidate for `eoap.cct.geojson`.
+      - `date` / `toi` are plain `string` / `string[]` holding ISO dates: candidates for
+        `eoap.cct.string-format` (`Date` / `DateTime`); the either/or constraint between them is
+        only stated in `doc` and cannot be expressed in the processDescription.
+      - `product_level` and `catalog` are enums; the parent workflows fix them with `valueFrom`
+        (`L2A`, and `earth-search` or `copernicus`), so they are not exposed at workflow level.
+      - Requires `NetworkAccess`.
+
+      **Provenance.** The output is a list of literal URLs, not files: under the generic profile
+      it can only be a plain `prov:Entity` with `value` (GP-4). Its value is what links the
+      selection to each scattered download (`product_url`).
+    run: {prov: w1-earth-search, step: select_products}
+    execute:
+      inputs:
+        aoi: {href: "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson", type: application/geo+json}
+        catalog: earth-search
+        collection: sentinel-2-l2a
+        product_level: L2A
+        toi: ["2019-06-25", "2019-07-03"]
+        delta: 4
+        cloud_cover: 0.1
+    results:
+      urls: ["https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A"]
+
+  - key: download-band-sentinel2-stac-item
+    workflow: algae-bloom
+    source: {repo: w1, file: download-band-sentinel2-stac-item.cwl}
+    phases: [data-retrieval]
+    cct: []
+    cct_candidates: [eoap.cct.string-format, eoap.cct.stac]
+    parents: [workflow-earth-search-process]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands]
+      relatedMatch: [ogc.openeo.types.band-name, ogc.openeo.types.stac]
+      rationale: >-
+        Retrieves one band of one product: load_collection with `bands` (or filter_bands) over a
+        single-item extent. The closest openEO process, `load_stac`, is only an openEO proposal
+        and out of the register's scope. The band is chosen by Sentinel-2 band id (B01..B12),
+        matched to STAC `eo:common_name` assets inside the tool, where openEO uses collection band
+        names directly.
+    analysis: |
+      **Behaviour.** Resolves the STAC Item, picks the GeoTIFF asset of the requested band and
+      downloads it as `<band>.tif` (COG from the Earth-Search Sentinel-2 L2A collection).
+
+      **CWL specifics.** `product_url` is a plain `string` holding an HTTPS STAC Item URL
+      (candidate `eoap.cct.string-format` URI, or `eoap.cct.stac` Item if the Item itself were
+      passed). `band` is an enum of 16 values. Output `product` is `File` with
+      `format: ogc:geotiff`, dropped by the transform (M-01).
+
+      **Provenance.** The downloaded band is the first file entity of the chain; its
+      `wasDerivedFrom` is the STAC Item (remote, not an output of the run), which
+      `eoap-artifact` cannot express because it requires `wasOutputFrom` (GP-3).
+    run: {prov: w1-earth-search, step: download_b03_10m, iteration: 2}
+    execute:
+      inputs:
+        product_url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+        band: B03
+    results:
+      product: {href: B03.tif, type: geotiff}
+
+  - key: download-band-sentinel2-product-safe
+    workflow: algae-bloom
+    source: {repo: w1, file: download-band-sentinel2-product-safe.cwl}
+    phases: [data-retrieval]
+    cct: []
+    cct_candidates: [eoap.cct.string-format]
+    parents: [workflow-copernicus-process]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands]
+      relatedMatch: [ogc.openeo.types.band-name]
+      rationale: >-
+        Same operation as the STAC-Item variant (one band of one product) but reading the SAFE
+        archive on S3 with user credentials and a `resolution` selector (10m/20m/60m). openEO has
+        no credential parameters (handled by the back-end) and chooses native resolution per band;
+        choosing another resolution is resample_spatial territory.
+    analysis: |
+      **Behaviour.** Opens the SAFE manifest from `s3:///eodata/...` (Copernicus Data Space S3,
+      authenticated) and extracts `T<tile>_<datetime>_<band>_<res>.jp2`.
+
+      **CWL specifics.**
+      - `s3_access_key` / `s3_secret_key` are declared in the `cwltool:Secrets` hint. The engine
+        redacts them in the log (`(secret-<uuid>)`), but the transform exposes them as plain
+        `string` inputs (M-04).
+      - `resolution` is `null | enum` (optional enum), `debug` an optional boolean with default.
+      - Output `product` is `File` with `format: iana:image/jp2`, dropped by the transform (M-01).
+
+      **Provenance.** Secret inputs must be recorded as entities without value (GP-5): the generic
+      profile has no redaction convention, the example records the input entity with no `value`.
+    run: {prov: w1-copernicus, step: download_b03_60m, iteration: 1}
+    execute:
+      inputs:
+        product_url: s3:///eodata/Sentinel-2/MSI/L2A/2019/07/01/S2A_MSIL2A_20190701T110621_N0212_R137_T29SPC_20190701T120906.SAFE
+        band: B03
+        resolution: 60m
+        s3_access_key: "<redacted>"
+        s3_secret_key: "<redacted>"
+    secrets: [s3_access_key, s3_secret_key]
+    results:
+      product: {href: T29SPC_20190701T110621_B03_60m.jp2, type: jp2}
+
+  - key: reproject-image
+    workflow: algae-bloom
+    source: {repo: w1, file: reproject-image.cwl}
+    phases: [pre-processing]
+    cct: []
+    cct_candidates: []
+    parents: [workflow-earth-search-process]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.resample_spatial]
+      rationale: >-
+        As used in W1 the tool only changes the pixel size (gdalwarp `-tr 60 60`, nearest neighbour
+        by default, no `-t_srs`): resample_spatial with `resolution: 60`, `projection: null`,
+        `method: near`. Not an exactMatch: `output_dimensions` (`-ts`) has no openEO parameter, the
+        output type is forced to Float32 (`-ot Float32`), and the tool works on a file rather than
+        a data cube. Despite its name, no CRS transformation takes place.
+    analysis: |
+      **Behaviour.** `gdalwarp -ot Float32 -of GTiff [-ts w h] [-tr xres yres] <in> <name>.tiff`.
+      In W1 it is called once, to bring B03 from 10 m to 60 m so that it can be combined with B01
+      (only available at 60 m) for chlorophyll-a and turbidity. The run log reports a 1830 x 1830
+      output (10980 x 10980 at 10 m).
+
+      **CWL specifics.** `output_dimensions` and `output_resolution` are `int[]?` whose arity (2)
+      is only implied; the transform maps them to unbounded integer arrays (M-06). The label says
+      "reprojection" but no target CRS input exists. Docker image `ogc-ospd/algae-usecase/reproject-image`
+      has no tag and no registry (GP-6).
+
+      **Provenance.** Clear derivation: output `wasDerivedFrom` input band; `output_resolution` is a
+      parameter entity (`output_resolution`, literal array).
+    run: {prov: w1-earth-search, step: reproject_b03_60m, iteration: 2}
+    execute:
+      inputs:
+        input_image: {href: B03.tif, type: geotiff}
+        output_resolution: [60, 60]
+        output_name: B03_60m
+    results:
+      result: {href: B03_60m.tiff, type: geotiff}
+
+  - key: calculate-band
+    workflow: algae-bloom
+    source: {repo: w1, file: calculate-band.cwl}
+    phases: [scientific-computation]
+    cct: []
+    cct_candidates: []
+    parents: [workflow-earth-search-process, workflow-copernicus-process]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.reduce_dimension]
+      relatedMatch: [ogc.openeo.processes.math.divide, ogc.openeo.processes.math.power, ogc.openeo.processes.math.multiply, ogc.openeo.processes.math.subtract]
+      rationale: >-
+        Generic band math (gdal_calc.py with a Python/numpy expression over up to 26 bands A..Z):
+        openEO expresses it as reduce_dimension over the `bands` dimension with a callback built from
+        math processes. closeMatch at the generic level; each W1 instance is a fixed chain of math
+        processes (see decomposition). The expression is free text in CWL, a process graph in openEO.
+      decomposition:
+        - {stage: "chlorophyll_a = 4.26*((C/A)**3.94), A=B01 60m, C=B03 60m", openeo: [ogc.openeo.processes.math.divide, ogc.openeo.processes.math.power, ogc.openeo.processes.math.multiply], level: closeMatch}
+        - {stage: "cyanobacteria = 115530*(((B*C)/A)**2.38), A=B02, B=B03, C=B04 (10m)", openeo: [ogc.openeo.processes.math.multiply, ogc.openeo.processes.math.divide, ogc.openeo.processes.math.power], level: closeMatch, note: "coefficient is 115530 in the Earth-Search variant, 115530.31 in the Copernicus variant"}
+        - {stage: "turbidity = (8.93*(C/A))-6.39, A=B01 60m, C=B03 60m", openeo: [ogc.openeo.processes.math.divide, ogc.openeo.processes.math.multiply, ogc.openeo.processes.math.subtract], level: closeMatch}
+    analysis: |
+      **Behaviour.** Image entrypoint `gdal_calc.py`; fixed arguments
+      `--co TILED=YES --overwrite --type Float32`; `--calc <expr> --outfile <name>.tiff`. The
+      formulas come from Se2WaQ (Potes et al. 2018; Toming et al. 2016), per the base image labels.
+
+      **CWL specifics.**
+      - 28 inputs: `name`, `calc` and 26 optional `File?` bands `band_a`..`band_z`, each accepting
+        `ogc:geotiff | iana:image/tiff | iana:image/jp2`. The transform maps each to an octet-stream
+        string (M-01) and loses the multi-format choice (M-02).
+      - `calc` is an unconstrained string evaluated as Python: the processDescription cannot say
+        which band letters are required, so the process is only meaningful with its callers'
+        `valueFrom` expressions. This is the main profiling limit of the tool.
+      - `doc` says "calculation over JPEG bands" but the Earth-Search variant feeds GeoTIFFs.
+
+      **Provenance.** The expression is the scientific content: it must be recorded as a
+      parameter entity (`calc`) so that turbidity, chlorophyll-a and cyanobacteria runs can be
+      told apart. With the generic profile this is only possible as a plain `prov:Entity` with
+      `value` (GP-4); the activity type alone (`calculate-band`) does not identify the indicator.
+    run: {prov: w1-earth-search, step: calculate_turbidity, iteration: 2}
+    execute:
+      inputs:
+        name: S2A_29SPC_20190701_0_L2A_turbidity
+        calc: "(8.93*(C/A))-6.39"
+        band_a: {href: B01.tif, type: geotiff}
+        band_c: {href: B03_60m.tiff, type: geotiff}
+    results:
+      result: {href: S2A_29SPC_20190701_0_L2A_turbidity.tiff, type: geotiff, log_output: turbidity}
+
+  - key: plot-image
+    workflow: algae-bloom
+    source: {repo: w1, file: plot-image.cwl}
+    phases: [export-aggregation]
+    cct: []
+    cct_candidates: []
+    parents: [workflow-earth-search-process, workflow-copernicus-process]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.save_result]
+      relatedMatch: [ogc.openeo.processes.math.clip, ogc.openeo.processes.math.linear_scale_range]
+      rationale: >-
+        Partial: the export part (GeoTIFF + PNG) corresponds to save_result with a GTiff or PNG
+        format; `clip_min`/`clip_max` correspond to math.clip. The colour mapping (`color_scale`
+        bins) and the matplotlib figure (title, colour bar) have no stable openEO process
+        (colour maps are back-end-specific format options).
+    analysis: |
+      **Behaviour.** Python/GDAL + matplotlib: applies binned colour scales to a single-band
+      image, writes a colourised GeoTIFF (`<output_name>.tif`) and a PNG figure (`<plot_name>.png`).
+
+      **CWL specifics.** `color_scale` is a JSON array serialised in a `string` (a structured value
+      hidden in a literal: could be typed as an array of `[number, [r,g,b]]` in the
+      processDescription, but CWL cannot declare it). Outputs are globbed with
+      `$(runtime.outdir)/*.tif` / `*.png`, so any extra file would break the step. Output formats
+      `ogc:geotiff` and `iana:image/png` are dropped by the transform (M-01).
+
+      **Provenance.** Two outputs derived from one input; `color_scale` is the parameter that
+      makes the rendering reproducible.
+    run: {prov: w1-earth-search, step: plot_turbidity, iteration: 2}
+    execute:
+      inputs:
+        input_image: {href: S2A_29SPC_20190701_0_L2A_turbidity.tiff, type: geotiff}
+        color_scale: "[[0,[73,111,242]],[4,[130,211,95]],[8,[254,253,5]],[12,[253,0,4]],[16,[142,32,38]],[20,[217,124,245]]]"
+        output_name: S2A_29SPC_20190701_0_L2A_turbidity_color
+        plot_name: S2A_29SPC_20190701_0_L2A_turbidity_plot
+        plot_title: Turbidity
+    results:
+      output_file: {href: S2A_29SPC_20190701_0_L2A_turbidity_color.tif, type: geotiff, log_output: turbidity_color}
+      output_plot: {href: S2A_29SPC_20190701_0_L2A_turbidity_plot.png, type: png, log_output: turbidity_plot}
+
+  # ---------------------------------------------------------------- W2
+  - key: mangrove-workflow
+    workflow: kindgrove
+    source: {repo: w2, file: mangrove-workflow.cwl, element: mangrove-workflow}
+    phases: [filter-configuration, selection-filtering, data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: [eoap.cct.bbox]
+    cct_candidates: []
+    steps: [parse-aoi, mangrove]
+    openeo:
+      level: none
+      rationale: >-
+        Composite of a BBox-unpacking helper and one opaque tool; the openEO equivalent is a process
+        graph (see the `mangrove` profile for the stage-by-stage decomposition). `stac.yaml` is
+        imported in `SchemaDefRequirement` but unused.
+      decomposition:
+        - {stage: parse_aoi, openeo: [], level: none, note: "structural; bounding box is a native openEO parameter type"}
+        - {stage: step_1 (mangrove_cli), openeo: [], level: none, note: see ospd.process-profiles.kindgrove.mangrove}
+    run: {prov: w2-pinned}
+    execute:
+      inputs:
+        aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+        cloud_cover_max: 20
+        days_back: 90
+    stac_catalog: [stac]
+    results:
+      stac: {href: catalog.json, type: application/json, stac: true}
+
+  - key: parse-aoi
+    workflow: kindgrove
+    source: {repo: w2, file: mangrove-workflow.cwl, element: parse_aoi}
+    # the CWL has no label/doc (M-08): hand-written label and definition for the process-type entry
+    label: Parse area of interest
+    definition: Unpacks an OGC bounding box (EOAP BBox custom type) into west, south, east and north coordinates.
+    phases: [filter-configuration]
+    cct: [eoap.cct.bbox]
+    cct_candidates: []
+    parents: [mangrove-workflow]
+    openeo:
+      level: none
+      relatedMatch: [ogc.openeo.types.bounding-box]
+      rationale: >-
+        Structural helper: unpacks an OGC BBox record into west/south/east/north floats and emits a
+        constant `output_dir` ("outputs"). No openEO process does this, because openEO passes a
+        bounding box object directly (`ogc.openeo.types.bounding-box`, relatedMatch at type level).
+    analysis: |
+      **Behaviour.** `echo --` in `alpine:3.22.2`; all outputs come from `outputEval`
+      JavaScript expressions over `inputs.aoi.bbox[0..3]`. Nothing is computed by the container.
+
+      **CWL specifics.** The only W2 tool that uses a custom type (`ogc.yaml#BBox`). Its
+      processDescription therefore exposes the eoap BBox schema, whose `crs` enum
+      (`CRS84`, `CRS84h`) differs from the OGC API - Processes Part 1 bbox CRS URIs (M-07).
+      The `crs` value is ignored by the expressions: a bbox in another CRS would be silently
+      misread.
+
+      **Provenance.** An activity with parameter-only inputs and outputs: nothing in it is a file,
+      so neither `eoap-artifact` nor `execution` apply (GP-3, GP-4). Deployed standalone it is of
+      little use; it is profiled because it is a separately deployable CWL process.
+    run: {prov: w2-pinned, step: parse_aoi}
+    execute:
+      inputs:
+        aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+    results:
+      west: 95.15
+      south: 15.9
+      east: 95.35
+      north: 16.1
+      output_dir: outputs
+
+  - key: mangrove
+    workflow: kindgrove
+    source: {repo: w2, file: mangrove-workflow.cwl, element: mangrove_cli}
+    label: Mangrove biomass and carbon estimation
+    definition: >-
+      Detects mangroves from Sentinel-2 L2A vegetation indices within a bounding box and estimates
+      above-ground biomass and carbon stock (ipython2cwl binary of the KindGrove notebook).
+    phases: [selection-filtering, data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.bbox]
+    parents: [mangrove-workflow]
+    openeo:
+      level: none
+      rationale: >-
+        Opaque: one ipython2cwl binary running the whole notebook. No single openEO process;
+        each notebook stage has a closeMatch (decomposition). run_udf could wrap the binary but
+        expects a data cube in and out, which this tool does not follow (it searches and
+        downloads its own data).
+      decomposition:
+        - {stage: "STAC search, Earth-Search sentinel-2-l2a, bbox, cloud cover, last N days", openeo: [ogc.openeo.processes.cubes.load_collection], level: closeMatch}
+        - {stage: "NDVI (nir-red)/(nir+red+1e-8)", openeo: [ogc.openeo.processes.cubes.ndvi, ogc.openeo.processes.math.indices.normalized_difference], level: closeMatch, note: "epsilon 1e-8 in the denominator"}
+        - {stage: "NDWI (green-nir)/(green+nir+1e-8)", openeo: [ogc.openeo.processes.math.indices.normalized_difference], level: closeMatch}
+        - {stage: "SAVI ((nir-red)/(nir+red+0.5))*1.5", openeo: [], level: none, note: "no stable process; composition of add/subtract/divide/multiply"}
+        - {stage: "mangrove mask: 0.3<NDVI<0.9 and NDWI>-0.3 and SAVI>0.2", openeo: [ogc.openeo.processes.comparison.gt, ogc.openeo.processes.comparison.lt, ogc.openeo.processes.logic.and, ogc.openeo.processes.cubes.mask], level: closeMatch}
+        - {stage: "biomass = 250.5*NDVI - 75.2", openeo: [ogc.openeo.processes.cubes.apply, ogc.openeo.processes.math.multiply, ogc.openeo.processes.math.subtract], level: closeMatch}
+        - {stage: "carbon stock and totals (IPCC carbon fraction 0.47)", openeo: [ogc.openeo.processes.cubes.aggregate_spatial, ogc.openeo.processes.math.sum, ogc.openeo.processes.math.multiply], level: closeMatch}
+        - {stage: "export CSV + GeoTIFF", openeo: [ogc.openeo.processes.cubes.save_result], level: closeMatch, note: "CSV summaries are not a raster format"}
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/mangrove_workflow_for_cwl`, generated by ipython2cwl from
+      `mangrove_workflow_for_cwl.ipynb` (one binary per notebook). It searches Earth-Search for
+      Sentinel-2 L2A scenes in the bbox over the last `days_back` days below `cloud_cover_max`,
+      computes NDVI/NDWI/SAVI, thresholds a mangrove mask, applies the allometric model
+      (Biomass = 250.5 × NDVI − 75.2) and IPCC carbon accounting, and writes
+      `biomass_summary.csv`, `carbon_summary.csv` and `mangrove_mask.tif` into `output_dir`.
+
+      **CWL specifics.**
+      - Inputs are four floats for the bbox plus `cloud_cover_max`, `days_back`, `output_dir`
+        (candidate: a single `eoap.cct.bbox` input, as done one level up by `parse_aoi`).
+      - `cloud_cover_max` is `float` here while the notebook annotates it `CWLIntInput`
+        (the KindGrove application-package variant uses `int`): open question Q-W2-INT.
+      - Output `result` is a `Directory` (glob `outputs`), mapped by the transform to a STAC
+        **Collection**. The run record shows the binary itself writes a STAC **Catalog**
+        (`catalog.json`) with one Item (`mangrove-analysis-<timestamp>.json`) whose assets are
+        `mangrove_mask.tif`, `biomass_summary.csv` and `carbon_summary.csv`: corrected (M-05).
+      - `ResourceRequirement.ramMax: 512`, while the run record's engine log reports
+        `Max memory used: 2949MiB` for this step. Under an engine that enforces the limit
+        (Calrissian on Kubernetes) the step is OOM-killed; cwltool alone does not enforce it.
+      - Image `ghcr.io/geolabs/kindgrove/mangrove-cwl:v0.0.1-rc7` (tag, not digest).
+      - `days_back` is relative to execution time: the same inputs select different scenes on
+        different days. The scene actually used is exposed in the Item written by the tool
+        (`properties.scene_id`, `cloud_cover`, `datetime`), not in any CWL output parameter.
+
+      **Provenance.** Opaque at the CWL level: only one activity can be recorded, while the
+      incubator example `KindGroveProvenance.ttl` (bblocks-openscience) describes nine
+      notebook-cell processes. The profile keeps the deployable granularity and records the
+      decomposition as a process-type annotation, not as sub-activities.
+    run: {prov: w2-pinned, step: step_1}
+    execute:
+      inputs:
+        west: 95.15
+        south: 15.9
+        east: 95.35
+        north: 16.1
+        cloud_cover_max: 20
+        days_back: 90
+        output_dir: outputs
+    stac_catalog: [result]
+    results:
+      result: {href: catalog.json, type: application/json, stac: true}

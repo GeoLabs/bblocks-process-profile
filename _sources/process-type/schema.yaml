@@ -1,0 +1,142 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: |
+  Candidate entry for the OSPD process-type register (Activity 4). A process type classifies the
+  activities recorded in provenance: a provenance Activity of this type carries the entry `id` as
+  its `activityType`. The entry is modelled as a SKOS concept; openEO equivalences use the SKOS
+  mapping properties.
+type: object
+required:
+  - id
+  - type
+  - prefLabel
+  - definition
+  - inScheme
+  - status
+  - phase
+  - profile
+  - source
+  - provenanceClass
+  - openeoEquivalence
+properties:
+  id:
+    description: IRI of the process type (also used as `activityType` in provenance records).
+    type: string
+    format: uri
+  type:
+    const: ProcessType
+  prefLabel:
+    type: string
+  definition:
+    type: string
+  inScheme:
+    description: IRI of the process-type register (concept scheme) this entry is proposed to.
+    type: string
+    format: uri
+  status:
+    description: ISO 19135 item status. Entries produced here are candidates, hence `submitted` at most.
+    type: string
+    enum: [submitted, valid, invalid, superseded, retired]
+  phase:
+    description: Position(s) in the six-phase workflow framework.
+    type: array
+    minItems: 1
+    items:
+      type: string
+      enum:
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/filter-configuration
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation
+        - https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation
+  profile:
+    description: Identifier of the process-profile Building Block.
+    type: string
+  processDescription:
+    type: object
+    required: [id, version]
+    properties:
+      id:
+        type: string
+      version:
+        type: string
+  source:
+    type: object
+    required: [cwl, cwlClass, cwlId]
+    properties:
+      cwl:
+        description: Pinned URL of the CWL document.
+        type: string
+        format: uri
+      cwlClass:
+        enum: [CommandLineTool, Workflow, ExpressionTool]
+      cwlId:
+        type: string
+      license:
+        type: string
+        format: uri
+  provenanceClass:
+    description: Class of the run records produced by executing this process.
+    type: string
+    enum:
+      - http://purl.org/wf4ever/wfprov#ProcessRun
+      - http://purl.org/wf4ever/wfprov#WorkflowRun
+  cctDependencies:
+    description: EOAP CWL custom types used by the CWL source.
+    type: array
+    items:
+      type: string
+      pattern: '^eoap\.cct\.'
+  candidateCctDependencies:
+    description: EOAP CWL custom types that could replace plain CWL types (not used by the source).
+    type: array
+    items:
+      type: string
+      pattern: '^eoap\.cct\.'
+  hasStep:
+    description: Process types of the steps of a Workflow.
+    type: array
+    items:
+      type: string
+      format: uri
+  exactMatch:
+    type: array
+    items:
+      type: string
+      format: uri
+  closeMatch:
+    type: array
+    items:
+      type: string
+      format: uri
+  relatedMatch:
+    type: array
+    items:
+      type: string
+      format: uri
+  openeoEquivalence:
+    type: object
+    required: [level, rationale]
+    properties:
+      level:
+        enum: [exactMatch, closeMatch, none]
+      rationale:
+        type: string
+      decomposition:
+        description: Ordered correspondence of the stages of a composite or opaque process.
+        type: array
+        items:
+          type: object
+          required: [stage, level]
+          properties:
+            stage:
+              type: string
+            openeo:
+              type: array
+              items:
+                type: string
+                pattern: '^ogc\.openeo\.'
+            level:
+              enum: [exactMatch, closeMatch, none]
+            note:
+              type: string

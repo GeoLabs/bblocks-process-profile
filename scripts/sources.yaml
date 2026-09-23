@@ -1,0 +1,70 @@
+# Pinned sources used by generate.py. CWL is read from local clones (the generator never
+# downloads) and referenced in the register by URL only.
+w1:
+  title: W1 Algae Bloom (Se2WaQ water quality, CRIM)
+  repo: https://github.com/crim-ca/ogc-ospd-phase1
+  commit: 5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea
+  clone: ogc-ospd-phase1        # directory name under --sources-root
+  base_path: ogc_app_pkg
+  license: https://spdx.org/licenses/CC-BY-NC-SA-4.0
+  upstream: https://gitlab.ogc.org/ogc/ogc-ospd   # s:codeRepository in the CWL, not reachable publicly
+w2:
+  title: W2 KindGrove mangrove biomass (Starling Foundries / GeoLabs)
+  repo: https://github.com/GeoLabs/bblocks-eoap-cct
+  commit: c27c60d2755c01f69bd7f1bd0903b6388d375e58
+  clone: bblocks-eoap-cct
+  base_path: _sources/cwl-to-ogcprocess/examples
+  license: https://spdx.org/licenses/Apache-2.0
+eoap_cct:
+  repo: https://github.com/GeoLabs/bblocks-eoap-cct
+  commit: c27c60d2755c01f69bd7f1bd0903b6388d375e58
+  clone: bblocks-eoap-cct
+  transform: _sources/cwl-to-ogcprocess/transforms/cwl-to-ogcprocess.jq
+
+# Real `cwltool --provenance` runs (CWLProv research objects) that the run-derived examples are
+# built from. Like the CWL clones they are read from local directories, never downloaded: `bag` is
+# a path under --runs-root (default: --sources-root), or absolute. They are large (the W1 payload
+# is 3.1 GB) and are not part of this repository.
+#
+# generate.py reads `bag` and `note`. scripts/run_workflows.py produces the bags from the rest:
+# `workflow` (clone key, CWL file, optional packed-document element), either `job` (a job file in
+# the clone, relative to its base_path; `secrets` maps its placeholder inputs to environment
+# variables) or inline `inputs`, `results` (cwltool --outdir), `cwltool_args`.
+runs:
+  w1-earth-search:
+    bag: ogc-ospd-phase1/ogc_app_pkg/PROV
+    results: ogc-ospd-phase1/ogc_app_pkg/results
+    workflow: {repo: w1, file: algae-usecase-workflow-earth-search.cwl}
+    job: example/algae-usecase-job-earth-search.yml
+    note: >-
+      earth-search variant of the pinned W1 package, `cwltool --outdir ./results --provenance ./PROV
+      algae-usecase-workflow-earth-search.cwl example/algae-usecase-job-earth-search.yml`, 2026-09-23,
+      cwltool 3.1.20260108082145 on an arm64 macOS host; two products scattered
+      (S2A_29SPC_20190701_1_L2A then S2A_29SPC_20190701_0_L2A). Three local deviations were needed to
+      run the package at all, none touching the CWL (docs/DEVIATIONS.md U-03, U-04)
+  w1-copernicus:
+    bag: ogc-ospd-phase1/ogc_app_pkg/PROV1
+    results: ogc-ospd-phase1/ogc_app_pkg/results1
+    workflow: {repo: w1, file: algae-usecase-workflow-copernicus.cwl}
+    job: example/algae-usecase-job-copernicus.yml
+    secrets: {s3_access_key: CDSE_S3_ACCESS_KEY, s3_secret_key: CDSE_S3_SECRET_KEY}
+    note: >-
+      Copernicus variant of the pinned W1 package, `cwltool --outdir ./results1 --provenance ./PROV1
+      algae-usecase-workflow-copernicus.cwl example/algae-usecase-job-copernicus.yml` with Copernicus
+      Data Space S3 credentials, 2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host; one
+      product (S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542). cwltool writes the
+      `cwltool:Secrets` inputs as `(secret-<uuid>)` placeholders in the research object
+  w2-pinned:
+    bag: runs/w2-pinned/ro
+    results: runs/w2-pinned/out
+    workflow: {repo: w2, file: mangrove-workflow.cwl, element: mangrove-workflow}
+    inputs:
+      aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+      cloud_cover_max: 20
+      days_back: 90
+    cwltool_args: [--no-match-user]   # the image's entrypoint loses its execute bit under cwltool's uid mapping
+    note: >-
+      the register's pinned W2 source itself (bblocks-eoap-cct c27c60d `mangrove-workflow.cwl#mangrove-workflow`)
+      run with the profile's execute inputs, `cwltool --no-match-user --provenance ro --outdir out`,
+      2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host, 126 s; scene selected by
+      `days_back` on that day: S2C_46PGC_20260913_0_L2A

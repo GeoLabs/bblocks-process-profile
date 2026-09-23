@@ -1,0 +1,174 @@
+{
+  "id": "mangrove_cli",
+  "version": "0.0.1",
+  "title": "mangrove_cli",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "keywords": [
+    "OSPD",
+    "mangrove",
+    "biomass"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "mangrove_cli"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "0.0.1"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cameron Sajedi"
+      }
+    },
+    {
+      "role": "https://schema.org/contributor",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Gérald Fenoy",
+        "identifier": "https://orcid.org/0000-0002-9617-8641"
+      }
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://github.com/starling-foundries/KindGrove"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme"
+    }
+  ],
+  "inputs": {
+    "cloud_cover_max": {
+      "title": "cloud_cover_max",
+      "description": "",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "days_back": {
+      "title": "days_back",
+      "description": "",
+      "schema": {
+        "type": "integer"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "east": {
+      "title": "east",
+      "description": "",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "north": {
+      "title": "north",
+      "description": "",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "south": {
+      "title": "south",
+      "description": "",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "west": {
+      "title": "west",
+      "description": "",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "output_dir": {
+      "title": "output_dir",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "result",
+      "description": "",
+      "schema": {
+        "type": "object",
+        "required": [
+          "type",
+          "stac_version",
+          "id",
+          "description",
+          "license",
+          "extent",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Collection"
+            ]
+          },
+          "stac_version": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "extent": {
+            "type": "object"
+          },
+          "links": {
+            "type": "array"
+          },
+          "assets": {
+            "type": "object"
+          }
+        },
+        "format": "stac-collection"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

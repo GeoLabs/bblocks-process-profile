@@ -1,0 +1,53 @@
+# Open questions
+
+Decisions already taken (2026-09-22): all 13 processes profiled, with the 8 CommandLineTools
+analysed in depth; W2 source = the CCT-enabled `mangrove-workflow.cwl` of bblocks-eoap-cct; CRIM
+CWL files linked, not copied; openEO equivalence levels as in the Step 0 table.
+
+## Blocking before any commit
+
+| ID | Question |
+|---|---|
+| Q-LIC | **Derived text from CC-BY-NC-SA-4.0 files.** The W1 CWL files are linked, not copied, but the generated processDescriptions and process-type entries reproduce their `label`/`doc` texts and the input/output names, and the run examples reuse file names from the CRIM logs. Is that acceptable in an Apache-2.0 repository with attribution, or should the W1 descriptive texts be replaced / that subtree be licensed CC-BY-NC-SA? |
+| Q-BUILD | **Resolved 2026-09-22.** `./build.sh` passes (see `docs/VALIDATION.md`); it first required a JSON-LD context per profile. |
+| Q-PUB | Are `https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json` and `https://geolabs.github.io/bblock-ogcapi-processes-part2/build/register.json` published? Neither repository contains a `build/` directory. If not, the build cannot resolve `ogc.bbr.provenance.*` / `ogc.api.processes.v2.*` (workaround for local testing: `bblocks-config-local.yaml.example`). |
+
+## Sources and examples
+
+| ID | Question |
+|---|---|
+| Q-W1-LOG | **Answered 2026-09-23 for the earth-search variant.** The pinned package was run with `cwltool --provenance` (run record `w1-earth-search`, `scripts/sources.yaml`) and the earth-search profiles are now built from it. Compared with the CRIM log of 2024-05-31 on the same product (`S2A_29SPC_20190701_0_L2A`), only 2 of 9 output checksums coincide (`cyanobacteria_color`, `turbidity_color`); `calculate_chlorophyll_a` indeed runs on B01 + B03_60m (`4.26*((C/A)**3.94)`), so the 2024 log came from a different CWL. The observability runs (agents A/B/C) could not be used: none completed under DRU. The Copernicus variant was run the same day with credentials (`w1-copernicus`, same product as the 2024-09-24 log): 3 of 9 checksums coincide, the three `_color.tif` again. **All 13 profiles are now built from run records; the 2024 logs are no longer read.** |
+| Q-W1-PRODUCTS | Earth-Search now returns **two** reprocessings of the same acquisition under the job's 10 % cloud-cover filter (`S2A_29SPC_20190701_1_L2A` then `_0_L2A`); the 2024 log had `_0_L2A` only. The workflow scatters over both (18 outputs). Tool-level examples use scatter iteration 2 (`_0_L2A`) for continuity; should the profiles pin one reprocessing, or should the job constrain it? |
+| Q-W1-COPERNICUS | **Resolved 2026-09-23.** Run with Copernicus Data Space S3 credentials (`w1-copernicus`, 07:31–07:34 Z, one product, 5 band downloads incl. `B03_60m` directly, no reprojection); `workflow-copernicus`, `workflow-copernicus-process` and `download-band-sentinel2-product-safe` are built from it. An attempt without credentials fails at the first download with a bare `permanentFail` (`download_b04_10m`, glob `*.jp2` unmatched): the tool gives no hint that credentials are the cause. |
+| Q-W1-SCI | The cyanobacteria coefficient is `115530` in the Earth-Search variant and `115530.31` in the Copernicus variant (and in the source notebook). Report to CRIM? |
+| Q-W1-TZ | Log timestamps (cidfile names) carry no timezone; written as UTC. |
+| Q-W2-INT | `cloud_cover_max` is `float` in the eoap-cct example but `int` in the notebook (`CWLIntInput`) and in the KindGrove application-package variant. Does the ipython2cwl binary accept `20.0`? |
+| Q-W2-STAC | **Half answered.** `mangrove_cli` does write STAC: a **Catalog** with one Item (run records `w2-pinned` and, before it, agent A's July run; M-05 corrected accordingly). What ZOO-Project-DRU stage-out produces *on top of it* (a Collection wrapping it? the Catalog as is?) is still unknown: no DRU run of W2 has completed (observability investigation, `mangrove_cli` OOM-killed at its own `ramMax: 512` while the run record reports 2949 MiB used). |
+| Q-W2-RUN | **Resolved 2026-09-23.** The three W2 profiles are built from `w2-pinned`: the register's own pinned CWL (`bblocks-eoap-cct` c27c60d, `mangrove-workflow.cwl#mangrove-workflow`) run with `cwltool --provenance` and the profile's execute inputs (126 s). The first evidence was the 2026-07-30 run of the KindGrove package under its own id by agent A of the observability investigation; both records agree on structure. Engine is cwltool, not ZOO-Project-DRU/Calrissian: a DRU run record is still wanted, and blocked by the `ramMax` issue below. |
+| Q-W2-DAYSBACK | `days_back` makes the result a function of the execution date: the same execute request gave scene `S2C_46PGC_20260506_0_L2A` and **1.49 ha** of mangrove on 2026-07-30, scene `S2C_46PGC_20260913_0_L2A` and **170.91 ha** on 2026-09-23. The processDescription cannot express this; the Item written by the tool does (`scene_id`, `datetime`). Should the profile require the resolved scene in the provenance view, or should the package take an explicit time window instead of `days_back`? |
+| Q-W2-RAMMAX | `mangrove_cli` declares `ramMax: 512` and the run record's engine log reports `Max memory used: 2949MiB` (cwltool does not enforce the limit; Calrissian does, hence the OOM kills on DRU). The figure is cwltool's own measurement and the **same value** appears for the July run, the September run and an unrelated W1 step (`plot_cyanobacteria`), so it is a ceiling of the measurement, not a consumption; re-measure with `docker stats` or a cgroup peak before reporting to KindGrove. |
+| Q-DEPLOY | The `ogcapppkg` example of a tool inside the packed W2 document points to `mangrove-workflow.cwl#parse_aoi` / `#mangrove_cli`. Does ZOO-Project-DRU deploy a fragment of a packed document, or must the tool be extracted into its own CWL file? |
+
+## Mapping (eoap-cct)
+
+| ID | Question |
+|---|---|
+| Q-M02 | Multi-format file inputs use `oneOf` (Part 1 convention); the branches differ only by `contentMediaType`, so strict validators match all of them. Keep `oneOf` or switch to `anyOf`? |
+| Q-M03 | Should a tool isolated from a packed `$graph` inherit the document-level annotations (version, author, license, keywords)? Done here; changes `version` from the transform default `1.0.0` to `0.0.1`. |
+| Q-M07 | BBox CCT `crs` (`CRS84`/`CRS84h`) vs Part 1 CRS URIs: an execute request built from the CWL type is rejected by `ogc.api.processes.v1.schemas.bbox` (checked). Raise at eoap/schemas, or map in the transform? |
+| Q-M12 | Which mapping artefact is normative: jq transform or JSON-LD + SHACL uplift? Inline or `-refs` jq variant? (inline used) |
+| Q-CCT | Should CCT-upgraded variants of the W1 tools be profiled too (`aoi` → `eoap.cct.geojson`, `date`/`toi` → `eoap.cct.string-format`)? Recorded as `candidateCctDependencies` only. |
+
+## Register design
+
+| ID | Question |
+|---|---|
+| Q-PREFIX | **Resolved 2026-09-23: `ospd.process-profiles.`** (was `osc.process-profiles.`, from the brief). A project root like `eoap.cct.*`, claiming nothing under `ogc.`, which the main OGC register owns; `ogc.ospd.process-profiles.` remains the natural form should the register join the incubator's `ogc.<family>` namespace. |
+| Q-W3C | Since 2026-09-23 every profile carries its run record as **W3C PROV-JSONLD** (`examples/cwlprov.jsonld`, the CWLProv bundle holding the profile's activity, re-serialised by the `prov` library), validated against `ogc.ogc-utils.prov.w3c-prov-jsonld` of `ogcincubator/bblocks-prov-jsonld-alt` and read as RDF through its own context — the only example whose PROV-O graph is the engine's. That register is **experimental** (`under-development`, its schema and context point at openprovenance.org without local copies): its changes reach this build directly. Measured cost: +1.3 MB in `_sources`, generated doc pages 2–4× larger (the W1 tool profiles share a 179 KB bundle). The raw PROV-JSON form (`w3c-prov-json`) also validates but was not added: bblocks-postprocess uplifts every `.json` snippet with the profile's context, which turns PROV-JSON's `prefix` map into junk triples. Keep the dependency, pin it, or vendor the two schemas? |
+| Q-PROV-SCHEMA | What "validated against `ogc.bbr.provenance.provenance`" actually checks (verified 2026-09-23): that block is `allOf: [ogc.ogc-utils.prov]` with no constraint of its own, and the chain schema accepts an activity without `provType`, without `id`, and an empty array (it rejects wrong value types and objects with no PROV signal). The PROV SHACL shapes of cross-domain-model find our nodes but only check datatypes (`xsd:dateTime`): duplicate `startedAtTime`, dangling `wasGeneratedBy`, literal `used`, an activity without `rdf:type` all conform. `execution`, by contrast, requires `checksum`, `status` (enum) and `engine`. Candidate: tighten `$defs/provenance` to what the description states (one activity with `activityType`, `startedAtTime`, `used`, `qualifiedAssociation.hadPlan`; typed entities; `prov:SoftwareAgent` agents), per-profile SHACL rules targeted by the process-type class, negative checks in `validate_offline.py`; upstream: GP-14 (generic profile without constraints), shapes limited to datatypes. |
+| Q-IRI | Process-type IRIs, phase IRIs and the `pp:` vocabulary are provisional under `https://geolabs.github.io/bblocks-process-profiles/def/`. Where will the Activity 4 process-type register live? |
+| Q-STATUS | Process-type entries use ISO 19135 status `submitted`. Right value for candidates that have not been submitted anywhere yet? |
+| Q-STRICT | Profile strictness: the profile pins the process `id` and the input/output **names** only (not `version`, not the I/O schemas). Tighter or looser? |
+| Q-IMPORT | eoap-cct imported from the GeoLabs origin; the generic provenance profile imports the incubator fork (GP-8), so `eoap.cct.*` appears twice in the import graph. Check the build does not complain; otherwise align both on the origin. |
+| Q-ENTITYTYPE | Binding entities to input/output names uses `entityType = <processDescription>#inputs/<name>` (GP-12). Acceptable as an interim convention? |
+| Q-U01 | Report U-01 (`oneOf` in execute/results) to ogcincubator/bblocks-ogcapi-processes and to the GeoLabs fork? |

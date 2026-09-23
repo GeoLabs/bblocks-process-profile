@@ -1,0 +1,89 @@
+{
+  "run": {
+    "id": "urn:example:run:kindgrove:mangrove-workflow",
+    "type": "WorkflowRun",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove-workflow",
+    "describedByWorkflow": "https://ospd.example.org/ogc-api/processes/mangrove-workflow",
+    "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+    "status": "successful",
+    "jobID": "kindgrove-mangrove-workflow-0001",
+    "startedAtTime": "2026-09-23T08:01:10Z",
+    "endedAtTime": "2026-09-23T08:03:17Z",
+    "hadSubProcessRun": [
+      {
+        "id": "urn:example:run:kindgrove:parse-aoi"
+      },
+      {
+        "id": "urn:example:run:kindgrove:mangrove"
+      }
+    ]
+  },
+  "engine": {
+    "@id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "@type": "WorkflowEngine",
+    "name": "cwltool",
+    "version": "3.1.20260108082145"
+  },
+  "outputs": [
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/catalog.json",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "application/json",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+      "wasOutputFrom": "urn:example:run:kindgrove:mangrove-workflow",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "8eeff5d9360c12c34666e58c05819462f451c0cb"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/biomass_summary.csv",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "text/csv",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+      "wasOutputFrom": "urn:example:run:kindgrove:mangrove-workflow",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "85e5b7702d82de1bc19c00fdebce3e4b00d9ae4c"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/carbon_summary.csv",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "text/csv",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+      "wasOutputFrom": "urn:example:run:kindgrove:mangrove-workflow",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "7e692955f3c119da05517da56423ef1afffeb3a1"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove-analysis-20260923-080315.json",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "application/json",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+      "wasOutputFrom": "urn:example:run:kindgrove:mangrove-workflow",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "85af35ec75b965fc1c515c5850cb53a81c919b22"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/mangrove-analysis-20260923-080315/mangrove_mask.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/mangrove-workflow#outputs/stac",
+      "wasOutputFrom": "urn:example:run:kindgrove:mangrove-workflow",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "de0d01dfb965345b5db12bd9c3701bd109aa9362"
+      }
+    }
+  ]
+}

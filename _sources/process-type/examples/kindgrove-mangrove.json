@@ -1,0 +1,102 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove",
+  "type": "ProcessType",
+  "prefLabel": "Mangrove biomass and carbon estimation",
+  "definition": "Detects mangroves from Sentinel-2 L2A vegetation indices within a bounding box and estimates above-ground biomass and carbon stock (ipython2cwl binary of the KindGrove notebook).",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.kindgrove.mangrove",
+  "processDescription": {
+    "id": "mangrove_cli",
+    "version": "0.0.1"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "mangrove_cli",
+    "license": "https://spdx.org/licenses/Apache-2.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Opaque: one ipython2cwl binary running the whole notebook. No single openEO process; each notebook stage has a closeMatch (decomposition). run_udf could wrap the binary but expects a data cube in and out, which this tool does not follow (it searches and downloads its own data).",
+    "decomposition": [
+      {
+        "stage": "STAC search, Earth-Search sentinel-2-l2a, bbox, cloud cover, last N days",
+        "openeo": [
+          "ogc.openeo.processes.cubes.load_collection"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "NDVI (nir-red)/(nir+red+1e-8)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.ndvi",
+          "ogc.openeo.processes.math.indices.normalized_difference"
+        ],
+        "level": "closeMatch",
+        "note": "epsilon 1e-8 in the denominator"
+      },
+      {
+        "stage": "NDWI (green-nir)/(green+nir+1e-8)",
+        "openeo": [
+          "ogc.openeo.processes.math.indices.normalized_difference"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "SAVI ((nir-red)/(nir+red+0.5))*1.5",
+        "openeo": [],
+        "level": "none",
+        "note": "no stable process; composition of add/subtract/divide/multiply"
+      },
+      {
+        "stage": "mangrove mask: 0.3<NDVI<0.9 and NDWI>-0.3 and SAVI>0.2",
+        "openeo": [
+          "ogc.openeo.processes.comparison.gt",
+          "ogc.openeo.processes.comparison.lt",
+          "ogc.openeo.processes.logic.and",
+          "ogc.openeo.processes.cubes.mask"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "biomass = 250.5*NDVI - 75.2",
+        "openeo": [
+          "ogc.openeo.processes.cubes.apply",
+          "ogc.openeo.processes.math.multiply",
+          "ogc.openeo.processes.math.subtract"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "carbon stock and totals (IPCC carbon fraction 0.47)",
+        "openeo": [
+          "ogc.openeo.processes.cubes.aggregate_spatial",
+          "ogc.openeo.processes.math.sum",
+          "ogc.openeo.processes.math.multiply"
+        ],
+        "level": "closeMatch"
+      },
+      {
+        "stage": "export CSV + GeoTIFF",
+        "openeo": [
+          "ogc.openeo.processes.cubes.save_result"
+        ],
+        "level": "closeMatch",
+        "note": "CSV summaries are not a raster format"
+      }
+    ]
+  }
+}

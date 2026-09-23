@@ -1,17 +1,77 @@
-# OGC Building Block template
+# bblocks-process-profiles
 
-This template provides a working example of an [OGC Building Block](https:blocks.ogc.org). For more info see [the Documentation](https://ogcincubator.github.io/bblocks-docs/).
+OGC Building Blocks register holding **process profiles** for the deployable CWL processes of the
+OSPD 2026 reference workflows. Identifier prefix: `ospd.process-profiles.`
 
-This template is a working automation recipe to define, test and document a set of Building Blocks.
+| Workflow | Source (linked, not copied) |
+|---|---|
+| W1 Algae Bloom | [`crim-ca/ogc-ospd-phase1@5edd4ec`](https://github.com/crim-ca/ogc-ospd-phase1/tree/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg) (CC-BY-NC-SA-4.0) |
+| W2 KindGrove | [`GeoLabs/bblocks-eoap-cct@c27c60d`](https://github.com/GeoLabs/bblocks-eoap-cct/blob/c27c60d2755c01f69bd7f1bd0903b6388d375e58/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl) |
 
-The automation-generated documentation for this example is here: [https://opengeospatial.github.io/bblock-template/](https://opengeospatial.github.io/bblock-template/)
+## Building blocks
 
-[Examples of using this with typical applications of OGC standards](https://github.com/ogcincubator/bblocks-examples)
+| Identifier | CWL class | Phase(s) | openEO |
+|---|---|---|---|
+| `ospd.process-profiles.algae-bloom.workflow-earth-search` | Workflow | Filter configuration, Selection / filtering, Data retrieval, Pre-processing, Scientific computation, Export / aggregation | none |
+| `ospd.process-profiles.algae-bloom.workflow-earth-search-process` | Workflow | Data retrieval, Pre-processing, Scientific computation, Export / aggregation | none |
+| `ospd.process-profiles.algae-bloom.workflow-copernicus` | Workflow | Filter configuration, Selection / filtering, Data retrieval, Pre-processing, Scientific computation, Export / aggregation | none |
+| `ospd.process-profiles.algae-bloom.workflow-copernicus-process` | Workflow | Data retrieval, Scientific computation, Export / aggregation | none |
+| `ospd.process-profiles.algae-bloom.select-products-sentinel2` | CommandLineTool | Selection / filtering | closeMatch: processes.cubes.load_collection |
+| `ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item` | CommandLineTool | Data retrieval | closeMatch: processes.cubes.load_collection, processes.cubes.filter_bands |
+| `ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe` | CommandLineTool | Data retrieval | closeMatch: processes.cubes.load_collection, processes.cubes.filter_bands |
+| `ospd.process-profiles.algae-bloom.reproject-image` | CommandLineTool | Pre-processing | closeMatch: processes.cubes.resample_spatial |
+| `ospd.process-profiles.algae-bloom.calculate-band` | CommandLineTool | Scientific computation | closeMatch: processes.cubes.reduce_dimension |
+| `ospd.process-profiles.algae-bloom.plot-image` | CommandLineTool | Export / aggregation | closeMatch: processes.cubes.save_result |
+| `ospd.process-profiles.kindgrove.mangrove-workflow` | Workflow | Filter configuration, Selection / filtering, Data retrieval, Pre-processing, Scientific computation, Export / aggregation | none |
+| `ospd.process-profiles.kindgrove.parse-aoi` | CommandLineTool | Filter configuration | none |
+| `ospd.process-profiles.kindgrove.mangrove` | CommandLineTool | Selection / filtering, Data retrieval, Pre-processing, Scientific computation, Export / aggregation | none |
 
-Please replace the contents of this README with information about your Building Block(s).
+Shared: `ospd.process-profiles.process-type` — schema of a candidate process-type register entry (Activity 4).
 
-# How to use this template
+## What each process profile contains
 
-[More information on design and usage](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md)
+| Artefact | Validated against |
+|---|---|
+| `processDescription` (default schema) | this profile = `ogc.api.processes.v1.schemas.process` + `ogc.api.processes.v2.schemas.staticIndicator` + id/input/output constraints |
+| raw `cwl-to-ogcprocess` output (when a manual correction was needed) | `ogc.api.processes.v1.schemas.process` |
+| OGC Application Package (Part 2 deploy body, `executionUnit` = link to the CWL) | `ogc.api.processes.v2.schemas.ogcapppkg` |
+| execute request / results | `ogc.api.processes.v1.schemas.execute` / `results` |
+| provenance chain | `ogc.bbr.provenance.provenance` |
+| process run (CommandLineTool) | `ogc.bbr.wf4ever.wfprov.ProcessRun` (gap GP-1 in the generic profile) |
+| execution bundle (Workflow) | `ogc.bbr.provenance.execution` |
+| process-type entry | `ospd.process-profiles.process-type` |
 
+## Documentation
 
+- [docs/DEVIATIONS.md](docs/DEVIATIONS.md) — deviations from / gaps in `eoap.cct.cwl-to-ogcprocess`
+- [docs/PROVENANCE-GAPS.md](docs/PROVENANCE-GAPS.md) — gaps in `bblocks-generic-provenance-profile`
+- [docs/OPENEO-EQUIVALENCES.md](docs/OPENEO-EQUIVALENCES.md) — equivalence decisions and criteria
+- [docs/OPEN-QUESTIONS.md](docs/OPEN-QUESTIONS.md)
+- [docs/VALIDATION.md](docs/VALIDATION.md) — validation status (Docker build passing, 14/14)
+- [CLAUDE.md](CLAUDE.md) — contributor notes: generated sources, why `context.jsonld` exists, build quirks
+
+## Regenerating
+
+```bash
+# needs jq, python3 (pyyaml, prov>=2 for the W3C PROV-JSONLD examples), git, cwltool + Docker
+python3 scripts/run_workflows.py --sources-root DIR --runs-root DIR --build-images --generate
+#   clones the pinned sources (scripts/sources.yaml `repo:`/`commit:`) under --sources-root when
+#   missing, runs the three workflows with `cwltool --provenance` (asks for the Copernicus S3
+#   credentials, or reads CDSE_S3_ACCESS_KEY / CDSE_S3_SECRET_KEY), stores the research objects
+#   under --runs-root as named in `runs:`, then regenerates; --only NAME picks runs, --force
+#   replaces an existing bag, --no-fetch leaves the clones alone
+python3 scripts/generate.py --sources-root DIR --runs-root DIR   # regenerate only, never downloads
+python3 scripts/validate_offline.py --deps-root ../   # pre-check only
+./build.sh                                             # authoritative validation (Docker)
+./view.sh                                              # http://localhost:9090
+```
+
+Generated files are overwritten; hand-written content lives in `scripts/profiles.yaml` and `docs/`.
+The run-derived examples (times, engine, container images, output names and checksums) are read
+from real `cwltool --provenance` research objects declared under `runs:` in `scripts/sources.yaml`;
+those are local directories (the W1 one carries a 3.1 GB payload) and are not part of this
+repository. Without them the generator stops.
+
+## License
+
+Apache-2.0 for this register. The W1 CWL files are CC-BY-NC-SA-4.0 and are **referenced by URL only**.

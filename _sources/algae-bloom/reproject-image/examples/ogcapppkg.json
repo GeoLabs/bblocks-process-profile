@@ -1,0 +1,13 @@
+{
+  "processDescription": {
+    "process": {
+      "id": "reproject-image",
+      "version": "1.0.0"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/reproject-image.cwl",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}
