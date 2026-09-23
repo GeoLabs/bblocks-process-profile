@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -23,51 +23,43 @@ will be named with the ID of the original product to distinguish them in case of
     dcterms:title """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
 """ ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "Polygon defining the area of interest." ;
+    proc:inputs [ ns2:aoi [ dcterms:description "Polygon defining the area of interest." ;
                     dcterms:title "Area of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "application/geo+json" ] ] ;
-            ns1:cloud_cover [ dcterms:description "" ;
+                            ns1:contentEncoding "binary" ;
+                            ns1:contentMediaType "application/geo+json" ] ] ;
+            ns2:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:collection [ dcterms:description "" ;
+            ns2:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
+            ns2:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
                     dcterms:title "Central date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:delta [ dcterms:description "" ;
+            ns2:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns1:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
+            ns2:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
                     dcterms:title "Time of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] ;
+                            ns1:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
-""" ;
-            proc:role schema:name ],
-        [ rdf:value [ a ns4:Person ;
-                    ns4:email "francis.charette-migneault@crim.ca" ;
-                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns4:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
+    proc:metadata [ rdf:value "2.0.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value """Searches for Sentinel-2 L2A products on Earth-Search using filtering parameters
 and performs band calculation on matched Sentinel-2 products to evaluate algae bloom
 for water quality assessment. For each match, reference bands are downloaded, processed,
@@ -75,65 +67,73 @@ and returned as output with raw data, color map and plot visualization. Each out
 will be named with the ID of the original product to distinguish them in case of multiple matches.
 """ ;
             proc:role schema:description ],
-        [ rdf:value "2.0.0" ;
-            proc:role schema:softwareVersion ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:email "francis.charette-migneault@crim.ca" ;
+                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns4:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
+""" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns3:chlorophyll_a [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:chlorophyll_a_color [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:chlorophyll_a_plot [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns3:cyanobacteria [ dcterms:description "" ;
                     dcterms:title "cyanobacteria" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:cyanobacteria_color [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:cyanobacteria_plot [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns3:turbidity [ dcterms:description "" ;
                     dcterms:title "turbidity" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:turbidity_color [ dcterms:description "" ;
                     dcterms:title "turbidity_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns3:turbidity_plot [ dcterms:description "" ;
                     dcterms:title "turbidity_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ] .
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ] .
 

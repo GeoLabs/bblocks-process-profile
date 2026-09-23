@@ -184,19 +184,19 @@
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "1.1.0" ;
             proc:role schema:softwareVersion ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
+            proc:role schema:description ],
         [ rdf:value [ a ns3:Person ;
                     ns3:email "francis.charette-migneault@crim.ca" ;
                     ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns3:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
         [ rdf:value "Performs a calculation with bands." ;
-            proc:role schema:name ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
-            proc:role schema:description ],
-        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
