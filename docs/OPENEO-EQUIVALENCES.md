@@ -19,7 +19,7 @@ process equivalence. Composite and opaque processes carry a stage-by-stage `deco
 process-type entry. openEO `proposals/` (e.g. `load_stac`) are out of scope because
 bblocks-openeo only models stable processes.
 
-## Decisions (to be confirmed by Gérald before commit)
+## Decisions
 
 | # | Profile | Level | exactMatch / closeMatch | relatedMatch | Rationale (short) |
 |---|---|---|---|---|---|

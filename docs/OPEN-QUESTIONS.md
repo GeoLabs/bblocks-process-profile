@@ -9,7 +9,7 @@ CWL files linked, not copied; openEO equivalence levels as in the Step 0 table.
 | ID | Question |
 |---|---|
 | Q-LIC | **Derived text from CC-BY-NC-SA-4.0 files.** The W1 CWL files are linked, not copied, but the generated processDescriptions and process-type entries reproduce their `label`/`doc` texts and the input/output names, and the run examples reuse file names from the CRIM logs. Is that acceptable in an Apache-2.0 repository with attribution, or should the W1 descriptive texts be replaced / that subtree be licensed CC-BY-NC-SA? |
-| Q-BUILD | **Resolved 2026-09-22.** `./build.sh` passes (see `docs/VALIDATION.md`); it first required a JSON-LD context per profile. |
+| Q-BUILD | **Resolved** `./build.sh` passes (see `docs/VALIDATION.md`); it first required a JSON-LD context per profile. |
 | Q-PUB | Are `https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json` and `https://geolabs.github.io/bblock-ogcapi-processes-part2/build/register.json` published? Neither repository contains a `build/` directory. If not, the build cannot resolve `ogc.bbr.provenance.*` / `ogc.api.processes.v2.*` (workaround for local testing: `bblocks-config-local.yaml.example`). |
 
 ## Sources and examples

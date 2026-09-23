@@ -1,6 +1,6 @@
 # Validation status
 
-## Authoritative validation: passing (2026-09-23)
+## Authoritative validation: passing
 
 `./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`) run on a machine with
 network access: **14/14 building blocks, 118/118 example snippets, 0 errors**, 116 SHACL
