@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://schema.org/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,59 +15,59 @@
         "mangrove" ;
     dcterms:title "mangrove_cli" ;
     pp:version "0.0.1" ;
-    proc:inputs [ ns3:cloud_cover_max [ dcterms:description "" ;
+    proc:inputs [ ns2:cloud_cover_max [ dcterms:description "" ;
                     dcterms:title "cloud_cover_max" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:days_back [ dcterms:description "" ;
+            ns2:days_back [ dcterms:description "" ;
                     dcterms:title "days_back" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "integer" ] ] ;
-            ns3:east [ dcterms:description "" ;
+            ns2:east [ dcterms:description "" ;
                     dcterms:title "east" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:north [ dcterms:description "" ;
+            ns2:north [ dcterms:description "" ;
                     dcterms:title "north" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:output_dir [ dcterms:description "" ;
+            ns2:output_dir [ dcterms:description "" ;
                     dcterms:title "output_dir" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:south [ dcterms:description "" ;
+            ns2:south [ dcterms:description "" ;
                     dcterms:title "south" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:west [ dcterms:description "" ;
+            ns2:west [ dcterms:description "" ;
                     dcterms:title "west" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
-            proc:role schema:license ],
-        [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:name "Cameron Sajedi" ] ;
+    proc:metadata [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
             proc:role schema:author ],
-        [ rdf:value "0.0.1" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns2:name "Gérald Fenoy" ] ;
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns3:name "Gérald Fenoy" ] ;
             proc:role schema:contributor ],
         [ rdf:value "mangrove_cli" ;
-            proc:role schema:name ] ;
+            proc:role schema:name ],
+        [ rdf:value "0.0.1" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
+            proc:role schema:license ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

@@ -3,7 +3,7 @@
   "name": "OSPD Process Profiles",
   "abstract": "OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference\nworkflows (W1 Algae Bloom, W2 KindGrove mangrove biomass), each linked to its CWL source,\nthe generic provenance profile, the EOAP CWL custom types and the openEO Building Blocks.\n",
   "description": "This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API\nProcesses Profiler). It holds one Building Block per deployable CWL process (`CommandLineTool`\nor `Workflow`) identified in the workflow observability investigation.\n\nEach process profile combines:\n\n- a reference to the source CWL (linked by URL at a pinned commit, never copied);\n- an OGC API - Processes Part 1 `processDescription` derived with the\n  `eoap.cct.cwl-to-ogcprocess` mapping (deviations are documented, not hidden);\n- a provenance view expressed as an instance of the generic provenance profile\n  (`ogc.bbr.provenance.*`);\n- a candidate process-type entry (`ospd.process-profiles.process-type`) for the OSPD\n  process-type register (Activity 4);\n- proposed openEO equivalences (`ogc.openeo.*`) with an explicit level\n  (exactMatch / closeMatch / none) and rationale;\n- a representative execution example.\n\nAll mappings are proposed correspondences offered for review, not settled equivalences.\n",
-  "modified": "2026-09-23T15:27:16.883010",
+  "modified": "2026-09-23T15:34:38.862009",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
@@ -114,16 +114,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -195,16 +195,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
@@ -273,16 +273,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -352,16 +352,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -431,16 +431,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -507,16 +507,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search",
@@ -588,16 +588,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -666,16 +666,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe",
@@ -747,16 +747,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -825,16 +825,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item",
@@ -908,16 +908,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",
@@ -996,17 +996,17 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://eoap.cct.bbox",
-        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.parse-aoi",
@@ -1074,17 +1074,17 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://eoap.cct.bbox",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ospd.process-profiles.process-type",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
         "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v1.schemas.process",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://eoap.cct.bbox",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",

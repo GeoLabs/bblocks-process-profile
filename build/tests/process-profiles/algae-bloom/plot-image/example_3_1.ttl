@@ -1,8 +1,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://schema.org/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <https://w3id.org/ogc/api/schema/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -43,7 +43,7 @@ Example: '[ [0, [0,0,0]], [20, [0,0,255]], [50, [255,100,0]] ]'
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/octet-stream" ] ] ;
+                            ns4:contentMediaType "application/octet-stream" ] ] ;
             ns1:output_name [ dcterms:description "" ;
                     dcterms:title "output_name" ;
                     proc:maxOccurs 1 ;
@@ -62,30 +62,30 @@ Example: '[ [0, [0,0,0]], [20, [0,0,255]], [50, [255,100,0]] ]'
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "Applies the specified color mapping with scaled bins to a geospatial image." ;
-            proc:role schema:description ],
+    proc:metadata [ rdf:value [ a ns2:Person ;
+                    ns2:email "francis.charette-migneault@crim.ca" ;
+                    ns2:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns2:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
         [ rdf:value "Plots an image with colors." ;
             proc:role schema:name ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
         [ rdf:value "1.0.0" ;
             proc:role schema:softwareVersion ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+            proc:role schema:license ],
+        [ rdf:value "Applies the specified color mapping with scaled bins to a geospatial image." ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:output_file [ dcterms:description "" ;
+    proc:outputs [ ns3:output_file [ dcterms:description "" ;
                     dcterms:title "output_file" ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/octet-stream" ] ] ;
-            ns4:output_plot [ dcterms:description "" ;
+                            ns4:contentMediaType "application/octet-stream" ] ] ;
+            ns3:output_plot [ dcterms:description "" ;
                     dcterms:title "output_plot" ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/octet-stream" ] ] ] .
+                            ns4:contentMediaType "application/octet-stream" ] ] ] .
 
