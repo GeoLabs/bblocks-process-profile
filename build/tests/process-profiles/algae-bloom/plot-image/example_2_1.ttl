@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <http://schema.org/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -18,17 +18,17 @@
         "visualization" ;
     dcterms:title "Plots an image with colors." ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns2:clip_max [ dcterms:description "Clip values above this threshold for color mapping." ;
+    proc:inputs [ ns1:clip_max [ dcterms:description "Clip values above this threshold for color mapping." ;
                     dcterms:title "clip_max" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns2:clip_min [ dcterms:description "Clip values below this threshold for color mapping." ;
+            ns1:clip_min [ dcterms:description "Clip values below this threshold for color mapping." ;
                     dcterms:title "clip_min" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns2:color_scale [ dcterms:description """JSON-like array with each item being an array of 2 elements, 
+            ns1:color_scale [ dcterms:description """JSON-like array with each item being an array of 2 elements, 
 the first for the bin scale value and the second for the RGB color.
 Each RGB value can be either a [0-1] floating point or a [0-255] integer.
 
@@ -38,63 +38,63 @@ Example: '[ [0, [0,0,0]], [20, [0,0,255]], [50, [255,100,0]] ]'
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns2:input_image [ dcterms:description "Image to map with the colors bins." ;
+            ns1:input_image [ dcterms:description "Image to map with the colors bins." ;
                     dcterms:title "input_image" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "binary" ;
+                                    ns2:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns2:contentEncoding "binary" ;
+                                    ns2:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns2:output_name [ dcterms:description "" ;
+                                    ns2:contentEncoding "binary" ;
+                                    ns2:contentMediaType "image/tiff" ] ] ] ;
+            ns1:output_name [ dcterms:description "" ;
                     dcterms:title "output_name" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"output\""^^rdf:JSON ;
                             proc:type "string" ] ] ;
-            ns2:plot_name [ dcterms:description "" ;
+            ns1:plot_name [ dcterms:description "" ;
                     dcterms:title "plot_name" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"plot\""^^rdf:JSON ;
                             proc:type "string" ] ] ;
-            ns2:plot_title [ dcterms:description "" ;
+            ns1:plot_title [ dcterms:description "" ;
                     dcterms:title "plot_title" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value [ a ns3:Person ;
+    proc:metadata [ rdf:value "Applies the specified color mapping with scaled bins to a geospatial image." ;
+            proc:role schema:description ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns3:Person ;
                     ns3:email "francis.charette-migneault@crim.ca" ;
                     ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns3:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
-        [ rdf:value "1.0.0" ;
-            proc:role schema:softwareVersion ],
         [ rdf:value "Plots an image with colors." ;
             proc:role schema:name ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "Applies the specified color mapping with scaled bins to a geospatial image." ;
-            proc:role schema:description ],
-        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+        [ rdf:value "1.0.0" ;
+            proc:role schema:softwareVersion ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns4:output_file [ dcterms:description "" ;
                     dcterms:title "output_file" ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentEncoding "binary" ;
-                            ns1:contentMediaType "image/tiff; application=geotiff" ] ] ;
+                            ns2:contentEncoding "binary" ;
+                            ns2:contentMediaType "image/tiff; application=geotiff" ] ] ;
             ns4:output_plot [ dcterms:description "" ;
                     dcterms:title "output_plot" ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentEncoding "binary" ;
-                            ns1:contentMediaType "image/png" ] ] ] .
+                            ns2:contentEncoding "binary" ;
+                            ns2:contentMediaType "image/png" ] ] ] .
 

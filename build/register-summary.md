@@ -1,8 +1,9 @@
 # OSPD Process Profiles
 
 OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference
-workflows (W1 Algae Bloom, W2 KindGrove mangrove biomass), each linked to its CWL source,
-the generic provenance profile, the EOAP CWL custom types and the openEO Building Blocks.
+workflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection), each
+linked to its CWL source, the generic provenance profile, the EOAP CWL custom types and the
+openEO Building Blocks.
 
 
 This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API
