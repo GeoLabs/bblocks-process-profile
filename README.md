@@ -48,7 +48,6 @@ Shared: `ospd.process-profiles.process-type` — schema of a candidate process-t
 - [docs/OPENEO-EQUIVALENCES.md](docs/OPENEO-EQUIVALENCES.md) — equivalence decisions and criteria
 - [docs/OPEN-QUESTIONS.md](docs/OPEN-QUESTIONS.md)
 - [docs/VALIDATION.md](docs/VALIDATION.md) — validation status (Docker build passing, 14/14)
-- [CLAUDE.md](CLAUDE.md) — contributor notes: generated sources, why `context.jsonld` exists, build quirks
 
 ## Regenerating
 

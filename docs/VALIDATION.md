@@ -37,7 +37,7 @@ Fix, in `scripts/generate.py`: a shared `PROFILE_CONTEXT` written to every profi
 the same build and rejected: splitting each profile into one building block per payload
 (26/102 — the OGC API - Processes bblocks have no annotations to inherit) and inlining
 `@context` in the example files (75/102 with 13 new JSON Schema failures, `propertyNames: enum`
-rejects `@context`; array-rooted `provenance.json` cannot carry one). See `CLAUDE.md`.
+rejects `@context`; array-rooted `provenance.json` cannot carry one).
 
 A data bug surfaced by the fix: `scripts/profiles.yaml` had an unquoted flow-mapping value
 `note: partial, no colour-ramp rendering`, parsed as a stray key that became an invalid IRI once a
