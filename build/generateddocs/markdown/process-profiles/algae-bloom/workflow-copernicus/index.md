@@ -561,9 +561,9 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -583,35 +583,35 @@ to evaluate algae bloom for water quality assessment.
     dcterms:title """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
 """ ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "" ;
+    proc:inputs [ ns3:aoi [ dcterms:description "" ;
                     dcterms:title "aoi" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "application/geo+json" ] ] ;
-            ns1:cloud_cover [ dcterms:description "" ;
+                            ns1:contentEncoding "binary" ;
+                            ns1:contentMediaType "application/geo+json" ] ] ;
+            ns3:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:collection [ dcterms:description "" ;
+            ns3:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:date [ dcterms:description "" ;
+            ns3:date [ dcterms:description "" ;
                     dcterms:title "date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:delta [ dcterms:description "" ;
+            ns3:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns1:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
+            ns3:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -619,8 +619,8 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:writeOnly true ] ] ;
-            ns1:s3_secret_key [ dcterms:description """Access key to Copernicus data provider.
+                            ns1:writeOnly true ] ] ;
+            ns3:s3_secret_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -628,84 +628,84 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:writeOnly true ] ] ] ;
+                            ns1:writeOnly true ] ] ] ;
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value """Finds Sentinel-2 products on Copernicus using filtering parameters
 and performs band calculation on retrieved Sentinel-2 products
 to evaluate algae bloom for water quality assessment.
 """ ;
             proc:role schema:description ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
         [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
 """ ;
             proc:role schema:name ],
-        [ rdf:value "2.0.0" ;
-            proc:role schema:softwareVersion ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value [ a ns4:Person ;
                     ns4:email "francis.charette-migneault@crim.ca" ;
                     ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns4:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ] ;
+            proc:role schema:author ],
+        [ rdf:value "2.0.0" ;
+            proc:role schema:softwareVersion ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:chlorophyll_a [ dcterms:description "" ;
+    proc:outputs [ ns2:chlorophyll_a [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:chlorophyll_a_color [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:chlorophyll_a_color [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:chlorophyll_a_plot [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:chlorophyll_a_plot [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
-            ns3:cyanobacteria [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
+            ns2:cyanobacteria [ dcterms:description "" ;
                     dcterms:title "cyanobacteria" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:cyanobacteria_color [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:cyanobacteria_color [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:cyanobacteria_plot [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:cyanobacteria_plot [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
-            ns3:turbidity [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
+            ns2:turbidity [ dcterms:description "" ;
                     dcterms:title "turbidity" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:turbidity_color [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:turbidity_color [ dcterms:description "" ;
                     dcterms:title "turbidity_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns3:turbidity_plot [ dcterms:description "" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:turbidity_plot [ dcterms:description "" ;
                     dcterms:title "turbidity_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentEncoding "binary" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ] .
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ] .
 
 
 ```
@@ -1168,9 +1168,9 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -1190,34 +1190,34 @@ to evaluate algae bloom for water quality assessment.
     dcterms:title """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
 """ ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns3:aoi [ dcterms:description "" ;
+    proc:inputs [ ns1:aoi [ dcterms:description "" ;
                     dcterms:title "aoi" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/octet-stream" ] ] ;
-            ns3:cloud_cover [ dcterms:description "" ;
+                            ns2:contentMediaType "application/octet-stream" ] ] ;
+            ns1:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:collection [ dcterms:description "" ;
+            ns1:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:date [ dcterms:description "" ;
+            ns1:date [ dcterms:description "" ;
                     dcterms:title "date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:delta [ dcterms:description "" ;
+            ns1:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns3:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
+            ns1:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -1225,7 +1225,7 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:s3_secret_key [ dcterms:description """Access key to Copernicus data provider.
+            ns1:s3_secret_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -1239,68 +1239,68 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns4:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
-        [ rdf:value """Finds Sentinel-2 products on Copernicus using filtering parameters
-and performs band calculation on retrieved Sentinel-2 products
-to evaluate algae bloom for water quality assessment.
-""" ;
-            proc:role schema:description ],
         [ rdf:value "2.0.0" ;
             proc:role schema:softwareVersion ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
         [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.
 """ ;
             proc:role schema:name ],
         [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
             proc:role schema:codeRepository ],
-        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+        [ rdf:value """Finds Sentinel-2 products on Copernicus using filtering parameters
+and performs band calculation on retrieved Sentinel-2 products
+to evaluate algae bloom for water quality assessment.
+""" ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:chlorophyll_a [ dcterms:description "" ;
+    proc:outputs [ ns3:chlorophyll_a [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:chlorophyll_a_color [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:chlorophyll_a_color [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:chlorophyll_a_plot [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:chlorophyll_a_plot [ dcterms:description "" ;
                     dcterms:title "chlorophyll_a_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:cyanobacteria [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:cyanobacteria [ dcterms:description "" ;
                     dcterms:title "cyanobacteria" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:cyanobacteria_color [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:cyanobacteria_color [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:cyanobacteria_plot [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:cyanobacteria_plot [ dcterms:description "" ;
                     dcterms:title "cyanobacteria_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:turbidity [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:turbidity [ dcterms:description "" ;
                     dcterms:title "turbidity" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:turbidity_color [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:turbidity_color [ dcterms:description "" ;
                     dcterms:title "turbidity_color" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ;
-            ns2:turbidity_plot [ dcterms:description "" ;
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ;
+            ns3:turbidity_plot [ dcterms:description "" ;
                     dcterms:title "turbidity_plot" ;
                     proc:schema [ proc:type "array" ;
-                            ns1:items [ proc:type "string" ;
-                                    ns1:contentMediaType "application/octet-stream" ] ] ] ] .
+                            ns2:items [ proc:type "string" ;
+                                    ns2:contentMediaType "application/octet-stream" ] ] ] ] .
 
 
 ```
@@ -4100,6 +4100,26 @@ id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:02.350383"^^xsd:dateTime ;
             prov:hadActivity id:44c595c3-0138-459e-bff2-432829fe1bf3 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392016"^^xsd:dateTime ;
+            prov:entity id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/cloud_cover> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392462"^^xsd:dateTime ;
+            prov:entity id:fc839955-c480-42b7-a657-730494fc154e ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/delta> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392701"^^xsd:dateTime ;
+            prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/product_level> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.392236"^^xsd:dateTime ;
+            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/collection> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.391633"^^xsd:dateTime ;
+            prov:entity id:653d2ec7-333d-431e-81c5-d30c4c02282a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/aoi> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.392720"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/toi> ],
@@ -4108,29 +4128,9 @@ id:3b68ba23-95c2-48fc-92bb-753f98188bf2 a wfprov:ProcessRun,
             prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/date> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392701"^^xsd:dateTime ;
-            prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/product_level> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392462"^^xsd:dateTime ;
-            prov:entity id:fc839955-c480-42b7-a657-730494fc154e ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/delta> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.391980"^^xsd:dateTime ;
             prov:entity data:8bfeb7b030ae1994f504c6c9ec46111b90434378 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/catalog> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392016"^^xsd:dateTime ;
-            prov:entity id:c5d12ec5-693c-4ae4-9157-ffaf8e84a5a2 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/cloud_cover> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.391633"^^xsd:dateTime ;
-            prov:entity id:653d2ec7-333d-431e-81c5-d30c4c02282a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/aoi> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.392236"^^xsd:dateTime ;
-            prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/collection> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/select_products/catalog> ] .
 
 id:5001cc2f-8b7b-4b93-9043-8ce09886304f a prov:Agent .
 
@@ -4246,10 +4246,6 @@ id:44c595c3-0138-459e-bff2-432829fe1bf3 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T09:31:01.086687"^^xsd:dateTime ;
             prov:hadActivity id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.348133"^^xsd:dateTime ;
-            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.348450"^^xsd:dateTime ;
             prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ],
@@ -4257,6 +4253,10 @@ id:44c595c3-0138-459e-bff2-432829fe1bf3 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T09:31:02.347708"^^xsd:dateTime ;
             prov:entity data:aae1ba7d07b94e0929479a0ed4c1ec64718ac191 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/date> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.346121"^^xsd:dateTime ;
+            prov:entity id:cea98bc9-4a78-442d-a99a-eb4850b01d63 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.346187"^^xsd:dateTime ;
             prov:entity id:c719b109-a5e5-414b-8e1a-2fa5262c9394 ;
@@ -4266,13 +4266,13 @@ id:44c595c3-0138-459e-bff2-432829fe1bf3 a wfprov:WorkflowRun,
             prov:entity data:d184cbedd77b80cede3f63388a471a8634278cf3 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/collection> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:02.346121"^^xsd:dateTime ;
-            prov:entity id:cea98bc9-4a78-442d-a99a-eb4850b01d63 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/aoi> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:02.347746"^^xsd:dateTime ;
             prov:entity id:97f268f3-383e-43a2-ad2b-3212b43b5676 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/delta> ] ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/delta> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:02.348133"^^xsd:dateTime ;
+            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ] ;
     prov:startedAtTime "2026-09-23T09:31:01.086664"^^xsd:dateTime .
 
 

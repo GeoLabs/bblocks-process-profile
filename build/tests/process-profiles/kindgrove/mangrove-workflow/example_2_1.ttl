@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://schema.org/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <http://schema.org/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -21,44 +21,37 @@ a reusable workflow for analyzing different study areas.
         "mangrove" ;
     dcterms:title "Mangrove Biomass Workflow" ;
     pp:version "0.0.1" ;
-    proc:inputs [ ns3:aoi [ dcterms:description "Area of interest as a bounding box" ;
+    proc:inputs [ ns1:aoi [ dcterms:description "Area of interest as a bounding box" ;
                     dcterms:title "Area of Interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "object" ;
-                            ns1:properties [ ns1:bbox [ proc:type "array" ;
-                                            ns1:items [ proc:type "number" ] ;
-                                            ns1:oneOf [ dcterms:description "3D bbox" ;
-                                                    ns1:maxItems 6 ;
-                                                    ns1:minItems 6 ],
-                                                [ dcterms:description "2D bbox" ;
-                                                    ns1:maxItems 4 ;
-                                                    ns1:minItems 4 ] ] ;
-                                    ns1:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                            ns2:properties [ ns2:bbox [ proc:type "array" ;
+                                            ns2:items [ proc:type "number" ] ;
+                                            ns2:oneOf [ dcterms:description "2D bbox" ;
+                                                    ns2:maxItems 4 ;
+                                                    ns2:minItems 4 ],
+                                                [ dcterms:description "3D bbox" ;
+                                                    ns2:maxItems 6 ;
+                                                    ns2:minItems 6 ] ] ;
+                                    ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;
                                             proc:type "string" ] ] ;
-                            ns1:required "bbox" ] ] ;
-            ns3:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
+                            ns2:required "bbox" ] ] ;
+            ns1:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
                     dcterms:title "Maximum Cloud Cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:days_back [ dcterms:description "Number of days to search backwards from current date" ;
+            ns1:days_back [ dcterms:description "Number of days to search backwards from current date" ;
                     dcterms:title "Days Back" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "integer" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Mangrove Biomass Workflow" ;
-            proc:role schema:name ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "0.0.1" ;
+    proc:metadata [ rdf:value "0.0.1" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:name "Cameron Sajedi" ] ;
-            proc:role schema:author ],
         [ rdf:value """Workflow for Mangrove Biomass Analysis
   
 This workflow orchestrates the mangrove biomass estimation process using
@@ -66,26 +59,33 @@ Sentinel-2 imagery. It wraps the mangrove_workflow.cwl tool to provide
 a reusable workflow for analyzing different study areas.
 """ ;
             proc:role schema:description ],
+        [ rdf:value "Mangrove Biomass Workflow" ;
+            proc:role schema:name ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
             proc:role schema:license ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns2:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ] ;
+        [ rdf:value [ a ns3:Person ;
+                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns3:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns4:stac [ dcterms:description "" ;
                     dcterms:title "stac" ;
                     proc:schema [ proc:type "object" ;
-                            ns1:format "stac-catalog" ;
-                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
+                            ns2:format "stac-catalog" ;
+                            ns2:properties [ dcterms:description [ proc:type "string" ] ;
                                     dcterms:title [ proc:type "string" ] ;
                                     rdfs:seeAlso [ dcterms:type "array" ] ;
                                     proc:type [ proc:enum "Catalog" ;
                                             proc:type "string" ] ;
-                                    ns1:stac_version [ proc:type "string" ] ] ;
-                            ns1:required "description",
+                                    ns2:stac_version [ proc:type "string" ] ] ;
+                            ns2:required "description",
                                 "id",
                                 "links",
                                 "stac_version",

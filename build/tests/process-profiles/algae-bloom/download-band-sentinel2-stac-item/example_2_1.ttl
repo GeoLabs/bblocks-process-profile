@@ -1,8 +1,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://schema.org/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -20,7 +20,7 @@ the 'common band name' associated to the band
         "demo" ;
     dcterms:title "Downloads Sentinel-2 GeoTiff from STAC Item." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns4:band [ dcterms:description "" ;
+    proc:inputs [ ns2:band [ dcterms:description "" ;
                     dcterms:title "band" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -41,23 +41,16 @@ the 'common band name' associated to the band
                                 "TCI",
                                 "WVP" ;
                             proc:type "string" ] ] ;
-            ns4:product_url [ dcterms:description "" ;
+            ns2:product_url [ dcterms:description "" ;
                     dcterms:title "HTTPS URL to a Sentinel-2 product in STAC Item format." ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
-        [ rdf:value "1.1.0" ;
+    proc:metadata [ rdf:value "1.1.0" ;
             proc:role schema:softwareVersion ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
         [ rdf:value """Downloads the GeoTiff band from the Sentinel-2 product STAC Item
 using the requested band selection criteria. It is assumed that
 the referenced STAC Item contains the desired GeoTiff Asset with
@@ -65,6 +58,13 @@ the 'common band name' associated to the band
 (see https://github.com/stac-extensions/eo#common-band-names).
 """ ;
             proc:role schema:description ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:email "francis.charette-migneault@crim.ca" ;
+                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns4:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "Downloads Sentinel-2 GeoTiff from STAC Item." ;
             proc:role schema:name ] ;
     proc:mutable true ;
@@ -73,6 +73,6 @@ the 'common band name' associated to the band
     proc:outputs [ ns1:product [ dcterms:description "" ;
                     dcterms:title "product" ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "image/tiff; application=geotiff" ] ] ] .
+                            ns3:contentEncoding "binary" ;
+                            ns3:contentMediaType "image/tiff; application=geotiff" ] ] ] .
 

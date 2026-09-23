@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://schema.org/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <http://schema.org/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -51,37 +51,37 @@
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+    proc:metadata [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
+        [ rdf:value "mangrove_cli" ;
+            proc:role schema:name ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns2:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
             proc:role schema:license ],
         [ rdf:value "0.0.1" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns1:Person ;
-                    ns1:name "Cameron Sajedi" ] ;
-            proc:role schema:author ],
-        [ rdf:value "mangrove_cli" ;
-            proc:role schema:name ],
-        [ rdf:value [ a ns1:Person ;
-                    ns1:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns1:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ] ;
+            proc:role schema:softwareVersion ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ pp:result [ dcterms:description "" ;
                     dcterms:title "result" ;
                     proc:schema [ proc:type "object" ;
-                            ns2:format "stac-catalog" ;
-                            ns2:properties [ dcterms:description [ proc:type "string" ] ;
+                            ns1:format "stac-catalog" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
                                     dcterms:title [ proc:type "string" ] ;
                                     rdfs:seeAlso [ dcterms:type "array" ] ;
                                     proc:type [ proc:enum "Catalog" ;
                                             proc:type "string" ] ;
-                                    ns2:stac_version [ proc:type "string" ] ] ;
-                            ns2:required "description",
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
                                 "id",
                                 "links",
                                 "stac_version",
