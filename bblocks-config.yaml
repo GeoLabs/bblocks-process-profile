@@ -1,0 +1,91 @@
+# A short, descriptive name of this building block collection
+name: My OGC Building Blocks repository
+
+# Short abstract for this collection (optional)
+abstract: |
+  This is an example text for the abstract. It should be short and to the point.
+  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+
+# Description for this collection (optional)
+description: |
+  The description can be longer. Both **the abstract** *and the description* support Markdown,
+  including [links](https://google.es).
+
+# Customize the following prefix (will be prepended to the path of the building blocks):
+identifier-prefix: ogc.bbr.template.
+
+# List of imports ("default" is an alias for the main OGC Building Blocks Register).
+# An entry can also be an "@org/register" alias (e.g. "@ogc/main", equivalent to "default"),
+# resolved against a Building Blocks meta-registry -- see "meta-registry" below -- instead of
+# a full register.json URL.
+imports:
+  - default
+
+# Meta-registry used to resolve "@org/register" import aliases above (optional).
+# Defaults to the postprocessor's built-in meta-registry if omitted; set to null to disable
+# alias resolution entirely (any "@org/register" import will then fail).
+#
+# meta-registry: https://w3id.org/ogc/bblocks/meta-register.json
+
+# Whether to enable the (highly experimental) downcompiling of JSON schemas to an OpenAPI 3.0-compatible
+# version
+schema-oas30-downcompile: False
+
+# Default license for this register and all of its building blocks (optional).
+# At least one of "name"/"url" is required. A building block can override this by declaring its own
+# "license" in its bblock.json.
+# If "url" is left unspecified and a LICENSE, LICENSE.md or LICENSE.txt file exists at the repository
+# root, its published URL is used automatically.
+#
+# license:
+#   name: Apache-2.0
+#   url: https://www.apache.org/licenses/LICENSE-2.0
+
+# Viewer configuration (optional)
+#
+# viewer:
+#   show-imported-depth: 0  # Controls which imported building blocks are shown in the viewer.
+#                           #   0 (default): only local building blocks
+#                           #   N (positive integer): local + imported up to N levels deep
+#                           #   -1 (any negative number): show all imported building blocks
+#                           # This setting is written to register.json and used by the viewer
+#                           # whether it is deployed via GitHub Pages or run locally against
+#                           # the register. It takes precedence over the viewer_show_imported
+#                           # GitHub workflow input (which is now deprecated).
+#   view-plugins:           # Client-side view plugins for the viewer (optional)
+#     - url: https://example.com/my-view-plugin.js  # ESM module, loaded at runtime via import()
+#       export: MyView                              # Optional: named export(s) to use (string or array; defaults to the default export)
+#       weight: 10                                   # Optional: controls tab ordering relative to other view plugins
+
+# SPARQL configuration (optional)
+#   Authentication can be set through the sparql_username and sparql_password GitHub Workflow inputs
+#   (see .github/workflow/process-bblocks.yml)
+#
+# sparql:
+#   push: https://example.com/gsp           # SPARQL Graph Store Protocol endpoint for uploading data
+#   graph: https://my.bblocks.example.com/  # SPARQL Graph where data will be uploaded
+#                                           #  if left empty, the base URL for the publication will be used
+#   query: https://example.com/sparql       # SPARQL query endpoint where data will be available
+#   resources:                              # Additional resources to upload apart from building block metadata
+#      ontologies: true                     #   Whether to upload ontology files to the triplestore
+
+# External transformer/validator plugins (optional)
+#   Each entry installs its pip dependencies into a sandbox and imports the given modules,
+#   which are scanned for plugin classes. Unless the postprocessor is run with
+#   --skip-permissions=true, you will be prompted before plugin code is installed/run.
+#
+# plugins:
+#   transforms:
+#     - modules: [my.custom.Transformer]     # Dotted Python module path(s) to import
+#       pip: [my-custom-package]             # pip install specifier(s) for the module(s)
+#       url: https://example.com/my-plugin   # Optional: plugin homepage/repo (auto-derived from pip if omitted)
+#   validators:
+#     - modules: [my.custom.Validator]
+#       pip: [my-custom-package]
+#   build:                                   # Lifecycle-hook plugins (before_run, before/after_bblock,
+#                                             #   after_register, after_uplift, after_run, on_error),
+#                                             #   run locally and in CI alike.
+#     - classes: [my.custom.BuildHooks]      # Fully-qualified module.ClassName(s) - used exactly as
+#                                             #   given, not scanned like transforms/validators' "modules"
+#       pip: [my-custom-package]
+#       url: https://example.com/my-plugin
