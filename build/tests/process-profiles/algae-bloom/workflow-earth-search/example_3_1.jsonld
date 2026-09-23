@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld",
   "id": "algae-usecase-workflow-earth-search",
   "version": "2.0.0",
   "title": "Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.\n",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
   "id": "urn:example:run:algae-bloom:reproject-image",
   "type": "ProcessRun",
   "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",

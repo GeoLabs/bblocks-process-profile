@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.process-type - Process type register entry",
   "bblockName": "Process type register entry",
   "bblockId": "ospd.process-profiles.process-type",
-  "generated": "2026-09-23T14:06:39.443249+00:00",
+  "generated": "2026-09-23T15:15:54.683711+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/process-type/example_1_1.json",
-        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/tests/process-profiles/process-type/example_1_1.json",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/build/tests/process-profiles/process-type/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"
@@ -65,7 +65,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/process-type/example_2_1.json",
-        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/tests/process-profiles/process-type/example_2_1.json",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/build/tests/process-profiles/process-type/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"

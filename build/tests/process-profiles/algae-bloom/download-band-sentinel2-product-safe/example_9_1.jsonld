@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/download-band-sentinel2-product-safe",
   "type": "ProcessType",
   "prefLabel": "Downloads Copernicus products.",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/parse-aoi",
   "type": "ProcessType",
   "prefLabel": "Parse area of interest",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "id": "mangrove-workflow",
   "version": "0.0.1",
   "title": "Mangrove Biomass Workflow",

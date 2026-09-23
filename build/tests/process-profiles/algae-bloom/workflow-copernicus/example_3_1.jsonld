@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
   "id": "algae-usecase-workflow-copernicus",
   "version": "2.0.0",
   "title": "Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.\n",

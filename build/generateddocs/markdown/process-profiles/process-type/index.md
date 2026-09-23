@@ -72,7 +72,7 @@ are provisional, pending a decision on the process-type register namespace.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/reproject-image",
   "type": "ProcessType",
   "prefLabel": "Performs image reprojection.",
@@ -246,7 +246,7 @@ are provisional, pending a decision on the process-type register namespace.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove",
   "type": "ProcessType",
   "prefLabel": "Mangrove biomass and carbon estimation",
@@ -641,8 +641,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml)
 
 
 # JSON-LD Context
@@ -732,7 +732,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld)
 
 ## Sources
 
@@ -743,6 +743,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-process-profile](https://github.com/GeoLabs/bblocks-process-profile)
+* URL: [https://github.com/GeoLabs/bblocks-process-profiles](https://github.com/GeoLabs/bblocks-process-profiles)
 * Path: `_sources/process-type`
 

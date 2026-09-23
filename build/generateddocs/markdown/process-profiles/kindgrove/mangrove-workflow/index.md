@@ -231,7 +231,7 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "id": "mangrove-workflow",
   "version": "0.0.1",
   "title": "Mangrove Biomass Workflow",
@@ -394,9 +394,9 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://schema.org/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -416,38 +416,36 @@ a reusable workflow for analyzing different study areas.
         "mangrove" ;
     dcterms:title "Mangrove Biomass Workflow" ;
     pp:version "0.0.1" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "Area of interest as a bounding box" ;
+    proc:inputs [ ns3:aoi [ dcterms:description "Area of interest as a bounding box" ;
                     dcterms:title "Area of Interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "object" ;
-                            ns2:properties [ ns2:bbox [ proc:type "array" ;
-                                            ns2:items [ proc:type "number" ] ;
-                                            ns2:oneOf [ dcterms:description "2D bbox" ;
-                                                    ns2:maxItems 4 ;
-                                                    ns2:minItems 4 ],
+                            ns1:properties [ ns1:bbox [ proc:type "array" ;
+                                            ns1:items [ proc:type "number" ] ;
+                                            ns1:oneOf [ dcterms:description "2D bbox" ;
+                                                    ns1:maxItems 4 ;
+                                                    ns1:minItems 4 ],
                                                 [ dcterms:description "3D bbox" ;
-                                                    ns2:maxItems 6 ;
-                                                    ns2:minItems 6 ] ] ;
-                                    ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                                                    ns1:maxItems 6 ;
+                                                    ns1:minItems 6 ] ] ;
+                                    ns1:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;
                                             proc:type "string" ] ] ;
-                            ns2:required "bbox" ] ] ;
-            ns1:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
+                            ns1:required "bbox" ] ] ;
+            ns3:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
                     dcterms:title "Maximum Cloud Cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:days_back [ dcterms:description "Number of days to search backwards from current date" ;
+            ns3:days_back [ dcterms:description "Number of days to search backwards from current date" ;
                     dcterms:title "Days Back" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "integer" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "0.0.1" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value """Workflow for Mangrove Biomass Analysis
+    proc:metadata [ rdf:value """Workflow for Mangrove Biomass Analysis
   
 This workflow orchestrates the mangrove biomass estimation process using
 Sentinel-2 imagery. It wraps the mangrove_workflow.cwl tool to provide
@@ -458,29 +456,31 @@ a reusable workflow for analyzing different study areas.
             proc:role schema:name ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "0.0.1" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
             proc:role schema:license ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns3:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:name "Cameron Sajedi" ] ;
-            proc:role schema:author ] ;
+        [ rdf:value [ a ns2:Person ;
+                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns2:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns4:stac [ dcterms:description "" ;
                     dcterms:title "stac" ;
                     proc:schema [ proc:type "object" ;
-                            ns2:format "stac-catalog" ;
-                            ns2:properties [ dcterms:description [ proc:type "string" ] ;
+                            ns1:format "stac-catalog" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
                                     dcterms:title [ proc:type "string" ] ;
                                     rdfs:seeAlso [ dcterms:type "array" ] ;
                                     proc:type [ proc:enum "Catalog" ;
                                             proc:type "string" ] ;
-                                    ns2:stac_version [ proc:type "string" ] ] ;
-                            ns2:required "description",
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
                                 "id",
                                 "links",
                                 "stac_version",
@@ -669,7 +669,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "id": "mangrove-workflow",
   "version": "0.0.1",
   "title": "Mangrove Biomass Workflow",
@@ -844,9 +844,9 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <http://schema.org/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -865,30 +865,30 @@ a reusable workflow for analyzing different study areas.
         "mangrove" ;
     dcterms:title "Mangrove Biomass Workflow" ;
     pp:version "0.0.1" ;
-    proc:inputs [ ns3:aoi [ dcterms:description "Area of interest as a bounding box" ;
+    proc:inputs [ ns4:aoi [ dcterms:description "Area of interest as a bounding box" ;
                     dcterms:title "Area of Interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "object" ;
-                            ns2:properties [ ns2:bbox [ proc:type "array" ;
-                                            ns2:items [ proc:type "number" ] ;
-                                            ns2:oneOf [ dcterms:description "2D bbox" ;
-                                                    ns2:maxItems 4 ;
-                                                    ns2:minItems 4 ],
+                            ns3:properties [ ns3:bbox [ proc:type "array" ;
+                                            ns3:items [ proc:type "number" ] ;
+                                            ns3:oneOf [ dcterms:description "2D bbox" ;
+                                                    ns3:maxItems 4 ;
+                                                    ns3:minItems 4 ],
                                                 [ dcterms:description "3D bbox" ;
-                                                    ns2:maxItems 6 ;
-                                                    ns2:minItems 6 ] ] ;
-                                    ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                                                    ns3:maxItems 6 ;
+                                                    ns3:minItems 6 ] ] ;
+                                    ns3:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;
                                             proc:type "string" ] ] ;
-                            ns2:required "bbox" ] ] ;
-            ns3:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
+                            ns3:required "bbox" ] ] ;
+            ns4:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
                     dcterms:title "Maximum Cloud Cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns3:days_back [ dcterms:description "Number of days to search backwards from current date" ;
+            ns4:days_back [ dcterms:description "Number of days to search backwards from current date" ;
                     dcterms:title "Days Back" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -896,17 +896,11 @@ a reusable workflow for analyzing different study areas.
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "0.0.1" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value "Mangrove Biomass Workflow" ;
-            proc:role schema:name ],
-        [ rdf:value [ a ns4:Person ;
-                    ns4:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns4:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value [ a ns4:Person ;
-                    ns4:name "Cameron Sajedi" ] ;
-            proc:role schema:author ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
             proc:role schema:license ],
         [ rdf:value """Workflow for Mangrove Biomass Analysis
@@ -915,24 +909,30 @@ This workflow orchestrates the mangrove biomass estimation process using
 Sentinel-2 imagery. It wraps the mangrove_workflow.cwl tool to provide
 a reusable workflow for analyzing different study areas.
 """ ;
-            proc:role schema:description ] ;
+            proc:role schema:description ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns2:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "Mangrove Biomass Workflow" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns1:stac [ dcterms:description "" ;
                     dcterms:title "stac" ;
                     proc:schema [ proc:type "object" ;
-                            ns2:format "stac-collection" ;
-                            ns2:properties [ dcterms:description [ proc:type "string" ] ;
+                            ns3:format "stac-collection" ;
+                            ns3:properties [ dcterms:description [ proc:type "string" ] ;
                                     dcterms:title [ proc:type "string" ] ;
                                     rdfs:seeAlso [ dcterms:type "array" ] ;
                                     proc:type [ proc:enum "Collection" ;
                                             proc:type "string" ] ;
-                                    ns2:assets [ proc:type "object" ] ;
-                                    ns2:extent [ proc:type "object" ] ;
-                                    ns2:license [ proc:type "string" ] ;
-                                    ns2:stac_version [ proc:type "string" ] ] ;
-                            ns2:required "description",
+                                    ns3:assets [ proc:type "object" ] ;
+                                    ns3:extent [ proc:type "object" ] ;
+                                    ns3:license [ proc:type "string" ] ;
+                                    ns3:stac_version [ proc:type "string" ] ] ;
+                            ns3:required "description",
                                 "extent",
                                 "id",
                                 "license",
@@ -967,7 +967,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "processDescription": {
     "process": {
       "id": "mangrove-workflow",
@@ -1023,7 +1023,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "inputs": {
     "aoi": {
       "bbox": [
@@ -1075,7 +1075,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "stac": {
     "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-mangrove-workflow-0001/results/catalog.json",
     "type": "application/json"
@@ -1172,7 +1172,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:kindgrove:mangrove-workflow",
@@ -1395,7 +1395,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "run": {
     "id": "urn:example:run:kindgrove:mangrove-workflow",
     "type": "WorkflowRun",
@@ -1626,7 +1626,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/mangrove-workflow",
   "type": "ProcessType",
   "prefLabel": "Mangrove Biomass Workflow",
@@ -3336,10 +3336,10 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/step_1" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ],
-        [ a prov:Association ;
             prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
-            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ] ;
+            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ],
+        [ a prov:Association ;
+            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T10:03:16.994695"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
@@ -3347,33 +3347,33 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T10:01:12.463948"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503410"^^xsd:dateTime ;
-            prov:entity id:cf0be29b-e4d9-4fd3-bd1b-2ed80a4095a9 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/days_back> ],
+            prov:atTime "2026-09-23T10:01:12.503371"^^xsd:dateTime ;
+            prov:entity id:980cdadc-8748-4ee0-8e50-02285fada4ac ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/cloud_cover_max> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503436"^^xsd:dateTime ;
+            prov:entity id:43bb865a-d8cd-4787-8345-a30f5433a956 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/east> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503886"^^xsd:dateTime ;
             prov:entity id:a98d2a32-f817-4ba9-9a35-66d4b22bc9de ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/south> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503452"^^xsd:dateTime ;
-            prov:entity id:930cbb58-e736-4bd6-97e8-f8d6fdb3ecca ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/north> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503371"^^xsd:dateTime ;
-            prov:entity id:980cdadc-8748-4ee0-8e50-02285fada4ac ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/cloud_cover_max> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503865"^^xsd:dateTime ;
             prov:entity data:e71003c6b7dd4093ce139ac0c51a6ba38d54a439 ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/output_dir> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503452"^^xsd:dateTime ;
+            prov:entity id:930cbb58-e736-4bd6-97e8-f8d6fdb3ecca ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/north> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503903"^^xsd:dateTime ;
             prov:entity id:d061c0fb-cd9b-4026-acea-7aa18b482246 ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/west> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503436"^^xsd:dateTime ;
-            prov:entity id:43bb865a-d8cd-4787-8345-a30f5433a956 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/east> ] .
+            prov:atTime "2026-09-23T10:01:12.503410"^^xsd:dateTime ;
+            prov:entity id:cf0be29b-e4d9-4fd3-bd1b-2ed80a4095a9 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/days_back> ] .
 
 id:371c06f9-5e4f-482d-a56d-17457d592305 a prov:Entity ;
     prov:value 1.59e+01 .
@@ -3428,9 +3428,9 @@ id:639b3f31-e75a-4bcb-891c-0a3a8d2301e3 a wfprov:Artifact,
         [ a provext:Membership ;
             provext:member id:84fd2907-ae91-49e6-b896-5337cf88d4e4 ],
         [ a provext:Membership ;
-            provext:member id:8cae0f0e-8136-47a3-91de-2df4cb915caa ],
+            provext:member id:c5bac52b-0236-4d46-9e95-2715e4ebb57f ],
         [ a provext:Membership ;
-            provext:member id:c5bac52b-0236-4d46-9e95-2715e4ebb57f ] .
+            provext:member id:8cae0f0e-8136-47a3-91de-2df4cb915caa ] .
 
 id:74500aa8-7eb8-4831-a5d7-b57b0d559a7f a wfprov:Artifact,
         prov:Collection,
@@ -3493,9 +3493,9 @@ id:ef051260-da6b-471f-b7ec-77a3f03338f9 a wfprov:Artifact,
         [ a provext:Membership ;
             provext:member id:371c06f9-5e4f-482d-a56d-17457d592305 ],
         [ a provext:Membership ;
-            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ],
+            provext:member id:05148d8f-b41a-430e-ab3c-e47863420580 ],
         [ a provext:Membership ;
-            provext:member id:05148d8f-b41a-430e-ab3c-e47863420580 ] .
+            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ] .
 
 data:09b42388eb37be1a4b972127a78f691ec6eb3795 a wfprov:Artifact,
         prov:Entity ;
@@ -3512,9 +3512,9 @@ id:3efd1082-30b0-4081-aac3-595258d0235a a ro:Folder,
         "id:beef0d3b-cdec-4f99-a497-ed54573e9aa0"^^xsd:QName,
         "id:d2617387-2a90-4dc3-8db3-0d71f8e3d6ef"^^xsd:QName ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:311c03b4-81b7-421a-8cd4-b744019dc39b ],
-        [ a provext:Membership ;
             provext:member id:1ec302cf-1d77-48c8-9550-86945f3a70ef ],
+        [ a provext:Membership ;
+            provext:member id:311c03b4-81b7-421a-8cd4-b744019dc39b ],
         [ a provext:Membership ;
             provext:member id:30f546f9-0831-4994-946d-88f0365ffd8a ],
         [ a provext:Membership ;
@@ -3561,17 +3561,17 @@ id:ec5cc9e1-3e83-4551-a759-4745c5b5040b a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T10:01:10.962463"^^xsd:dateTime ;
             prov:hadActivity id:3ad94428-01ae-451b-a3f4-af56b73e6981 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:11.351399"^^xsd:dateTime ;
-            prov:entity id:74500aa8-7eb8-4831-a5d7-b57b0d559a7f ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/aoi> ],
+            prov:atTime "2026-09-23T10:01:11.351454"^^xsd:dateTime ;
+            prov:entity id:ab971800-6389-44da-a7db-d85c11161552 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/days_back> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:11.351432"^^xsd:dateTime ;
             prov:entity id:d41afe53-37b5-4d07-a4d3-8f135d5ee9bd ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/cloud_cover_max> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:11.351454"^^xsd:dateTime ;
-            prov:entity id:ab971800-6389-44da-a7db-d85c11161552 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/days_back> ] ;
+            prov:atTime "2026-09-23T10:01:11.351399"^^xsd:dateTime ;
+            prov:entity id:74500aa8-7eb8-4831-a5d7-b57b0d559a7f ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/aoi> ] ;
     prov:startedAtTime "2026-09-23T10:01:10.962438"^^xsd:dateTime .
 
 
@@ -3627,7 +3627,7 @@ $defs:
   provenance:
     $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJsonLd:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
   execute:
@@ -3852,8 +3852,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml)
 
 
 # JSON-LD Context
@@ -4094,13 +4094,13 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld)
 
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-process-profile](https://github.com/GeoLabs/bblocks-process-profile)
+* URL: [https://github.com/GeoLabs/bblocks-process-profiles](https://github.com/GeoLabs/bblocks-process-profiles)
 * Path: `_sources/kindgrove/mangrove-workflow`
 

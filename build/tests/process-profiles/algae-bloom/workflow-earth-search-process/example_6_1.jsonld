@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
   "chlorophyll_a": {
     "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-workflow-earth-search-process-0001/results/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
     "type": "image/tiff; application=geotiff"

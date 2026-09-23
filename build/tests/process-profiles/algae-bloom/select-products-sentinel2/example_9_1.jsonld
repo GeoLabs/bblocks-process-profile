@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
   "type": "ProcessType",
   "prefLabel": "Searches the specified catalog for Sentinel-2 products matching filtering criteria.",

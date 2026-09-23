@@ -22,50 +22,50 @@
     rdfs:label "Process profile: calculate-band" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `calculate-band` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/calculate-band/index.md> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/calculate-band/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.calculate-band> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.calculate-band> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.reduce_dimension>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.divide>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.multiply>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.power>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.subtract>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-copernicus-process>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.reduce_dimension>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.divide>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.multiply>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.power>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.subtract>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-copernicus-process>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: calculate-band" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -76,7 +76,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/calculate-band/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/calculate-band/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -88,47 +88,47 @@
     rdfs:label "Process profile: download-band-sentinel2-product-safe" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `download-band-sentinel2-product-safe` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.filter_bands>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.band-name>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.filter_bands>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.types.band-name>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: download-band-sentinel2-product-safe" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.json> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -139,7 +139,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-product-safe/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-product-safe/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -151,48 +151,48 @@
     rdfs:label "Process profile: download-band-sentinel2-stac-item" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `download-band-sentinel2-stac-item` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.md> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.filter_bands>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.band-name>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.stac>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.filter_bands>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.types.band-name>,
+        <https://geolabs.github.io/ogc.openeo.types.stac>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: download-band-sentinel2-stac-item" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -203,7 +203,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-stac-item/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-stac-item/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -216,46 +216,46 @@
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `plot-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.plot-image> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.plot-image> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.save_result>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.clip>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.linear_scale_range>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-copernicus-process>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.save_result>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.clip>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.linear_scale_range>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-copernicus-process>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: plot-image" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -267,7 +267,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/plot-image/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/plot-image/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -280,21 +280,87 @@
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `reproject-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.reproject-image> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.reproject-image> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.resample_spatial>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.resample_spatial>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: reproject-image" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
+    dcat:keyword "CWL",
+        "CommandLineTool",
+        "OSPD",
+        "algae-bloom",
+        "manually-corrected",
+        "process profile" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
+        <bblocks://ogc.api.processes.v1.schemas.link>,
+        <bblocks://ogc.api.processes.v1.schemas.process>,
+        <bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue>,
+        <bblocks://ogc.api.processes.v2.schemas.ogcapppkg>,
+        <bblocks://ogc.api.processes.v2.schemas.staticIndicator>,
+        <bblocks://ogc.bbr.provenance.provenance>,
+        <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
+        <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
+        <bblocks://ospd.process-profiles.process-type> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/reproject-image/context.jsonld> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ospd.process-profiles.algae-bloom.select-products-sentinel2> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Process profile: select-products-sentinel2" ;
+    dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `select-products-sentinel2` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2> ] ;
+    dct:hasVersion "0.1" ;
+    dct:license [ rdfs:label "Apache-2.0" ] ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.types.collection-id>,
+        <https://geolabs.github.io/ogc.openeo.types.geojson>,
+        <https://geolabs.github.io/ogc.openeo.types.metadata-filter>,
+        <https://geolabs.github.io/ogc.openeo.types.temporal-interval>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-copernicus>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
+    skos:prefLabel "Process profile: select-products-sentinel2" ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
@@ -308,16 +374,16 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/schema.json> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -328,73 +394,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/reproject-image/context.jsonld> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> ;
-    bblocks:validationPassed true .
-
-<bblocks://ospd.process-profiles.algae-bloom.select-products-sentinel2> a skos:Concept,
-        dcat:Dataset,
-        bblocks:BBlock,
-        bblocks:Schema ;
-    rdfs:label "Process profile: select-products-sentinel2" ;
-    dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `select-products-sentinel2` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2> ] ;
-    dct:hasVersion "0.1" ;
-    dct:license [ rdfs:label "Apache-2.0" ] ;
-    dct:modified "2026-09-22"^^xsd:date ;
-    modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.collection-id>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.geojson>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.metadata-filter>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.temporal-interval>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-copernicus>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
-    skos:prefLabel "Process profile: select-products-sentinel2" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
-    dcat:keyword "CWL",
-        "CommandLineTool",
-        "OSPD",
-        "algae-bloom",
-        "manually-corrected",
-        "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml> ;
-            prof:hasRole role:schema ] ;
-    bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
-        <bblocks://ogc.api.processes.v1.schemas.link>,
-        <bblocks://ogc.api.processes.v1.schemas.process>,
-        <bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue>,
-        <bblocks://ogc.api.processes.v2.schemas.ogcapppkg>,
-        <bblocks://ogc.api.processes.v2.schemas.staticIndicator>,
-        <bblocks://ogc.bbr.provenance.provenance>,
-        <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
-        <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
-        <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/select-products-sentinel2/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/select-products-sentinel2/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -407,22 +407,22 @@
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.select-products-sentinel2>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.select-products-sentinel2>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: algae-usecase-workflow-copernicus" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "OSPD",
         "Workflow",
@@ -431,7 +431,7 @@
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -440,11 +440,11 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.json> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.yaml> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -456,7 +456,7 @@
         <bblocks://ogc.bbr.provenance.provenance>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -468,49 +468,49 @@
     rdfs:label "Process profile: algae-usecase-workflow-copernicus-process" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.filter_bands>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.reduce_dimension>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.save_result>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.calculate-band>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.plot-image> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.filter_bands>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.reduce_dimension>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.save_result>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.calculate-band>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.plot-image> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: algae-usecase-workflow-copernicus-process" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "OSPD",
         "Workflow",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.json> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -522,7 +522,7 @@
         <bblocks://ogc.bbr.provenance.provenance>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus-process/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus-process/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -535,22 +535,22 @@
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-search` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.select-products-sentinel2>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.select-products-sentinel2>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: algae-usecase-workflow-earth-search" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "OSPD",
         "Workflow",
@@ -558,21 +558,21 @@
         "manually-corrected",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.json> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -584,7 +584,7 @@
         <bblocks://ogc.bbr.provenance.provenance>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -597,51 +597,51 @@
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-search-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json> ],
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search-process> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search-process/index.md> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search-process/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.filter_bands>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.reduce_dimension>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.resample_spatial>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.save_result>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.calculate-band>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.plot-image>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.algae-bloom.reproject-image> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.filter_bands>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.reduce_dimension>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.resample_spatial>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.save_result>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.calculate-band>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.plot-image>,
+        <https://geolabs.github.io/ospd.process-profiles.algae-bloom.reproject-image> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: algae-usecase-workflow-earth-search-process" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "OSPD",
         "Workflow",
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.json> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -652,7 +652,7 @@
         <bblocks://ogc.bbr.provenance.provenance>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search-process/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search-process/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -664,34 +664,34 @@
     rdfs:label "Process profile: mangrove_cli" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `mangrove_cli` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/mangrove/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.mangrove> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.mangrove> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.comparison.gt>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.comparison.lt>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.aggregate_spatial>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.apply>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.load_collection>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.mask>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.ndvi>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.cubes.save_result>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.logic.and>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.indices.normalized_difference>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.multiply>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.subtract>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.processes.math.sum>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.kindgrove.mangrove-workflow> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.processes.comparison.gt>,
+        <https://geolabs.github.io/ogc.openeo.processes.comparison.lt>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.aggregate_spatial>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.apply>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.load_collection>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.mask>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.ndvi>,
+        <https://geolabs.github.io/ogc.openeo.processes.cubes.save_result>,
+        <https://geolabs.github.io/ogc.openeo.processes.logic.and>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.indices.normalized_difference>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.multiply>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.subtract>,
+        <https://geolabs.github.io/ogc.openeo.processes.math.sum>,
+        <https://geolabs.github.io/ospd.process-profiles.kindgrove.mangrove-workflow> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: mangrove_cli" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
@@ -700,20 +700,20 @@
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/schema.json> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -725,7 +725,7 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -737,44 +737,44 @@
     rdfs:label "Process profile: mangrove-workflow" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `mangrove-workflow` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.mangrove-workflow> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove-workflow/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/mangrove-workflow/index.md> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.mangrove-workflow> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.kindgrove.mangrove>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.kindgrove.parse-aoi> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ospd.process-profiles.kindgrove.mangrove>,
+        <https://geolabs.github.io/ospd.process-profiles.kindgrove.parse-aoi> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: mangrove-workflow" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "OSPD",
         "Workflow",
         "kindgrove",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.bbox>,
         <bblocks://eoap.cct.cwl-to-ogcprocess>,
@@ -787,7 +787,7 @@
         <bblocks://ogc.bbr.provenance.provenance>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove-workflow/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove-workflow/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -799,34 +799,34 @@
     rdfs:label "Process profile: parse_aoi" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.parse-aoi> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.parse-aoi> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     modspec:class <http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.api.processes.part1.requirements.core>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.openeo.types.bounding-box>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ospd.process-profiles.kindgrove.mangrove-workflow> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.api.processes.part1.requirements.core>,
+        <https://geolabs.github.io/ogc.openeo.types.bounding-box>,
+        <https://geolabs.github.io/ospd.process-profiles.kindgrove.mangrove-workflow> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process profile: parse_aoi" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "CWL",
         "CommandLineTool",
         "OSPD",
         "kindgrove",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -834,8 +834,8 @@
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.bbox>,
         <bblocks://eoap.cct.cwl-to-ogcprocess>,
@@ -848,25 +848,25 @@
         <bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun>,
         <bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld>,
         <bblocks://ospd.process-profiles.process-type> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/parse-aoi/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/parse-aoi/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
-<https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/bblocks.ttl> a prov:Entity ;
+<https://geolabs.github.io/bblocks-process-profiles/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N47be41b46e9b4c12b10afab69b01a87a ;
+    prov:wasAttributedTo _:N8cbf0a0644504aeea0766964efc14c8d ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-09-23T14:08:47.409377"^^xsd:dateTime ;
-            prov:startedAtTime "2026-09-23T14:08:47.201192"^^xsd:dateTime ;
+            prov:endedAtTime "2026-09-23T15:17:44.908113"^^xsd:dateTime ;
+            prov:startedAtTime "2026-09-23T15:17:44.707461"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:015b7ea2fdaf7b9ccf9d3fc7981ddf8a390b5c27" ;
-                    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/register.json> ],
-                [ a prov:Entity ;
                     dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N47be41b46e9b4c12b10afab69b01a87a ] .
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:3a48301c5fc2a9033237ab60d494c49a081d569a" ;
+                    rdfs:seeAlso <https://geolabs.github.io/bblocks-process-profiles/build/register.json> ] ;
+            prov:wasAssociatedWith _:N8cbf0a0644504aeea0766964efc14c8d ] .
 
 <https://www.iso.org/standard/54721.html> rdfs:label "ISO 19135-1 Geographic information - Procedures for item registration" .
 
@@ -879,47 +879,47 @@
     rdfs:label "Process type register entry" ;
     dct:abstract "Candidate entry for the OSPD process-type register (Activity 4), linking a process profile, its six-phase position, its provenance class and its proposed openEO equivalences."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.process-type> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.process-type> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/process-type/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/process-type/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/process-type/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-09-22"^^xsd:date ;
     dct:source <https://www.iso.org/standard/54721.html>,
         <https://www.w3.org/TR/skos-reference/> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.bbr.provenance.activity>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.bbr.wf4ever.wfprov.ProcessRun>,
-        <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/ogc.bbr.wf4ever.wfprov.WorkflowRun> ;
-    skos:inScheme <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    rdfs:seeAlso <https://geolabs.github.io/ogc.bbr.provenance.activity>,
+        <https://geolabs.github.io/ogc.bbr.wf4ever.wfprov.ProcessRun>,
+        <https://geolabs.github.io/ogc.bbr.wf4ever.wfprov.WorkflowRun> ;
+    skos:inScheme <https://geolabs.github.io/bblocks-process-profiles/> ;
     skos:prefLabel "Process type register entry" ;
-    skos:topConceptOf <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
+    skos:topConceptOf <https://geolabs.github.io/bblocks-process-profiles/> ;
     dcat:keyword "Activity 4",
         "OSPD",
         "SKOS",
         "openEO",
         "process type",
         "register" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/context.jsonld> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.yaml> ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml> ;
             prof:hasRole role:schema ] ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/process-type/context.jsonld> ;
+    bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-process-profiles/_sources/process-type/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
-<https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> a skos:ConceptScheme,
+<https://geolabs.github.io/bblocks-process-profiles/> a skos:ConceptScheme,
         dcat:Catalog,
         bblocks:BBlocksRegister ;
     rdfs:label "Building Blocks - OSPD Process Profiles" ;
@@ -947,7 +947,7 @@ Each process profile combines:
 All mappings are proposed correspondences offered for review, not settled equivalences.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
-    dct:modified "2026-09-23T14:06:31.433812"^^xsd:dateTime ;
+    dct:modified "2026-09-23T15:15:44.670464"^^xsd:dateTime ;
     owl:imports <https://geolabs.github.io/bblock-ogcapi-processes-part2/build/register.json>,
         <https://geolabs.github.io/bblocks-eoap-cct/build/register.json>,
         <https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json>,
@@ -976,19 +976,19 @@ All mappings are proposed correspondences offered for review, not settled equiva
     prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/bblocks.ttl> ],
-        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/bblocks.jsonld> ],
+            ns2:hasTarget <https://geolabs.github.io/bblocks-process-profiles/build/bblocks.ttl> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/register.json> ] ;
-    foaf:homepage <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/> ;
-    bblocks:hasValidationReport <https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/tests/report.html> .
+            ns2:hasTarget <https://geolabs.github.io/bblocks-process-profiles/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://geolabs.github.io/bblocks-process-profiles/build/bblocks.jsonld> ] ;
+    foaf:homepage <https://geolabs.github.io/bblocks-process-profiles/> ;
+    bblocks:hasValidationReport <https://geolabs.github.io/bblocks-process-profiles/build/tests/report.html> .
 
-_:N47be41b46e9b4c12b10afab69b01a87a a prov:Agent,
+_:N8cbf0a0644504aeea0766964efc14c8d a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.35.dev2+g67607e7aa" ;

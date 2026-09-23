@@ -247,7 +247,7 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "id": "select-products-sentinel2",
   "version": "1.1.0",
   "title": "Searches the specified catalog for Sentinel-2 products matching filtering criteria.",
@@ -404,8 +404,8 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <http://schema.org/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -423,79 +423,79 @@ Returned matches will be either S3 or direct HTTPS references depending on the c
         "search" ;
     dcterms:title "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "Polygon defining the area of interest." ;
+    proc:inputs [ ns2:aoi [ dcterms:description "Polygon defining the area of interest." ;
                     dcterms:title "Area of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "application/geo+json" ] ] ;
-            ns1:catalog [ dcterms:description "" ;
+                            ns1:contentEncoding "binary" ;
+                            ns1:contentMediaType "application/geo+json" ] ] ;
+            ns2:catalog [ dcterms:description "" ;
                     dcterms:title "catalog" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:enum "copernicus",
                                 "earth-search" ;
                             proc:type "string" ] ] ;
-            ns1:cloud_cover [ dcterms:description "" ;
+            ns2:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:collection [ dcterms:description "" ;
+            ns2:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
+            ns2:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
                     dcterms:title "Central date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:delta [ dcterms:description "" ;
+            ns2:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns1:product_level [ dcterms:description "" ;
+            ns2:product_level [ dcterms:description "" ;
                     dcterms:title "product_level" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:enum "L1C",
                                 "L2A" ;
                             proc:type "string" ] ] ;
-            ns1:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
+            ns2:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
                     dcterms:title "Time of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] ;
+                            ns1:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
         [ rdf:value "1.1.0" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
         [ rdf:value """Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations.
 Returned matches will be either S3 or direct HTTPS references depending on the catalog.
 """ ;
             proc:role schema:description ],
         [ rdf:value "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
-            proc:role schema:name ] ;
+            proc:role schema:name ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:email "francis.charette-migneault@crim.ca" ;
+                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns3:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns4:urls [ dcterms:description "" ;
                     dcterms:title "urls" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] .
+                            ns1:items [ proc:type "string" ] ] ] ] .
 
 
 ```
@@ -662,7 +662,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "id": "select-products-sentinel2",
   "version": "1.1.0",
   "title": "Searches the specified catalog for Sentinel-2 products matching filtering criteria.",
@@ -820,8 +820,8 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns2: <http://schema.org/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -842,7 +842,7 @@ Returned matches will be either S3 or direct HTTPS references depending on the c
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns4:contentMediaType "application/octet-stream" ] ] ;
+                            ns3:contentMediaType "application/octet-stream" ] ] ;
             ns1:catalog [ dcterms:description "" ;
                     dcterms:title "catalog" ;
                     proc:maxOccurs 1 ;
@@ -883,32 +883,32 @@ Returned matches will be either S3 or direct HTTPS references depending on the c
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "array" ;
-                            ns4:items [ proc:type "string" ] ] ] ] ;
+                            ns3:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ],
+    proc:metadata [ rdf:value "1.1.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
             proc:role schema:name ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value """Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations.
-Returned matches will be either S3 or direct HTTPS references depending on the catalog.
-""" ;
-            proc:role schema:description ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
         [ rdf:value [ a ns2:Person ;
                     ns2:email "francis.charette-migneault@crim.ca" ;
                     ns2:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns2:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ] ;
+        [ rdf:value """Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations.
+Returned matches will be either S3 or direct HTTPS references depending on the catalog.
+""" ;
+            proc:role schema:description ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:urls [ dcterms:description "" ;
+    proc:outputs [ ns4:urls [ dcterms:description "" ;
                     dcterms:title "urls" ;
                     proc:schema [ proc:type "array" ;
-                            ns4:items [ proc:type "string" ] ] ] ] .
+                            ns3:items [ proc:type "string" ] ] ] ] .
 
 
 ```
@@ -937,7 +937,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "processDescription": {
     "process": {
       "id": "select-products-sentinel2",
@@ -995,7 +995,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "inputs": {
     "aoi": {
       "href": "https://github.com/crim-ca/ogc-ospd-phase1/raw/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg/example/algae-usecase-region.geojson",
@@ -1051,7 +1051,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "urls": [
     "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_1_L2A",
     "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A"
@@ -1183,7 +1183,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:algae-bloom:select-products-sentinel2",
@@ -1407,7 +1407,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "id": "urn:example:run:algae-bloom:select-products-sentinel2",
   "type": "ProcessRun",
   "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
@@ -1515,7 +1515,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/algae-bloom/select-products-sentinel2",
   "type": "ProcessType",
   "prefLabel": "Searches the specified catalog for Sentinel-2 products matching filtering criteria.",
@@ -3232,9 +3232,9 @@ id:78c77861-3ab8-4a56-a0cc-62899eb92912 a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/turbidity_plot> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:6dd26a4a-5269-487b-ad11-0e3cfe83bae2 ],
+            provext:member id:94fcea32-9310-49c6-8684-7517ae960f49 ],
         [ a provext:Membership ;
-            provext:member id:94fcea32-9310-49c6-8684-7517ae960f49 ] .
+            provext:member id:6dd26a4a-5269-487b-ad11-0e3cfe83bae2 ] .
 
 id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 a wfprov:ProcessRun,
         prov:Activity ;
@@ -3258,10 +3258,10 @@ id:7a4b06ca-ec17-4eac-bbf7-96ba8af7bd86 a wfprov:ProcessRun,
             prov:agent id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ;
             prov:hadPlan <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/algae-usecase-workflow-earth-search/process> ] ;
     prov:qualifiedStart [ a prov:Start ;
-            prov:atTime "2026-09-23T08:35:40.367661"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:26:25.902635"^^xsd:dateTime ;
             prov:hadActivity id:39aa9d6c-b92f-486d-9c56-5289ebc57918 ],
         [ a prov:Start ;
-            prov:atTime "2026-09-23T08:26:25.902635"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T08:35:40.367661"^^xsd:dateTime ;
             prov:hadActivity id:39aa9d6c-b92f-486d-9c56-5289ebc57918 ] .
 
 id:8fb08dce-0549-434c-b6bc-251e3b2227d2 a wfprov:Artifact,
@@ -3284,9 +3284,9 @@ id:d5e1a699-e4ec-4961-9136-0c23387faf90 a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/turbidity> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:d0b679db-ef77-442f-a4c0-f093f5da8990 ],
+            provext:member id:4e6424db-66b9-4389-81ca-0a3040fbfd07 ],
         [ a provext:Membership ;
-            provext:member id:4e6424db-66b9-4389-81ca-0a3040fbfd07 ] .
+            provext:member id:d0b679db-ef77-442f-a4c0-f093f5da8990 ] .
 
 id:ed4239e2-9d57-4b3c-9644-295b0a843de3 a wfprov:Artifact,
         prov:Collection,
@@ -3296,9 +3296,9 @@ id:ed4239e2-9d57-4b3c-9644-295b0a843de3 a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/chlorophyll_a_plot> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:372c5307-8059-4cb2-afdb-5417b1e9d278 ],
+            provext:member id:3a29ce4a-c70b-4cb5-ac90-5cc003d32df1 ],
         [ a provext:Membership ;
-            provext:member id:3a29ce4a-c70b-4cb5-ac90-5cc003d32df1 ] .
+            provext:member id:372c5307-8059-4cb2-afdb-5417b1e9d278 ] .
 
 wf:main a wfdesc:Workflow,
         prov:Entity,
@@ -3491,45 +3491,45 @@ id:6eeb1082-3e85-4b8c-87e4-db08b8a54f27 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:26:24.581116"^^xsd:dateTime ;
             prov:hadActivity id:39aa9d6c-b92f-486d-9c56-5289ebc57918 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619451"^^xsd:dateTime ;
-            prov:entity id:4be4827d-8cb6-4720-99c0-164401d97f27 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/delta> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.620133"^^xsd:dateTime ;
-            prov:entity id:71200b7e-dd7c-4784-a342-7f5a60ceba87 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/toi> ],
+            prov:atTime "2026-09-23T08:26:24.619184"^^xsd:dateTime ;
+            prov:entity id:cf1cca44-d0e6-48b5-ba47-0e7ab8eb2752 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/cloud_cover> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619408"^^xsd:dateTime ;
             prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/collection> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619154"^^xsd:dateTime ;
-            prov:entity data:b361b353c05b9c7e9b56b5de806f65ce2c8da7b5 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/catalog> ],
+            prov:atTime "2026-09-23T08:26:24.618823"^^xsd:dateTime ;
+            prov:entity id:bb36ba47-4fd9-4c7e-b7f8-fd944a8f3539 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619429"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/date> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.618823"^^xsd:dateTime ;
-            prov:entity id:bb36ba47-4fd9-4c7e-b7f8-fd944a8f3539 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/aoi> ],
+            prov:atTime "2026-09-23T08:26:24.619154"^^xsd:dateTime ;
+            prov:entity data:b361b353c05b9c7e9b56b5de806f65ce2c8da7b5 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/catalog> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.620133"^^xsd:dateTime ;
+            prov:entity id:71200b7e-dd7c-4784-a342-7f5a60ceba87 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/toi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619722"^^xsd:dateTime ;
             prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/product_level> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619184"^^xsd:dateTime ;
-            prov:entity id:cf1cca44-d0e6-48b5-ba47-0e7ab8eb2752 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/cloud_cover> ] .
+            prov:atTime "2026-09-23T08:26:24.619451"^^xsd:dateTime ;
+            prov:entity id:4be4827d-8cb6-4720-99c0-164401d97f27 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/delta> ] .
 
 id:71200b7e-dd7c-4784-a342-7f5a60ceba87 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member data:2a63ee24a0e8e4b59a1f6e59f003d4201c3ecba3 ],
+            provext:member data:e6b6a83d9218e6cb73c53b7fb501615a47a84aaa ],
         [ a provext:Membership ;
-            provext:member data:e6b6a83d9218e6cb73c53b7fb501615a47a84aaa ] .
+            provext:member data:2a63ee24a0e8e4b59a1f6e59f003d4201c3ecba3 ] .
 
 id:74ee65c3-45e0-49ab-9086-fd0704308112 a prov:Agent,
         prov:SoftwareAgent ;
@@ -3664,25 +3664,25 @@ id:39aa9d6c-b92f-486d-9c56-5289ebc57918 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T08:26:24.309107"^^xsd:dateTime ;
             prov:hadActivity id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.577940"^^xsd:dateTime ;
-            prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/collection> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.577508"^^xsd:dateTime ;
             prov:entity id:5226a207-b9d6-4693-b683-260e1f1d77cf ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.578511"^^xsd:dateTime ;
+            prov:entity id:50b5b789-1882-4c70-9c6a-59f121c84204 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/toi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.577974"^^xsd:dateTime ;
             prov:entity id:c03c3a8f-fd1a-4796-9014-0da5e9f7866d ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/delta> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.577940"^^xsd:dateTime ;
+            prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/collection> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.577548"^^xsd:dateTime ;
             prov:entity id:9841304d-a79d-49fb-ba33-d05f45ce0443 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/cloud_cover> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.578511"^^xsd:dateTime ;
-            prov:entity id:50b5b789-1882-4c70-9c6a-59f121c84204 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/toi> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/cloud_cover> ] ;
     prov:startedAtTime "2026-09-23T08:26:24.309085"^^xsd:dateTime .
 
 
@@ -3748,7 +3748,7 @@ $defs:
   provenance:
     $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJsonLd:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
   execute:
@@ -3978,8 +3978,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml)
 
 
 # JSON-LD Context
@@ -4220,13 +4220,13 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld)
 
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-process-profile](https://github.com/GeoLabs/bblocks-process-profile)
+* URL: [https://github.com/GeoLabs/bblocks-process-profiles](https://github.com/GeoLabs/bblocks-process-profiles)
 * Path: `_sources/algae-bloom/select-products-sentinel2`
 

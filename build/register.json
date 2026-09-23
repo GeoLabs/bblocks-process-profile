@@ -3,7 +3,7 @@
   "name": "OSPD Process Profiles",
   "abstract": "OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference\nworkflows (W1 Algae Bloom, W2 KindGrove mangrove biomass), each linked to its CWL source,\nthe generic provenance profile, the EOAP CWL custom types and the openEO Building Blocks.\n",
   "description": "This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API\nProcesses Profiler). It holds one Building Block per deployable CWL process (`CommandLineTool`\nor `Workflow`) identified in the workflow observability investigation.\n\nEach process profile combines:\n\n- a reference to the source CWL (linked by URL at a pinned commit, never copied);\n- an OGC API - Processes Part 1 `processDescription` derived with the\n  `eoap.cct.cwl-to-ogcprocess` mapping (deviations are documented, not hidden);\n- a provenance view expressed as an instance of the generic provenance profile\n  (`ogc.bbr.provenance.*`);\n- a candidate process-type entry (`ospd.process-profiles.process-type`) for the OSPD\n  process-type register (Activity 4);\n- proposed openEO equivalences (`ogc.openeo.*`) with an explicit level\n  (exactMatch / closeMatch / none) and rationale;\n- a representative execution example.\n\nAll mappings are proposed correspondences offered for review, not settled equivalences.\n",
-  "modified": "2026-09-23T14:06:31.433812",
+  "modified": "2026-09-23T15:15:44.670464",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
@@ -11,15 +11,15 @@
       "date": "2026-09-23T12:30:49+00:00\""
     }
   },
-  "gitRepository": "https://github.com/GeoLabs/bblocks-process-profile",
-  "gitHubRepository": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/",
-  "baseURL": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/",
-  "viewerURL": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-process-profiles",
+  "gitHubRepository": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/",
+  "baseURL": "https://geolabs.github.io/bblocks-process-profiles/",
+  "viewerURL": "https://geolabs.github.io/bblocks-process-profiles/",
   "license": {
     "name": "Apache-2.0"
   },
-  "validationReport": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/tests/report.html",
-  "validationReportJson": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/tests/report.json",
+  "validationReport": "https://geolabs.github.io/bblocks-process-profiles/build/tests/report.html",
+  "validationReportJson": "https://geolabs.github.io/bblocks-process-profiles/build/tests/report.json",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
     "https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json",
@@ -59,8 +59,8 @@
         "OSPD",
         "Activity 4"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/process-type/schema.yaml",
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/context.jsonld",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/process-type/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld",
       "sources": [
         {
           "title": "ISO 19135-1 Geographic information - Procedures for item registration",
@@ -79,26 +79,26 @@
         "name": "Apache-2.0"
       },
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/process-type/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/process-type/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/process-type/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/process-type/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/process-type/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/process-type/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/process-type/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/process-type/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/process-type/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.process-type"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.process-type"
         }
       }
     },
@@ -114,16 +114,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -147,7 +147,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/calculate-band/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/calculate-band/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -158,28 +158,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/calculate-band/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/calculate-band/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/calculate-band/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/calculate-band/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/calculate-band/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/calculate-band/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/calculate-band/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/calculate-band/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/calculate-band/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.calculate-band"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.calculate-band"
         }
       }
     },
@@ -195,16 +195,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
@@ -225,7 +225,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-product-safe/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-product-safe/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -236,28 +236,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-product-safe/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-product-safe/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-product-safe/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-product-safe/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-product-safe/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe"
         }
       }
     },
@@ -273,16 +273,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -304,7 +304,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-stac-item/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-stac-item/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -315,28 +315,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/download-band-sentinel2-stac-item/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/download-band-sentinel2-stac-item/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-stac-item/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-stac-item/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item"
         }
       }
     },
@@ -352,16 +352,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -383,7 +383,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/plot-image/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/plot-image/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -394,28 +394,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/plot-image/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/plot-image/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/plot-image/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/plot-image/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/plot-image/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/plot-image/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/plot-image/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.plot-image"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.plot-image"
         }
       }
     },
@@ -431,16 +431,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -459,7 +459,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/reproject-image/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/reproject-image/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -470,28 +470,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/reproject-image/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/reproject-image/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/reproject-image/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/reproject-image/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/reproject-image/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/reproject-image/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.reproject-image"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.reproject-image"
         }
       }
     },
@@ -507,16 +507,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search",
@@ -540,7 +540,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/select-products-sentinel2/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/select-products-sentinel2/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -551,28 +551,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/select-products-sentinel2/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/select-products-sentinel2/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/select-products-sentinel2/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/select-products-sentinel2/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/select-products-sentinel2/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/select-products-sentinel2/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2"
         }
       }
     },
@@ -588,16 +588,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ospd.process-profiles.process-type"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -617,7 +617,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus/schema.yaml",
       "maturity": "development",
       "highlighted": true,
       "group": "W1 Algae Bloom",
@@ -629,28 +629,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus"
         }
       }
     },
@@ -666,16 +666,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ospd.process-profiles.process-type"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe",
@@ -699,7 +699,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus-process/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus-process/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -710,28 +710,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus-process/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-copernicus-process/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus-process/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-copernicus-process/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus-process/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus-process/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process"
         }
       }
     },
@@ -747,16 +747,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ospd.process-profiles.process-type"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -776,7 +776,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search/schema.yaml",
       "maturity": "development",
       "highlighted": true,
       "group": "W1 Algae Bloom",
@@ -788,28 +788,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search"
         }
       }
     },
@@ -825,16 +825,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ospd.process-profiles.process-type"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item",
@@ -860,7 +860,7 @@
         "algae-bloom",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search-process/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search-process/schema.yaml",
       "maturity": "development",
       "group": "W1 Algae Bloom",
       "shaclShapes": {
@@ -871,28 +871,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search-process/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/algae-bloom/workflow-earth-search-process/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search-process/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/algae-bloom/workflow-earth-search-process/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search-process/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search-process/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search-process/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search-process/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search-process"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search-process"
         }
       }
     },
@@ -908,16 +908,16 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",
@@ -948,7 +948,7 @@
         "kindgrove",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove/schema.yaml",
       "maturity": "development",
       "group": "W2 KindGrove",
       "shaclShapes": {
@@ -959,28 +959,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/kindgrove/mangrove/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/mangrove/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/mangrove/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.mangrove"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.mangrove"
         }
       }
     },
@@ -996,17 +996,17 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.bbox",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.provenance.execution",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ospd.process-profiles.process-type"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.parse-aoi",
@@ -1025,7 +1025,7 @@
         "kindgrove",
         "manually-corrected"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove-workflow/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove-workflow/schema.yaml",
       "maturity": "development",
       "highlighted": true,
       "group": "W2 KindGrove",
@@ -1037,28 +1037,28 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove-workflow/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/mangrove-workflow/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/mangrove-workflow/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove-workflow/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/mangrove-workflow/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/kindgrove/mangrove-workflow/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/mangrove-workflow/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/mangrove-workflow/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove-workflow/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.mangrove-workflow"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.mangrove-workflow"
         }
       }
     },
@@ -1074,17 +1074,17 @@
       "itemClass": "schema",
       "register": "process-profiles",
       "dependsOn": [
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
         "bblocks://eoap.cct.bbox",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.bbr.provenance.provenance"
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",
@@ -1102,7 +1102,7 @@
         "CommandLineTool",
         "kindgrove"
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/parse-aoi/schema.yaml",
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/parse-aoi/schema.yaml",
       "maturity": "development",
       "group": "W2 KindGrove",
       "shaclShapes": {
@@ -1113,49 +1113,49 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
       "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json"
       },
-      "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/parse-aoi/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/_sources/kindgrove/parse-aoi/",
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/parse-aoi/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/kindgrove/parse-aoi/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profile/blob/master/build/tests/process-profiles/kindgrove/parse-aoi/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/parse-aoi/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/bblock/ospd.process-profiles.kindgrove.parse-aoi"
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.parse-aoi"
         }
       }
     }
   ],
-  "remoteCacheDir": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/_cache",
+  "remoteCacheDir": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/_cache",
   "links": [
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/register.json",
+      "href": "https://geolabs.github.io/bblocks-process-profiles/build/register.json",
       "type": "application/json",
       "title": "This Building Blocks Register in JSON format"
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/bblocks.ttl",
+      "href": "https://geolabs.github.io/bblocks-process-profiles/build/bblocks.ttl",
       "type": "text/turtle",
       "title": "This Building Blocks Register in RDF Turtle format"
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/bblocks.jsonld",
+      "href": "https://geolabs.github.io/bblocks-process-profiles/build/bblocks.jsonld",
       "type": "application/ld+json",
       "title": "This Building Blocks Register in JSON-LD format"
     }

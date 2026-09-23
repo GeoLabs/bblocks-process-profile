@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld",
   "id": "algae-usecase-workflow-copernicus-process",
   "version": "2.1.0",
   "title": "Processing on Sentinel-2 bands to evaluate algae bloom.\n",

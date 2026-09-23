@@ -69,7 +69,7 @@
       "$ref": "https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.json"
     },
     "processTypeEntry": {
-      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/process-type/schema.json"
+      "$ref": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json"
     },
     "w3cProvJsonLd": {
       "$ref": "https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.json"

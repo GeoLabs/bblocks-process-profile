@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:algae-bloom:download-band-sentinel2-stac-item",

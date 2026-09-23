@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-process-profile/undefined/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld",
   "result": {
     "href": "https://ospd.example.org/ogc-api/jobs/algae-bloom-reproject-image-0001/results/B03_60m.tiff",
     "type": "image/tiff; application=geotiff"

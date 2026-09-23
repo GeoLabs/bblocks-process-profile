@@ -62,22 +62,22 @@ will be named with the ID of the original product to distinguish them in case of
                     ns2:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns2:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
+        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
+""" ;
+            proc:role schema:name ],
+        [ rdf:value "2.0.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
             proc:role schema:codeRepository ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value "2.0.0" ;
-            proc:role schema:softwareVersion ],
         [ rdf:value """Searches for Sentinel-2 L2A products on Earth-Search using filtering parameters
 and performs band calculation on matched Sentinel-2 products to evaluate algae bloom
 for water quality assessment. For each match, reference bands are downloaded, processed,
 and returned as output with raw data, color map and plot visualization. Each output file
 will be named with the ID of the original product to distinguish them in case of multiple matches.
 """ ;
-            proc:role schema:description ],
-        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
-""" ;
-            proc:role schema:name ] ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

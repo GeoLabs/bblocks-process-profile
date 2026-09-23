@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <http://schema.org/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -18,77 +18,77 @@ Returned matches will be either S3 or direct HTTPS references depending on the c
         "search" ;
     dcterms:title "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "Polygon defining the area of interest." ;
+    proc:inputs [ ns2:aoi [ dcterms:description "Polygon defining the area of interest." ;
                     dcterms:title "Area of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "application/geo+json" ] ] ;
-            ns1:catalog [ dcterms:description "" ;
+                            ns1:contentEncoding "binary" ;
+                            ns1:contentMediaType "application/geo+json" ] ] ;
+            ns2:catalog [ dcterms:description "" ;
                     dcterms:title "catalog" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:enum "copernicus",
                                 "earth-search" ;
                             proc:type "string" ] ] ;
-            ns1:cloud_cover [ dcterms:description "" ;
+            ns2:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:collection [ dcterms:description "" ;
+            ns2:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
+            ns2:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
                     dcterms:title "Central date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:delta [ dcterms:description "" ;
+            ns2:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns1:product_level [ dcterms:description "" ;
+            ns2:product_level [ dcterms:description "" ;
                     dcterms:title "product_level" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:enum "L1C",
                                 "L2A" ;
                             proc:type "string" ] ] ;
-            ns1:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
+            ns2:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
                     dcterms:title "Time of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] ;
+                            ns1:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
         [ rdf:value "1.1.0" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:email "francis.charette-migneault@crim.ca" ;
-                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns3:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
         [ rdf:value """Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations.
 Returned matches will be either S3 or direct HTTPS references depending on the catalog.
 """ ;
             proc:role schema:description ],
         [ rdf:value "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
-            proc:role schema:name ] ;
+            proc:role schema:name ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:email "francis.charette-migneault@crim.ca" ;
+                    ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns3:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
     proc:outputs [ ns4:urls [ dcterms:description "" ;
                     dcterms:title "urls" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] .
+                            ns1:items [ proc:type "string" ] ] ] ] .
 
