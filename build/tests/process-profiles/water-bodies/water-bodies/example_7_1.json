@@ -1,0 +1,63 @@
+[
+  {
+    "id": "urn:example:run:water-bodies:water-bodies",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies",
+    "startedAtTime": "2026-09-23T18:00:51Z",
+    "used": [
+      "urn:example:entity:water-bodies:in:aoi",
+      "urn:example:entity:water-bodies:in:epsg",
+      "urn:example:entity:water-bodies:in:stac_items"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/water-bodies"
+      }
+    ],
+    "endedAtTime": "2026-09-23T18:07:16Z"
+  },
+  {
+    "id": "urn:example:entity:water-bodies:in:aoi",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/water-bodies#inputs/aoi",
+    "value": "-121.399,39.834,-120.74,40.472"
+  },
+  {
+    "id": "urn:example:entity:water-bodies:in:epsg",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/water-bodies#inputs/epsg",
+    "value": "EPSG:4326"
+  },
+  {
+    "id": "urn:example:entity:water-bodies:in:stac_items",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/water-bodies#inputs/stac_items",
+    "value": [
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+    ]
+  },
+  {
+    "id": "urn:example:entity:water-bodies:out:stac",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+    "wasGeneratedBy": "urn:example:run:water-bodies:water-bodies",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/catalog.json",
+        "rel": "item",
+        "type": "application/json"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  }
+]

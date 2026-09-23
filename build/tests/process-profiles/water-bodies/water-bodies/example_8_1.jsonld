@@ -1,0 +1,90 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "run": {
+    "id": "urn:example:run:water-bodies:water-bodies",
+    "type": "WorkflowRun",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies",
+    "describedByWorkflow": "https://ospd.example.org/ogc-api/processes/water-bodies",
+    "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+    "status": "successful",
+    "jobID": "water-bodies-water-bodies-0001",
+    "startedAtTime": "2026-09-23T18:00:51Z",
+    "endedAtTime": "2026-09-23T18:07:16Z",
+    "hadSubProcessRun": [
+      {
+        "id": "urn:example:run:water-bodies:detect-water-body"
+      },
+      {
+        "id": "urn:example:run:water-bodies:stac"
+      }
+    ]
+  },
+  "engine": {
+    "@id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "@type": "WorkflowEngine",
+    "name": "cwltool",
+    "version": "3.1.20260108082145"
+  },
+  "outputs": [
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/S2A_10TFK_20220524_0_L2A/S2A_10TFK_20220524_0_L2A.json",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "application/json",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+      "wasOutputFrom": "urn:example:run:water-bodies:water-bodies",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "d6d2a88a822dadbc95c6d3381d6b0386e94a2148"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/S2A_10TFK_20220524_0_L2A/otsu.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+      "wasOutputFrom": "urn:example:run:water-bodies:water-bodies",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "8a97a5260b1039d7f867c2f9ab8ee36a5cb5fbd4"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "application/json",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+      "wasOutputFrom": "urn:example:run:water-bodies:water-bodies",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "e74c29702b96c01957579e7d11b35d835356376b"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/S2B_10TFK_20210713_0_L2A/otsu.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+      "wasOutputFrom": "urn:example:run:water-bodies:water-bodies",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "8cb131413518c30be6ba485ea61764491444cde5"
+      }
+    },
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/catalog.json",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "application/json",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/water-bodies#outputs/stac",
+      "wasOutputFrom": "urn:example:run:water-bodies:water-bodies",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "a234b13e2668a49acb831fdf87f3c1ead120dd41"
+      }
+    }
+  ]
+}

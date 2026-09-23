@@ -112,3 +112,39 @@ OGC API - Processes profile of the CWL Workflow `mangrove-workflow` (W2 KindGrov
 
 OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
 
+### `ospd.process-profiles.water-bodies.crop` — Process profile: crop
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `crop` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.water-bodies.detect-water-body` — Process profile: detect_water_body
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL Workflow `detect_water_body` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.water-bodies.norm-diff` — Process profile: norm_diff
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `norm_diff` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.water-bodies.otsu` — Process profile: otsu
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `otsu` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.water-bodies.stac` — Process profile: stac
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.water-bodies.water-bodies` — Process profile: water-bodies
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL Workflow `water-bodies` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+

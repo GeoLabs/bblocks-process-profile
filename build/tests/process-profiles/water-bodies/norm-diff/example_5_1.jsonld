@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "ndwi": {
+    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-norm-diff-0001/results/norm_diff.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

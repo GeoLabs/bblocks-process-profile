@@ -1,0 +1,16 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "inputs": {
+    "rasters": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif",
+        "type": "image/tiff; application=geotiff"
+      },
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  "response": "document"
+}

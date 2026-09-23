@@ -3,7 +3,7 @@
   "name": "OSPD Process Profiles",
   "abstract": "OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference\nworkflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection), each\nlinked to its CWL source, the generic provenance profile, the EOAP CWL custom types and the\nopenEO Building Blocks.\n",
   "description": "This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API\nProcesses Profiler). It holds one Building Block per deployable CWL process (`CommandLineTool`\nor `Workflow`) identified in the workflow observability investigation.\n\nEach process profile combines:\n\n- a reference to the source CWL (linked by URL at a pinned commit, never copied);\n- an OGC API - Processes Part 1 `processDescription` derived with the\n  `eoap.cct.cwl-to-ogcprocess` mapping (deviations are documented, not hidden);\n- a provenance view expressed as an instance of the generic provenance profile\n  (`ogc.bbr.provenance.*`);\n- a candidate process-type entry (`ospd.process-profiles.process-type`) for the OSPD\n  process-type register (Activity 4);\n- proposed openEO equivalences (`ogc.openeo.*`) with an explicit level\n  (exactMatch / closeMatch / none) and rationale;\n- a representative execution example.\n\nAll mappings are proposed correspondences offered for review, not settled equivalences.\n",
-  "modified": "2026-09-23T18:57:50.935360",
+  "modified": "2026-09-23T19:04:09.205098",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
@@ -117,15 +117,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -198,15 +198,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-copernicus-process",
@@ -277,15 +277,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -356,15 +356,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -435,15 +435,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search-process",
@@ -511,15 +511,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.workflow-earth-search",
@@ -592,15 +592,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.bbr.provenance.execution"
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -671,15 +671,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.bbr.provenance.execution"
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe",
@@ -753,15 +753,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.bbr.provenance.execution"
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.select-products-sentinel2",
@@ -831,15 +831,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
-        "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.bbr.provenance.execution"
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.algae-bloom.download-band-sentinel2-stac-item",
@@ -914,15 +914,15 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
-        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
-        "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
         "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",
@@ -1003,16 +1003,16 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
         "bblocks://eoap.cct.bbox",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.api.processes.v1.schemas.link",
-        "bblocks://ogc.bbr.provenance.execution"
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.parse-aoi",
@@ -1082,16 +1082,16 @@
       "register": "process-profiles",
       "dependsOn": [
         "bblocks://eoap.cct.cwl-to-ogcprocess",
-        "bblocks://ospd.process-profiles.process-type",
-        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
-        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.link",
         "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
         "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
         "bblocks://eoap.cct.bbox",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
         "bblocks://ogc.bbr.provenance.provenance",
-        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg",
-        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
-        "bblocks://ogc.api.processes.v1.schemas.link"
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
       ],
       "seeAlso": [
         "ospd.process-profiles.kindgrove.mangrove-workflow",
@@ -1143,6 +1143,470 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.parse-aoi"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.crop",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: crop",
+      "abstract": "OGC API - Processes profile of the CWL CommandLineTool `crop` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.detect-water-body",
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "CommandLineTool",
+        "water-bodies"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/crop/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/crop/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/crop/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/crop/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/crop/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/crop/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.crop"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.detect-water-body",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: detect_water_body",
+      "abstract": "OGC API - Processes profile of the CWL Workflow `detect_water_body` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.crop",
+        "ospd.process-profiles.water-bodies.norm-diff",
+        "ospd.process-profiles.water-bodies.otsu",
+        "ospd.process-profiles.water-bodies.water-bodies",
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands",
+        "ogc.openeo.processes.math.indices.normalized_difference",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "Workflow",
+        "water-bodies"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/detect-water-body/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/detect-water-body/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/detect-water-body/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/detect-water-body/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/detect-water-body/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/detect-water-body/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.detect-water-body"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.norm-diff",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: norm_diff",
+      "abstract": "OGC API - Processes profile of the CWL CommandLineTool `norm_diff` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.detect-water-body",
+        "ogc.openeo.processes.math.indices.normalized_difference",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "CommandLineTool",
+        "water-bodies"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/norm-diff/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/norm-diff/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/norm-diff/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/norm-diff/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/norm-diff/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/norm-diff/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.norm-diff"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.otsu",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: otsu",
+      "abstract": "OGC API - Processes profile of the CWL CommandLineTool `otsu` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.detect-water-body",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "CommandLineTool",
+        "water-bodies"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/otsu/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/otsu/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/otsu/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/otsu/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/otsu/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/otsu/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.otsu"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.stac",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: stac",
+      "abstract": "OGC API - Processes profile of the CWL CommandLineTool `stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ogc.bbr.wf4ever.wfprov.ProcessRun",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.water-bodies",
+        "ogc.openeo.processes.cubes.save_result",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "CommandLineTool",
+        "water-bodies",
+        "manually-corrected"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/stac/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/stac/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/stac/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/stac/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/stac/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/stac/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.stac"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ospd.process-profiles.water-bodies.water-bodies",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Process profile: water-bodies",
+      "abstract": "OGC API - Processes profile of the CWL Workflow `water-bodies` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-22T00:00:00Z",
+      "dateOfLastChange": "2026-09-23",
+      "version": "0.1",
+      "itemClass": "schema",
+      "register": "process-profiles",
+      "dependsOn": [
+        "bblocks://eoap.cct.cwl-to-ogcprocess",
+        "bblocks://ogc.api.processes.v1.schemas.link",
+        "bblocks://ogc.api.processes.v1.schemas.process",
+        "bblocks://ospd.process-profiles.process-type",
+        "bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld",
+        "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.api.processes.v2.schemas.staticIndicator",
+        "bblocks://ogc.bbr.provenance.provenance",
+        "bblocks://ogc.bbr.provenance.execution",
+        "bblocks://ogc.api.processes.v2.schemas.ogcapppkg"
+      ],
+      "seeAlso": [
+        "ospd.process-profiles.water-bodies.detect-water-body",
+        "ospd.process-profiles.water-bodies.stac",
+        "ogc.openeo.processes.cubes.save_result",
+        "ogc.api.processes.part1.requirements.core"
+      ],
+      "conformanceClasses": [
+        "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+      ],
+      "scope": "dev",
+      "tags": [
+        "OSPD",
+        "process profile",
+        "CWL",
+        "Workflow",
+        "water-bodies",
+        "manually-corrected"
+      ],
+      "sourceSchema": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/water-bodies/schema.yaml",
+      "maturity": "development",
+      "group": "W2 KindGrove",
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://geolabs.github.io/bblocks-process-profiles/LICENSE"
+      },
+      "ldContext": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.json"
+      },
+      "sourceLdContext": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/water-bodies/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-process-profiles/_sources/water-bodies/water-bodies/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/water-bodies/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/water-bodies/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/water-bodies/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.water-bodies"
         }
       }
     }

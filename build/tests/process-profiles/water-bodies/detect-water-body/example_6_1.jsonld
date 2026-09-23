@@ -1,0 +1,73 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:water-bodies:detect-water-body",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
+      "startedAtTime": "2026-09-23T18:00:51Z",
+      "used": [
+        "urn:example:entity:detect-water-body:in:aoi",
+        "urn:example:entity:detect-water-body:in:epsg",
+        "urn:example:entity:detect-water-body:in:item",
+        "urn:example:entity:detect-water-body:in:bands"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/detect_water_body"
+        }
+      ],
+      "endedAtTime": "2026-09-23T18:03:51Z"
+    },
+    {
+      "id": "urn:example:entity:detect-water-body:in:aoi",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/detect_water_body#inputs/aoi",
+      "value": "-121.399,39.834,-120.74,40.472"
+    },
+    {
+      "id": "urn:example:entity:detect-water-body:in:epsg",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/detect_water_body#inputs/epsg",
+      "value": "EPSG:4326"
+    },
+    {
+      "id": "urn:example:entity:detect-water-body:in:item",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/detect_water_body#inputs/item",
+      "value": "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+    },
+    {
+      "id": "urn:example:entity:detect-water-body:in:bands",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/detect_water_body#inputs/bands",
+      "value": [
+        "green",
+        "nir"
+      ]
+    },
+    {
+      "id": "urn:example:entity:detect-water-body:out:detected_water_body",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/detect_water_body#outputs/detected_water_body",
+      "wasGeneratedBy": "urn:example:run:water-bodies:detect-water-body",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-detect-water-body-0001/results/otsu.tif",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    }
+  ]
+}

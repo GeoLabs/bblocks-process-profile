@@ -1,0 +1,107 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld",
+  "id": "stac",
+  "version": "1.4.1",
+  "title": "stac",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "stac"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "item": {
+      "title": "item",
+      "description": "",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "rasters": {
+      "title": "rasters",
+      "description": "",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "contentMediaType": "application/octet-stream"
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "stac_catalog": {
+      "title": "stac_catalog",
+      "description": "",
+      "schema": {
+        "type": "object",
+        "required": [
+          "type",
+          "stac_version",
+          "id",
+          "description",
+          "license",
+          "extent",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Collection"
+            ]
+          },
+          "stac_version": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "extent": {
+            "type": "object"
+          },
+          "links": {
+            "type": "array"
+          },
+          "assets": {
+            "type": "object"
+          }
+        },
+        "format": "stac-collection"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

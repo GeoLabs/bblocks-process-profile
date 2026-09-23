@@ -1,0 +1,37 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation> ;
+    skos:definition "Water body detection based on NDWI and otsu threshold" ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Water body detection based on NDWI and otsu threshold" ;
+    pp:candidateCctDependency "eoap.cct.bbox",
+        "eoap.cct.string-format" ;
+    pp:hasStep <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/norm-diff>,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/otsu> ;
+    pp:openeoEquivalence [ pp:decomposition ( [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.cubes.filter_bands",
+                            "ogc.openeo.processes.cubes.load_collection" ;
+                        pp:stage "node_crop (x2, scatter over bands)" ] [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.math.indices.normalized_difference" ;
+                        pp:stage "node_normalized_difference" ] [ skos:note "no stable Otsu-threshold process in openEO" ;
+                        pp:equivalenceLevel "none" ;
+                        pp:stage "node_otsu" ] ) ;
+            pp:equivalenceLevel "none" ;
+            pp:rationale "Composite (3 steps: band crop scattered over 2 bands, NDWI, Otsu threshold). In openEO this is one load_collection with band selection followed by a short process graph." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/detect_water_body> ;
+    pp:profile "ospd.process-profiles.water-bodies.detect-water-body" ;
+    pp:provenanceClass wfprov:WorkflowRun ;
+    pp:source [ pp:cwl <https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#detect_water_body> ;
+            pp:cwlClass "Workflow" ;
+            pp:cwlId "detect_water_body" ;
+            pp:license "https://spdx.org/licenses/CC-BY-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/detect_water_body> pp:version "1.4.1" .
+

@@ -1,0 +1,64 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:water-bodies:norm-diff",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/norm-diff",
+      "startedAtTime": "2026-09-23T18:03:27Z",
+      "used": [
+        "urn:example:entity:norm-diff:in:rasters"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/norm_diff"
+        }
+      ],
+      "endedAtTime": "2026-09-23T18:03:45Z"
+    },
+    {
+      "id": "urn:example:entity:norm-diff:in:rasters",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/norm_diff#inputs/rasters",
+      "value": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif",
+          "type": "image/tiff; application=geotiff"
+        },
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif",
+          "type": "image/tiff; application=geotiff"
+        }
+      ]
+    },
+    {
+      "id": "urn:example:entity:norm-diff:out:ndwi",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/norm_diff#outputs/ndwi",
+      "wasGeneratedBy": "urn:example:run:water-bodies:norm-diff",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-norm-diff-0001/results/norm_diff.tif",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0"
+    }
+  ]
+}

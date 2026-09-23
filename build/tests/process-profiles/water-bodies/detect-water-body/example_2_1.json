@@ -1,0 +1,80 @@
+{
+  "id": "detect_water_body",
+  "version": "1.4.1",
+  "title": "Water body detection based on NDWI and otsu threshold",
+  "description": "Water body detection based on NDWI and otsu threshold",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Water body detection based on NDWI and otsu threshold"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Water body detection based on NDWI and otsu threshold"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "aoi": {
+      "title": "aoi",
+      "description": "area of interest as a bounding box",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "epsg": {
+      "title": "epsg",
+      "description": "EPSG code",
+      "schema": {
+        "type": "string",
+        "default": "EPSG:4326"
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "bands": {
+      "title": "bands",
+      "description": "bands used for the NDWI",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "item": {
+      "title": "item",
+      "description": "STAC item",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "detected_water_body": {
+      "title": "detected_water_body",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

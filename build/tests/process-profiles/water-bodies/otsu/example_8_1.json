@@ -1,0 +1,29 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/otsu",
+  "type": "ProcessType",
+  "prefLabel": "Otsu binary threshold",
+  "definition": "Thresholds a single-band raster into a binary mask using Otsu's method.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation"
+  ],
+  "profile": "ospd.process-profiles.water-bodies.otsu",
+  "processDescription": {
+    "id": "otsu",
+    "version": "1.4.1"
+  },
+  "source": {
+    "cwl": "https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#otsu",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "otsu",
+    "license": "https://spdx.org/licenses/CC-BY-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "openEO has no built-in Otsu (automatic histogram) threshold process; the closest primitive, `ogc.openeo.processes.comparison.gt`, only compares against a caller-supplied constant, not a threshold the process computes itself."
+  }
+}

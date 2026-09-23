@@ -1,0 +1,45 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+  "run": {
+    "id": "urn:example:run:water-bodies:detect-water-body",
+    "type": "WorkflowRun",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
+    "describedByWorkflow": "https://ospd.example.org/ogc-api/processes/detect_water_body",
+    "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+    "status": "successful",
+    "jobID": "water-bodies-detect-water-body-0001",
+    "startedAtTime": "2026-09-23T18:00:51Z",
+    "endedAtTime": "2026-09-23T18:03:51Z",
+    "hadSubProcessRun": [
+      {
+        "id": "urn:example:run:water-bodies:crop"
+      },
+      {
+        "id": "urn:example:run:water-bodies:norm-diff"
+      },
+      {
+        "id": "urn:example:run:water-bodies:otsu"
+      }
+    ]
+  },
+  "engine": {
+    "@id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "@type": "WorkflowEngine",
+    "name": "cwltool",
+    "version": "3.1.20260108082145"
+  },
+  "outputs": [
+    {
+      "id": "https://ospd.example.org/ogc-api/jobs/water-bodies-detect-water-body-0001/results/otsu.tif",
+      "type": "Artifact",
+      "role": "output",
+      "mediaType": "image/tiff; application=geotiff",
+      "describedByParameter": "https://ospd.example.org/ogc-api/processes/detect_water_body#outputs/detected_water_body",
+      "wasOutputFrom": "urn:example:run:water-bodies:detect-water-body",
+      "checksum": {
+        "algorithm": "SHA-1",
+        "value": "8cb131413518c30be6ba485ea61764491444cde5"
+      }
+    }
+  ]
+}

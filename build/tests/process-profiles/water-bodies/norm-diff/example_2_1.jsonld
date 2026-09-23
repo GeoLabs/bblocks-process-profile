@@ -1,0 +1,54 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "id": "norm_diff",
+  "version": "1.4.1",
+  "title": "norm_diff",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "norm_diff"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "rasters": {
+      "title": "rasters",
+      "description": "",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "contentMediaType": "application/octet-stream"
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "ndwi": {
+      "title": "ndwi",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

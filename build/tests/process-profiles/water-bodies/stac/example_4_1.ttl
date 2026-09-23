@@ -1,0 +1,10 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/stac> pp:version "1.4.1" .
+
+[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/stac> ] ;
+    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+            pp:href "https://github.com/gfenoy/mastering-app-package/raw/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#stac" ;
+            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+

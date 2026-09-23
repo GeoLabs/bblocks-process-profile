@@ -1,0 +1,13 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:water-bodies:stac> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/stac> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/stac> ;
+    wfprov:usedInput <urn:example:entity:stac:in:item>,
+        <urn:example:entity:stac:in:rasters> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:water-bodies:water-bodies> ;
+    prov:startedAtTime "2026-09-23T18:07:11+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

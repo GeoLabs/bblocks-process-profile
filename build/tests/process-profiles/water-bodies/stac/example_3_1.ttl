@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/stac> dcterms:description "Process converted from CWL" ;
+    dcterms:title "stac" ;
+    pp:version "1.4.1" ;
+    proc:inputs [ ns2:item [ dcterms:description "" ;
+                    dcterms:title "item" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ] ] ] ;
+            ns2:rasters [ dcterms:description "" ;
+                    dcterms:title "rasters" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "stac" ;
+            proc:role schema:name ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value "1.4.1" ;
+            proc:role schema:softwareVersion ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns3:stac_catalog [ dcterms:description "" ;
+                    dcterms:title "stac_catalog" ;
+                    proc:schema [ proc:type "object" ;
+                            ns1:format "stac-collection" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
+                                    dcterms:title [ proc:type "string" ] ;
+                                    rdfs:seeAlso [ dcterms:type "array" ] ;
+                                    proc:type [ proc:enum "Collection" ;
+                                            proc:type "string" ] ;
+                                    ns1:assets [ proc:type "object" ] ;
+                                    ns1:extent [ proc:type "object" ] ;
+                                    ns1:license [ proc:type "string" ] ;
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
+                                "extent",
+                                "id",
+                                "license",
+                                "links",
+                                "stac_version",
+                                "type" ] ] ] .
+

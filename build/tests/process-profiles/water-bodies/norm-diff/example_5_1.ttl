@@ -1,0 +1,4 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+
+[] pp:ndwi [ pp:href "https://ospd.example.org/ogc-api/jobs/water-bodies-norm-diff-0001/results/norm_diff.tif" ] .
+

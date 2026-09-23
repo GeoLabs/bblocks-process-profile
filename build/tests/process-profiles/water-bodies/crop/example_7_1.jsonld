@@ -1,0 +1,24 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "id": "urn:example:run:water-bodies:crop",
+  "type": "ProcessRun",
+  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
+  "describedByProcess": "https://ospd.example.org/ogc-api/processes/crop",
+  "usedInput": [
+    {
+      "id": "urn:example:entity:crop:in:item"
+    },
+    {
+      "id": "urn:example:entity:crop:in:aoi"
+    },
+    {
+      "id": "urn:example:entity:crop:in:epsg"
+    },
+    {
+      "id": "urn:example:entity:crop:in:band"
+    }
+  ],
+  "startedAtTime": "2026-09-23T18:00:51Z",
+  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+  "wasPartOfWorkflowRun": "urn:example:run:water-bodies:detect-water-body"
+}

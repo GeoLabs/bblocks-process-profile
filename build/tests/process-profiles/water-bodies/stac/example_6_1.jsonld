@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld",
+  "stac_catalog": {
+    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-stac-0001/results/catalog.json",
+    "type": "application/json"
+  }
+}

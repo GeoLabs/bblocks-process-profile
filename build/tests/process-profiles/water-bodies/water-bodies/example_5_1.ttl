@@ -1,0 +1,9 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+[] proc:inputs [ ns1:aoi "-121.399,39.834,-120.74,40.472" ;
+            ns1:epsg "EPSG:4326" ;
+            ns1:stac_items "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
+                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ] ;
+    proc:response "document" .
+

@@ -1,0 +1,76 @@
+{
+  "id": "crop",
+  "version": "1.4.1",
+  "title": "crop",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "crop"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "item": {
+      "title": "item",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "aoi": {
+      "title": "aoi",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "epsg": {
+      "title": "epsg",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "band": {
+      "title": "band",
+      "description": "",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "cropped": {
+      "title": "cropped",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

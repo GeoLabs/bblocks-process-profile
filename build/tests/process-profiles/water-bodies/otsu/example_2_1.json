@@ -1,0 +1,50 @@
+{
+  "id": "otsu",
+  "version": "1.4.1",
+  "title": "otsu",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "otsu"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Process converted from CWL"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "title": "raster",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "binary_mask_item": {
+      "title": "binary_mask_item",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

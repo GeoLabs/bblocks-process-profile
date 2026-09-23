@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://schema.org/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -20,53 +20,53 @@
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "object" ;
-                            ns2:properties [ ns2:bbox [ proc:type "array" ;
-                                            ns2:items [ proc:type "number" ] ;
-                                            ns2:oneOf [ dcterms:description "3D bbox" ;
-                                                    ns2:maxItems 6 ;
-                                                    ns2:minItems 6 ],
+                            ns1:properties [ ns1:bbox [ proc:type "array" ;
+                                            ns1:items [ proc:type "number" ] ;
+                                            ns1:oneOf [ dcterms:description "3D bbox" ;
+                                                    ns1:maxItems 6 ;
+                                                    ns1:minItems 6 ],
                                                 [ dcterms:description "2D bbox" ;
-                                                    ns2:maxItems 4 ;
-                                                    ns2:minItems 4 ] ] ;
-                                    ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                                                    ns1:maxItems 4 ;
+                                                    ns1:minItems 4 ] ] ;
+                                    ns1:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;
                                             proc:type "string" ] ] ;
-                            ns2:required "bbox" ] ] ] ;
+                            ns1:required "bbox" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns3:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:name "Cameron Sajedi" ] ;
-            proc:role schema:author ],
-        [ rdf:value "parse_aoi" ;
-            proc:role schema:name ],
+    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
+            proc:role schema:license ],
         [ rdf:value "0.0.1" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
-            proc:role schema:license ],
+        [ rdf:value "parse_aoi" ;
+            proc:role schema:name ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns2:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
-            proc:role schema:codeRepository ] ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns1:east [ dcterms:description "" ;
+    proc:outputs [ ns3:east [ dcterms:description "" ;
                     dcterms:title "east" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:north [ dcterms:description "" ;
+            ns3:north [ dcterms:description "" ;
                     dcterms:title "north" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:output_dir [ dcterms:description "" ;
+            ns3:output_dir [ dcterms:description "" ;
                     dcterms:title "output_dir" ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:south [ dcterms:description "" ;
+            ns3:south [ dcterms:description "" ;
                     dcterms:title "south" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:west [ dcterms:description "" ;
+            ns3:west [ dcterms:description "" ;
                     dcterms:title "west" ;
                     proc:schema [ proc:type "number" ] ] ] .
 

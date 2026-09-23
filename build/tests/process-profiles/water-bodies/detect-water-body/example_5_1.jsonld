@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+  "detected_water_body": {
+    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-detect-water-body-0001/results/otsu.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

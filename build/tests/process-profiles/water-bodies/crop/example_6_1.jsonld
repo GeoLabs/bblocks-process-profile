@@ -1,0 +1,76 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:water-bodies:crop",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
+      "startedAtTime": "2026-09-23T18:00:51Z",
+      "used": [
+        "urn:example:entity:crop:in:item",
+        "urn:example:entity:crop:in:aoi",
+        "urn:example:entity:crop:in:epsg",
+        "urn:example:entity:crop:in:band"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/crop"
+        }
+      ],
+      "endedAtTime": "2026-09-23T18:02:24Z"
+    },
+    {
+      "id": "urn:example:entity:crop:in:item",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/crop#inputs/item",
+      "value": "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+    },
+    {
+      "id": "urn:example:entity:crop:in:aoi",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/crop#inputs/aoi",
+      "value": "-121.399,39.834,-120.74,40.472"
+    },
+    {
+      "id": "urn:example:entity:crop:in:epsg",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/crop#inputs/epsg",
+      "value": "EPSG:4326"
+    },
+    {
+      "id": "urn:example:entity:crop:in:band",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/crop#inputs/band",
+      "value": "green"
+    },
+    {
+      "id": "urn:example:entity:crop:out:cropped",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/crop#outputs/cropped",
+      "wasGeneratedBy": "urn:example:run:water-bodies:crop",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif",
+          "rel": "item",
+          "type": "image/tiff; application=geotiff"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0"
+    }
+  ]
+}

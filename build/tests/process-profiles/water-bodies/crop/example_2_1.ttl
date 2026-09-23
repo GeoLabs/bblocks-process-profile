@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/crop> dcterms:description "Process converted from CWL" ;
+    dcterms:title "crop" ;
+    pp:version "1.4.1" ;
+    proc:inputs [ ns2:aoi [ dcterms:description "" ;
+                    dcterms:title "aoi" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns2:band [ dcterms:description "" ;
+                    dcterms:title "band" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns2:epsg [ dcterms:description "" ;
+                    dcterms:title "epsg" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns2:item [ dcterms:description "" ;
+                    dcterms:title "item" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "1.4.1" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "crop" ;
+            proc:role schema:name ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns3:cropped [ dcterms:description "" ;
+                    dcterms:title "cropped" ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ] .
+

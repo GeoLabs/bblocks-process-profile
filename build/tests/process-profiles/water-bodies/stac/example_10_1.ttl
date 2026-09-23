@@ -1,0 +1,402 @@
+@prefix cwlprov: <https://w3id.org/cwl/prov#> .
+@prefix data: <urn:hash::sha1:> .
+@prefix id: <urn:uuid:> .
+@prefix metadata: <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/metadata/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix provext: <https://openprovenance.org/ns/provext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix wf: <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+metadata:directory-16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce.ttl a prov:Bundle .
+
+metadata:directory-2130f56f-95c9-402b-9eb0-40da721e3759.ttl a prov:Bundle .
+
+metadata:directory-a2f08f81-e643-4be8-abae-0f978d046626.ttl a prov:Bundle .
+
+metadata:directory-a98b76f0-e827-4e51-88d4-743d74dc56e5.ttl a prov:Bundle .
+
+metadata:directory-b9e64b3e-d79e-4c7a-bc47-28a28455d624.ttl a prov:Bundle .
+
+<arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_water_bodies> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+id:0ff601ef-c798-4f3f-a3c4-2eda410edfc9 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:797bf692-749a-49da-a923-00eb0b159969"^^xsd:QName ;
+    prov:pairKey "S2A_10TFK_20220524_0_L2A.json" .
+
+id:15730f9e-1cda-4f32-9a58-059c70b9d08a a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:a98b76f0-e827-4e51-88d4-743d74dc56e5"^^xsd:QName ;
+    prov:pairKey "S2A_10TFK_20220524_0_L2A" .
+
+<urn:uuid:16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce#ore> provext:qualifiedSpecialization [ a provext:Specialization ;
+            prov:asInBundle "metadata:directory-16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce.ttl"^^xsd:QName ;
+            provext:generalEntity id:16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce ] .
+
+id:2006c806-1df6-4e22-94de-966b8502a53e a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:c5be1143-111a-46a6-a2f1-ada3cd295102"^^xsd:QName ;
+    prov:pairKey "otsu.tif" .
+
+<urn:uuid:2130f56f-95c9-402b-9eb0-40da721e3759#ore> provext:qualifiedSpecialization [ a provext:Specialization ;
+            prov:asInBundle "metadata:directory-2130f56f-95c9-402b-9eb0-40da721e3759.ttl"^^xsd:QName ;
+            provext:generalEntity id:2130f56f-95c9-402b-9eb0-40da721e3759 ] .
+
+id:895451cb-8cf8-458e-9908-91da5c9ba1eb a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:61391dee-f548-4e47-a8f9-0a130296d338"^^xsd:QName ;
+    prov:pairKey "catalog.json" .
+
+<urn:uuid:a2f08f81-e643-4be8-abae-0f978d046626#ore> provext:qualifiedSpecialization [ a provext:Specialization ;
+            prov:asInBundle "metadata:directory-a2f08f81-e643-4be8-abae-0f978d046626.ttl"^^xsd:QName ;
+            provext:generalEntity id:a2f08f81-e643-4be8-abae-0f978d046626 ] .
+
+<urn:uuid:a98b76f0-e827-4e51-88d4-743d74dc56e5#ore> provext:qualifiedSpecialization [ a provext:Specialization ;
+            prov:asInBundle "metadata:directory-a98b76f0-e827-4e51-88d4-743d74dc56e5.ttl"^^xsd:QName ;
+            provext:generalEntity id:a98b76f0-e827-4e51-88d4-743d74dc56e5 ] .
+
+id:b2e3669b-a196-4f44-8f36-2356ab8decc4 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:372fa8e9-41de-4eca-b664-9d67b9de8105"^^xsd:QName ;
+    prov:pairKey "otsu.tif" .
+
+<urn:uuid:b9e64b3e-d79e-4c7a-bc47-28a28455d624#ore> provext:qualifiedSpecialization [ a provext:Specialization ;
+            prov:asInBundle "metadata:directory-b9e64b3e-d79e-4c7a-bc47-28a28455d624.ttl"^^xsd:QName ;
+            provext:generalEntity id:b9e64b3e-d79e-4c7a-bc47-28a28455d624 ] .
+
+id:cc07bb28-a8d6-4bd5-b544-9b28dafe2456 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:a2f08f81-e643-4be8-abae-0f978d046626"^^xsd:QName ;
+    prov:pairKey "S2B_10TFK_20210713_0_L2A" .
+
+id:d068eba2-9042-43d3-bb67-dc8d27a430aa a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/water-bodies/node_water_bodies" ;
+    prov:has_provenance "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.json"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.jsonld"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.nt"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.provn"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.ttl"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.xml"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.json"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.jsonld"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.nt"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.provn"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.ttl"^^xsd:QName,
+        "provenance:workflow_20node_water_bodies_2.d068eba2-9042-43d3-bb67-dc8d27a430aa.cwlprov.xml"^^xsd:QName ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:5f91d65c-f84e-4132-8f79-e9854fd220ae ;
+            prov:hadPlan <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/water-bodies/node_water_bodies> ],
+        [ a prov:Association ;
+            prov:agent id:5f91d65c-f84e-4132-8f79-e9854fd220ae ;
+            prov:hadPlan <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/water-bodies/node_water_bodies> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T20:03:52.048105"^^xsd:dateTime ;
+            prov:hadActivity id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 ],
+        [ a prov:Start ;
+            prov:atTime "2026-09-23T20:00:51.846700"^^xsd:dateTime ;
+            prov:hadActivity id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 ] .
+
+id:e61c11d4-523a-49b0-86fb-833cbdc7d505 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:b9e64b3e-d79e-4c7a-bc47-28a28455d624"^^xsd:QName ;
+    prov:pairKey "rosetta" .
+
+id:e99b63b9-6b31-4784-8016-e1840063baa4 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:795c2ea4-222e-44ad-a93a-ecb0e435cecd"^^xsd:QName ;
+    prov:pairKey "S2B_10TFK_20210713_0_L2A.json" .
+
+id:ecbc2f95-69c0-4c0b-bfdb-020a45db4778 a prov:Entity,
+        prov:KeyEntityPair ;
+    prov:pairEntity "id:2130f56f-95c9-402b-9eb0-40da721e3759"^^xsd:QName ;
+    prov:pairKey ".cache" .
+
+wf:main a wfdesc:Workflow,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance" ;
+    wfdesc:hasSubProcess "wf:main/node_stac"^^xsd:QName,
+        "wf:main/node_water_bodies"^^xsd:QName .
+
+<arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_stac> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+data:9d1fba832b03655b5b73ff964bc74d4543bf904a a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "EPSG:4326" .
+
+data:a234b13e2668a49acb831fdf87f3c1ead120dd41 a wfprov:Artifact,
+        prov:Entity .
+
+data:ba936cb0e062bea4078e8b56371ca8fe054093dd a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "nir" .
+
+data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "green" .
+
+data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "-121.399,39.834,-120.74,40.472" .
+
+data:d6d2a88a822dadbc95c6d3381d6b0386e94a2148 a wfprov:Artifact,
+        prov:Entity .
+
+data:e74c29702b96c01957579e7d11b35d835356376b a wfprov:Artifact,
+        prov:Entity .
+
+id:0bd67efc-8b26-4e06-bf16-ba4d19b7fa4d a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0" ;
+    cwlprov:image "ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0" .
+
+id:16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce a ro:Folder,
+        wfprov:Artifact,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:isDescribedBy "metadata:directory-16cc0faa-b8d5-4ae5-91e3-0fe3e012c5ce.ttl"^^xsd:QName ;
+    prov:hadDictionaryMember "id:15730f9e-1cda-4f32-9a58-059c70b9d08a"^^xsd:QName,
+        "id:895451cb-8cf8-458e-9908-91da5c9ba1eb"^^xsd:QName,
+        "id:cc07bb28-a8d6-4bd5-b544-9b28dafe2456"^^xsd:QName,
+        "id:ecbc2f95-69c0-4c0b-bfdb-020a45db4778"^^xsd:QName ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity id:953f4995-c287-44cd-a578-e24240a64da2 ;
+            prov:atTime "2026-09-23T20:07:16.191544"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_stac/stac_catalog> ],
+        [ a prov:Generation ;
+            prov:activity id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 ;
+            prov:atTime "2026-09-23T20:07:16.228161"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/primary/stac> ] ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:a2f08f81-e643-4be8-abae-0f978d046626 ],
+        [ a provext:Membership ;
+            provext:member id:a98b76f0-e827-4e51-88d4-743d74dc56e5 ],
+        [ a provext:Membership ;
+            provext:member id:61391dee-f548-4e47-a8f9-0a130296d338 ],
+        [ a provext:Membership ;
+            provext:member id:2130f56f-95c9-402b-9eb0-40da721e3759 ] ;
+    cwlprov:basename "docker_tmp9y0rulaj" .
+
+id:372fa8e9-41de-4eca-b664-9d67b9de8105 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:8a97a5260b1039d7f867c2f9ab8ee36a5cb5fbd4 ] ;
+    cwlprov:basename "otsu.tif" .
+
+id:61391dee-f548-4e47-a8f9-0a130296d338 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:a234b13e2668a49acb831fdf87f3c1ead120dd41 ] ;
+    cwlprov:basename "catalog.json" .
+
+id:6da21690-3a79-4287-bc75-890027879714 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c ],
+        [ a provext:Membership ;
+            provext:member data:ba936cb0e062bea4078e8b56371ca8fe054093dd ] .
+
+id:795c2ea4-222e-44ad-a93a-ecb0e435cecd a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:e74c29702b96c01957579e7d11b35d835356376b ] ;
+    cwlprov:basename "S2B_10TFK_20210713_0_L2A.json" .
+
+id:797bf692-749a-49da-a923-00eb0b159969 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:d6d2a88a822dadbc95c6d3381d6b0386e94a2148 ] ;
+    cwlprov:basename "S2A_10TFK_20220524_0_L2A.json" .
+
+id:904c32c6-5eba-4e27-a477-77806278e7af a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ],
+        [ a provext:Membership ;
+            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ] .
+
+id:953f4995-c287-44cd-a578-e24240a64da2 a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/node_stac" ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:0bd67efc-8b26-4e06-bf16-ba4d19b7fa4d ],
+        [ a prov:Association ;
+            prov:agent id:5f91d65c-f84e-4132-8f79-e9854fd220ae ;
+            prov:hadPlan <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_stac> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2026-09-23T20:07:16.191532"^^xsd:dateTime ;
+            prov:hadActivity id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T20:07:11.264943"^^xsd:dateTime ;
+            prov:hadActivity id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:07:11.361524"^^xsd:dateTime ;
+            prov:entity id:fb47109d-f184-4e62-a730-ac77b9922420 ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_stac/rasters> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:07:11.360833"^^xsd:dateTime ;
+            prov:entity id:e04bd2e2-712e-4f78-9992-2ace02176ac4 ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/node_stac/item> ] .
+
+id:c5be1143-111a-46a6-a2f1-ada3cd295102 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:8cb131413518c30be6ba485ea61764491444cde5 ] ;
+    cwlprov:basename "otsu.tif" .
+
+id:d7552c61-3f43-4c30-b699-8bdbe8442578 a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:8a97a5260b1039d7f867c2f9ab8ee36a5cb5fbd4 ] ;
+    cwlprov:basename "otsu.tif" ;
+    cwlprov:nameext ".tif" ;
+    cwlprov:nameroot "otsu" .
+
+id:da338fbf-ae6b-4522-a1d0-9aef3704793d a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    provext:qualifiedSpecialization [ a provext:Specialization ;
+            provext:generalEntity data:8cb131413518c30be6ba485ea61764491444cde5 ] ;
+    cwlprov:basename "otsu.tif" ;
+    cwlprov:nameext ".tif" ;
+    cwlprov:nameroot "otsu" .
+
+id:ddc22e9e-6fa4-44ab-ae9a-92a29300687b a prov:Agent .
+
+id:e04bd2e2-712e-4f78-9992-2ace02176ac4 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ],
+        [ a provext:Membership ;
+            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ] .
+
+id:fb47109d-f184-4e62-a730-ac77b9922420 a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:d7552c61-3f43-4c30-b699-8bdbe8442578 ],
+        [ a provext:Membership ;
+            provext:member id:da338fbf-ae6b-4522-a1d0-9aef3704793d ] .
+
+data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A" .
+
+data:5f0002427ab880579cf6a5a5c704bd399f3310f2 a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" .
+
+data:8a97a5260b1039d7f867c2f9ab8ee36a5cb5fbd4 a wfprov:Artifact,
+        prov:Entity .
+
+data:8cb131413518c30be6ba485ea61764491444cde5 a wfprov:Artifact,
+        prov:Entity .
+
+id:2130f56f-95c9-402b-9eb0-40da721e3759 a ro:Folder,
+        wfprov:Artifact,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:isDescribedBy "metadata:directory-2130f56f-95c9-402b-9eb0-40da721e3759.ttl"^^xsd:QName ;
+    prov:hadDictionaryMember "id:e61c11d4-523a-49b0-86fb-833cbdc7d505"^^xsd:QName ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:b9e64b3e-d79e-4c7a-bc47-28a28455d624 ] ;
+    cwlprov:basename ".cache" .
+
+id:a2f08f81-e643-4be8-abae-0f978d046626 a ro:Folder,
+        wfprov:Artifact,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:isDescribedBy "metadata:directory-a2f08f81-e643-4be8-abae-0f978d046626.ttl"^^xsd:QName ;
+    prov:hadDictionaryMember "id:2006c806-1df6-4e22-94de-966b8502a53e"^^xsd:QName,
+        "id:e99b63b9-6b31-4784-8016-e1840063baa4"^^xsd:QName ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:795c2ea4-222e-44ad-a93a-ecb0e435cecd ],
+        [ a provext:Membership ;
+            provext:member id:c5be1143-111a-46a6-a2f1-ada3cd295102 ] ;
+    cwlprov:basename "S2B_10TFK_20210713_0_L2A" .
+
+id:a98b76f0-e827-4e51-88d4-743d74dc56e5 a ro:Folder,
+        wfprov:Artifact,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:isDescribedBy "metadata:directory-a98b76f0-e827-4e51-88d4-743d74dc56e5.ttl"^^xsd:QName ;
+    prov:hadDictionaryMember "id:0ff601ef-c798-4f3f-a3c4-2eda410edfc9"^^xsd:QName,
+        "id:b2e3669b-a196-4f44-8f36-2356ab8decc4"^^xsd:QName ;
+    provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:372fa8e9-41de-4eca-b664-9d67b9de8105 ],
+        [ a provext:Membership ;
+            provext:member id:797bf692-749a-49da-a923-00eb0b159969 ] ;
+    cwlprov:basename "S2A_10TFK_20220524_0_L2A" .
+
+id:b9e64b3e-d79e-4c7a-bc47-28a28455d624 a ro:Folder,
+        wfprov:Artifact,
+        prov:Collection,
+        prov:Dictionary,
+        prov:EmptyCollection,
+        prov:EmptyDictionary,
+        prov:Entity ;
+    ore:isDescribedBy "metadata:directory-b9e64b3e-d79e-4c7a-bc47-28a28455d624.ttl"^^xsd:QName ;
+    cwlprov:basename "rosetta" .
+
+id:b876db1e-61d9-41c0-bb10-60b2a8ef6945 a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main" ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent id:5f91d65c-f84e-4132-8f79-e9854fd220ae ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2026-09-23T20:07:16.228225"^^xsd:dateTime ;
+            prov:hadActivity id:5f91d65c-f84e-4132-8f79-e9854fd220ae ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T20:00:51.739634"^^xsd:dateTime ;
+            prov:hadActivity id:5f91d65c-f84e-4132-8f79-e9854fd220ae ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:00:51.841416"^^xsd:dateTime ;
+            prov:entity id:6da21690-3a79-4287-bc75-890027879714 ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/bands> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:00:51.836976"^^xsd:dateTime ;
+            prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:00:51.845651"^^xsd:dateTime ;
+            prov:entity id:904c32c6-5eba-4e27-a477-77806278e7af ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/stac_items> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T20:00:51.842953"^^xsd:dateTime ;
+            prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
+            prov:hadRole <arcp://uuid,b876db1e-61d9-41c0-bb10-60b2a8ef6945/workflow/packed.cwl#main/epsg> ] ;
+    prov:startedAtTime "2026-09-23T20:00:51.739573"^^xsd:dateTime .
+
+id:5f91d65c-f84e-4132-8f79-e9854fd220ae a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.1.20260108082145" ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-09-23T20:00:51.739534"^^xsd:dateTime ;
+            prov:hadActivity id:ddc22e9e-6fa4-44ab-ae9a-92a29300687b ] .
+

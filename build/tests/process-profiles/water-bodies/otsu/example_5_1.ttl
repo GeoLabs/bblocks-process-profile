@@ -1,0 +1,4 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+
+[] pp:binary_mask_item [ pp:href "https://ospd.example.org/ogc-api/jobs/water-bodies-otsu-0001/results/otsu.tif" ] .
+

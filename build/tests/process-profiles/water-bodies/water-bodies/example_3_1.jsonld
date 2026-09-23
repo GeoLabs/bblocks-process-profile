@@ -1,0 +1,129 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "id": "water-bodies",
+  "version": "1.4.1",
+  "title": "Water bodies detection based on NDWI and otsu threshold",
+  "description": "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items",
+  "mutable": true,
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Water bodies detection based on NDWI and otsu threshold"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "1.4.1"
+    }
+  ],
+  "inputs": {
+    "aoi": {
+      "title": "area of interest",
+      "description": "area of interest as a bounding box",
+      "schema": {
+        "type": "string"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "epsg": {
+      "title": "EPSG code",
+      "description": "EPSG code",
+      "schema": {
+        "type": "string",
+        "default": "EPSG:4326"
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "stac_items": {
+      "title": "Sentinel-2 STAC items",
+      "description": "list of Sentinel-2 COG STAC items",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "bands": {
+      "title": "bands used for the NDWI",
+      "description": "bands used for the NDWI",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "green",
+          "nir"
+        ]
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "stac": {
+      "title": "stac",
+      "description": "",
+      "schema": {
+        "type": "object",
+        "required": [
+          "type",
+          "stac_version",
+          "id",
+          "description",
+          "license",
+          "extent",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Collection"
+            ]
+          },
+          "stac_version": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "extent": {
+            "type": "object"
+          },
+          "links": {
+            "type": "array"
+          },
+          "assets": {
+            "type": "object"
+          }
+        },
+        "format": "stac-collection"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

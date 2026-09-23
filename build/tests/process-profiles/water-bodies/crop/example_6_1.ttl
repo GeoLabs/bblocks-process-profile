@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:crop:out:cropped> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/crop#outputs/cropped> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:water-bodies:crop> .
+
+<urn:example:entity:crop:in:aoi> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/crop#inputs/aoi> ;
+    rdf:value "-121.399,39.834,-120.74,40.472" .
+
+<urn:example:entity:crop:in:band> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/crop#inputs/band> ;
+    rdf:value "green" .
+
+<urn:example:entity:crop:in:epsg> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/crop#inputs/epsg> ;
+    rdf:value "EPSG:4326" .
+
+<urn:example:entity:crop:in:item> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/crop#inputs/item> ;
+    rdf:value "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" .
+
+<urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0> a prov:SoftwareAgent ;
+    pp:name "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0" .
+
+<urn:example:run:water-bodies:crop> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop> ;
+    prov:endedAtTime "2026-09-23T18:02:24+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/crop> ] ;
+    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:crop:in:aoi>,
+        <urn:example:entity:crop:in:band>,
+        <urn:example:entity:crop:in:epsg>,
+        <urn:example:entity:crop:in:item> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:1.5.0> .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

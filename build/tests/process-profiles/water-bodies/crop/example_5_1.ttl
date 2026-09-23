@@ -1,0 +1,4 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+
+[] pp:cropped [ pp:href "https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif" ] .
+

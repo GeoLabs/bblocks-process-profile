@@ -1,0 +1,9 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+[] proc:inputs [ ns1:rasters [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif" ;
+                    proc:type "image/tiff; application=geotiff" ],
+                [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ] ;
+    proc:response "document" .
+

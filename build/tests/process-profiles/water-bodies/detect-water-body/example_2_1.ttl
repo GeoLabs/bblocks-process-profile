@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/detect_water_body> dcterms:description "Water body detection based on NDWI and otsu threshold" ;
+    dcterms:title "Water body detection based on NDWI and otsu threshold" ;
+    pp:version "1.4.1" ;
+    proc:inputs [ ns1:aoi [ dcterms:description "area of interest as a bounding box" ;
+                    dcterms:title "aoi" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ;
+            ns1:bands [ dcterms:description "bands used for the NDWI" ;
+                    dcterms:title "bands" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "array" ;
+                            ns3:items [ proc:type "string" ] ] ] ;
+            ns1:epsg [ dcterms:description "EPSG code" ;
+                    dcterms:title "epsg" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "\"EPSG:4326\""^^rdf:JSON ;
+                            proc:type "string" ] ] ;
+            ns1:item [ dcterms:description "STAC item" ;
+                    dcterms:title "item" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "Water body detection based on NDWI and otsu threshold" ;
+            proc:role schema:description ],
+        [ rdf:value "Water body detection based on NDWI and otsu threshold" ;
+            proc:role schema:name ],
+        [ rdf:value "1.4.1" ;
+            proc:role schema:softwareVersion ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns2:detected_water_body [ dcterms:description "" ;
+                    dcterms:title "detected_water_body" ;
+                    proc:schema [ proc:type "string" ;
+                            ns3:contentMediaType "application/octet-stream" ] ] ] .
+

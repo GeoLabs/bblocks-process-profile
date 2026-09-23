@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/context.jsonld",
+  "binary_mask_item": {
+    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-otsu-0001/results/otsu.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

@@ -1,0 +1,36 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ospd.example.org/ogc-api/jobs/water-bodies-detect-water-body-0001/results/otsu.tif> prov:generated <urn:example:run:water-bodies:detect-water-body> ;
+    ns1:checksum [ rdf:value "8cb131413518c30be6ba485ea61764491444cde5" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/detect_water_body#outputs/detected_water_body" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a wfprov:WorkflowEngine ;
+    pp:name "cwltool" ;
+    pp:version "3.1.20260108082145" .
+
+<urn:example:run:water-bodies:detect-water-body> a wfprov:WorkflowRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body> ;
+    wfprov:describedByWorkflow <https://ospd.example.org/ogc-api/processes/detect_water_body> ;
+    wfprov:hadSubProcessRun <urn:example:run:water-bodies:crop>,
+        <urn:example:run:water-bodies:norm-diff>,
+        <urn:example:run:water-bodies:otsu> ;
+    prov:endedAtTime "2026-09-23T18:03:51+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:jobID "water-bodies-detect-water-body-0001" ;
+    pp:status "successful" .
+
+[] pp:engine <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:run <urn:example:run:water-bodies:detect-water-body> ;
+    proc:outputs <https://ospd.example.org/ogc-api/jobs/water-bodies-detect-water-body-0001/results/otsu.tif> .
+

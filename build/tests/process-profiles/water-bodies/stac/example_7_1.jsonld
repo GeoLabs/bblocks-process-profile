@@ -1,0 +1,74 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:water-bodies:stac",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/stac",
+      "startedAtTime": "2026-09-23T18:07:11Z",
+      "used": [
+        "urn:example:entity:stac:in:item",
+        "urn:example:entity:stac:in:rasters"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/stac"
+        }
+      ],
+      "endedAtTime": "2026-09-23T18:07:16Z"
+    },
+    {
+      "id": "urn:example:entity:stac:in:item",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/stac#inputs/item",
+      "value": [
+        "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+        "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+      ]
+    },
+    {
+      "id": "urn:example:entity:stac:in:rasters",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/stac#inputs/rasters",
+      "value": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif",
+          "type": "image/tiff; application=geotiff"
+        },
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif",
+          "type": "image/tiff; application=geotiff"
+        }
+      ]
+    },
+    {
+      "id": "urn:example:entity:stac:out:stac_catalog",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/stac#outputs/stac_catalog",
+      "wasGeneratedBy": "urn:example:run:water-bodies:stac",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-stac-0001/results/catalog.json",
+          "rel": "item",
+          "type": "application/json"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0"
+    }
+  ]
+}

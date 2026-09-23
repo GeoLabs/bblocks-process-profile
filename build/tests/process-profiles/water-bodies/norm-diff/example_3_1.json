@@ -1,0 +1,13 @@
+{
+  "processDescription": {
+    "process": {
+      "id": "norm_diff",
+      "version": "1.4.1"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/gfenoy/mastering-app-package/raw/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#norm_diff",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

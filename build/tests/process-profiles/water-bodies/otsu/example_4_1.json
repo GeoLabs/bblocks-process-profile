@@ -1,0 +1,9 @@
+{
+  "inputs": {
+    "raster": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/norm_diff.tif",
+      "type": "image/tiff; application=geotiff"
+    }
+  },
+  "response": "document"
+}

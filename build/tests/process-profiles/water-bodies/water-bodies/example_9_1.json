@@ -1,0 +1,53 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies",
+  "type": "ProcessType",
+  "prefLabel": "Water bodies detection based on NDWI and otsu threshold",
+  "definition": "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.water-bodies.water-bodies",
+  "processDescription": {
+    "id": "water-bodies",
+    "version": "1.4.1"
+  },
+  "source": {
+    "cwl": "https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#water-bodies",
+    "cwlClass": "Workflow",
+    "cwlId": "water-bodies",
+    "license": "https://spdx.org/licenses/CC-BY-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox",
+    "eoap.cct.string-format"
+  ],
+  "hasStep": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
+    "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/stac"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Composite: a CWL Workflow scattering a per-item sub-workflow over the STAC item list, then aggregating the results into one STAC catalog. The openEO equivalent would be a user-defined process graph, which has no Building Block of its own; the correspondence is carried by the steps.",
+    "decomposition": [
+      {
+        "stage": "node_water_bodies (detect_water_body, scatter over stac_items)",
+        "openeo": [],
+        "level": "none",
+        "note": "see osc.process-profiles.water-bodies.detect-water-body"
+      },
+      {
+        "stage": "node_stac",
+        "openeo": [
+          "ogc.openeo.processes.cubes.save_result"
+        ],
+        "level": "closeMatch"
+      }
+    ]
+  }
+}
