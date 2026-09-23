@@ -38,5 +38,6 @@
   ],
   "sourceSchema": "schema.yaml",
   "maturity": "development",
+  "highlighted": true,
   "group": "W1 Algae Bloom"
 }
