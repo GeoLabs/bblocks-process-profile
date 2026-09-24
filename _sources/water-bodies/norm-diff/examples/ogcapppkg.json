@@ -6,7 +6,7 @@
     }
   },
   "executionUnit": {
-    "href": "https://github.com/gfenoy/mastering-app-package/raw/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#norm_diff",
+    "href": "https://github.com/GeoLabs/ogc-eo-application-package-hands-on/raw/f47258567ddf8efbc7c33fd1ec277e4f1b454883/water-bodies/app-pkg-multiple/norm_diff.cwl",
     "type": "application/cwl+yaml",
     "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
   }

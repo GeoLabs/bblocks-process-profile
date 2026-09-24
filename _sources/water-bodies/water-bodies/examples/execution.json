@@ -7,8 +7,8 @@
     "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
     "status": "successful",
     "jobID": "water-bodies-water-bodies-0001",
-    "startedAtTime": "2026-09-23T18:00:51Z",
-    "endedAtTime": "2026-09-23T18:07:16Z",
+    "startedAtTime": "2026-09-23T20:09:35Z",
+    "endedAtTime": "2026-09-23T20:17:45Z",
     "hadSubProcessRun": [
       {
         "id": "urn:example:run:water-bodies:detect-water-body"

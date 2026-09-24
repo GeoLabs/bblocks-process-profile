@@ -7,7 +7,7 @@ OSPD 2026 reference workflows. Identifier prefix: `ospd.process-profiles.`
 |---|---|
 | W1 Algae Bloom | [`crim-ca/ogc-ospd-phase1@5edd4ec`](https://github.com/crim-ca/ogc-ospd-phase1/tree/5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea/ogc_app_pkg) (CC-BY-NC-SA-4.0) |
 | W2 KindGrove | [`GeoLabs/bblocks-eoap-cct@291a741`](https://github.com/GeoLabs/bblocks-eoap-cct/blob/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl) |
-| W3 Water Bodies | [`gfenoy/mastering-app-package@40ecc09`](https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl) (CC-BY-SA-4.0; tool images from `Terradue/ogc-eo-application-package-hands-on`) |
+| W3 Water Bodies | [`GeoLabs/ogc-eo-application-package-hands-on@f472585`](https://github.com/GeoLabs/ogc-eo-application-package-hands-on/tree/f47258567ddf8efbc7c33fd1ec277e4f1b454883/water-bodies/app-pkg-multiple) (license unassigned upstream and in this fork; CC-BY-SA-4.0 assumed, see `scripts/sources.yaml` `w3`; tool images from `Terradue/ogc-eo-application-package-hands-on`) |
 
 ## Building blocks
 
@@ -53,6 +53,7 @@ Shared: `ospd.process-profiles.process-type` — schema of a candidate process-t
 - [docs/DEVIATIONS.md](docs/DEVIATIONS.md) — deviations from / gaps in `eoap.cct.cwl-to-ogcprocess`
 - [docs/PROVENANCE-GAPS.md](docs/PROVENANCE-GAPS.md) — gaps in `bblocks-generic-provenance-profile`
 - [docs/OPENEO-EQUIVALENCES.md](docs/OPENEO-EQUIVALENCES.md) — equivalence decisions and criteria
+- [docs/WORKFLOW-COMPARISON.md](docs/WORKFLOW-COMPARISON.md) — structural parallels and differences across W1/W2/W3
 - [docs/OPEN-QUESTIONS.md](docs/OPEN-QUESTIONS.md)
 - [docs/VALIDATION.md](docs/VALIDATION.md) — validation status (Docker build passing, 20/20)
 

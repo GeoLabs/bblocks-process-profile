@@ -525,13 +525,13 @@ processes:
       result: {href: catalog.json, type: application/json, stac: true}
 
   # ---------------------------------------------------------------- W3 water-bodies (OGC EO
-  # Application Package Hands-On, Terradue): a real two-level scatter (per STAC item, per band),
-  # neither W1 nor W2 exercises. Source: gfenoy/mastering-app-package, `main` -- a live OGC API -
-  # Processes deployment reference the author does not want this repo's tooling touching; running
-  # it needs a local-only patch, never applied to the clone (docs/DEVIATIONS.md U-06).
+  # Application Package Hands-On): a real two-level scatter (per STAC item, per band), neither W1
+  # nor W2 exercises. Source: GeoLabs/ogc-eo-application-package-hands-on (fork of Terradue's
+  # tutorial repo), water-bodies/app-pkg-multiple -- one CWL file per step, same layout as W1; the
+  # NetworkAccess fix is baked into the source (docs/DEVIATIONS.md U-06), no local patch needed.
   - key: water-bodies
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: water-bodies}
+    source: {repo: w3, file: water-bodies.cwl}
     phases: [data-retrieval, scientific-computation, export-aggregation]
     cct: []
     cct_candidates: [eoap.cct.bbox, eoap.cct.string-format]
@@ -560,7 +560,7 @@ processes:
 
   - key: detect-water-body
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: detect_water_body}
+    source: {repo: w3, file: detect_water_body.cwl}
     phases: [data-retrieval, scientific-computation]
     cct: []
     cct_candidates: [eoap.cct.bbox, eoap.cct.string-format]
@@ -596,7 +596,7 @@ processes:
 
   - key: crop
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: crop}
+    source: {repo: w3, file: crop.cwl}
     label: Crop a Sentinel-2 COG band to an area of interest
     definition: >-
       Cloud-native windowed read of one Sentinel-2 COG band asset of a STAC item, cropped to the
@@ -639,7 +639,7 @@ processes:
 
   - key: norm-diff
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: norm_diff}
+    source: {repo: w3, file: norm_diff.cwl}
     label: Normalized difference between two rasters
     definition: Computes the normalized difference index ((A-B)/(A+B)) of two co-registered rasters.
     phases: [scientific-computation]
@@ -677,7 +677,7 @@ processes:
 
   - key: otsu
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: otsu}
+    source: {repo: w3, file: otsu.cwl}
     label: Otsu binary threshold
     definition: Thresholds a single-band raster into a binary mask using Otsu's method.
     phases: [scientific-computation]
@@ -705,7 +705,7 @@ processes:
 
   - key: stac
     workflow: water-bodies
-    source: {repo: w3, file: app-water-bodies-cloud-native.cwl, element: stac}
+    source: {repo: w3, file: stac.cwl}
     label: Assemble a STAC catalog of detected water bodies
     definition: >-
       Writes a STAC Catalog with one Item per input identifier, each carrying the corresponding

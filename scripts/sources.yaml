@@ -21,13 +21,18 @@ eoap_cct:
   clone: bblocks-eoap-cct
   transform: _sources/cwl-to-ogcprocess/transforms/cwl-to-ogcprocess.jq
 w3:
-  title: W3 Water Bodies (OGC EO Application Package Hands-On, GeoLabs)
-  repo: https://github.com/gfenoy/mastering-app-package
-  commit: 40ecc096da56c6810758b87b01a87502f7c4507c
-  clone: mastering-app-package
-  base_path: cwl-workflow
+  title: W3 Water Bodies (OGC EO Application Package Hands-On, GeoLabs split)
+  repo: https://github.com/GeoLabs/ogc-eo-application-package-hands-on
+  commit: f47258567ddf8efbc7c33fd1ec277e4f1b454883
+  clone: ogc-eo-application-package-hands-on
+  base_path: water-bodies/app-pkg-multiple
+  # Neither this fork nor Terradue/ogc-eo-application-package-hands-on (upstream) declares a real
+  # license -- the repo's own LICENCE file is a 4-byte "TBW" placeholder in both. Reusing the
+  # license of the register's previous W3 source (gfenoy/mastering-app-package, CC-BY-SA-4.0,
+  # confirmed via the GitHub API) is an assumption, not a fact verified on this repo -- Gérald's
+  # call, made 2026-09-23; revisit if either repo ever adds a real LICENSE file.
   license: https://spdx.org/licenses/CC-BY-SA-4.0
-  upstream: https://github.com/Terradue/ogc-eo-application-package-hands-on   # the tools' own origin (docker images)
+  upstream: https://github.com/Terradue/ogc-eo-application-package-hands-on   # the tools' own origin (docker images), same TBW license gap
 
 # Real `cwltool --provenance` runs (CWLProv research objects) that the run-derived examples are
 # built from. Like the CWL clones they are read from local directories, never downloaded: `bag` is
@@ -36,10 +41,12 @@ w3:
 #
 # generate.py reads `bag` and `note`. scripts/run_workflows.py produces the bags from the rest:
 # `workflow` (clone key, CWL file, optional packed-document element, optional `patch`: find/replace
-# substitutions applied to a temporary copy of the CWL file, never to the clone -- see
-# docs/DEVIATIONS.md U-06), either `job` (a job file in the clone, relative to its base_path;
-# `secrets` maps its placeholder inputs to environment variables) or inline `inputs`, `results`
-# (cwltool --outdir), `cwltool_args`.
+# substitutions applied to a temporary copy of the CWL file, never to the clone -- for a source
+# whose CWL cannot be fixed at the source, see the mechanism's own docstring in run_workflows.py;
+# not currently used by any `runs:` entry below, since W3's own NetworkAccess fix landed at the
+# source instead, docs/DEVIATIONS.md U-06), either `job` (a job file in the clone, relative to its
+# base_path; `secrets` maps its placeholder inputs to environment variables) or inline `inputs`,
+# `results` (cwltool --outdir), `cwltool_args`.
 runs:
   w1-earth-search:
     bag: ogc-ospd-phase1/ogc_app_pkg/PROV
@@ -83,29 +90,22 @@ runs:
     results: runs/water-bodies/out
     workflow:
       repo: w3
-      file: app-water-bodies-cloud-native.cwl
-      element: water-bodies
-      # docs/DEVIATIONS.md U-06: `class: NetworkAccess` with no namespace prefix is not valid CWL --
-      # it is cwltool's own extension (`cwltool:NetworkAccess`, http://commonwl.org/cwltool#). Local
-      # patch only: `main` of this source is a live OGC API - Processes deployment reference the
-      # author does not want this script touching; if it is ever fixed upstream, this patch's `find`
-      # will stop matching and run_workflows.py will fail loudly rather than silently no-op.
-      patch:
-        - find: "$namespaces:\n  s: https://schema.org/\n"
-          replace: "$namespaces:\n  s: https://schema.org/\n  cwltool: http://commonwl.org/cwltool#\n"
-        - find: "      - class: NetworkAccess\n        networkAccess: true\n"
-          replace: "      - class: cwltool:NetworkAccess\n        networkAccess: true\n"
+      file: water-bodies.cwl
+      # docs/DEVIATIONS.md U-06: fixed at the source, no `patch` needed any more -- the fork's own
+      # water-bodies.cwl already declares `class: cwltool:NetworkAccess` with the `cwltool:`
+      # namespace. One CWL file per step (no packed $graph, no `element:` needed for any of the 6
+      # water-bodies profiles), the same layout as W1.
     inputs:
       aoi: "-121.399,39.834,-120.74,40.472"
       epsg: "EPSG:4326"
       stac_items:
         - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
         - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-    cwltool_args: [--enable-ext]   # required for the (locally patched) cwltool:NetworkAccess requirement, U-06
+    cwltool_args: [--enable-ext]   # still required even with the correct cwltool: prefix, U-06
     note: >-
-      the pinned W3 source itself (mastering-app-package 40ecc09
-      `app-water-bodies-cloud-native.cwl#water-bodies`), inputs from that source's own
-      `water-bodies/params.yml`, run with `cwltool --enable-ext --provenance ro --outdir out`
-      against a locally patched copy (U-06), 2026-09-23, cwltool 3.1.20260108082145 on an arm64
-      macOS host, ~9 min; two STAC items scattered (S2B_10TFK_20210713_0_L2A then
-      S2A_10TFK_20220524_0_L2A), each over 2 bands (green, nir)
+      the pinned W3 source itself (ogc-eo-application-package-hands-on f472585
+      `water-bodies/app-pkg-multiple/water-bodies.cwl`, one CWL file per step), inputs from that
+      source's own `water-bodies/params.yml`, run with `cwltool --enable-ext --provenance ro
+      --outdir out`, 2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host, ~9 min; two
+      STAC items scattered (S2B_10TFK_20210713_0_L2A then S2A_10TFK_20220524_0_L2A), each over 2
+      bands (green, nir)
