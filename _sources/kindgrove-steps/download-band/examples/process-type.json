@@ -1,0 +1,36 @@
+{
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/download-band",
+  "type": "ProcessType",
+  "prefLabel": "Download one Sentinel-2 band over a bounding box",
+  "definition": "Downloads one Sentinel-2 band over a bounding box from a STAC Item.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval"
+  ],
+  "profile": "ospd.process-profiles.kindgrove-steps.download-band",
+  "processDescription": {
+    "id": "download_band",
+    "version": "0.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#download_band",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "download_band",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox",
+    "eoap.cct.stac"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection",
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "load_collection with a spatial_extent and a single band selected (filter_bands); the STAC item is a resolved File (the output of `select-scene`) rather than resolved in-process, same pattern as `algae-bloom.download-band-sentinel2-stac-item`."
+  }
+}

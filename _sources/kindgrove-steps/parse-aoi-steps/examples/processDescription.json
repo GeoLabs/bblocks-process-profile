@@ -1,0 +1,116 @@
+{
+  "id": "parse_aoi",
+  "version": "0.1.0",
+  "title": "Parse area of interest",
+  "description": "Splits an OGC bounding box into its west, south, east and north coordinates.",
+  "mutable": true,
+  "keywords": [
+    "ospd",
+    "mangrove",
+    "biomass",
+    "carbon",
+    "sentinel-2",
+    "stac"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Parse area of interest"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Splits an OGC bounding box into its west, south, east and north coordinates."
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "0.1.0"
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://github.com/starling-foundries/KindGrove"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    }
+  ],
+  "inputs": {
+    "aoi": {
+      "title": "Area of interest",
+      "description": "Area of interest defined as a bounding box",
+      "schema": {
+        "type": "object",
+        "required": [
+          "bbox"
+        ],
+        "properties": {
+          "bbox": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "oneOf": [
+              {
+                "minItems": 4,
+                "maxItems": 4,
+                "description": "2D bbox"
+              },
+              {
+                "minItems": 6,
+                "maxItems": 6,
+                "description": "3D bbox"
+              }
+            ]
+          },
+          "crs": {
+            "type": "string",
+            "enum": [
+              "CRS84",
+              "CRS84h"
+            ],
+            "default": "CRS84"
+          }
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "west": {
+      "title": "west",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "south": {
+      "title": "south",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "east": {
+      "title": "east",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    },
+    "north": {
+      "title": "north",
+      "description": "",
+      "schema": {
+        "type": "number"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

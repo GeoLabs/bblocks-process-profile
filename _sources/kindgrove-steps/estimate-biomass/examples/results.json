@@ -1,0 +1,22 @@
+{
+  "analysis_summary_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/analysis_summary.json",
+    "type": "application/json"
+  },
+  "biomass_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "biomass_summary_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass_summary.csv",
+    "type": "text/csv"
+  },
+  "carbon_summary_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/carbon_summary.csv",
+    "type": "text/csv"
+  },
+  "mangrove_mask_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/mangrove_mask.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

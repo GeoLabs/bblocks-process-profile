@@ -1,18 +1,33 @@
 # Validation status
 
-## Authoritative validation: passing (2026-09-23)
+## Authoritative validation: passing (2026-09-24)
 
 `./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`) run on a machine with
-network access: **20/20 building blocks, 161/161 example snippets, 0 errors**, 159 SHACL
-validations conform, no empty RDF graph, no `file:///` IRI. The 20th block and the jump from
-111 to 161 snippets is a third reference workflow, W3 Water Bodies (`docs/OPEN-QUESTIONS.md`
-Q-W3-RUN), six building blocks (`water-bodies`, `detect-water-body`, `crop`, `norm-diff`, `otsu`,
-`stac`) added the same way as W1/W2: a real `cwltool --provenance` run, no illustrative examples.
-It also surfaced a mapping gap neither W1 nor W2 exercises (`docs/DEVIATIONS.md` M-13: a packed
+network access: **28/28 building blocks, 227/227 example snippets, 0 errors**, 225 SHACL
+validations conform, no empty RDF graph, no `file:///` IRI.
+
+The register now covers four workflow groups. W3 Water Bodies (2026-09-23,
+`docs/OPEN-QUESTIONS.md` Q-W3-RUN) added six building blocks (`water-bodies`,
+`detect-water-body`, `crop`, `norm-diff`, `otsu`, `stac`) from a real `cwltool --provenance` run;
+it surfaced a mapping gap neither W1 nor W2 exercises (`docs/DEVIATIONS.md` M-13: a packed
 `$graph` document with more than one top-level `Workflow` always converts the *first* one,
-regardless of which `element` was requested) and needed one local, non-upstream CWL patch to run
-at all (M-13's sibling on the execution side, U-06: `NetworkAccess` with no namespace prefix is
-not valid CWL).
+regardless of which `element` was requested) and needed one local CWL patch to run at all (U-06:
+`NetworkAccess` with no namespace prefix is not valid CWL) — both later superseded when Gérald
+published a split, pre-fixed source (`GeoLabs/ogc-eo-application-package-hands-on`) adopting this
+register's own split proposal byte-for-byte.
+
+W2b KindGrove (step notebooks) (2026-09-24, `docs/OPEN-QUESTIONS.md` Q-W2B-RUN) added eight more
+building blocks (`mangrove-workflow-steps`, `parse-aoi-steps`, `select-scene`, `download-band`,
+`reproject-band`, `calculate-indices`, `estimate-biomass`, `export-stac`) under a new
+`kindgrove-steps` workflow group, **alongside** the original `kindgrove` group, not replacing it:
+a ground-up reimplementation (different tools, different Docker images, CC-BY-NC-SA-4.0 instead of
+`kindgrove`'s Apache-2.0), published only as a GitHub prerelease asset (`GeoLabs/KindGrove`
+`v0.0.2-rc2`), never committed to that repo's tree — the first source in this register pinned by
+`release:` + `sha256:` instead of a git `commit:` (`scripts/sources.yaml`, `run_workflows.py`
+`ensure_release_assets()`). It independently hit the same M-05 Directory→Collection gap as
+`kindgrove.mangrove` and `water-bodies.stac` (`export-stac`, corrected the same way) and one new
+generator bug: `description_md()` assumed every source had a `commit`, fixed to branch on
+`release` vs `commit` when building the "pinned" text.
 
 `eoap.cct.cwl-to-ogcprocess` (`GeoLabs/bblocks-eoap-cct`, commit `291a741`, pinned in
 `scripts/sources.yaml`) now resolves CWL `format` into `contentMediaType`/`contentEncoding` and
@@ -53,7 +68,7 @@ Fix, in `scripts/generate.py`: a shared `PROFILE_CONTEXT` written to every profi
 the same build and rejected: splitting each profile into one building block per payload
 (26/102 — the OGC API - Processes bblocks have no annotations to inherit) and inlining
 `@context` in the example files (75/102 with 13 new JSON Schema failures, `propertyNames: enum`
-rejects `@context`; array-rooted `provenance.json` cannot carry one).
+rejects `@context`; array-rooted `provenance.json` cannot carry one). See `CLAUDE.md`.
 
 A data bug surfaced by the fix: `scripts/profiles.yaml` had an unquoted flow-mapping value
 `note: partial, no colour-ramp rendering`, parsed as a stray key that became an invalid IRI once a

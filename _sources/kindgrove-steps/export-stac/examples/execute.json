@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "mangrove_mask_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/mangrove_mask.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "biomass_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "biomass_summary_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass_summary.csv",
+      "type": "text/csv"
+    },
+    "carbon_summary_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/carbon_summary.csv",
+      "type": "text/csv"
+    },
+    "analysis_summary_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/analysis_summary.json",
+      "type": "application/json"
+    },
+    "stac_item": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json",
+      "type": "application/geo+json"
+    },
+    "west": 95.15,
+    "south": 15.9,
+    "east": 95.35,
+    "north": 16.1
+  },
+  "response": "document"
+}

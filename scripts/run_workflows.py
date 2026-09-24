@@ -22,8 +22,12 @@ research object as `(secret-<uuid>)` placeholders only (docs/DEVIATIONS.md M-04)
 
 The pinned clones (scripts/sources.yaml `repo:` / `commit:` / `clone:`) are fetched under
 --sources-root when missing and checked out at the pinned commit when they are clean; a clone with
-local modifications is left alone and reported. generate.py itself never downloads anything: it
-only reads what this script (or you) put there. --no-fetch skips this step.
+local modifications is left alone and reported. A source pinned by `release:` instead of `commit:`
+(its CWL is published only as a GitHub Release asset, never committed to the repo tree) is
+downloaded once into --sources-root and checksum-verified against `sha256:` on every subsequent
+run; a mismatch is a loud failure, since nothing else pins that source the way a commit does.
+generate.py itself never downloads anything: it only reads what this script (or you) put there.
+--no-fetch skips both.
 
 Running the W1 package needs the deviations of docs/DEVIATIONS.md U-03..U-05; --build-images
 applies U-03 (build `base` first, tag `reproject-image:latest`) and, on arm64 hosts, U-04.
@@ -37,6 +41,7 @@ loud failure here (remove the patch) rather than a silent no-op.
 """
 import argparse
 import getpass
+import hashlib
 import json
 import os
 import platform
@@ -45,6 +50,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -102,6 +108,36 @@ def ensure_clones(sources, sources_root: Path, repos):
             sh(["git", "fetch", "--quiet", "--all"], cwd=d)
         if sh(["git", "checkout", "--quiet", "--detach", src["commit"]], cwd=d):
             sys.exit(f"checkout of {src['commit']} in {d} failed")
+
+
+def ensure_release_assets(sources, sources_root: Path, keys):
+    """The GitHub Release assets the selected runs need, present under sources_root, checksum
+    verified. Unlike ensure_clones(), there is no commit to check out -- a release asset is only
+    as pinned as its recorded `sha256`, so a mismatch (the maintainer re-uploaded the asset under
+    the same tag) is a loud failure, never a silent re-download of different content."""
+    sources_root.mkdir(parents=True, exist_ok=True)
+    for key in sorted(keys):
+        src = sources[key]
+        d = sources_root / src["clone"]
+        d.mkdir(parents=True, exist_ok=True)
+        for name in src["assets"]:
+            dest = d / name
+            want = src.get("sha256")
+            if dest.is_file():
+                got = hashlib.sha256(dest.read_bytes()).hexdigest()
+                if not want or got == want:
+                    continue
+                sys.exit(f"{dest} does not match the pinned sha256 for {key} "
+                         f"({src['repo']} release {src['release']}); delete it or update scripts/sources.yaml")
+            url = f"{src['repo']}/releases/download/{src['release']}/{name}"
+            print(f"== downloading {url} -> {dest}")
+            urllib.request.urlretrieve(url, dest)
+            if want:
+                got = hashlib.sha256(dest.read_bytes()).hexdigest()
+                if got != want:
+                    dest.unlink()
+                    sys.exit(f"{url}: sha256 {got} does not match the pinned {want} in scripts/sources.yaml "
+                              "-- the release asset changed under the same tag")
 
 
 def build_w1_images(w1_root: Path):
@@ -238,7 +274,14 @@ def main():
         sys.exit(f"unknown run(s) {unknown}; known: {list(runs)}")
 
     if not a.no_fetch:
-        ensure_clones(sources, a.sources_root, {runs[n]["workflow"]["repo"] for n in names})
+        selected = {runs[n]["workflow"]["repo"] for n in names}
+        cloned = {k for k in selected if "commit" in sources[k]}
+        released = {k for k in selected if "release" in sources[k]}
+        unknown_kind = selected - cloned - released
+        if unknown_kind:
+            sys.exit(f"source(s) {unknown_kind} have neither `commit` nor `release` in scripts/sources.yaml")
+        ensure_clones(sources, a.sources_root, cloned)
+        ensure_release_assets(sources, a.sources_root, released)
     if a.build_images:
         build_w1_images(a.sources_root / sources["w1"]["clone"])
 

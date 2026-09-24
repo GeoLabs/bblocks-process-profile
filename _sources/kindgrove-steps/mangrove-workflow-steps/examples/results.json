@@ -1,0 +1,6 @@
+{
+  "stac": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/catalog.json",
+    "type": "application/json"
+  }
+}

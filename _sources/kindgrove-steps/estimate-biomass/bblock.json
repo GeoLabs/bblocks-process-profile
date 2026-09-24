@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process profile: estimate_biomass",
+  "abstract": "OGC API - Processes profile of the CWL CommandLineTool `estimate_biomass` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-22T00:00:00Z",
+  "dateOfLastChange": "2026-09-22",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "process-profiles",
+  "dependsOn": [
+    "ogc.api.processes.v1.schemas.process",
+    "ogc.api.processes.v2.schemas.staticIndicator",
+    "ogc.api.processes.v2.schemas.ogcapppkg",
+    "ogc.bbr.provenance.provenance",
+    "ospd.process-profiles.process-type",
+    "eoap.cct.cwl-to-ogcprocess",
+    "ogc.ogc-utils.prov.w3c-prov-jsonld",
+    "ogc.bbr.wf4ever.wfprov.ProcessRun"
+  ],
+  "seeAlso": [
+    "ospd.process-profiles.kindgrove-steps.mangrove-workflow-steps",
+    "ogc.api.processes.part1.requirements.core"
+  ],
+  "conformanceClasses": [
+    "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+  ],
+  "scope": "dev",
+  "tags": [
+    "OSPD",
+    "process profile",
+    "CWL",
+    "CommandLineTool",
+    "kindgrove-steps"
+  ],
+  "sourceSchema": "schema.yaml",
+  "maturity": "development",
+  "group": "W2 KindGrove"
+}

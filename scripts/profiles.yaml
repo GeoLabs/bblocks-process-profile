@@ -746,3 +746,287 @@ processes:
     stac_catalog: [stac_catalog]
     results:
       stac_catalog: {href: catalog.json, type: application/json, stac: true}
+
+  # ---------------------------------------------------------------- W2b kindgrove-steps (GeoLabs
+  # KindGrove v0.0.2-rc2, a GitHub Release asset, not a git commit -- see scripts/sources.yaml
+  # `kindgrove_steps`). A ground-up reimplementation of the W2 KindGrove computation as one
+  # CommandLineTool per notebook, added ALONGSIDE `kindgrove`, not replacing it: different tools,
+  # different Docker images (ghcr.io/geolabs/kindgrove/*), different license (CC-BY-NC-SA-4.0 vs
+  # `kindgrove`'s Apache-2.0). See docs/WORKFLOW-COMPARISON.md.
+  - key: mangrove-workflow-steps
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: mangrove-workflow-steps}
+    phases: [filter-configuration, selection-filtering, data-retrieval, pre-processing, scientific-computation, export-aggregation]
+    cct: [eoap.cct.bbox]
+    cct_candidates: []
+    steps: [parse-aoi-steps, select-scene, download-band, reproject-band, calculate-indices, estimate-biomass, export-stac]
+    openeo:
+      level: none
+      rationale: >-
+        Composite: a CWL Workflow decomposed into one CommandLineTool per notebook, aligned on the
+        same granularity as W1 Algae Bloom (parse AOI, select scene, download/reproject bands,
+        compute indices, estimate biomass, export STAC) -- the workflow's own `doc:` says so
+        explicitly. A ground-up reimplementation of `kindgrove.mangrove-workflow`'s computation,
+        not a repackaging of it; the openEO equivalent would be a user-defined process graph.
+      decomposition:
+        - {stage: select_scene, openeo: [ogc.openeo.processes.cubes.load_collection], level: closeMatch}
+        - {stage: "download_band (x3, scatter over bands)", openeo: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands], level: closeMatch}
+        - {stage: "reproject_band (x3)", openeo: [ogc.openeo.processes.cubes.resample_spatial], level: closeMatch}
+        - {stage: calculate_indices, openeo: [ogc.openeo.processes.cubes.ndvi, ogc.openeo.processes.math.indices.normalized_difference], level: closeMatch, note: "NDVI and NDWI; SAVI has no openEO process in this register"}
+        - {stage: estimate_biomass, openeo: [], level: none, note: "opaque allometric regression + IPCC carbon fraction"}
+        - {stage: export_stac, openeo: [ogc.openeo.processes.cubes.save_result], level: closeMatch}
+    run: {prov: kindgrove-steps}
+    execute:
+      inputs:
+        aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+        cloud_cover_max: 20
+        days_back: 90
+    stac_catalog: [stac]
+    results:
+      stac: {href: catalog.json, type: application/json, stac: true}
+
+  - key: parse-aoi-steps
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: parse_aoi}
+    label: Parse area of interest
+    definition: Splits an OGC bounding box into its west, south, east and north coordinates.
+    phases: [filter-configuration]
+    cct: [eoap.cct.bbox]
+    cct_candidates: []
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: none
+      relatedMatch: [ogc.openeo.types.bounding-box]
+      rationale: >-
+        Structural helper: unpacks an OGC BBox record into west/south/east/north floats -- no
+        `output_dir` (unlike `kindgrove.parse-aoi`, which this profile parallels but does not
+        replace). No openEO process does this, since openEO passes a bounding box directly.
+    run: {prov: kindgrove-steps, step: parse_aoi}
+    execute:
+      inputs:
+        aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+
+  - key: select-scene
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: select_scene}
+    label: Select the least cloudy Sentinel-2 L2A scene
+    definition: Selects the least cloudy Sentinel-2 L2A scene over a bounding box within a time window.
+    phases: [selection-filtering]
+    cct: []
+    cct_candidates: [eoap.cct.bbox]
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection]
+      rationale: >-
+        Same filter semantics as load_collection's `spatial_extent` (west/south/east/north) and a
+        `properties` cloud-cover filter; `days_back` is a relative time window resolved against the
+        execution date, not an explicit `temporal_extent` -- the same non-reproducibility already
+        documented for `kindgrove.mangrove-workflow` (Q-W2-DAYSBACK).
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/steps/01_select_scene`, `ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2`.
+      Searches `stac_api`/`collection` (both defaulted to Earth Search / sentinel-2-l2a) for the
+      least cloudy scene intersecting the bounding box within `days_back` days of the execution
+      date, under `cloud_cover_max`, and writes its STAC Item as `scene_item.json`.
+
+      **CWL specifics.** `requirements: {NetworkAccess: {networkAccess: true}}` uses the dict-form
+      requirements syntax, where bare `NetworkAccess` validates without the `cwltool:` namespace
+      prefix W3's list-form syntax needed (`docs/DEVIATIONS.md` U-06) -- a different encoding of
+      the same cwltool extension, not a fix to the underlying non-standardness.
+
+      **Provenance.** No file input: `west`/`south`/`east`/`north`/`cloud_cover_max`/`days_back`
+      are literal-valued entities. The network search itself leaves no provenance trace beyond the
+      output STAC Item file (GP-3, GP-4, the same gap `water-bodies.crop` has).
+    run: {prov: kindgrove-steps, step: select_scene}
+    execute:
+      inputs:
+        west: 95.15
+        south: 15.9
+        east: 95.35
+        north: 16.1
+        cloud_cover_max: 20
+        days_back: 90
+
+  - key: download-band
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: download_band}
+    label: Download one Sentinel-2 band over a bounding box
+    definition: Downloads one Sentinel-2 band over a bounding box from a STAC Item.
+    phases: [data-retrieval]
+    cct: []
+    cct_candidates: [eoap.cct.bbox, eoap.cct.stac]
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.load_collection, ogc.openeo.processes.cubes.filter_bands]
+      rationale: >-
+        load_collection with a spatial_extent and a single band selected (filter_bands); the STAC
+        item is a resolved File (the output of `select-scene`) rather than resolved in-process,
+        same pattern as `algae-bloom.download-band-sentinel2-stac-item`.
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/steps/02_download_band`, `ghcr.io/geolabs/kindgrove/download-band:v0.0.2-rc2`.
+      Reads the given `band` asset of `stac_item`, windowed to the bounding box, writes one COG.
+
+      **Provenance.** One file input (`stac_item`), literal `band`/bbox inputs, one file output; a
+      plain `wasDerivedFrom` on `stac_item`.
+    run: {prov: kindgrove-steps, step: download_band}
+    execute:
+      inputs:
+        stac_item: {href: scene_item.json, type: application/geo+json}
+        band: red
+        west: 95.15
+        south: 15.9
+        east: 95.35
+        north: 16.1
+
+  - key: reproject-band
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: reproject_band}
+    label: Reproject a raster onto a regular grid
+    definition: Reprojects a raster onto a regular grid covering a bounding box.
+    phases: [pre-processing]
+    cct: []
+    cct_candidates: [eoap.cct.bbox]
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.resample_spatial]
+      rationale: >-
+        resample_spatial with a target `resolution` and `projection` (epsg); no explicit
+        resampling-method parameter in the CWL (implementation default), same partial match as
+        `algae-bloom.reproject-image`.
+    run: {prov: kindgrove-steps, step: reproject_band}
+    execute:
+      inputs:
+        band_file: {href: red.tif, type: geotiff}
+        west: 95.15
+        south: 15.9
+        east: 95.35
+        north: 16.1
+        epsg: 4326
+        resolution: 0.0001
+
+  - key: calculate-indices
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: calculate_indices}
+    label: Compute NDVI, NDWI and SAVI
+    definition: Computes NDVI, NDWI and SAVI from Sentinel-2 red, green and NIR bands.
+    phases: [scientific-computation]
+    cct: []
+    cct_candidates: []
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: none
+      rationale: >-
+        Composite, one tool computing three indices from the same three-band input at once. NDVI
+        alone would be closeMatch `ogc.openeo.processes.cubes.ndvi`; NDWI alone closeMatch
+        `ogc.openeo.processes.math.indices.normalized_difference` (as in `water-bodies.norm-diff`
+        and `kindgrove.mangrove`); SAVI (soil-adjusted, not a plain normalized difference) has no
+        openEO process in this register. Kept `none` for the tool as a whole since no single
+        openEO process covers the composite.
+      decomposition:
+        - {stage: ndvi, openeo: [ogc.openeo.processes.cubes.ndvi], level: closeMatch}
+        - {stage: ndwi, openeo: [ogc.openeo.processes.math.indices.normalized_difference], level: closeMatch}
+        - {stage: savi, openeo: [], level: none, note: "soil-adjusted vegetation index, no openEO process in this register"}
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/steps/04_calculate_indices`, `ghcr.io/geolabs/kindgrove/calculate-indices:v0.0.2-rc2`.
+      Reads the three reprojected bands (positional-order `File[]`: red, green, nir) and writes
+      NDVI, NDWI and SAVI as three separate GeoTIFFs.
+
+      **CWL specifics.** `band_files` is `File[]` with **no positional labels**, the same gap as
+      `water-bodies.norm-diff`'s `rasters`: which file is red/green/nir depends entirely on the
+      caller's array order, not expressed in the processDescription.
+
+      **Provenance.** Three file inputs, three file outputs; a plain `wasDerivedFrom` fan-out.
+    run: {prov: kindgrove-steps, step: calculate_indices}
+    execute:
+      inputs:
+        band_files:
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/red_4326.tif", type: geotiff}
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/green_4326.tif", type: geotiff}
+          - {href: "https://ospd.example.org/ogc-api/jobs/upstream-step/results/nir_4326.tif", type: geotiff}
+
+  - key: estimate-biomass
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: estimate_biomass}
+    label: Mangrove detection, allometric biomass and IPCC carbon stock
+    definition: Detects mangrove pixels and estimates above-ground biomass and carbon stock from NDVI, NDWI and SAVI.
+    phases: [scientific-computation]
+    cct: []
+    cct_candidates: [eoap.cct.stac]
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: none
+      rationale: >-
+        Opaque: a threshold-based mangrove mask (ndvi_min/max, ndwi_min, savi_min) followed by a
+        fixed linear allometric formula (biomass_slope/intercept) and an IPCC carbon_fraction
+        constant. No openEO process expresses a domain-specific regression model, same as
+        `kindgrove.mangrove`.
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/steps/05_estimate_biomass`, `ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2`.
+      Masks pixels within the `ndvi_min`/`ndvi_max`/`ndwi_min`/`savi_min` thresholds as mangrove,
+      applies `biomass = biomass_slope * ndvi + biomass_intercept` per masked pixel, and
+      `carbon = biomass * carbon_fraction`; writes the mask, the biomass raster, two CSV summaries
+      and a JSON analysis summary.
+
+      **CWL specifics.** `stac_item` (the scene's own STAC Item) is threaded through purely to
+      carry scene metadata into the outputs, not read as a raster.
+
+      **Provenance.** Three file inputs (ndvi/ndwi/savi) plus the STAC item; five file outputs, a
+      genuine fan-in/fan-out (GP-10 applies here the same way it does to `kindgrove.mangrove`).
+    run: {prov: kindgrove-steps, step: estimate_biomass}
+    execute:
+      inputs:
+        ndvi_file: {href: ndvi.tif, type: geotiff}
+        ndwi_file: {href: ndwi.tif, type: geotiff}
+        savi_file: {href: savi.tif, type: geotiff}
+        stac_item: {href: scene_item.json, type: application/geo+json}
+
+  - key: export-stac
+    workflow: kindgrove-steps
+    source: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: export_stac}
+    label: Plot the biomass map and export a STAC catalog
+    definition: Plots the biomass map and exports the mangrove analysis results as a STAC Catalog.
+    phases: [export-aggregation]
+    cct: []
+    cct_candidates: [eoap.cct.stac]
+    parents: [mangrove-workflow-steps]
+    openeo:
+      level: closeMatch
+      closeMatch: [ogc.openeo.processes.cubes.save_result]
+      rationale: >-
+        Writes the final rasters and summaries to a self-describing STAC output, plus a quicklook
+        PNG rendering; save_result's STAC output option is the closest openEO equivalent, same
+        partial match as `algae-bloom.plot-image` and `water-bodies.stac`.
+    analysis: |
+      **Behaviour.** `/app/cwl/bin/steps/06_export_stac`, `ghcr.io/geolabs/kindgrove/export-stac:v0.0.2-rc2`.
+      Renders a `biomass_quicklook.png` from the biomass raster, then writes a STAC Catalog with
+      one Item (`mangrove-analysis-<timestamp>`, timestamped at run time like `kindgrove.mangrove`'s
+      own output) carrying the mask, biomass raster, two summary CSVs, the analysis JSON and the
+      quicklook PNG as assets.
+
+      **CWL specifics.** Output `stac_catalog` is a `Directory` (`glob: outputs`), mapped by the
+      transform to a STAC **Collection**; the run record shows the tool itself writes a STAC
+      **Catalog** (`"type": "Catalog"`) with one Item: corrected (M-05), the same gap as
+      `kindgrove.mangrove` / `kindgrove.mangrove-workflow` and `water-bodies.stac` /
+      `water-bodies.water-bodies` -- a third, independent tool hitting the identical gap.
+
+      **Provenance.** Five file inputs coupled to one Item (GP-10 applies to the whole per-item
+      asset set); `west`/`south`/`east`/`north` are literal-valued entities describing the Item's
+      geometry, not files.
+    run: {prov: kindgrove-steps, step: export_stac}
+    execute:
+      inputs:
+        mangrove_mask_file: {href: mangrove_mask.tif, type: geotiff}
+        biomass_file: {href: biomass.tif, type: geotiff}
+        biomass_summary_file: {href: biomass_summary.csv, type: text/csv}
+        carbon_summary_file: {href: carbon_summary.csv, type: text/csv}
+        analysis_summary_file: {href: analysis_summary.json, type: application/json}
+        stac_item: {href: scene_item.json, type: application/geo+json}
+        west: 95.15
+        south: 15.9
+        east: 95.35
+        north: 16.1
+    stac_catalog: [stac_catalog]
+    results:
+      stac_catalog: {href: catalog.json, type: application/json, stac: true}

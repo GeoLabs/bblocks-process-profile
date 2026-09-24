@@ -1,0 +1,138 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `mangrove-workflow-steps` (CWL Workflow).
+  Pins the process id and the input/output names; the input/output schemas are those derived from the
+  CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: mangrove-workflow-steps
+    inputs:
+      type: object
+      required:
+      - aoi
+      - cloud_cover_max
+      - days_back
+      - stac_api
+      - collection
+      - epsg
+      - resolution
+      - ndvi_min
+      - ndvi_max
+      - ndwi_min
+      - savi_min
+      - biomass_slope
+      - biomass_intercept
+      - carbon_fraction
+      propertyNames:
+        enum:
+        - aoi
+        - cloud_cover_max
+        - days_back
+        - stac_api
+        - collection
+        - epsg
+        - resolution
+        - ndvi_min
+        - ndvi_max
+        - ndwi_min
+        - savi_min
+        - biomass_slope
+        - biomass_intercept
+        - carbon_fraction
+    outputs:
+      type: object
+      required:
+      - stac
+      propertyNames:
+        enum:
+        - stac
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+  provenance:
+    $ref: bblocks://ogc.bbr.provenance.provenance
+  processTypeEntry:
+    $ref: bblocks://ospd.process-profiles.process-type
+  w3cProvJsonLd:
+    $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld
+  execute:
+    description: Execute request for this process. Built on the processDescription input schemas and on
+      ogc.api.processes.v1.schemas.link / qualifiedInputValue, because ogc.api.processes.v1.schemas.execute
+      rejects plain strings and numbers (upstream issue U-01).
+    type: object
+    required:
+    - inputs
+    properties:
+      inputs:
+        type: object
+        required:
+        - aoi
+        - cloud_cover_max
+        - days_back
+        propertyNames:
+          enum:
+          - aoi
+          - cloud_cover_max
+          - days_back
+          - stac_api
+          - collection
+          - epsg
+          - resolution
+          - ndvi_min
+          - ndvi_max
+          - ndwi_min
+          - savi_min
+          - biomass_slope
+          - biomass_intercept
+          - carbon_fraction
+        additionalProperties:
+          anyOf:
+          - $ref: bblocks://ogc.api.processes.v1.schemas.link
+          - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
+          - type:
+            - string
+            - number
+            - integer
+            - boolean
+            - array
+            - object
+      outputs:
+        type: object
+        propertyNames:
+          enum:
+          - stac
+      response:
+        enum:
+        - raw
+        - document
+  results:
+    description: Results document (response=document) for this process (see U-01).
+    type: object
+    propertyNames:
+      enum:
+      - stac
+    additionalProperties:
+      anyOf:
+      - $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type: array
+        items:
+          $ref: bblocks://ogc.api.processes.v1.schemas.link
+      - type:
+        - string
+        - number
+        - integer
+        - boolean
+        - array
+        - object
+  execution:
+    $ref: bblocks://ogc.bbr.provenance.execution

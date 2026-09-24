@@ -679,5 +679,246 @@
     "cct": [],
     "inputs": 2,
     "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.mangrove-workflow-steps",
+    "key": "mangrove-workflow-steps",
+    "class": "Workflow",
+    "pd_id": "mangrove-workflow-steps",
+    "phases": [
+      "filter-configuration",
+      "selection-filtering",
+      "data-retrieval",
+      "pre-processing",
+      "scientific-computation",
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite: a CWL Workflow decomposed into one CommandLineTool per notebook, aligned on the same granularity as W1 Algae Bloom (parse AOI, select scene, download/reproject bands, compute indices, estimate biomass, export STAC) -- the workflow's own `doc:` says so explicitly. A ground-up reimplementation of `kindgrove.mangrove-workflow`'s computation, not a repackaging of it; the openEO equivalent would be a user-defined process graph.",
+      "decomposition": [
+        {
+          "stage": "select_scene",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "download_band (x3, scatter over bands)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.load_collection",
+            "ogc.openeo.processes.cubes.filter_bands"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "reproject_band (x3)",
+          "openeo": [
+            "ogc.openeo.processes.cubes.resample_spatial"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "calculate_indices",
+          "openeo": [
+            "ogc.openeo.processes.cubes.ndvi",
+            "ogc.openeo.processes.math.indices.normalized_difference"
+          ],
+          "level": "closeMatch",
+          "note": "NDVI and NDWI; SAVI has no openEO process in this register"
+        },
+        {
+          "stage": "estimate_biomass",
+          "openeo": [],
+          "level": "none",
+          "note": "opaque allometric regression + IPCC carbon fraction"
+        },
+        {
+          "stage": "export_stac",
+          "openeo": [
+            "ogc.openeo.processes.cubes.save_result"
+          ],
+          "level": "closeMatch"
+        }
+      ]
+    },
+    "corrections": [
+      "M-05 outputs.stac: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": true,
+    "cct": [
+      "eoap.cct.bbox"
+    ],
+    "inputs": 14,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.parse-aoi-steps",
+    "key": "parse-aoi-steps",
+    "class": "CommandLineTool",
+    "pd_id": "parse_aoi",
+    "phases": [
+      "filter-configuration"
+    ],
+    "openeo": {
+      "level": "none",
+      "relatedMatch": [
+        "ogc.openeo.types.bounding-box"
+      ],
+      "rationale": "Structural helper: unpacks an OGC BBox record into west/south/east/north floats -- no `output_dir` (unlike `kindgrove.parse-aoi`, which this profile parallels but does not replace). No openEO process does this, since openEO passes a bounding box directly."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [
+      "eoap.cct.bbox"
+    ],
+    "inputs": 1,
+    "outputs": 4
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.select-scene",
+    "key": "select-scene",
+    "class": "CommandLineTool",
+    "pd_id": "select_scene",
+    "phases": [
+      "selection-filtering"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection"
+      ],
+      "rationale": "Same filter semantics as load_collection's `spatial_extent` (west/south/east/north) and a `properties` cloud-cover filter; `days_back` is a relative time window resolved against the execution date, not an explicit `temporal_extent` -- the same non-reproducibility already documented for `kindgrove.mangrove-workflow` (Q-W2-DAYSBACK)."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 8,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.download-band",
+    "key": "download-band",
+    "class": "CommandLineTool",
+    "pd_id": "download_band",
+    "phases": [
+      "data-retrieval"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.load_collection",
+        "ogc.openeo.processes.cubes.filter_bands"
+      ],
+      "rationale": "load_collection with a spatial_extent and a single band selected (filter_bands); the STAC item is a resolved File (the output of `select-scene`) rather than resolved in-process, same pattern as `algae-bloom.download-band-sentinel2-stac-item`."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 6,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.reproject-band",
+    "key": "reproject-band",
+    "class": "CommandLineTool",
+    "pd_id": "reproject_band",
+    "phases": [
+      "pre-processing"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.resample_spatial"
+      ],
+      "rationale": "resample_spatial with a target `resolution` and `projection` (epsg); no explicit resampling-method parameter in the CWL (implementation default), same partial match as `algae-bloom.reproject-image`."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 7,
+    "outputs": 1
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.calculate-indices",
+    "key": "calculate-indices",
+    "class": "CommandLineTool",
+    "pd_id": "calculate_indices",
+    "phases": [
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Composite, one tool computing three indices from the same three-band input at once. NDVI alone would be closeMatch `ogc.openeo.processes.cubes.ndvi`; NDWI alone closeMatch `ogc.openeo.processes.math.indices.normalized_difference` (as in `water-bodies.norm-diff` and `kindgrove.mangrove`); SAVI (soil-adjusted, not a plain normalized difference) has no openEO process in this register. Kept `none` for the tool as a whole since no single openEO process covers the composite.",
+      "decomposition": [
+        {
+          "stage": "ndvi",
+          "openeo": [
+            "ogc.openeo.processes.cubes.ndvi"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "ndwi",
+          "openeo": [
+            "ogc.openeo.processes.math.indices.normalized_difference"
+          ],
+          "level": "closeMatch"
+        },
+        {
+          "stage": "savi",
+          "openeo": [],
+          "level": "none",
+          "note": "soil-adjusted vegetation index, no openEO process in this register"
+        }
+      ]
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 1,
+    "outputs": 3
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.estimate-biomass",
+    "key": "estimate-biomass",
+    "class": "CommandLineTool",
+    "pd_id": "estimate_biomass",
+    "phases": [
+      "scientific-computation"
+    ],
+    "openeo": {
+      "level": "none",
+      "rationale": "Opaque: a threshold-based mangrove mask (ndvi_min/max, ndwi_min, savi_min) followed by a fixed linear allometric formula (biomass_slope/intercept) and an IPCC carbon_fraction constant. No openEO process expresses a domain-specific regression model, same as `kindgrove.mangrove`."
+    },
+    "corrections": [],
+    "execution": false,
+    "cct": [],
+    "inputs": 11,
+    "outputs": 5
+  },
+  {
+    "id": "ospd.process-profiles.kindgrove-steps.export-stac",
+    "key": "export-stac",
+    "class": "CommandLineTool",
+    "pd_id": "export_stac",
+    "phases": [
+      "export-aggregation"
+    ],
+    "openeo": {
+      "level": "closeMatch",
+      "closeMatch": [
+        "ogc.openeo.processes.cubes.save_result"
+      ],
+      "rationale": "Writes the final rasters and summaries to a self-describing STAC output, plus a quicklook PNG rendering; save_result's STAC output option is the closest openEO equivalent, same partial match as `algae-bloom.plot-image` and `water-bodies.stac`."
+    },
+    "corrections": [
+      "M-05 outputs.stac_catalog: the Directory output is a STAC Catalog written by the tool itself (run record: `catalog.json` with one Item), not the Collection assumed by the transform"
+    ],
+    "execution": false,
+    "cct": [],
+    "inputs": 10,
+    "outputs": 1
   }
 ]

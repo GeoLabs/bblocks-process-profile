@@ -432,7 +432,12 @@ def load_process(proc, sources, roots):
     path = roots[proc["source"]["repo"]] / src["base_path"] / proc["source"]["file"]
     doc = yaml.safe_load(path.read_text())
     element = proc["source"].get("element")
-    url = f"{src['repo']}/blob/{src['commit']}/{src['base_path']}/{proc['source']['file']}"
+    if "release" in src:
+        # a release-asset source (sources.yaml `release:`, no `commit:`): there is no repo tree
+        # path to link to, only the asset's own download URL.
+        url = f"{src['repo']}/releases/download/{src['release']}/{proc['source']['file']}"
+    else:
+        url = f"{src['repo']}/blob/{src['commit']}/{src['base_path']}/{proc['source']['file']}"
     if not element:
         return doc, doc, url
     top = {k: v for k, v in doc.items() if k != "$graph"}
@@ -790,9 +795,12 @@ def md_openeo(oe):
 
 def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_key, eoap_commit):
     wf = {"algae-bloom": "W1 Algae Bloom", "kindgrove": "W2 KindGrove",
-          "water-bodies": "W3 Water Bodies"}[proc["workflow"]]
+          "water-bodies": "W3 Water Bodies",
+          "kindgrove-steps": "W2b KindGrove (step notebooks)"}[proc["workflow"]]
     ins = cwl_items(cwl_el.get("inputs"))
     outs = cwl_items(cwl_el.get("outputs"))
+    pin = (f"pinned commit `{src['commit'][:7]}`" if "commit" in src
+           else f"GitHub Release `{src['release']}`, sha256 `{src['sha256'][:12]}`")
     parts = [
         f"Process profile of **`{pd['id']}`** ({cwl_el['class']}, {wf}).",
         "",
@@ -801,7 +809,7 @@ def description_md(proc, pd, cwl_el, url, src, corrections, has_exec, info, by_k
         "## Source",
         "",
         f"- CWL: [{proc['source']['file']}{('#' + proc['source']['element']) if proc['source'].get('element') else ''}]({url}) "
-        f"(pinned commit `{src['commit'][:7]}`, license <{src['license']}>). Referenced, not copied.",
+        f"({pin}, license <{src['license']}>). Referenced, not copied.",
         f"- Six-phase position: " + " → ".join(PHASE_LABELS[p] for p in proc["phases"]),
         f"- EOAP CWL custom types used: {', '.join('`'+c+'`' for c in proc.get('cct', [])) or 'none'}"
         + (f"; candidates: {', '.join('`'+c+'`' for c in proc['cct_candidates'])}" if proc.get("cct_candidates") else ""),
@@ -965,6 +973,7 @@ def main():
     ap.add_argument("--w1", type=Path)
     ap.add_argument("--w2", type=Path)
     ap.add_argument("--w3", type=Path)
+    ap.add_argument("--kindgrove-steps", type=Path)
     ap.add_argument("--eoap-cct", type=Path)
     ap.add_argument("--runs-root", type=Path,
                     help="directory holding the CWLProv research objects named in scripts/sources.yaml `runs:` "
@@ -975,9 +984,14 @@ def main():
     cfg = yaml.safe_load((SCRIPTS / "profiles.yaml").read_text())
     d, procs = cfg["defaults"], cfg["processes"]
     by_key = {p["key"]: p for p in procs}
+    if len(by_key) != len(procs):
+        dupes = sorted({p["key"] for p in procs if [q["key"] for q in procs].count(p["key"]) > 1})
+        sys.exit(f"scripts/profiles.yaml: duplicate key(s) {dupes} -- `key` must be unique across "
+                 "the whole file (steps/parents references and by_key lookups are not workflow-scoped)")
     roots = {"w1": a.w1 or a.sources_root / sources["w1"]["clone"],
              "w2": a.w2 or a.sources_root / sources["w2"]["clone"],
-             "w3": a.w3 or a.sources_root / sources["w3"]["clone"]}
+             "w3": a.w3 or a.sources_root / sources["w3"]["clone"],
+             "kindgrove_steps": a.kindgrove_steps or a.sources_root / sources["kindgrove_steps"]["clone"]}
     eoap = a.eoap_cct or a.sources_root / sources["eoap_cct"]["clone"]
     jq_path = eoap / sources["eoap_cct"]["transform"]
     # real run records: local research objects, never downloaded (like the CWL clones)

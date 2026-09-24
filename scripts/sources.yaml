@@ -1,5 +1,11 @@
 # Pinned sources used by generate.py. CWL is read from local clones (the generator never
-# downloads) and referenced in the register by URL only.
+# downloads) and referenced in the register by URL only. A source pins either `commit` (a git
+# checkout, the default -- see ensure_clones() in run_workflows.py) or `release` + `sha256` (a
+# GitHub Release asset downloaded once and verified by checksum -- ensure_release_asset(); used
+# when the CWL is published only as a release artifact and never committed to the repo tree, so
+# there is no commit to pin against. A release asset is not immutable the way a commit is: the
+# checksum is what actually pins it, and a mismatch on a later fetch is a loud failure, not a
+# silent re-download).
 w1:
   title: W1 Algae Bloom (Se2WaQ water quality, CRIM)
   repo: https://github.com/crim-ca/ogc-ospd-phase1
@@ -33,6 +39,19 @@ w3:
   # call, made 2026-09-23; revisit if either repo ever adds a real LICENSE file.
   license: https://spdx.org/licenses/CC-BY-SA-4.0
   upstream: https://github.com/Terradue/ogc-eo-application-package-hands-on   # the tools' own origin (docker images), same TBW license gap
+kindgrove_steps:
+  title: W2b KindGrove mangrove biomass (step notebooks, GeoLabs, prerelease)
+  repo: https://github.com/GeoLabs/KindGrove
+  release: v0.0.2-rc2   # GitHub prerelease; CI-built, never committed to the repo tree (unlike every other source above)
+  sha256: 361cb6a75d541fdd480a41d75aab83896afebea3c096f1893d1ac2537bb80f3d   # of mangrove-workflow-steps.cwl, checked 2026-09-24
+  clone: kindgrove-steps
+  base_path: .
+  assets: [mangrove-workflow-steps.cwl]   # one packed $graph document: the Workflow + 8 steps; no element collides (only one top-level Workflow), unlike W3's M-13
+  license: https://spdx.org/licenses/CC-BY-NC-SA-4.0   # declared in the CWL itself (s:license), unlike W3's TBW gap
+  # A ground-up reimplementation, not a repackaging of the pinned `w2` source: different tools,
+  # different Docker images (ghcr.io/geolabs/kindgrove/*), different license (Apache-2.0 for `w2`
+  # vs this). Added alongside `w2` under its own `kindgrove-steps` profile workflow, not replacing
+  # it -- see the `kindgrove-steps` block in profiles.yaml and docs/WORKFLOW-COMPARISON.md.
 
 # Real `cwltool --provenance` runs (CWLProv research objects) that the run-derived examples are
 # built from. Like the CWL clones they are read from local directories, never downloaded: `bag` is
@@ -109,3 +128,19 @@ runs:
       --outdir out`, 2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host, ~9 min; two
       STAC items scattered (S2B_10TFK_20210713_0_L2A then S2A_10TFK_20220524_0_L2A), each over 2
       bands (green, nir)
+  kindgrove-steps:
+    bag: runs/kindgrove-steps/ro
+    results: runs/kindgrove-steps/out
+    workflow: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: mangrove-workflow-steps}
+    inputs:
+      aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+      cloud_cover_max: 20
+      days_back: 90
+    cwltool_args: [--enable-ext]
+    note: >-
+      the pinned W2b source itself (GeoLabs/KindGrove v0.0.2-rc2
+      `mangrove-workflow-steps.cwl#mangrove-workflow-steps`), the same execute inputs as
+      `w2-pinned` for comparability, `cwltool --enable-ext --provenance ro --outdir out`,
+      2026-09-24, cwltool 3.1.20260108082145 on an arm64 macOS host, ~5 min; scene selected by
+      `days_back` on that day, three bands scattered (red, green, nir) through download_band and
+      reproject_band
