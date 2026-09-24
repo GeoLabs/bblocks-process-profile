@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:download-band:out:band_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#outputs/band_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-download-band-0001/results/red.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:download-band:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:download-band> .
+
+<urn:example:entity:download-band:in:band> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/band> ;
+    rdf:value "red" .
+
+<urn:example:entity:download-band:in:east> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/east> ;
+    rdf:value 9.535e+01 .
+
+<urn:example:entity:download-band:in:north> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/north> ;
+    rdf:value 1.61e+01 .
+
+<urn:example:entity:download-band:in:south> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/south> ;
+    rdf:value 1.59e+01 .
+
+<urn:example:entity:download-band:in:west> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/west> ;
+    rdf:value 9.515e+01 .
+
+<urn:example:image:ghcr.io/geolabs/kindgrove/download-band:v0.0.2-rc2> a prov:SoftwareAgent ;
+    pp:name "container image ghcr.io/geolabs/kindgrove/download-band:v0.0.2-rc2" .
+
+<urn:example:run:kindgrove-steps:download-band> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/download-band> ;
+    prov:endedAtTime "2026-09-24T10:58:16+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/download_band> ] ;
+    prov:startedAtTime "2026-09-24T10:58:01+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:download-band:in:band>,
+        <urn:example:entity:download-band:in:east>,
+        <urn:example:entity:download-band:in:north>,
+        <urn:example:entity:download-band:in:south>,
+        <urn:example:entity:download-band:in:stac_item>,
+        <urn:example:entity:download-band:in:west> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ghcr.io/geolabs/kindgrove/download-band:v0.0.2-rc2> .
+
+<urn:example:entity:download-band:in:stac_item> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/download_band#inputs/stac_item> ;
+    rdfs:seeAlso [ dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json> ] .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

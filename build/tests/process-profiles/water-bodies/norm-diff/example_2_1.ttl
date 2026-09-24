@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,25 +11,25 @@
 <https://geolabs.github.io/bblocks-process-profiles/def/process/norm_diff> dcterms:description "Process converted from CWL" ;
     dcterms:title "norm_diff" ;
     pp:version "1.4.1" ;
-    proc:inputs [ ns1:rasters [ dcterms:description "" ;
+    proc:inputs [ ns3:rasters [ dcterms:description "" ;
                     dcterms:title "rasters" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ;
-                                    ns2:contentMediaType "application/octet-stream" ] ] ] ] ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "1.4.1" ;
+    proc:metadata [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ],
         [ rdf:value "norm_diff" ;
-            proc:role schema:name ],
-        [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ] ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:ndwi [ dcterms:description "" ;
+    proc:outputs [ ns2:ndwi [ dcterms:description "" ;
                     dcterms:title "ndwi" ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/octet-stream" ] ] ] .
+                            ns1:contentMediaType "application/octet-stream" ] ] ] .
 

@@ -1,0 +1,6 @@
+{
+  "stac_item": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-select-scene-0001/results/scene_item.json",
+    "type": "application/json"
+  }
+}

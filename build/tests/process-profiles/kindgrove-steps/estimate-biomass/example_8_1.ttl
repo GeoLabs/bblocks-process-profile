@@ -1,0 +1,23 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/estimate-biomass> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation> ;
+    skos:definition "Detects mangrove pixels and estimates above-ground biomass and carbon stock from NDVI, NDWI and SAVI." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Mangrove detection, allometric biomass and IPCC carbon stock" ;
+    pp:candidateCctDependency "eoap.cct.stac" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "none" ;
+            pp:rationale "Opaque: a threshold-based mangrove mask (ndvi_min/max, ndwi_min, savi_min) followed by a fixed linear allometric formula (biomass_slope/intercept) and an IPCC carbon_fraction constant. No openEO process expresses a domain-specific regression model, same as `kindgrove.mangrove`." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/estimate_biomass> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.estimate-biomass" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#estimate_biomass> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "estimate_biomass" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/estimate_biomass> pp:version "0.1.0" .
+

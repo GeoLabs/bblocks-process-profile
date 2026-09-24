@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:select-scene:out:stac_item> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#outputs/stac_item> ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-select-scene-0001/results/scene_item.json> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:select-scene> .
+
+<urn:example:entity:select-scene:in:cloud_cover_max> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/cloud_cover_max> ;
+    rdf:value 20 .
+
+<urn:example:entity:select-scene:in:days_back> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/days_back> ;
+    rdf:value 90 .
+
+<urn:example:entity:select-scene:in:east> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/east> ;
+    rdf:value 9.535e+01 .
+
+<urn:example:entity:select-scene:in:north> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/north> ;
+    rdf:value 1.61e+01 .
+
+<urn:example:entity:select-scene:in:south> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/south> ;
+    rdf:value 1.59e+01 .
+
+<urn:example:entity:select-scene:in:west> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/select_scene#inputs/west> ;
+    rdf:value 9.515e+01 .
+
+<urn:example:image:ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2> a prov:SoftwareAgent ;
+    pp:name "container image ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2" .
+
+<urn:example:run:kindgrove-steps:select-scene> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/select-scene> ;
+    prov:endedAtTime "2026-09-24T10:58:01+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/select_scene> ] ;
+    prov:startedAtTime "2026-09-24T10:57:48+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:select-scene:in:cloud_cover_max>,
+        <urn:example:entity:select-scene:in:days_back>,
+        <urn:example:entity:select-scene:in:east>,
+        <urn:example:entity:select-scene:in:north>,
+        <urn:example:entity:select-scene:in:south>,
+        <urn:example:entity:select-scene:in:west> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2> .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

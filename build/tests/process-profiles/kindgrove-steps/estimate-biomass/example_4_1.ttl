@@ -1,0 +1,13 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+[] proc:inputs [ ns1:ndvi_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndvi.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:ndwi_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndwi.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:savi_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/savi.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:stac_item [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json" ;
+                    proc:type "application/geo+json" ] ] ;
+    proc:response "document" .
+

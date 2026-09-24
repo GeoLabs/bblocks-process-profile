@@ -1,0 +1,86 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <http://schema.org/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/select_scene> dcterms:description "Process converted from CWL" ;
+    dcterms:subject "mangrove",
+        "ospd",
+        "sentinel-2",
+        "stac" ;
+    dcterms:title "select_scene" ;
+    pp:version "0.1.0" ;
+    proc:inputs [ ns1:cloud_cover_max [ dcterms:description "" ;
+                    dcterms:title "cloud_cover_max" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:collection [ dcterms:description "" ;
+                    dcterms:title "collection" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "\"sentinel-2-l2a\""^^rdf:JSON ;
+                            proc:type "string" ] ] ;
+            ns1:days_back [ dcterms:description "" ;
+                    dcterms:title "days_back" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "integer" ] ] ;
+            ns1:east [ dcterms:description "" ;
+                    dcterms:title "east" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:north [ dcterms:description "" ;
+                    dcterms:title "north" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:south [ dcterms:description "" ;
+                    dcterms:title "south" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns1:stac_api [ dcterms:description "" ;
+                    dcterms:title "stac_api" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "\"https://earth-search.aws.element84.com/v1\""^^rdf:JSON ;
+                            proc:type "string" ] ] ;
+            ns1:west [ dcterms:description "" ;
+                    dcterms:title "west" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "Select the least cloudy Sentinel-2 L2A scene over a bounding box" ;
+            proc:role schema:description ],
+        [ rdf:value "select_scene" ;
+            proc:role schema:name ],
+        [ rdf:value "0.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:affiliation "GeoLabs" ;
+                    ns3:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
+            proc:role schema:author ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns4:stac_item [ dcterms:description "" ;
+                    dcterms:title "stac_item" ;
+                    proc:schema [ proc:type "string" ;
+                            ns2:contentMediaType "application/octet-stream" ] ] ] .
+

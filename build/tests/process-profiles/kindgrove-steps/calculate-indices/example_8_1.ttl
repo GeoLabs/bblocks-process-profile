@@ -1,0 +1,30 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/calculate-indices> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation> ;
+    skos:definition "Computes NDVI, NDWI and SAVI from Sentinel-2 red, green and NIR bands." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Compute NDVI, NDWI and SAVI" ;
+    pp:openeoEquivalence [ pp:decomposition ( [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.cubes.ndvi" ;
+                        pp:stage "ndvi" ] [ pp:equivalenceLevel "closeMatch" ;
+                        pp:openeo "ogc.openeo.processes.math.indices.normalized_difference" ;
+                        pp:stage "ndwi" ] [ skos:note "soil-adjusted vegetation index, no openEO process in this register" ;
+                        pp:equivalenceLevel "none" ;
+                        pp:stage "savi" ] ) ;
+            pp:equivalenceLevel "none" ;
+            pp:rationale "Composite, one tool computing three indices from the same three-band input at once. NDVI alone would be closeMatch `ogc.openeo.processes.cubes.ndvi`; NDWI alone closeMatch `ogc.openeo.processes.math.indices.normalized_difference` (as in `water-bodies.norm-diff` and `kindgrove.mangrove`); SAVI (soil-adjusted, not a plain normalized difference) has no openEO process in this register. Kept `none` for the tool as a whole since no single openEO process covers the composite." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/calculate_indices> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.calculate-indices" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#calculate_indices> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "calculate_indices" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/calculate_indices> pp:version "0.1.0" .
+

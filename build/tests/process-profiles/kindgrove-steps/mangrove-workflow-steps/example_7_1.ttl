@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:mangrove-workflow-steps:out:stac> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac> ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/catalog.json> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:mangrove-workflow-steps> .
+
+<urn:example:entity:mangrove-workflow-steps:in:aoi> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#inputs/aoi> ;
+    rdf:value [ pp:bbox 1.59e+01,
+                1.61e+01,
+                9.515e+01,
+                9.535e+01 ;
+            pp:crs "CRS84" ] .
+
+<urn:example:entity:mangrove-workflow-steps:in:cloud_cover_max> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#inputs/cloud_cover_max> ;
+    rdf:value 20 .
+
+<urn:example:entity:mangrove-workflow-steps:in:days_back> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#inputs/days_back> ;
+    rdf:value 90 .
+
+<urn:example:run:kindgrove-steps:mangrove-workflow-steps> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/mangrove-workflow-steps> ;
+    prov:endedAtTime "2026-09-24T10:59:58+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps> ] ;
+    prov:startedAtTime "2026-09-24T10:57:44+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:mangrove-workflow-steps:in:aoi>,
+        <urn:example:entity:mangrove-workflow-steps:in:cloud_cover_max>,
+        <urn:example:entity:mangrove-workflow-steps:in:days_back> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

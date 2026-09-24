@@ -1,0 +1,16 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "inputs": {
+    "band_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/red.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "west": 95.15,
+    "south": 15.9,
+    "east": 95.35,
+    "north": 16.1,
+    "epsg": 4326,
+    "resolution": 0.0001
+  },
+  "response": "document"
+}

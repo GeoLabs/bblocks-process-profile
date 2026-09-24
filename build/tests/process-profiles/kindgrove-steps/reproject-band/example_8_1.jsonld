@@ -1,0 +1,35 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/reproject-band",
+  "type": "ProcessType",
+  "prefLabel": "Reproject a raster onto a regular grid",
+  "definition": "Reprojects a raster onto a regular grid covering a bounding box.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing"
+  ],
+  "profile": "ospd.process-profiles.kindgrove-steps.reproject-band",
+  "processDescription": {
+    "id": "reproject_band",
+    "version": "0.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#reproject_band",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "reproject_band",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.bbox"
+  ],
+  "closeMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.resample_spatial"
+  ],
+  "openeoEquivalence": {
+    "level": "closeMatch",
+    "rationale": "resample_spatial with a target `resolution` and `projection` (epsg); no explicit resampling-method parameter in the CWL (implementation default), same partial match as `algae-bloom.reproject-image`."
+  }
+}

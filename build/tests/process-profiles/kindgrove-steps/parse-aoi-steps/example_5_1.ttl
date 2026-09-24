@@ -1,0 +1,8 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] pp:east 9.535e+01 ;
+    pp:north 1.61e+01 ;
+    pp:south 1.59e+01 ;
+    pp:west 9.515e+01 .
+

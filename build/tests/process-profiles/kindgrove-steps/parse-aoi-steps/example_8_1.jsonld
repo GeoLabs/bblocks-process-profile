@@ -1,0 +1,35 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/parse-aoi-steps",
+  "type": "ProcessType",
+  "prefLabel": "Parse area of interest",
+  "definition": "Splits an OGC bounding box into its west, south, east and north coordinates.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/filter-configuration"
+  ],
+  "profile": "ospd.process-profiles.kindgrove-steps.parse-aoi-steps",
+  "processDescription": {
+    "id": "parse_aoi",
+    "version": "0.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#parse_aoi",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "parse_aoi",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [
+    "eoap.cct.bbox"
+  ],
+  "candidateCctDependencies": [],
+  "relatedMatch": [
+    "https://www.opengis.net/def/bblocks/ogc.openeo.types.bounding-box"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Structural helper: unpacks an OGC BBox record into west/south/east/north floats -- no `output_dir` (unlike `kindgrove.parse-aoi`, which this profile parallels but does not replace). No openEO process does this, since openEO passes a bounding box directly."
+  }
+}

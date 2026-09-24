@@ -1,0 +1,20 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld",
+  "inputs": {
+    "band_files": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/red_4326.tif",
+        "type": "geotiff"
+      },
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/green_4326.tif",
+        "type": "geotiff"
+      },
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/nir_4326.tif",
+        "type": "geotiff"
+      }
+    ]
+  },
+  "response": "document"
+}

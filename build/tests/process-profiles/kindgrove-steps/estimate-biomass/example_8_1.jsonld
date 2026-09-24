@@ -1,0 +1,32 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/estimate-biomass",
+  "type": "ProcessType",
+  "prefLabel": "Mangrove detection, allometric biomass and IPCC carbon stock",
+  "definition": "Detects mangrove pixels and estimates above-ground biomass and carbon stock from NDVI, NDWI and SAVI.",
+  "inScheme": "https://geolabs.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation"
+  ],
+  "profile": "ospd.process-profiles.kindgrove-steps.estimate-biomass",
+  "processDescription": {
+    "id": "estimate_biomass",
+    "version": "0.1.0"
+  },
+  "source": {
+    "cwl": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#estimate_biomass",
+    "cwlClass": "CommandLineTool",
+    "cwlId": "estimate_biomass",
+    "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#ProcessRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [
+    "eoap.cct.stac"
+  ],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "Opaque: a threshold-based mangrove mask (ndvi_min/max, ndwi_min, savi_min) followed by a fixed linear allometric formula (biomass_slope/intercept) and an IPCC carbon_fraction constant. No openEO process expresses a domain-specific regression model, same as `kindgrove.mangrove`."
+  }
+}

@@ -17,8 +17,8 @@
 
 <urn:example:entity:norm-diff:in:rasters> a prov:Entity,
         <https://ospd.example.org/ogc-api/processes/norm_diff#inputs/rasters> ;
-    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif" ],
-        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif" ] .
+    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_nir.tif" ],
+        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/crop_green.tif" ] .
 
 <urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0> a prov:SoftwareAgent ;
     pp:name "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:1.5.0" .

@@ -1,0 +1,94 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/catalog.json> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "943b0707a0f1a109dd1de1d61e37a1654a191ae9" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "application/json" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass.tif> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "2b8178722e8bb6fbc41909e7e32e88d4aa439eb8" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass_quicklook.png> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "0ff4ea33ebd17218fd87cba84943c04e4e56137f" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "image/png" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass_summary.csv> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "4451dd50c71fb43e9f78bbe62b52f4d6349624a8" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "text/csv" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/carbon_summary.csv> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "661fc93f43cc808586d1ba6bf1b9e22a963ce449" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "text/csv" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/mangrove-analysis-20260924-105955.json> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "7238dd3cfee022d8d78263cad6a90a7ed0b1c31a" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "application/json" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/mangrove_mask.tif> prov:generated <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    ns1:checksum [ rdf:value "443e27d9b969edf33b0080e08bc8bffe154f06f9" ;
+            ns1:algorithm "SHA-1" ] ;
+    ns1:describedByParameter "https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps#outputs/stac" ;
+    ns1:mediaType "image/tiff; application=geotiff" ;
+    proc:role <https://geolabs.github.io/bblocks-process-profiles/def/process/output> ;
+    proc:type "Artifact" .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a wfprov:WorkflowEngine ;
+    pp:name "cwltool" ;
+    pp:version "3.1.20260108082145" .
+
+<urn:example:run:kindgrove-steps:mangrove-workflow-steps> a wfprov:WorkflowRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/mangrove-workflow-steps> ;
+    wfprov:describedByWorkflow <https://ospd.example.org/ogc-api/processes/mangrove-workflow-steps> ;
+    wfprov:hadSubProcessRun <urn:example:run:kindgrove-steps:calculate-indices>,
+        <urn:example:run:kindgrove-steps:download-band>,
+        <urn:example:run:kindgrove-steps:estimate-biomass>,
+        <urn:example:run:kindgrove-steps:export-stac>,
+        <urn:example:run:kindgrove-steps:parse-aoi-steps>,
+        <urn:example:run:kindgrove-steps:reproject-band>,
+        <urn:example:run:kindgrove-steps:select-scene> ;
+    prov:endedAtTime "2026-09-24T10:59:58+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-24T10:57:44+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:jobID "kindgrove-steps-mangrove-workflow-steps-0001" ;
+    pp:status "successful" .
+
+[] pp:engine <urn:example:engine:cwltool-3.1.20260108082145> ;
+    pp:run <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    proc:outputs <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/catalog.json>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass.tif>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass_quicklook.png>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/biomass_summary.csv>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/carbon_summary.csv>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/mangrove-analysis-20260924-105955.json>,
+        <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-mangrove-workflow-steps-0001/results/mangrove-analysis-20260924-105955/mangrove_mask.tif> .
+

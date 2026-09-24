@@ -1,0 +1,26 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/download-band> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.filter_bands>,
+        <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection> ;
+    skos:definition "Downloads one Sentinel-2 band over a bounding box from a STAC Item." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Download one Sentinel-2 band over a bounding box" ;
+    pp:candidateCctDependency "eoap.cct.bbox",
+        "eoap.cct.stac" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "load_collection with a spatial_extent and a single band selected (filter_bands); the STAC item is a resolved File (the output of `select-scene`) rather than resolved in-process, same pattern as `algae-bloom.download-band-sentinel2-stac-item`." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/download_band> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.download-band" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#download_band> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "download_band" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/download_band> pp:version "0.1.0" .
+

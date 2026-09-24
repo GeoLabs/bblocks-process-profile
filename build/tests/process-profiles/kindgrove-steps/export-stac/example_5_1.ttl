@@ -1,0 +1,22 @@
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] proc:inputs [ ns1:analysis_summary_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/analysis_summary.json" ;
+                    proc:type "application/json" ] ;
+            ns1:biomass_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:biomass_summary_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass_summary.csv" ;
+                    proc:type "text/csv" ] ;
+            ns1:carbon_summary_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/carbon_summary.csv" ;
+                    proc:type "text/csv" ] ;
+            ns1:east 9.535e+01 ;
+            ns1:mangrove_mask_file [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/mangrove_mask.tif" ;
+                    proc:type "image/tiff; application=geotiff" ] ;
+            ns1:north 1.61e+01 ;
+            ns1:south 1.59e+01 ;
+            ns1:stac_item [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json" ;
+                    proc:type "application/geo+json" ] ;
+            ns1:west 9.515e+01 ] ;
+    proc:response "document" .
+

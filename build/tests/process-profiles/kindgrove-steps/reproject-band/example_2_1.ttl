@@ -1,0 +1,81 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <http://schema.org/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/reproject_band> dcterms:description "Process converted from CWL" ;
+    dcterms:subject "mangrove",
+        "ospd",
+        "reprojection" ;
+    dcterms:title "reproject_band" ;
+    pp:version "0.1.0" ;
+    proc:inputs [ ns2:band_file [ dcterms:description "" ;
+                    dcterms:title "band_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:east [ dcterms:description "" ;
+                    dcterms:title "east" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:epsg [ dcterms:description "" ;
+                    dcterms:title "epsg" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "4326"^^rdf:JSON ;
+                            proc:type "integer" ] ] ;
+            ns2:north [ dcterms:description "" ;
+                    dcterms:title "north" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:resolution [ dcterms:description "" ;
+                    dcterms:title "resolution" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.0001"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:south [ dcterms:description "" ;
+                    dcterms:title "south" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:west [ dcterms:description "" ;
+                    dcterms:title "west" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value "reproject_band" ;
+            proc:role schema:name ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:affiliation "GeoLabs" ;
+                    ns3:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "Reproject a raster onto a regular grid covering a bounding box" ;
+            proc:role schema:description ],
+        [ rdf:value "0.1.0" ;
+            proc:role schema:softwareVersion ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns4:reprojected_file [ dcterms:description "" ;
+                    dcterms:title "reprojected_file" ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ] .
+

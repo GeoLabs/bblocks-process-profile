@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "band_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-download-band-0001/results/red.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

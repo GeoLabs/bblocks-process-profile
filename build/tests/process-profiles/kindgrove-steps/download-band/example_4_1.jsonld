@@ -1,0 +1,15 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "inputs": {
+    "stac_item": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json",
+      "type": "application/geo+json"
+    },
+    "band": "red",
+    "west": 95.15,
+    "south": 15.9,
+    "east": 95.35,
+    "north": 16.1
+  },
+  "response": "document"
+}

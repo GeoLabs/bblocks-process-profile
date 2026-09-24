@@ -1,9 +1,9 @@
 # OSPD Process Profiles
 
 OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference
-workflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection), each
-linked to its CWL source, the generic provenance profile, the EOAP CWL custom types and the
-openEO Building Blocks.
+workflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection, W2b a
+step-decomposed reimplementation of KindGrove), each linked to its CWL source, the generic
+provenance profile, the EOAP CWL custom types and the openEO Building Blocks.
 
 
 This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API
@@ -111,6 +111,54 @@ OGC API - Processes profile of the CWL Workflow `mangrove-workflow` (W2 KindGrov
 **Type:** schema
 
 OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.calculate-indices` — Process profile: calculate_indices
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `calculate_indices` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.download-band` — Process profile: download_band
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `download_band` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.estimate-biomass` — Process profile: estimate_biomass
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `estimate_biomass` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.export-stac` — Process profile: export_stac
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `export_stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.mangrove-workflow-steps` — Process profile: mangrove-workflow-steps
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL Workflow `mangrove-workflow-steps` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.parse-aoi-steps` — Process profile: parse_aoi
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.reproject-band` — Process profile: reproject_band
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `reproject_band` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
+
+### `ospd.process-profiles.kindgrove-steps.select-scene` — Process profile: select_scene
+
+**Type:** schema
+
+OGC API - Processes profile of the CWL CommandLineTool `select_scene` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.
 
 ### `ospd.process-profiles.water-bodies.crop` — Process profile: crop
 

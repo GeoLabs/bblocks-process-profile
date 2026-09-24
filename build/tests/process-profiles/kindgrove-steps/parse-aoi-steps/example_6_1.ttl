@@ -1,0 +1,53 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:parse-aoi-steps:out:east> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/parse_aoi#outputs/east> ;
+    rdf:value 9.535e+01 ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:parse-aoi-steps> .
+
+<urn:example:entity:parse-aoi-steps:out:north> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/parse_aoi#outputs/north> ;
+    rdf:value 1.61e+01 ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:parse-aoi-steps> .
+
+<urn:example:entity:parse-aoi-steps:out:south> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/parse_aoi#outputs/south> ;
+    rdf:value 1.59e+01 ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:parse-aoi-steps> .
+
+<urn:example:entity:parse-aoi-steps:out:west> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/parse_aoi#outputs/west> ;
+    rdf:value 9.515e+01 ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:parse-aoi-steps> .
+
+<urn:example:entity:parse-aoi-steps:in:aoi> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/parse_aoi#inputs/aoi> ;
+    rdf:value [ pp:bbox 1.59e+01,
+                1.61e+01,
+                9.515e+01,
+                9.535e+01 ;
+            pp:crs "CRS84" ] .
+
+<urn:example:image:alpine:3.22.2> a prov:SoftwareAgent ;
+    pp:name "container image alpine:3.22.2" .
+
+<urn:example:run:kindgrove-steps:parse-aoi-steps> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/parse-aoi-steps> ;
+    prov:endedAtTime "2026-09-24T10:57:48+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/parse_aoi> ] ;
+    prov:startedAtTime "2026-09-24T10:57:45+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:parse-aoi-steps:in:aoi> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:alpine:3.22.2> .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

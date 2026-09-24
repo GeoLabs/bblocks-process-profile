@@ -1,0 +1,183 @@
+[
+  {
+    "id": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/estimate-biomass",
+    "startedAtTime": "2026-09-24T10:59:40Z",
+    "used": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145",
+      "urn:example:image:ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/estimate_biomass"
+      }
+    ],
+    "endedAtTime": "2026-09-24T10:59:47Z"
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:in:ndvi_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/ndvi_file",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndvi.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:in:ndwi_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/ndwi_file",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndwi.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:in:savi_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/savi_file",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/savi.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:in:stac_item",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/stac_item",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json",
+        "rel": "item",
+        "type": "application/geo+json"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:out:analysis_summary_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/analysis_summary_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "wasDerivedFrom": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/analysis_summary.json",
+        "rel": "item",
+        "type": "application/json"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:out:biomass_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/biomass_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "wasDerivedFrom": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:out:biomass_summary_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/biomass_summary_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "wasDerivedFrom": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass_summary.csv",
+        "rel": "item",
+        "type": "text/csv"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:out:carbon_summary_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/carbon_summary_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "wasDerivedFrom": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/carbon_summary.csv",
+        "rel": "item",
+        "type": "text/csv"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:entity:estimate-biomass:out:mangrove_mask_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/mangrove_mask_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:estimate-biomass",
+    "wasDerivedFrom": [
+      "urn:example:entity:estimate-biomass:in:ndvi_file",
+      "urn:example:entity:estimate-biomass:in:ndwi_file",
+      "urn:example:entity:estimate-biomass:in:savi_file",
+      "urn:example:entity:estimate-biomass:in:stac_item"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/mangrove_mask.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:image:ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2",
+    "provType": "prov:SoftwareAgent",
+    "name": "container image ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2"
+  }
+]

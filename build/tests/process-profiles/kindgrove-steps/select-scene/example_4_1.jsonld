@@ -1,0 +1,12 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/select-scene/context.jsonld",
+  "inputs": {
+    "west": 95.15,
+    "south": 15.9,
+    "east": 95.35,
+    "north": 16.1,
+    "cloud_cover_max": 20,
+    "days_back": 90
+  },
+  "response": "document"
+}

@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:kindgrove-steps:parse-aoi-steps> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/parse-aoi-steps> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/parse_aoi> ;
+    wfprov:usedInput <urn:example:entity:parse-aoi-steps:in:aoi> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    prov:startedAtTime "2026-09-24T10:57:45+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

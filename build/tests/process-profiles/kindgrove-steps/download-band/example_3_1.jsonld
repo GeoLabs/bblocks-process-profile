@@ -1,0 +1,14 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "processDescription": {
+    "process": {
+      "id": "download_band",
+      "version": "0.1.0"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#download_band",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

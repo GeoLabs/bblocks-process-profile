@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "ndvi_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndvi.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "ndwi_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndwi.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "savi_file": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/savi.tif",
+      "type": "image/tiff; application=geotiff"
+    },
+    "stac_item": {
+      "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json",
+      "type": "application/geo+json"
+    }
+  },
+  "response": "document"
+}

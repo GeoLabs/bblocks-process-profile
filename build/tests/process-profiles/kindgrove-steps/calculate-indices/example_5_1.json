@@ -1,0 +1,14 @@
+{
+  "ndvi_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-calculate-indices-0001/results/ndvi.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "ndwi_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-calculate-indices-0001/results/ndwi.tif",
+    "type": "image/tiff; application=geotiff"
+  },
+  "savi_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-calculate-indices-0001/results/savi.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

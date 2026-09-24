@@ -1,0 +1,154 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/mangrove-workflow-steps> dcterms:description """Mangrove above-ground biomass and carbon stock estimation from Sentinel-2 L2A,
+split into one CommandLineTool per processing step, aligned on the steps of the
+OSPD W1 Algae Bloom workflow:
+parse_aoi -> select_scene -> download_band (x3) -> reproject_band (x3)
+-> calculate_indices -> estimate_biomass -> export_stac.
+""" ;
+    dcterms:subject "biomass",
+        "carbon",
+        "mangrove",
+        "ospd",
+        "sentinel-2",
+        "stac" ;
+    dcterms:title "Mangrove Biomass Workflow (step notebooks)" ;
+    pp:version "0.1.0" ;
+    proc:inputs [ ns2:aoi [ dcterms:description "Area of interest as a bounding box" ;
+                    dcterms:title "Area of Interest" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "object" ;
+                            ns1:properties [ ns1:bbox [ proc:type "array" ;
+                                            ns1:items [ proc:type "number" ] ;
+                                            ns1:oneOf [ dcterms:description "3D bbox" ;
+                                                    ns1:maxItems 6 ;
+                                                    ns1:minItems 6 ],
+                                                [ dcterms:description "2D bbox" ;
+                                                    ns1:maxItems 4 ;
+                                                    ns1:minItems 4 ] ] ;
+                                    ns1:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                                            proc:enum "CRS84",
+                                                "CRS84h" ;
+                                            proc:type "string" ] ] ;
+                            ns1:required "bbox" ] ] ;
+            ns2:biomass_intercept [ dcterms:description "" ;
+                    dcterms:title "biomass_intercept" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "-75.2"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:biomass_slope [ dcterms:description "" ;
+                    dcterms:title "biomass_slope" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "250.5"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:carbon_fraction [ dcterms:description "" ;
+                    dcterms:title "carbon_fraction" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.47"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:cloud_cover_max [ dcterms:description "Maximum acceptable cloud cover percentage (0-100)" ;
+                    dcterms:title "Maximum Cloud Cover" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:collection [ dcterms:description "" ;
+                    dcterms:title "collection" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "\"sentinel-2-l2a\""^^rdf:JSON ;
+                            proc:type "string" ] ] ;
+            ns2:days_back [ dcterms:description "Number of days to search backwards from current date" ;
+                    dcterms:title "Days Back" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "integer" ] ] ;
+            ns2:epsg [ dcterms:description "" ;
+                    dcterms:title "epsg" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "4326"^^rdf:JSON ;
+                            proc:type "integer" ] ] ;
+            ns2:ndvi_max [ dcterms:description "" ;
+                    dcterms:title "ndvi_max" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.9"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:ndvi_min [ dcterms:description "" ;
+                    dcterms:title "ndvi_min" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.3"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:ndwi_min [ dcterms:description "" ;
+                    dcterms:title "ndwi_min" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "-0.3"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:resolution [ dcterms:description "" ;
+                    dcterms:title "resolution" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.0001"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:savi_min [ dcterms:description "" ;
+                    dcterms:title "savi_min" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "0.2"^^rdf:JSON ;
+                            proc:type "number" ] ] ;
+            ns2:stac_api [ dcterms:description "" ;
+                    dcterms:title "stac_api" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ proc:default "\"https://earth-search.aws.element84.com/v1\""^^rdf:JSON ;
+                            proc:type "string" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "0.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value """Mangrove above-ground biomass and carbon stock estimation from Sentinel-2 L2A,
+split into one CommandLineTool per processing step, aligned on the steps of the
+OSPD W1 Algae Bloom workflow:
+parse_aoi -> select_scene -> download_band (x3) -> reproject_band (x3)
+-> calculate_indices -> estimate_biomass -> export_stac.
+""" ;
+            proc:role schema:description ],
+        [ rdf:value "Mangrove Biomass Workflow (step notebooks)" ;
+            proc:role schema:name ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns3:stac [ dcterms:description "STAC Catalog with one Item holding the mask, biomass, summaries and quicklook" ;
+                    dcterms:title "STAC Catalog" ;
+                    proc:schema [ proc:type "object" ;
+                            ns1:format "stac-catalog" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
+                                    dcterms:title [ proc:type "string" ] ;
+                                    rdfs:seeAlso [ dcterms:type "array" ] ;
+                                    proc:type [ proc:enum "Catalog" ;
+                                            proc:type "string" ] ;
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
+                                "id",
+                                "links",
+                                "stac_version",
+                                "type" ] ] ] .
+

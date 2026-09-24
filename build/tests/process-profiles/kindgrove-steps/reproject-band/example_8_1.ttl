@@ -1,0 +1,24 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/reproject-band> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/pre-processing> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.resample_spatial> ;
+    skos:definition "Reprojects a raster onto a regular grid covering a bounding box." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Reproject a raster onto a regular grid" ;
+    pp:candidateCctDependency "eoap.cct.bbox" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "resample_spatial with a target `resolution` and `projection` (epsg); no explicit resampling-method parameter in the CWL (implementation default), same partial match as `algae-bloom.reproject-image`." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/reproject_band> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.reproject-band" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#reproject_band> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "reproject_band" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/reproject_band> pp:version "0.1.0" .
+

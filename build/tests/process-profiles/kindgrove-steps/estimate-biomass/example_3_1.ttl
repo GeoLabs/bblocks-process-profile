@@ -1,0 +1,10 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/estimate_biomass> pp:version "0.1.0" .
+
+[] pp:processDescription [ pp:process <https://geolabs.github.io/bblocks-process-profiles/def/process/estimate_biomass> ] ;
+    proc:executionUnit [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+            pp:href "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#estimate_biomass" ;
+            pp:rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" ] .
+

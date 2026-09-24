@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.water-bodies.detect-water-body - Process profile: detect_water_body
-Generated 2026-09-24T10:03:36.793263+00:00
+Generated 2026-09-24T12:43:13.245445+00:00
 === Files ===
 Using examples/cwlprov.jsonld from examples
 "@graph" found, trying validation with contents unwrapped
@@ -14,70 +14,70 @@ Validation passed
 
 === SHACL ===
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
  - https://www.w3.org/ns/prov-o#
  - https://www.w3.org/ns/prov-o
  - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/CWLOntology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
 Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: id:1f7549f8-4403-44f2-a435-f95a32edb9de,id:eb53f504-eecb-4585-8e33-f7afdbbf816a
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedEnd,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedEnd,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedEnd,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedEnd,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedEnd
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference>,wf:main,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop>,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu>
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: id:42580139-e758-4dbe-8ca8-7a114f7abf7f/prov:qualifiedGeneration,id:5fa19808-d14c-4c01-8bd1-05a7a8845019/prov:qualifiedGeneration,id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e/prov:qualifiedGeneration,id:740c294a-a5f9-49be-b685-970f3eec0666/prov:qualifiedGeneration,id:5fa19808-d14c-4c01-8bd1-05a7a8845019/prov:qualifiedGeneration
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: id:006f10ba-bce7-4602-bc25-46f0ca2c5724,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32,id:f960d24b-dcbf-4c16-88ce-ad7029487e59,id:6d7920a6-ee35-4701-88be-68838b9ba10b,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedStart,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedStart,id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedStart,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedStart,id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c/prov:qualifiedStart,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedStart
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: data:2d6eb0dc351bd77d3f5b06672ed012ef5dec508f,data:ea91fcdd6f24b5105718011ca77810e4b6763c09,id:740c294a-a5f9-49be-b685-970f3eec0666,data:69255dfb77442b710fb7caf4fe2c555a8a8ca404,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu>,data:9d1fba832b03655b5b73ff964bc74d4543bf904a,id:eb53f504-eecb-4585-8e33-f7afdbbf816a,id:42580139-e758-4dbe-8ca8-7a114f7abf7f,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference>,data:8cb131413518c30be6ba485ea61764491444cde5,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop>,data:ba936cb0e062bea4078e8b56371ca8fe054093dd,id:1f7549f8-4403-44f2-a435-f95a32edb9de,wf:main,data:5f0002427ab880579cf6a5a5c704bd399f3310f2,id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e,data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad,id:5fa19808-d14c-4c01-8bd1-05a7a8845019,data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedEnd,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedEnd,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedEnd,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedEnd,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedEnd
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32,id:f960d24b-dcbf-4c16-88ce-ad7029487e59,id:006f10ba-bce7-4602-bc25-46f0ca2c5724,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5,id:6d7920a6-ee35-4701-88be-68838b9ba10b
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: id:740c294a-a5f9-49be-b685-970f3eec0666,id:1f7549f8-4403-44f2-a435-f95a32edb9de,data:2d6eb0dc351bd77d3f5b06672ed012ef5dec508f,data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu>,data:5f0002427ab880579cf6a5a5c704bd399f3310f2,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop>,data:9d1fba832b03655b5b73ff964bc74d4543bf904a,data:ea91fcdd6f24b5105718011ca77810e4b6763c09,data:ba936cb0e062bea4078e8b56371ca8fe054093dd,data:69255dfb77442b710fb7caf4fe2c555a8a8ca404,wf:main,data:8cb131413518c30be6ba485ea61764491444cde5,id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e,id:5fa19808-d14c-4c01-8bd1-05a7a8845019,data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad,id:eb53f504-eecb-4585-8e33-f7afdbbf816a,id:42580139-e758-4dbe-8ca8-7a114f7abf7f,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference>
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: id:1f7549f8-4403-44f2-a435-f95a32edb9de,id:eb53f504-eecb-4585-8e33-f7afdbbf816a
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference>,wf:main,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu>,<arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop>
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedStart,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedStart,id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c/prov:qualifiedStart,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedStart,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedStart,id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedStart
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e/prov:qualifiedGeneration,id:42580139-e758-4dbe-8ca8-7a114f7abf7f/prov:qualifiedGeneration,id:5fa19808-d14c-4c01-8bd1-05a7a8845019/prov:qualifiedGeneration,id:740c294a-a5f9-49be-b685-970f3eec0666/prov:qualifiedGeneration,id:5fa19808-d14c-4c01-8bd1-05a7a8845019/prov:qualifiedGeneration
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:f960d24b-dcbf-4c16-88ce-ad7029487e59/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:6d7920a6-ee35-4701-88be-68838b9ba10b/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5/prov:qualifiedUsage,id:006f10ba-bce7-4602-bc25-46f0ca2c5724/prov:qualifiedUsage
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
 
 === End SHACL ===
 

@@ -1,0 +1,90 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/select-scene/context.jsonld",
+  "@graph": [
+    {
+      "id": "urn:example:run:kindgrove-steps:select-scene",
+      "provType": "prov:Activity",
+      "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/select-scene",
+      "startedAtTime": "2026-09-24T10:57:48Z",
+      "used": [
+        "urn:example:entity:select-scene:in:west",
+        "urn:example:entity:select-scene:in:south",
+        "urn:example:entity:select-scene:in:east",
+        "urn:example:entity:select-scene:in:north",
+        "urn:example:entity:select-scene:in:cloud_cover_max",
+        "urn:example:entity:select-scene:in:days_back"
+      ],
+      "wasAssociatedWith": [
+        "urn:example:engine:cwltool-3.1.20260108082145",
+        "urn:example:image:ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2"
+      ],
+      "qualifiedAssociation": [
+        {
+          "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+          "hadPlan": "https://ospd.example.org/ogc-api/processes/select_scene"
+        }
+      ],
+      "endedAtTime": "2026-09-24T10:58:01Z"
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:west",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/west",
+      "value": 95.15
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:south",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/south",
+      "value": 15.9
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:east",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/east",
+      "value": 95.35
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:north",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/north",
+      "value": 16.1
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:cloud_cover_max",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/cloud_cover_max",
+      "value": 20
+    },
+    {
+      "id": "urn:example:entity:select-scene:in:days_back",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#inputs/days_back",
+      "value": 90
+    },
+    {
+      "id": "urn:example:entity:select-scene:out:stac_item",
+      "provType": "prov:Entity",
+      "entityType": "https://ospd.example.org/ogc-api/processes/select_scene#outputs/stac_item",
+      "wasGeneratedBy": "urn:example:run:kindgrove-steps:select-scene",
+      "links": [
+        {
+          "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-select-scene-0001/results/scene_item.json",
+          "rel": "item",
+          "type": "application/json"
+        }
+      ],
+      "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:engine:cwltool-3.1.20260108082145",
+      "provType": "prov:SoftwareAgent",
+      "name": "cwltool 3.1.20260108082145"
+    },
+    {
+      "id": "urn:example:image:ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2",
+      "provType": "prov:SoftwareAgent",
+      "name": "container image ghcr.io/geolabs/kindgrove/select-scene:v0.0.2-rc2"
+    }
+  ]
+}

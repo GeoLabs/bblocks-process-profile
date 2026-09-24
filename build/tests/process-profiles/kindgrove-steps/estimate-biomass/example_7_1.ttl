@@ -1,0 +1,15 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:kindgrove-steps:estimate-biomass> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/estimate-biomass> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/estimate_biomass> ;
+    wfprov:usedInput <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    prov:startedAtTime "2026-09-24T10:59:40+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

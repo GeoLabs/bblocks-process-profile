@@ -1,0 +1,15 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld",
+  "inputs": {
+    "aoi": {
+      "bbox": [
+        95.15,
+        15.9,
+        95.35,
+        16.1
+      ],
+      "crs": "CRS84"
+    }
+  },
+  "response": "document"
+}

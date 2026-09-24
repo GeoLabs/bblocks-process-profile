@@ -1,0 +1,111 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:estimate-biomass:out:analysis_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/analysis_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/analysis_summary.json> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:estimate-biomass> .
+
+<urn:example:entity:estimate-biomass:out:biomass_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/biomass_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:estimate-biomass> .
+
+<urn:example:entity:estimate-biomass:out:biomass_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/biomass_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "text/csv" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/biomass_summary.csv> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:estimate-biomass> .
+
+<urn:example:entity:estimate-biomass:out:carbon_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/carbon_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "text/csv" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/carbon_summary.csv> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:estimate-biomass> .
+
+<urn:example:entity:estimate-biomass:out:mangrove_mask_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#outputs/mangrove_mask_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-estimate-biomass-0001/results/mangrove_mask.tif> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:estimate-biomass> .
+
+<urn:example:image:ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2> a prov:SoftwareAgent ;
+    pp:name "container image ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2" .
+
+<urn:example:run:kindgrove-steps:estimate-biomass> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/estimate-biomass> ;
+    prov:endedAtTime "2026-09-24T10:59:47+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/estimate_biomass> ] ;
+    prov:startedAtTime "2026-09-24T10:59:40+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:estimate-biomass:in:ndvi_file>,
+        <urn:example:entity:estimate-biomass:in:ndwi_file>,
+        <urn:example:entity:estimate-biomass:in:savi_file>,
+        <urn:example:entity:estimate-biomass:in:stac_item> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ghcr.io/geolabs/kindgrove/estimate-biomass:v0.0.2-rc2> .
+
+<urn:example:entity:estimate-biomass:in:ndvi_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/ndvi_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndvi.tif> ] .
+
+<urn:example:entity:estimate-biomass:in:ndwi_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/ndwi_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/ndwi.tif> ] .
+
+<urn:example:entity:estimate-biomass:in:savi_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/savi_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/savi.tif> ] .
+
+<urn:example:entity:estimate-biomass:in:stac_item> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/estimate_biomass#inputs/stac_item> ;
+    rdfs:seeAlso [ dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json> ] .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

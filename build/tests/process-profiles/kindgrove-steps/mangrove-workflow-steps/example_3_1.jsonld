@@ -1,0 +1,266 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/context.jsonld",
+  "id": "mangrove-workflow-steps",
+  "version": "0.1.0",
+  "title": "Mangrove Biomass Workflow (step notebooks)",
+  "description": "Mangrove above-ground biomass and carbon stock estimation from Sentinel-2 L2A,\nsplit into one CommandLineTool per processing step, aligned on the steps of the\nOSPD W1 Algae Bloom workflow:\nparse_aoi -> select_scene -> download_band (x3) -> reproject_band (x3)\n-> calculate_indices -> estimate_biomass -> export_stac.\n",
+  "mutable": true,
+  "keywords": [
+    "ospd",
+    "mangrove",
+    "biomass",
+    "carbon",
+    "sentinel-2",
+    "stac"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "Mangrove Biomass Workflow (step notebooks)"
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Mangrove above-ground biomass and carbon stock estimation from Sentinel-2 L2A,\nsplit into one CommandLineTool per processing step, aligned on the steps of the\nOSPD W1 Algae Bloom workflow:\nparse_aoi -> select_scene -> download_band (x3) -> reproject_band (x3)\n-> calculate_indices -> estimate_biomass -> export_stac.\n"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "0.1.0"
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://github.com/starling-foundries/KindGrove"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    }
+  ],
+  "inputs": {
+    "aoi": {
+      "title": "Area of Interest",
+      "description": "Area of interest as a bounding box",
+      "schema": {
+        "type": "object",
+        "required": [
+          "bbox"
+        ],
+        "properties": {
+          "bbox": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "oneOf": [
+              {
+                "minItems": 4,
+                "maxItems": 4,
+                "description": "2D bbox"
+              },
+              {
+                "minItems": 6,
+                "maxItems": 6,
+                "description": "3D bbox"
+              }
+            ]
+          },
+          "crs": {
+            "type": "string",
+            "enum": [
+              "CRS84",
+              "CRS84h"
+            ],
+            "default": "CRS84"
+          }
+        }
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "cloud_cover_max": {
+      "title": "Maximum Cloud Cover",
+      "description": "Maximum acceptable cloud cover percentage (0-100)",
+      "schema": {
+        "type": "number"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "days_back": {
+      "title": "Days Back",
+      "description": "Number of days to search backwards from current date",
+      "schema": {
+        "type": "integer"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "stac_api": {
+      "title": "stac_api",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "default": "https://earth-search.aws.element84.com/v1"
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "collection": {
+      "title": "collection",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "default": "sentinel-2-l2a"
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "epsg": {
+      "title": "epsg",
+      "description": "",
+      "schema": {
+        "type": "integer",
+        "default": 4326
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "resolution": {
+      "title": "resolution",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.0001
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "ndvi_min": {
+      "title": "ndvi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.3
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "ndvi_max": {
+      "title": "ndvi_max",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.9
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "ndwi_min": {
+      "title": "ndwi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": -0.3
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "savi_min": {
+      "title": "savi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.2
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "biomass_slope": {
+      "title": "biomass_slope",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 250.5
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "biomass_intercept": {
+      "title": "biomass_intercept",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": -75.2
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "carbon_fraction": {
+      "title": "carbon_fraction",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.47
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "stac": {
+      "title": "STAC Catalog",
+      "description": "STAC Catalog with one Item holding the mask, biomass, summaries and quicklook",
+      "schema": {
+        "type": "object",
+        "required": [
+          "type",
+          "stac_version",
+          "id",
+          "description",
+          "license",
+          "extent",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "Collection"
+            ]
+          },
+          "stac_version": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "extent": {
+            "type": "object"
+          },
+          "links": {
+            "type": "array"
+          },
+          "assets": {
+            "type": "object"
+          }
+        },
+        "format": "stac-collection"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}

@@ -1,0 +1,5 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+
+[] pp:stac_item [ a <https://geolabs.github.io/bblocks-process-profiles/def/application/json> ;
+            pp:href "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-select-scene-0001/results/scene_item.json" ] .
+

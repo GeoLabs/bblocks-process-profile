@@ -1,0 +1,14 @@
+{
+  "id": "urn:example:run:kindgrove-steps:calculate-indices",
+  "type": "ProcessRun",
+  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/calculate-indices",
+  "describedByProcess": "https://ospd.example.org/ogc-api/processes/calculate_indices",
+  "usedInput": [
+    {
+      "id": "urn:example:entity:calculate-indices:in:band_files"
+    }
+  ],
+  "startedAtTime": "2026-09-24T10:59:32Z",
+  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+  "wasPartOfWorkflowRun": "urn:example:run:kindgrove-steps:mangrove-workflow-steps"
+}

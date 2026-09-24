@@ -1,0 +1,42 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
+  "id": "urn:example:run:kindgrove-steps:export-stac",
+  "type": "ProcessRun",
+  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/export-stac",
+  "describedByProcess": "https://ospd.example.org/ogc-api/processes/export_stac",
+  "usedInput": [
+    {
+      "id": "urn:example:entity:export-stac:in:mangrove_mask_file"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:biomass_file"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:biomass_summary_file"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:carbon_summary_file"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:analysis_summary_file"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:stac_item"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:west"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:south"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:east"
+    },
+    {
+      "id": "urn:example:entity:export-stac:in:north"
+    }
+  ],
+  "startedAtTime": "2026-09-24T10:59:47Z",
+  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+  "wasPartOfWorkflowRun": "urn:example:run:kindgrove-steps:mangrove-workflow-steps"
+}

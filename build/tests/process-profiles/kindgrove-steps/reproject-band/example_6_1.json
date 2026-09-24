@@ -1,0 +1,103 @@
+[
+  {
+    "id": "urn:example:run:kindgrove-steps:reproject-band",
+    "provType": "prov:Activity",
+    "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/reproject-band",
+    "startedAtTime": "2026-09-24T10:59:12Z",
+    "used": [
+      "urn:example:entity:reproject-band:in:band_file",
+      "urn:example:entity:reproject-band:in:west",
+      "urn:example:entity:reproject-band:in:south",
+      "urn:example:entity:reproject-band:in:east",
+      "urn:example:entity:reproject-band:in:north",
+      "urn:example:entity:reproject-band:in:epsg",
+      "urn:example:entity:reproject-band:in:resolution"
+    ],
+    "wasAssociatedWith": [
+      "urn:example:engine:cwltool-3.1.20260108082145",
+      "urn:example:image:ghcr.io/geolabs/kindgrove/reproject-band:v0.0.2-rc2"
+    ],
+    "qualifiedAssociation": [
+      {
+        "agent": "urn:example:engine:cwltool-3.1.20260108082145",
+        "hadPlan": "https://ospd.example.org/ogc-api/processes/reproject_band"
+      }
+    ],
+    "endedAtTime": "2026-09-24T10:59:18Z"
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:band_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/band_file",
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/red.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ]
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:west",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/west",
+    "value": 95.15
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:south",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/south",
+    "value": 15.9
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:east",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/east",
+    "value": 95.35
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:north",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/north",
+    "value": 16.1
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:epsg",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/epsg",
+    "value": 4326
+  },
+  {
+    "id": "urn:example:entity:reproject-band:in:resolution",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#inputs/resolution",
+    "value": 0.0001
+  },
+  {
+    "id": "urn:example:entity:reproject-band:out:reprojected_file",
+    "provType": "prov:Entity",
+    "entityType": "https://ospd.example.org/ogc-api/processes/reproject_band#outputs/reprojected_file",
+    "wasGeneratedBy": "urn:example:run:kindgrove-steps:reproject-band",
+    "wasDerivedFrom": [
+      "urn:example:entity:reproject-band:in:band_file"
+    ],
+    "links": [
+      {
+        "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-reproject-band-0001/results/red_4326.tif",
+        "rel": "item",
+        "type": "image/tiff; application=geotiff"
+      }
+    ],
+    "wasAttributedTo": "urn:example:engine:cwltool-3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:engine:cwltool-3.1.20260108082145",
+    "provType": "prov:SoftwareAgent",
+    "name": "cwltool 3.1.20260108082145"
+  },
+  {
+    "id": "urn:example:image:ghcr.io/geolabs/kindgrove/reproject-band:v0.0.2-rc2",
+    "provType": "prov:SoftwareAgent",
+    "name": "container image ghcr.io/geolabs/kindgrove/reproject-band:v0.0.2-rc2"
+  }
+]

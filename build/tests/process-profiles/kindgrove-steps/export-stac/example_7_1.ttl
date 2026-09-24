@@ -1,0 +1,100 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:entity:export-stac:out:stac_catalog> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#outputs/stac_catalog> ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/kindgrove-steps-export-stac-0001/results/catalog.json> ] ;
+    prov:wasAttributedTo <urn:example:engine:cwltool-3.1.20260108082145> ;
+    prov:wasDerivedFrom <urn:example:entity:export-stac:in:analysis_summary_file>,
+        <urn:example:entity:export-stac:in:biomass_file>,
+        <urn:example:entity:export-stac:in:biomass_summary_file>,
+        <urn:example:entity:export-stac:in:carbon_summary_file>,
+        <urn:example:entity:export-stac:in:mangrove_mask_file>,
+        <urn:example:entity:export-stac:in:stac_item> ;
+    prov:wasGeneratedBy <urn:example:run:kindgrove-steps:export-stac> .
+
+<urn:example:entity:export-stac:in:east> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/east> ;
+    rdf:value 9.535e+01 .
+
+<urn:example:entity:export-stac:in:north> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/north> ;
+    rdf:value 1.61e+01 .
+
+<urn:example:entity:export-stac:in:south> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/south> ;
+    rdf:value 1.59e+01 .
+
+<urn:example:entity:export-stac:in:west> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/west> ;
+    rdf:value 9.515e+01 .
+
+<urn:example:image:ghcr.io/geolabs/kindgrove/export-stac:v0.0.2-rc2> a prov:SoftwareAgent ;
+    pp:name "container image ghcr.io/geolabs/kindgrove/export-stac:v0.0.2-rc2" .
+
+<urn:example:run:kindgrove-steps:export-stac> a prov:Activity,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/export-stac> ;
+    prov:endedAtTime "2026-09-24T10:59:58+00:00"^^xsd:dateTime ;
+    prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
+            prov:hadPlan <https://ospd.example.org/ogc-api/processes/export_stac> ] ;
+    prov:startedAtTime "2026-09-24T10:59:47+00:00"^^xsd:dateTime ;
+    prov:used <urn:example:entity:export-stac:in:analysis_summary_file>,
+        <urn:example:entity:export-stac:in:biomass_file>,
+        <urn:example:entity:export-stac:in:biomass_summary_file>,
+        <urn:example:entity:export-stac:in:carbon_summary_file>,
+        <urn:example:entity:export-stac:in:east>,
+        <urn:example:entity:export-stac:in:mangrove_mask_file>,
+        <urn:example:entity:export-stac:in:north>,
+        <urn:example:entity:export-stac:in:south>,
+        <urn:example:entity:export-stac:in:stac_item>,
+        <urn:example:entity:export-stac:in:west> ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
+        <urn:example:image:ghcr.io/geolabs/kindgrove/export-stac:v0.0.2-rc2> .
+
+<urn:example:entity:export-stac:in:analysis_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/analysis_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/analysis_summary.json> ] .
+
+<urn:example:entity:export-stac:in:biomass_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/biomass_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass.tif> ] .
+
+<urn:example:entity:export-stac:in:biomass_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/biomass_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "text/csv" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/biomass_summary.csv> ] .
+
+<urn:example:entity:export-stac:in:carbon_summary_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/carbon_summary_file> ;
+    rdfs:seeAlso [ dcterms:type "text/csv" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/carbon_summary.csv> ] .
+
+<urn:example:entity:export-stac:in:mangrove_mask_file> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/mangrove_mask_file> ;
+    rdfs:seeAlso [ dcterms:type "image/tiff; application=geotiff" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/mangrove_mask.tif> ] .
+
+<urn:example:entity:export-stac:in:stac_item> a prov:Entity,
+        <https://ospd.example.org/ogc-api/processes/export_stac#inputs/stac_item> ;
+    rdfs:seeAlso [ dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json> ] .
+
+<urn:example:engine:cwltool-3.1.20260108082145> a prov:SoftwareAgent ;
+    pp:name "cwltool 3.1.20260108082145" .
+

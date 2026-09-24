@@ -1,0 +1,117 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://schema.org/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/export_stac> dcterms:description "Process converted from CWL" ;
+    dcterms:subject "export",
+        "mangrove",
+        "ospd",
+        "stac" ;
+    dcterms:title "export_stac" ;
+    pp:version "0.1.0" ;
+    proc:inputs [ ns2:analysis_summary_file [ dcterms:description "" ;
+                    dcterms:title "analysis_summary_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:biomass_file [ dcterms:description "" ;
+                    dcterms:title "biomass_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:biomass_summary_file [ dcterms:description "" ;
+                    dcterms:title "biomass_summary_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:carbon_summary_file [ dcterms:description "" ;
+                    dcterms:title "carbon_summary_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:east [ dcterms:description "" ;
+                    dcterms:title "east" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:mangrove_mask_file [ dcterms:description "" ;
+                    dcterms:title "mangrove_mask_file" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:north [ dcterms:description "" ;
+                    dcterms:title "north" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:south [ dcterms:description "" ;
+                    dcterms:title "south" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ;
+            ns2:stac_item [ dcterms:description "" ;
+                    dcterms:title "stac_item" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:west [ dcterms:description "" ;
+                    dcterms:title "west" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "number" ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "export_stac" ;
+            proc:role schema:name ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "0.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "Plot the biomass map and export the results as a STAC Catalog" ;
+            proc:role schema:description ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:affiliation "GeoLabs" ;
+                    ns4:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns3:stac_catalog [ dcterms:description "" ;
+                    dcterms:title "stac_catalog" ;
+                    proc:schema [ proc:type "object" ;
+                            ns1:format "stac-collection" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
+                                    dcterms:title [ proc:type "string" ] ;
+                                    rdfs:seeAlso [ dcterms:type "array" ] ;
+                                    proc:type [ proc:enum "Collection" ;
+                                            proc:type "string" ] ;
+                                    ns1:assets [ proc:type "object" ] ;
+                                    ns1:extent [ proc:type "object" ] ;
+                                    ns1:license [ proc:type "string" ] ;
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
+                                "extent",
+                                "id",
+                                "license",
+                                "links",
+                                "stac_version",
+                                "type" ] ] ] .
+

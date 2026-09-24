@@ -1,0 +1,24 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/export-stac> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.save_result> ;
+    skos:definition "Plots the biomass map and exports the mangrove analysis results as a STAC Catalog." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Plot the biomass map and export a STAC catalog" ;
+    pp:candidateCctDependency "eoap.cct.stac" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Writes the final rasters and summaries to a self-describing STAC output, plus a quicklook PNG rendering; save_result's STAC output option is the closest openEO equivalent, same partial match as `algae-bloom.plot-image` and `water-bodies.stac`." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/export_stac> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.export-stac" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#export_stac> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "export_stac" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/export_stac> pp:version "0.1.0" .
+

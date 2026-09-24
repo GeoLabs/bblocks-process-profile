@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld",
+  "east": 95.35,
+  "north": 16.1,
+  "south": 15.9,
+  "west": 95.15
+}

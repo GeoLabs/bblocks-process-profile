@@ -1,0 +1,7 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "reprojected_file": {
+    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-reproject-band-0001/results/red_4326.tif",
+    "type": "image/tiff; application=geotiff"
+  }
+}

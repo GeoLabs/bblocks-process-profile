@@ -1,0 +1,17 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:run:kindgrove-steps:download-band> a wfprov:ProcessRun,
+        <https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/download-band> ;
+    wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/download_band> ;
+    wfprov:usedInput <urn:example:entity:download-band:in:band>,
+        <urn:example:entity:download-band:in:east>,
+        <urn:example:entity:download-band:in:north>,
+        <urn:example:entity:download-band:in:south>,
+        <urn:example:entity:download-band:in:stac_item>,
+        <urn:example:entity:download-band:in:west> ;
+    wfprov:wasPartOfWorkflowRun <urn:example:run:kindgrove-steps:mangrove-workflow-steps> ;
+    prov:startedAtTime "2026-09-24T10:58:01+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
+

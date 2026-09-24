@@ -1,0 +1,24 @@
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/select-scene> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-process-profiles/def/phase/selection-filtering> ;
+    skos:closeMatch <https://www.opengis.net/def/bblocks/ogc.openeo.processes.cubes.load_collection> ;
+    skos:definition "Selects the least cloudy Sentinel-2 L2A scene over a bounding box within a time window." ;
+    skos:inScheme pp:process-type ;
+    skos:prefLabel "Select the least cloudy Sentinel-2 L2A scene" ;
+    pp:candidateCctDependency "eoap.cct.bbox" ;
+    pp:openeoEquivalence [ pp:equivalenceLevel "closeMatch" ;
+            pp:rationale "Same filter semantics as load_collection's `spatial_extent` (west/south/east/north) and a `properties` cloud-cover filter; `days_back` is a relative time window resolved against the execution date, not an explicit `temporal_extent` -- the same non-reproducibility already documented for `kindgrove.mangrove-workflow` (Q-W2-DAYSBACK)." ] ;
+    pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/select_scene> ;
+    pp:profile "ospd.process-profiles.kindgrove-steps.select-scene" ;
+    pp:provenanceClass wfprov:ProcessRun ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#select_scene> ;
+            pp:cwlClass "CommandLineTool" ;
+            pp:cwlId "select_scene" ;
+            pp:license "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ] ;
+    pp:status "submitted" .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/select_scene> pp:version "0.1.0" .
+

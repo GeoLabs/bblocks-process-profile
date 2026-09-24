@@ -1,0 +1,279 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `download_band`
+  (CWL CommandLineTool). Pins the process id and the input/output names; the input/output
+  schemas are those derived from the CWL.
+allOf:
+- $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml
+- $ref: https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/staticIndicator/schema.yaml
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: download_band
+      x-jsonld-id: '@id'
+    inputs:
+      type: object
+      required:
+      - stac_item
+      - band
+      - west
+      - south
+      - east
+      - north
+      propertyNames:
+        enum:
+        - stac_item
+        - band
+        - west
+        - south
+        - east
+        - north
+      x-jsonld-id: https://w3id.org/ogc/api/processes/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/input/
+    outputs:
+      type: object
+      required:
+      - band_file
+      propertyNames:
+        enum:
+        - band_file
+      x-jsonld-id: https://w3id.org/ogc/api/processes/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/output/
+$defs:
+  rawProcessDescription:
+    $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml
+  applicationPackage:
+    $ref: https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/ogcapppkg/schema.yaml
+  provenance:
+    $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
+  processTypeEntry:
+    $ref: https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
+  w3cProvJsonLd:
+    $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
+  execute:
+    description: Execute request for this process. Built on the processDescription
+      input schemas and on ogc.api.processes.v1.schemas.link / qualifiedInputValue,
+      because ogc.api.processes.v1.schemas.execute rejects plain strings and numbers
+      (upstream issue U-01).
+    type: object
+    required:
+    - inputs
+    properties:
+      inputs:
+        type: object
+        required:
+        - stac_item
+        - band
+        - west
+        - south
+        - east
+        - north
+        propertyNames:
+          enum:
+          - stac_item
+          - band
+          - west
+          - south
+          - east
+          - north
+        additionalProperties:
+          anyOf:
+          - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
+          - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedInputValue/schema.yaml
+          - type:
+            - string
+            - number
+            - integer
+            - boolean
+            - array
+            - object
+        x-jsonld-id: https://w3id.org/ogc/api/processes/inputs
+        x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/input/
+      outputs:
+        type: object
+        propertyNames:
+          enum:
+          - band_file
+        x-jsonld-id: https://w3id.org/ogc/api/processes/outputs
+        x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/output/
+      response:
+        enum:
+        - raw
+        - document
+        x-jsonld-id: https://w3id.org/ogc/api/processes/response
+  results:
+    description: Results document (response=document) for this process (see U-01).
+    type: object
+    propertyNames:
+      enum:
+      - band_file
+    additionalProperties:
+      anyOf:
+      - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
+      - type: array
+        items:
+          $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
+      - type:
+        - string
+        - number
+        - integer
+        - boolean
+        - array
+        - object
+  processRun:
+    $ref: https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/ProcessRun/schema.yaml
+x-jsonld-extra-terms:
+  type: '@type'
+  ProcessRun: http://purl.org/wf4ever/wfprov#ProcessRun
+  WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun
+  WorkflowEngine: http://purl.org/wf4ever/wfprov#WorkflowEngine
+  Artifact: http://purl.org/wf4ever/wfprov#Artifact
+  ProcessType: http://www.w3.org/2004/02/skos/core#Concept
+  title: http://purl.org/dc/terms/title
+  description: http://purl.org/dc/terms/description
+  keywords: http://purl.org/dc/terms/subject
+  version: https://geolabs.github.io/bblocks-process-profiles/def/version
+  mutable: https://w3id.org/ogc/api/processes/mutable
+  jobControlOptions: https://w3id.org/ogc/api/processes/jobControlOptions
+  outputTransmission: https://w3id.org/ogc/api/processes/outputTransmission
+  metadata: https://w3id.org/ogc/api/processes/metadata
+  role:
+    x-jsonld-id: https://w3id.org/ogc/api/processes/role
+    x-jsonld-type: '@id'
+  links:
+    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
+    x-jsonld-context:
+      href:
+        '@id': http://www.w3.org/ns/oa#hasTarget
+        '@type': '@id'
+      rel:
+        '@id': http://www.iana.org/assignments/relation
+        '@type': '@id'
+        '@context':
+          '@base': http://www.iana.org/assignments/relation/
+      type: http://purl.org/dc/terms/type
+      title: http://www.w3.org/2000/01/rdf-schema#label
+  response: https://w3id.org/ogc/api/processes/response
+  executionUnit: https://w3id.org/ogc/api/processes/executionUnit
+  processDescription: https://geolabs.github.io/bblocks-process-profiles/def/processDescription
+  result: https://geolabs.github.io/bblocks-process-profiles/def/result
+  engine: https://geolabs.github.io/bblocks-process-profiles/def/engine
+  run: https://geolabs.github.io/bblocks-process-profiles/def/run
+  provType:
+    x-jsonld-id: '@type'
+    x-jsonld-type: '@vocab'
+  provName: http://www.w3.org/2000/01/rdf-schema#label
+  activityType:
+    x-jsonld-id: '@type'
+    x-jsonld-type: '@id'
+  entityType:
+    x-jsonld-id: '@type'
+    x-jsonld-type: '@id'
+  used:
+    x-jsonld-id: http://www.w3.org/ns/prov#used
+    x-jsonld-type: '@id'
+  wasAssociatedWith:
+    x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
+    x-jsonld-type: '@id'
+  wasGeneratedBy:
+    x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
+    x-jsonld-type: '@id'
+  wasDerivedFrom:
+    x-jsonld-id: http://www.w3.org/ns/prov#wasDerivedFrom
+    x-jsonld-type: '@id'
+  wasAttributedTo:
+    x-jsonld-id: http://www.w3.org/ns/prov#wasAttributedTo
+    x-jsonld-type: '@id'
+  qualifiedAssociation: http://www.w3.org/ns/prov#qualifiedAssociation
+  agent:
+    x-jsonld-id: http://www.w3.org/ns/prov#agent
+    x-jsonld-type: '@id'
+  hadPlan:
+    x-jsonld-id: http://www.w3.org/ns/prov#hadPlan
+    x-jsonld-type: '@id'
+  startedAtTime:
+    x-jsonld-id: http://www.w3.org/ns/prov#startedAtTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  endedAtTime:
+    x-jsonld-id: http://www.w3.org/ns/prov#endedAtTime
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  value: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  describedByProcess:
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#describedByProcess
+    x-jsonld-type: '@id'
+  describedByWorkflow:
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#describedByWorkflow
+    x-jsonld-type: '@id'
+  usedInput:
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#usedInput
+    x-jsonld-type: '@id'
+  wasEnactedBy:
+    x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
+    x-jsonld-type: '@id'
+  wasPartOfWorkflowRun:
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#wasPartOfWorkflowRun
+    x-jsonld-type: '@id'
+  hadSubProcessRun:
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#hadSubProcessRun
+    x-jsonld-type: '@id'
+  wasOutputFrom:
+    x-jsonld-id: http://www.w3.org/ns/prov#generated
+    x-jsonld-type: '@id'
+  prefLabel: http://www.w3.org/2004/02/skos/core#prefLabel
+  definition: http://www.w3.org/2004/02/skos/core#definition
+  inScheme:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
+    x-jsonld-type: '@id'
+  status: https://geolabs.github.io/bblocks-process-profiles/def/status
+  phase:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader
+    x-jsonld-type: '@id'
+  profile: https://geolabs.github.io/bblocks-process-profiles/def/profile
+  source: https://geolabs.github.io/bblocks-process-profiles/def/source
+  cwl:
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/cwl
+    x-jsonld-type: '@id'
+  cwlClass: https://geolabs.github.io/bblocks-process-profiles/def/cwlClass
+  cwlId: https://geolabs.github.io/bblocks-process-profiles/def/cwlId
+  provenanceClass:
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/provenanceClass
+    x-jsonld-type: '@id'
+  cctDependencies: https://geolabs.github.io/bblocks-process-profiles/def/cctDependency
+  candidateCctDependencies: https://geolabs.github.io/bblocks-process-profiles/def/candidateCctDependency
+  hasStep:
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/hasStep
+    x-jsonld-type: '@id'
+  exactMatch:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#exactMatch
+    x-jsonld-type: '@id'
+  closeMatch:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#closeMatch
+    x-jsonld-type: '@id'
+  relatedMatch:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#relatedMatch
+    x-jsonld-type: '@id'
+  openeoEquivalence: https://geolabs.github.io/bblocks-process-profiles/def/openeoEquivalence
+  level: https://geolabs.github.io/bblocks-process-profiles/def/equivalenceLevel
+  rationale: https://geolabs.github.io/bblocks-process-profiles/def/rationale
+  decomposition:
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/decomposition
+    x-jsonld-container: '@list'
+  stage: https://geolabs.github.io/bblocks-process-profiles/def/stage
+  openeo: https://geolabs.github.io/bblocks-process-profiles/def/openeo
+  note: http://www.w3.org/2004/02/skos/core#note
+x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/
+x-jsonld-prefixes:
+  wfprov: http://purl.org/wf4ever/wfprov#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dct: http://purl.org/dc/terms/
+  pp: https://geolabs.github.io/bblocks-process-profiles/def/
+  proc: https://w3id.org/ogc/api/processes/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  oa: http://www.w3.org/ns/oa#
+  prov: http://www.w3.org/ns/prov#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#

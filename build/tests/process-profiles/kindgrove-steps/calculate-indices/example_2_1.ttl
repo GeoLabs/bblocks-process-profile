@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <http://schema.org/> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-process-profiles/def/process/calculate_indices> dcterms:description "Process converted from CWL" ;
+    dcterms:subject "mangrove",
+        "ndvi",
+        "ndwi",
+        "ospd",
+        "savi" ;
+    dcterms:title "calculate_indices" ;
+    pp:version "0.1.0" ;
+    proc:inputs [ ns3:band_files [ dcterms:description "" ;
+                    dcterms:title "band_files" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 1 ;
+                    proc:schema [ proc:type "array" ;
+                            ns1:items [ proc:type "string" ;
+                                    ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
+    proc:jobControlOptions "async-execute" ;
+    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value "Compute NDVI, NDWI and SAVI from Sentinel-2 red, green and NIR bands" ;
+            proc:role schema:description ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:affiliation "GeoLabs" ;
+                    ns4:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value "0.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "calculate_indices" ;
+            proc:role schema:name ] ;
+    proc:mutable true ;
+    proc:outputTransmission "reference",
+        "value" ;
+    proc:outputs [ ns2:ndvi_file [ dcterms:description "" ;
+                    dcterms:title "ndvi_file" ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:ndwi_file [ dcterms:description "" ;
+                    dcterms:title "ndwi_file" ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ;
+            ns2:savi_file [ dcterms:description "" ;
+                    dcterms:title "savi_file" ;
+                    proc:schema [ proc:type "string" ;
+                            ns1:contentMediaType "application/octet-stream" ] ] ] .
+

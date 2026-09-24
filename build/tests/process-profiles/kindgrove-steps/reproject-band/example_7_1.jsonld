@@ -1,0 +1,33 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "id": "urn:example:run:kindgrove-steps:reproject-band",
+  "type": "ProcessRun",
+  "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/reproject-band",
+  "describedByProcess": "https://ospd.example.org/ogc-api/processes/reproject_band",
+  "usedInput": [
+    {
+      "id": "urn:example:entity:reproject-band:in:band_file"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:west"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:south"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:east"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:north"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:epsg"
+    },
+    {
+      "id": "urn:example:entity:reproject-band:in:resolution"
+    }
+  ],
+  "startedAtTime": "2026-09-24T10:59:12Z",
+  "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
+  "wasPartOfWorkflowRun": "urn:example:run:kindgrove-steps:mangrove-workflow-steps"
+}

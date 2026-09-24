@@ -1,0 +1,14 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
+  "processDescription": {
+    "process": {
+      "id": "export_stac",
+      "version": "0.1.0"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/GeoLabs/KindGrove/releases/download/v0.0.2-rc2/mangrove-workflow-steps.cwl#export_stac",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

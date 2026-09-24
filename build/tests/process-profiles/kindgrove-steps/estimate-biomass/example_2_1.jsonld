@@ -1,0 +1,214 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/context.jsonld",
+  "id": "estimate_biomass",
+  "version": "0.1.0",
+  "title": "estimate_biomass",
+  "description": "Process converted from CWL",
+  "mutable": true,
+  "keywords": [
+    "ospd",
+    "mangrove",
+    "biomass",
+    "carbon"
+  ],
+  "metadata": [
+    {
+      "role": "https://schema.org/name",
+      "value": "estimate_biomass"
+    },
+    {
+      "role": "https://schema.org/softwareVersion",
+      "value": "0.1.0"
+    },
+    {
+      "role": "https://schema.org/codeRepository",
+      "value": "https://github.com/starling-foundries/KindGrove"
+    },
+    {
+      "role": "https://schema.org/license",
+      "value": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+    },
+    {
+      "role": "https://schema.org/author",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cameron Sajedi"
+      }
+    },
+    {
+      "role": "https://schema.org/contributor",
+      "value": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "G\u00e9rald Fenoy",
+        "affiliation": "GeoLabs"
+      }
+    },
+    {
+      "role": "https://schema.org/description",
+      "value": "Mangrove detection, allometric biomass and IPCC carbon stock"
+    }
+  ],
+  "inputs": {
+    "ndvi_file": {
+      "title": "ndvi_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "ndwi_file": {
+      "title": "ndwi_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "savi_file": {
+      "title": "savi_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "stac_item": {
+      "title": "stac_item",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      },
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "ndvi_min": {
+      "title": "ndvi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.3
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "ndvi_max": {
+      "title": "ndvi_max",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.9
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "ndwi_min": {
+      "title": "ndwi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": -0.3
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "savi_min": {
+      "title": "savi_min",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.2
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "biomass_slope": {
+      "title": "biomass_slope",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 250.5
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "biomass_intercept": {
+      "title": "biomass_intercept",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": -75.2
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    },
+    "carbon_fraction": {
+      "title": "carbon_fraction",
+      "description": "",
+      "schema": {
+        "type": "number",
+        "default": 0.47
+      },
+      "minOccurs": 0,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "mangrove_mask_file": {
+      "title": "mangrove_mask_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "biomass_file": {
+      "title": "biomass_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "biomass_summary_file": {
+      "title": "biomass_summary_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "carbon_summary_file": {
+      "title": "carbon_summary_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    },
+    "analysis_summary_file": {
+      "title": "analysis_summary_file",
+      "description": "",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/octet-stream"
+      }
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ]
+}
