@@ -24,8 +24,8 @@
     wfprov:hadSubProcessRun <urn:example:run:water-bodies:crop>,
         <urn:example:run:water-bodies:norm-diff>,
         <urn:example:run:water-bodies:otsu> ;
-    prov:endedAtTime "2026-09-23T18:03:51+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-23T20:14:43+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:09:36+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> ;
     pp:jobID "water-bodies-detect-water-body-0001" ;
     pp:status "successful" .

@@ -27,7 +27,7 @@
     pp:processDescription <https://geolabs.github.io/bblocks-process-profiles/def/process/detect_water_body> ;
     pp:profile "ospd.process-profiles.water-bodies.detect-water-body" ;
     pp:provenanceClass wfprov:WorkflowRun ;
-    pp:source [ pp:cwl <https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#detect_water_body> ;
+    pp:source [ pp:cwl <https://github.com/GeoLabs/ogc-eo-application-package-hands-on/blob/f47258567ddf8efbc7c33fd1ec277e4f1b454883/water-bodies/app-pkg-multiple/detect_water_body.cwl> ;
             pp:cwlClass "Workflow" ;
             pp:cwlId "detect_water_body" ;
             pp:license "https://spdx.org/licenses/CC-BY-SA-4.0" ] ;

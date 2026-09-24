@@ -30,10 +30,10 @@
 
 <urn:example:run:water-bodies:water-bodies> a prov:Activity,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies> ;
-    prov:endedAtTime "2026-09-23T18:07:16+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-23T20:17:45+00:00"^^xsd:dateTime ;
     prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
             prov:hadPlan <https://ospd.example.org/ogc-api/processes/water-bodies> ] ;
-    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:09:35+00:00"^^xsd:dateTime ;
     prov:used <urn:example:entity:water-bodies:in:aoi>,
         <urn:example:entity:water-bodies:in:epsg>,
         <urn:example:entity:water-bodies:in:stac_items> ;

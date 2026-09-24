@@ -34,10 +34,10 @@
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value "crop" ;
-            proc:role schema:name ],
         [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ] ;
+            proc:role schema:description ],
+        [ rdf:value "crop" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

@@ -1,8 +1,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://schema.org/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,7 +15,7 @@
         "mangrove" ;
     dcterms:title "parse_aoi" ;
     pp:version "0.0.1" ;
-    proc:inputs [ ns4:aoi [ dcterms:description "Area of interest defined as a bounding box" ;
+    proc:inputs [ ns2:aoi [ dcterms:description "Area of interest defined as a bounding box" ;
                     dcterms:title "Area of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -36,21 +36,21 @@
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
             proc:role schema:license ],
-        [ rdf:value "0.0.1" ;
-            proc:role schema:softwareVersion ],
         [ rdf:value "parse_aoi" ;
             proc:role schema:name ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns2:name "Gérald Fenoy" ] ;
+        [ rdf:value [ a ns4:Person ;
+                    ns4:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns4:name "Gérald Fenoy" ] ;
             proc:role schema:contributor ],
+        [ rdf:value "0.0.1" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "Process converted from CWL" ;
             proc:role schema:description ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:name "Cameron Sajedi" ] ;
-            proc:role schema:author ] ;
+            proc:role schema:codeRepository ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

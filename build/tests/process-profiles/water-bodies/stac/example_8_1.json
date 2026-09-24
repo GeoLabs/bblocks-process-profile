@@ -11,7 +11,7 @@
       "id": "urn:example:entity:stac:in:rasters"
     }
   ],
-  "startedAtTime": "2026-09-23T18:07:11Z",
+  "startedAtTime": "2026-09-23T20:17:40Z",
   "wasEnactedBy": "urn:example:engine:cwltool-3.1.20260108082145",
   "wasPartOfWorkflowRun": "urn:example:run:water-bodies:water-bodies"
 }

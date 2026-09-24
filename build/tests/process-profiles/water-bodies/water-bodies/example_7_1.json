@@ -3,7 +3,7 @@
     "id": "urn:example:run:water-bodies:water-bodies",
     "provType": "prov:Activity",
     "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies",
-    "startedAtTime": "2026-09-23T18:00:51Z",
+    "startedAtTime": "2026-09-23T20:09:35Z",
     "used": [
       "urn:example:entity:water-bodies:in:aoi",
       "urn:example:entity:water-bodies:in:epsg",
@@ -18,7 +18,7 @@
         "hadPlan": "https://ospd.example.org/ogc-api/processes/water-bodies"
       }
     ],
-    "endedAtTime": "2026-09-23T18:07:16Z"
+    "endedAtTime": "2026-09-23T20:17:45Z"
   },
   {
     "id": "urn:example:entity:water-bodies:in:aoi",

@@ -35,9 +35,9 @@
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "Water body detection based on NDWI and otsu threshold" ;
-            proc:role schema:description ],
-        [ rdf:value "Water body detection based on NDWI and otsu threshold" ;
             proc:role schema:name ],
+        [ rdf:value "Water body detection based on NDWI and otsu threshold" ;
+            proc:role schema:description ],
         [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ] ;
     proc:mutable true ;

@@ -36,10 +36,10 @@
 
 <urn:example:run:water-bodies:crop> a prov:Activity,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop> ;
-    prov:endedAtTime "2026-09-23T18:02:24+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-23T20:11:25+00:00"^^xsd:dateTime ;
     prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
             prov:hadPlan <https://ospd.example.org/ogc-api/processes/crop> ] ;
-    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:09:38+00:00"^^xsd:dateTime ;
     prov:used <urn:example:entity:crop:in:aoi>,
         <urn:example:entity:crop:in:band>,
         <urn:example:entity:crop:in:epsg>,

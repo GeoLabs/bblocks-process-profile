@@ -17,7 +17,7 @@
     "version": "1.4.1"
   },
   "source": {
-    "cwl": "https://github.com/gfenoy/mastering-app-package/blob/40ecc096da56c6810758b87b01a87502f7c4507c/cwl-workflow/app-water-bodies-cloud-native.cwl#water-bodies",
+    "cwl": "https://github.com/GeoLabs/ogc-eo-application-package-hands-on/blob/f47258567ddf8efbc7c33fd1ec277e4f1b454883/water-bodies/app-pkg-multiple/water-bodies.cwl",
     "cwlClass": "Workflow",
     "cwlId": "water-bodies",
     "license": "https://spdx.org/licenses/CC-BY-SA-4.0"

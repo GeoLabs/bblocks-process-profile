@@ -7,6 +7,6 @@
     wfprov:describedByProcess <https://ospd.example.org/ogc-api/processes/otsu> ;
     wfprov:usedInput <urn:example:entity:otsu:in:raster> ;
     wfprov:wasPartOfWorkflowRun <urn:example:run:water-bodies:detect-water-body> ;
-    prov:startedAtTime "2026-09-23T18:03:45+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:14:35+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145> .
 

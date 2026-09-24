@@ -382,10 +382,10 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <http://schema.org/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -398,7 +398,7 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
         "demo" ;
     dcterms:title "Downloads Copernicus products." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns4:band [ dcterms:description "" ;
+    proc:inputs [ ns3:band [ dcterms:description "" ;
                     dcterms:title "band" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -419,18 +419,18 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                 "TCI",
                                 "WVP" ;
                             proc:type "string" ] ] ;
-            ns4:debug [ dcterms:description "" ;
+            ns3:debug [ dcterms:description "" ;
                     dcterms:title "debug" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "false"^^rdf:JSON ;
                             proc:type "boolean" ] ] ;
-            ns4:product_url [ dcterms:description "" ;
+            ns3:product_url [ dcterms:description "" ;
                     dcterms:title "S3 URL to a Sentinel-2 product in SAFE format." ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns4:resolution [ dcterms:description "" ;
+            ns3:resolution [ dcterms:description "" ;
                     dcterms:title "resolution" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
@@ -438,7 +438,7 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                                 "20m",
                                 "60m" ;
                             proc:type "string" ] ] ;
-            ns4:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
+            ns3:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -446,8 +446,8 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns3:writeOnly true ] ] ;
-            ns4:s3_secret_key [ dcterms:description """Secret key to Copernicus data provider.
+                            ns1:writeOnly true ] ] ;
+            ns3:s3_secret_key [ dcterms:description """Secret key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -455,31 +455,31 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns3:writeOnly true ] ] ] ;
+                            ns1:writeOnly true ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ],
-        [ rdf:value "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest." ;
+    proc:metadata [ rdf:value "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest." ;
             proc:role schema:description ],
         [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
             proc:role schema:codeRepository ],
         [ rdf:value "Downloads Copernicus products." ;
             proc:role schema:name ],
+        [ rdf:value "1.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
         [ rdf:value [ a ns2:Person ;
                     ns2:email "francis.charette-migneault@crim.ca" ;
                     ns2:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns2:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns1:product [ dcterms:description "" ;
+    proc:outputs [ ns4:product [ dcterms:description "" ;
                     dcterms:title "product" ;
                     proc:schema [ proc:type "string" ;
-                            ns3:contentEncoding "binary" ;
-                            ns3:contentMediaType "image/jp2" ] ] ] .
+                            ns1:contentEncoding "binary" ;
+                            ns1:contentMediaType "image/jp2" ] ] ] .
 
 
 ```
@@ -784,10 +784,10 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://schema.org/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://schema.org/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -800,7 +800,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
         "demo" ;
     dcterms:title "Downloads Copernicus products." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns3:band [ dcterms:description "" ;
+    proc:inputs [ ns1:band [ dcterms:description "" ;
                     dcterms:title "band" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -821,18 +821,18 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
                                 "TCI",
                                 "WVP" ;
                             proc:type "string" ] ] ;
-            ns3:debug [ dcterms:description "" ;
+            ns1:debug [ dcterms:description "" ;
                     dcterms:title "debug" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "false"^^rdf:JSON ;
                             proc:type "boolean" ] ] ;
-            ns3:product_url [ dcterms:description "" ;
+            ns1:product_url [ dcterms:description "" ;
                     dcterms:title "S3 URL to a Sentinel-2 product in SAFE format." ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:resolution [ dcterms:description "" ;
+            ns1:resolution [ dcterms:description "" ;
                     dcterms:title "resolution" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
@@ -840,7 +840,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
                                 "20m",
                                 "60m" ;
                             proc:type "string" ] ] ;
-            ns3:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
+            ns1:s3_access_key [ dcterms:description """Access key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -848,7 +848,7 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:s3_secret_key [ dcterms:description """Secret key to Copernicus data provider.
+            ns1:s3_secret_key [ dcterms:description """Secret key to Copernicus data provider.
 See https://documentation.dataspace.copernicus.eu/Registration.html 
 and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets for details.
 """ ;
@@ -857,29 +857,29 @@ and https://documentation.dataspace.copernicus.eu/APIs/S3.html#generate-secrets 
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
+    proc:metadata [ rdf:value "1.1.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "Downloads the Copernicus product from S3 using the Sentinel-2 SAFE manifest." ;
             proc:role schema:description ],
-        [ rdf:value [ a ns1:Person ;
-                    ns1:email "francis.charette-migneault@crim.ca" ;
-                    ns1:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns1:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "Downloads Copernicus products." ;
             proc:role schema:name ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ],
+        [ rdf:value [ a ns4:Person ;
+                    ns4:email "francis.charette-migneault@crim.ca" ;
+                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns4:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:product [ dcterms:description "" ;
+    proc:outputs [ ns3:product [ dcterms:description "" ;
                     dcterms:title "product" ;
                     proc:schema [ proc:type "string" ;
-                            ns4:contentEncoding "binary" ;
-                            ns4:contentMediaType "image/jp2" ] ] ] .
+                            ns2:contentEncoding "binary" ;
+                            ns2:contentMediaType "image/jp2" ] ] ] .
 
 
 ```
@@ -5644,13 +5644,13 @@ id:7e671680-4e90-4584-89b1-36260f670af1 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:f5c0b341-97fb-484c-9f8c-0646f0c63e86 ;
-            prov:atTime "2026-09-23T09:33:51.697961"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/output_plot> ],
-        [ a prov:Generation ;
             prov:activity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ;
             prov:atTime "2026-09-23T09:33:59.283154"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/workflow%252525252520process/cyanobacteria_plot> ] ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/workflow%252525252520process/cyanobacteria_plot> ],
+        [ a prov:Generation ;
+            prov:activity id:f5c0b341-97fb-484c-9f8c-0646f0c63e86 ;
+            prov:atTime "2026-09-23T09:33:51.697961"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/output_plot> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:1b832fde3fc0d94955508d006d745a0a9e9b9596 ] ;
     cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria_plot.png" ;
@@ -5953,6 +5953,62 @@ id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:48.321511"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328852"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328747"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328880"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_u> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328713"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_e> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328781"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_k> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328772"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_j> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.327842"^^xsd:dateTime ;
+            prov:entity id:fcc8bc22-4c42-45a2-a828-ef8de070904e ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_c> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328916"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328723"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328808"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_n> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328861"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328735"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_g> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328691"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_b> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328889"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_v> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328703"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_d> ],
@@ -5961,109 +6017,53 @@ id:0fbabdc1-ddb9-4c88-99d2-7b53d77c7c07 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_p> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328852"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_r> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328691"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328880"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328898"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_w> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328925"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_z> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.327798"^^xsd:dateTime ;
-            prov:entity id:6e735750-bb9c-4417-b20e-f7ddb07df649 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_a> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328761"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_i> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328723"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_f> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328907"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_x> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328871"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_t> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328713"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_e> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328790"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_l> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328772"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_j> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328861"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_s> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328672"^^xsd:dateTime ;
             prov:entity data:a67be08b0183aa19f78701cd7fb864462a08af4c ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328889"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328781"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_k> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328799"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_m> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328819"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_o> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328871"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_t> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328843"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328761"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_i> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.327798"^^xsd:dateTime ;
+            prov:entity id:6e735750-bb9c-4417-b20e-f7ddb07df649 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_a> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:48.328925"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_z> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:48.328390"^^xsd:dateTime ;
             prov:entity data:c6f40f302effca33768fc256bbb5dedaca044174 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/calc> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328916"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:48.328799"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_y> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_m> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328747"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:48.328898"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_h> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328808"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.328735"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_g> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:48.327842"^^xsd:dateTime ;
-            prov:entity id:fcc8bc22-4c42-45a2-a828-ef8de070904e ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_c> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_chlorophyll_a/band_w> ] .
 
 id:136d036c-1194-4d69-b3c7-538ad435fe46 a prov:Agent,
         prov:SoftwareAgent ;
@@ -6074,10 +6074,10 @@ id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b03_10m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:136d036c-1194-4d69-b3c7-538ad435fe46 ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m> ],
+        [ a prov:Association ;
+            prov:agent id:136d036c-1194-4d69-b3c7-538ad435fe46 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:13.060666"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6085,6 +6085,18 @@ id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:06.038809"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:06.087923"^^xsd:dateTime ;
+            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:06.088207"^^xsd:dateTime ;
+            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/resolution> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:06.088743"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/s3_secret_key> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:06.087662"^^xsd:dateTime ;
             prov:entity data:7c5d11a451cde788be37383d50239d7672a8cb1f ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/band> ],
@@ -6095,31 +6107,19 @@ id:15bb5476-8c6a-4c0d-85ac-0ff7f4765451 a wfprov:ProcessRun,
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:06.088513"^^xsd:dateTime ;
             prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/s3_access_key> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:06.087923"^^xsd:dateTime ;
-            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/product_url> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:06.088743"^^xsd:dateTime ;
-            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/s3_secret_key> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:06.088207"^^xsd:dateTime ;
-            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/resolution> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_10m/s3_access_key> ] .
 
 id:1855b873-514a-46e8-85f9-7e6fdd5c1c12 a wf4ever:File,
         wfprov:Artifact,
         prov:Entity ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ;
-            prov:atTime "2026-09-23T09:33:59.283154"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/workflow%25252520process/cyanobacteria> ],
-        [ a prov:Generation ;
             prov:activity id:f0b22113-c4b4-451a-894f-30fc14eafc60 ;
             prov:atTime "2026-09-23T09:31:48.067700"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/result> ] ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/result> ],
+        [ a prov:Generation ;
+            prov:activity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ;
+            prov:atTime "2026-09-23T09:33:59.283154"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/workflow%25252520process/cyanobacteria> ] ;
     provext:qualifiedSpecialization [ a provext:Specialization ;
             provext:generalEntity data:b90b2dee65d0b638143e2788b825e245dbe9c4bb ] ;
     cwlprov:basename "S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542_cyanobacteria.tiff" ;
@@ -6135,10 +6135,10 @@ id:1f7c9599-10e3-4a9f-a64b-c333d730ff68 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b04_10m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m> ],
+            prov:agent id:271d494f-4cd0-47bc-86d6-bcd7da4a7ff9 ],
         [ a prov:Association ;
-            prov:agent id:271d494f-4cd0-47bc-86d6-bcd7da4a7ff9 ] ;
+            prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:20.357689"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6146,29 +6146,29 @@ id:1f7c9599-10e3-4a9f-a64b-c333d730ff68 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:13.105700"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:13.112573"^^xsd:dateTime ;
-            prov:entity id:a16a5d61-1192-43b9-8be3-6f546af4ccdd ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/debug> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:13.112207"^^xsd:dateTime ;
             prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/s3_access_key> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:13.111934"^^xsd:dateTime ;
-            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/resolution> ],
+            prov:atTime "2026-09-23T09:31:13.111723"^^xsd:dateTime ;
+            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:13.112573"^^xsd:dateTime ;
+            prov:entity id:a16a5d61-1192-43b9-8be3-6f546af4ccdd ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/debug> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:13.112514"^^xsd:dateTime ;
             prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/s3_secret_key> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:13.111934"^^xsd:dateTime ;
+            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/resolution> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:13.111444"^^xsd:dateTime ;
             prov:entity data:ee59b16f9fd43ef6b27fa343095d5284d49bddd0 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/band> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:13.111723"^^xsd:dateTime ;
-            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/product_url> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b04_10m/band> ] .
 
 id:271d494f-4cd0-47bc-86d6-bcd7da4a7ff9 a prov:Agent,
         prov:SoftwareAgent ;
@@ -6184,10 +6184,10 @@ id:489bffb3-47ea-4505-8a69-fb23eacf14a1 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b01_60m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:a8ac9566-6183-46d2-8801-4814c774cbd1 ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m> ],
+        [ a prov:Association ;
+            prov:agent id:a8ac9566-6183-46d2-8801-4814c774cbd1 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:23.013674"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6199,25 +6199,25 @@ id:489bffb3-47ea-4505-8a69-fb23eacf14a1 a wfprov:ProcessRun,
             prov:entity data:0e25362cc531cdfa5fe7478737037da2ab1c4b2f ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/band> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:20.410192"^^xsd:dateTime ;
-            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/s3_access_key> ],
+            prov:atTime "2026-09-23T09:31:20.410426"^^xsd:dateTime ;
+            prov:entity id:fbda755c-26d7-4213-8ac3-437112f3f27a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/debug> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:20.409969"^^xsd:dateTime ;
             prov:entity data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/resolution> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:20.410426"^^xsd:dateTime ;
-            prov:entity id:fbda755c-26d7-4213-8ac3-437112f3f27a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/debug> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:20.409713"^^xsd:dateTime ;
-            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/product_url> ],
+            prov:atTime "2026-09-23T09:31:20.410192"^^xsd:dateTime ;
+            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/s3_access_key> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:20.410382"^^xsd:dateTime ;
             prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/s3_secret_key> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/s3_secret_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:20.409713"^^xsd:dateTime ;
+            prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b01_60m/product_url> ] .
 
 id:5001cc2f-8b7b-4b93-9043-8ce09886304f a prov:Agent .
 
@@ -6249,97 +6249,61 @@ id:63513262-cbe0-42d8-a5b8-843eba63ae68 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:32.238304"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279852"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279882"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_r> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279679"^^xsd:dateTime ;
-            prov:entity data:cf72a11e7365073ae3c966029d357f3e9b82af8a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/name> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279806"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_m> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279921"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_y> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279711"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279934"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_z> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279843"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_q> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279742"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_g> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_u> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:32.279781"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_k> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279835"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_p> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:32.279388"^^xsd:dateTime ;
             prov:entity data:81e487db73b1725c362decd3aac3a2c13f86d595 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/calc> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279760"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_i> ],
+            prov:atTime "2026-09-23T09:31:32.278687"^^xsd:dateTime ;
+            prov:entity id:6e735750-bb9c-4417-b20e-f7ddb07df649 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_a> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279899"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279826"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_w> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_o> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279882"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279852"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_u> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279806"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_m> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:32.279699"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_b> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279861"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279760"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_s> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279891"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279816"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279722"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_e> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279908"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_x> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279835"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279733"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_f> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_i> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:32.279769"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_j> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279751"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279872"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_h> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_t> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279679"^^xsd:dateTime ;
+            prov:entity data:cf72a11e7365073ae3c966029d357f3e9b82af8a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279722"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_e> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:32.278743"^^xsd:dateTime ;
             prov:entity id:fcc8bc22-4c42-45a2-a828-ef8de070904e ;
@@ -6349,17 +6313,53 @@ id:63513262-cbe0-42d8-a5b8-843eba63ae68 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_l> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279826"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279934"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_o> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_z> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.278687"^^xsd:dateTime ;
-            prov:entity id:6e735750-bb9c-4417-b20e-f7ddb07df649 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_a> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:32.279872"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:32.279899"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_t> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_w> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279861"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_s> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279742"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_g> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279751"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_h> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279921"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279891"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_v> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279816"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_n> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279843"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_q> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279733"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279908"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_x> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:32.279711"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_turbidity/band_d> ] .
 
 id:697c2f54-7c7d-4e14-8900-d1e42db3a142 a prov:Agent,
         prov:SoftwareAgent ;
@@ -6378,10 +6378,10 @@ id:74e5b6d2-7e78-4e78-9028-bec1988305d6 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/download_b03_60m" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:27cdb921-72e1-47e6-96a9-08b6f25e590a ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m> ],
+        [ a prov:Association ;
+            prov:agent id:27cdb921-72e1-47e6-96a9-08b6f25e590a ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:32.223936"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6389,29 +6389,29 @@ id:74e5b6d2-7e78-4e78-9028-bec1988305d6 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:29.717898"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:29.724936"^^xsd:dateTime ;
-            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/s3_secret_key> ],
+            prov:atTime "2026-09-23T09:31:29.723838"^^xsd:dateTime ;
+            prov:entity data:7c5d11a451cde788be37383d50239d7672a8cb1f ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/band> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:29.724514"^^xsd:dateTime ;
+            prov:entity data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/resolution> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:29.724260"^^xsd:dateTime ;
             prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/product_url> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:29.723838"^^xsd:dateTime ;
-            prov:entity data:7c5d11a451cde788be37383d50239d7672a8cb1f ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/band> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:29.724732"^^xsd:dateTime ;
             prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/s3_access_key> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:29.724936"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/s3_secret_key> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:29.724989"^^xsd:dateTime ;
             prov:entity id:ee76b2e7-fa78-416c-982a-0034be8e3618 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/debug> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:29.724514"^^xsd:dateTime ;
-            prov:entity data:ccd4d27929279b55bfa676ddddbe7b67aa8d9ce5 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/resolution> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b03_60m/debug> ] .
 
 id:7fb56c04-4cb6-45f5-923c-390c6520ae3a a wf4ever:File,
         wfprov:Artifact,
@@ -6487,10 +6487,10 @@ id:f0b22113-c4b4-451a-894f-30fc14eafc60 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/calculate_cyanobacteria" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:e268cc0e-1073-422f-af40-acfe6b7db163 ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria> ],
+        [ a prov:Association ;
+            prov:agent id:e268cc0e-1073-422f-af40-acfe6b7db163 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:31:48.067683"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6498,69 +6498,61 @@ id:f0b22113-c4b4-451a-894f-30fc14eafc60 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:31:34.582528"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596576"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596558"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_q> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596463"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_g> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596617"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_u> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596567"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_p> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596549"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_n> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.594405"^^xsd:dateTime ;
-            prov:entity id:b379cd45-e93d-43eb-902f-df573b67ccf0 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_b> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596585"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_r> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596658"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_y> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596492"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_j> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596418"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_d> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596452"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_f> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596397"^^xsd:dateTime ;
-            prov:entity data:915294efd60b642abdf0ab2947e15fbb5d702a7e ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/name> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_o> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.596594"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_s> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596473"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596530"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_h> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_l> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596433"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_e> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.594422"^^xsd:dateTime ;
+            prov:entity id:f1093031-b0f1-4f09-bf38-f001b51a13e5 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_c> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596025"^^xsd:dateTime ;
+            prov:entity data:a87dac8429196320690ec2c17ae2c00532d9e957 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/calc> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596658"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_y> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596567"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_p> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596648"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_x> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596397"^^xsd:dateTime ;
+            prov:entity data:915294efd60b642abdf0ab2947e15fbb5d702a7e ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596492"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_j> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.596606"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_t> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596433"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596540"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_e> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_m> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596576"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_q> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.596635"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
@@ -6570,45 +6562,53 @@ id:f0b22113-c4b4-451a-894f-30fc14eafc60 a wfprov:ProcessRun,
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_k> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596530"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596452"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_l> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_f> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596585"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_r> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.594405"^^xsd:dateTime ;
+            prov:entity id:b379cd45-e93d-43eb-902f-df573b67ccf0 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_b> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596617"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_u> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.594359"^^xsd:dateTime ;
             prov:entity id:55c5cc1e-5f73-4878-8a63-f5d1ab235cb6 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_a> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596648"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596418"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_x> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_d> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596626"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596549"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_v> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596025"^^xsd:dateTime ;
-            prov:entity data:a87dac8429196320690ec2c17ae2c00532d9e957 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/calc> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_n> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.596483"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_i> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:34.596626"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_v> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:34.596667"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_z> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596540"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596463"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_m> ],
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_g> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.596558"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T09:31:34.596473"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_o> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:34.594422"^^xsd:dateTime ;
-            prov:entity id:f1093031-b0f1-4f09-bf38-f001b51a13e5 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_c> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/calculate_cyanobacteria/band_h> ] .
 
 id:f1093031-b0f1-4f09-bf38-f001b51a13e5 a wf4ever:File,
         wfprov:Artifact,
@@ -6642,25 +6642,25 @@ id:fabfd56f-08a1-4eb4-b698-a069c9e9edb8 a wfprov:ProcessRun,
             prov:entity data:36dea452bfe795afb42cf14b59c82a3127598281 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/band> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:23.052690"^^xsd:dateTime ;
-            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/s3_access_key> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:23.052004"^^xsd:dateTime ;
-            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/resolution> ],
+            prov:atTime "2026-09-23T09:31:23.053637"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/s3_secret_key> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:23.053767"^^xsd:dateTime ;
             prov:entity id:b509d8cc-cc7b-4fdf-88aa-f13c8d9b47c5 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/debug> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:23.053637"^^xsd:dateTime ;
-            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/s3_secret_key> ],
+            prov:atTime "2026-09-23T09:31:23.052690"^^xsd:dateTime ;
+            prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/s3_access_key> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:23.050787"^^xsd:dateTime ;
             prov:entity data:5e7cb55727e375cb72dac733c05c4c81c30ffaae ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/product_url> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/product_url> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:23.052004"^^xsd:dateTime ;
+            prov:entity data:6e0ff3f48a8e5ea3d6694c8c7ad596728e98090b ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/download_b02_10m/resolution> ] .
 
 id:fbda755c-26d7-4213-8ac3-437112f3f27a a prov:Entity ;
     prov:value false .
@@ -6677,10 +6677,10 @@ id:5805a5d2-d626-4eee-a0c2-b4167521a820 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/plot_turbidity" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:6a564363-742d-4015-b71b-70001b3a39ff ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity> ],
+        [ a prov:Association ;
+            prov:agent id:6a564363-742d-4015-b71b-70001b3a39ff ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:33:56.221490"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6692,38 +6692,38 @@ id:5805a5d2-d626-4eee-a0c2-b4167521a820 a wfprov:ProcessRun,
             prov:entity data:34bd4f200813f30333e40ecb55d1a316cf2da8af ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/output_name> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:51.989440"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/clip_min> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:51.988984"^^xsd:dateTime ;
             prov:entity data:1edf82bd141d9e642e6ec01d71e53d8107df885c ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/plot_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:33:51.989440"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/clip_min> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:51.989423"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/clip_max> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:51.987879"^^xsd:dateTime ;
-            prov:entity data:2b0824b4ba24b098adc7ce01881499891c48d2ea ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/color_scale> ],
+            prov:atTime "2026-09-23T09:33:51.989395"^^xsd:dateTime ;
+            prov:entity data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/plot_title> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:51.987923"^^xsd:dateTime ;
             prov:entity id:0a64bae7-5f25-441b-b114-51f6437fb00f ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/input_image> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:51.989395"^^xsd:dateTime ;
-            prov:entity data:6a9b80ab0cf720811aa23e47d7915bf82f03f56c ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/plot_title> ] .
+            prov:atTime "2026-09-23T09:33:51.987879"^^xsd:dateTime ;
+            prov:entity data:2b0824b4ba24b098adc7ce01881499891c48d2ea ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_turbidity/color_scale> ] .
 
 id:6a328b3b-9e05-4b3b-94c1-551257cc1214 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/plot_chlorophyll_a" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:697c2f54-7c7d-4e14-8900-d1e42db3a142 ],
-        [ a prov:Association ;
             prov:agent id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ;
-            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a> ] ;
+            prov:hadPlan <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a> ],
+        [ a prov:Association ;
+            prov:agent id:697c2f54-7c7d-4e14-8900-d1e42db3a142 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T09:33:59.271251"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
@@ -6731,33 +6731,33 @@ id:6a328b3b-9e05-4b3b-94c1-551257cc1214 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T09:33:56.238639"^^xsd:dateTime ;
             prov:hadActivity id:0470b6f9-f5c0-484c-bb2e-534806f95d65 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:56.249844"^^xsd:dateTime ;
-            prov:entity data:e059662a461e5d1b245f555149febc699f42b537 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/plot_title> ],
+            prov:atTime "2026-09-23T09:33:56.248008"^^xsd:dateTime ;
+            prov:entity id:7fb56c04-4cb6-45f5-923c-390c6520ae3a ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/input_image> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:56.249875"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/clip_max> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:56.248008"^^xsd:dateTime ;
-            prov:entity id:7fb56c04-4cb6-45f5-923c-390c6520ae3a ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/input_image> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:56.248701"^^xsd:dateTime ;
-            prov:entity data:6f7a2e56416e7ae7128bf930d39e5c26ca53c5d7 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/output_name> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:56.247945"^^xsd:dateTime ;
             prov:entity data:53dc86e3cbc21ff9ef3ae5a5a8cc9f7d1a9942c8 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/color_scale> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:33:56.249891"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/clip_min> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:33:56.249844"^^xsd:dateTime ;
+            prov:entity data:e059662a461e5d1b245f555149febc699f42b537 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/plot_title> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:33:56.249375"^^xsd:dateTime ;
             prov:entity data:f1a11aea9cfbd38e6dbda7e14c05bf9addcd2248 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/plot_name> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:33:56.249891"^^xsd:dateTime ;
-            prov:entity cwlprov:None ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/clip_min> ] .
+            prov:atTime "2026-09-23T09:33:56.248701"^^xsd:dateTime ;
+            prov:entity data:6f7a2e56416e7ae7128bf930d39e5c26ca53c5d7 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_chlorophyll_a/output_name> ] .
 
 id:6e735750-bb9c-4417-b20e-f7ddb07df649 a wf4ever:File,
         wfprov:Artifact,
@@ -6791,21 +6791,13 @@ id:f5c0b341-97fb-484c-9f8c-0646f0c63e86 a wfprov:ProcessRun,
             prov:entity id:1855b873-514a-46e8-85f9-7e6fdd5c1c12 ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/input_image> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:50.805055"^^xsd:dateTime ;
-            prov:entity data:4ad2eab867b3280cabc93a14c615ab97b6b6575e ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/plot_title> ],
+            prov:atTime "2026-09-23T09:31:50.803738"^^xsd:dateTime ;
+            prov:entity id:8fc8d4c9-0d3d-43d8-8e04-1fb53d64f191 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/clip_min> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:50.804251"^^xsd:dateTime ;
             prov:entity data:1370052da0755d73768c0c75500107d3759bcc2d ;
             prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/color_scale> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:50.803703"^^xsd:dateTime ;
-            prov:entity id:73af567d-64fb-4113-9d5d-24a98b4a23d5 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/clip_max> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:50.803738"^^xsd:dateTime ;
-            prov:entity id:8fc8d4c9-0d3d-43d8-8e04-1fb53d64f191 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/clip_min> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:50.804800"^^xsd:dateTime ;
             prov:entity data:a15e03a530b917f396df0bd7bf919d2f342d7ecf ;
@@ -6813,7 +6805,15 @@ id:f5c0b341-97fb-484c-9f8c-0646f0c63e86 a wfprov:ProcessRun,
         [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:50.804535"^^xsd:dateTime ;
             prov:entity data:8655751d19f645dec4f65b6bb306877a7180a3b2 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/output_name> ] .
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/output_name> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:50.805055"^^xsd:dateTime ;
+            prov:entity data:4ad2eab867b3280cabc93a14c615ab97b6b6575e ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/plot_title> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:50.803703"^^xsd:dateTime ;
+            prov:entity id:73af567d-64fb-4113-9d5d-24a98b4a23d5 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/plot_cyanobacteria/clip_max> ] .
 
 id:fcc8bc22-4c42-45a2-a828-ef8de070904e a wf4ever:File,
         wfprov:Artifact,
@@ -6865,13 +6865,13 @@ id:0470b6f9-f5c0-484c-bb2e-534806f95d65 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T09:31:01.456549"^^xsd:dateTime ;
             prov:hadActivity id:63709288-2770-4d4f-97fa-3e8ff70d0b32 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T09:31:06.037821"^^xsd:dateTime ;
-            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T09:31:06.037596"^^xsd:dateTime ;
             prov:entity data:b75fa50f91a9dd377927a83994bff64245718790 ;
-            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ] ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_access_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T09:31:06.037821"^^xsd:dateTime ;
+            prov:entity data:f6cab44ac3c9f733bfece9ad8d3ad1452cbf9570 ;
+            prov:hadRole <arcp://uuid,44c595c3-0138-459e-bff2-432829fe1bf3/workflow/packed.cwl#main/s3_secret_key> ] ;
     prov:startedAtTime "2026-09-23T09:31:01.456528"^^xsd:dateTime .
 
 cwlprov:None a prov:Entity ;

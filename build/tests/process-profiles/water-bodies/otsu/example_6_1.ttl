@@ -20,10 +20,10 @@
 
 <urn:example:run:water-bodies:otsu> a prov:Activity,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/otsu> ;
-    prov:endedAtTime "2026-09-23T18:03:51+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-23T20:14:43+00:00"^^xsd:dateTime ;
     prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
             prov:hadPlan <https://ospd.example.org/ogc-api/processes/otsu> ] ;
-    prov:startedAtTime "2026-09-23T18:03:45+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:14:35+00:00"^^xsd:dateTime ;
     prov:used <urn:example:entity:otsu:in:raster> ;
     prov:wasAssociatedWith <urn:example:engine:cwltool-3.1.20260108082145>,
         <urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/otsu:1.5.0> .

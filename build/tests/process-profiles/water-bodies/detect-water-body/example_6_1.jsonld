@@ -5,7 +5,7 @@
       "id": "urn:example:run:water-bodies:detect-water-body",
       "provType": "prov:Activity",
       "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
-      "startedAtTime": "2026-09-23T18:00:51Z",
+      "startedAtTime": "2026-09-23T20:09:36Z",
       "used": [
         "urn:example:entity:detect-water-body:in:aoi",
         "urn:example:entity:detect-water-body:in:epsg",
@@ -21,7 +21,7 @@
           "hadPlan": "https://ospd.example.org/ogc-api/processes/detect_water_body"
         }
       ],
-      "endedAtTime": "2026-09-23T18:03:51Z"
+      "endedAtTime": "2026-09-23T20:14:43Z"
     },
     {
       "id": "urn:example:entity:detect-water-body:in:aoi",

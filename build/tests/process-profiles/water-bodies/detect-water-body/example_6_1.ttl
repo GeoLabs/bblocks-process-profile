@@ -34,10 +34,10 @@
 
 <urn:example:run:water-bodies:detect-water-body> a prov:Activity,
         <https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body> ;
-    prov:endedAtTime "2026-09-23T18:03:51+00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-09-23T20:14:43+00:00"^^xsd:dateTime ;
     prov:qualifiedAssociation [ prov:agent <urn:example:engine:cwltool-3.1.20260108082145> ;
             prov:hadPlan <https://ospd.example.org/ogc-api/processes/detect_water_body> ] ;
-    prov:startedAtTime "2026-09-23T18:00:51+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-09-23T20:09:36+00:00"^^xsd:dateTime ;
     prov:used <urn:example:entity:detect-water-body:in:aoi>,
         <urn:example:entity:detect-water-body:in:bands>,
         <urn:example:entity:detect-water-body:in:epsg>,
